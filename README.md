@@ -8,7 +8,7 @@ Los productos estarán enfocados a un público de hombres y mujeres mayores de 3
 
 Descripción de integrantes del grupo:
 Guido:
-Daniel:
+Daniel: Soy Daniel Diaz de Cordoba Capital tengo 42 años; soy Lic en Logística, tengo mas de 20 años dentro de la Cadena de Suministros, comencé a estudiar programación con la idea de poder dar un giro a mi vida profesional.
 Vale:
 Milton:
 
