@@ -21,6 +21,7 @@ Vale: Soy Valeria Mirenzi de Buenos Aires, tengo 19 años. Empecé el curso porq
 Milton: 27 años. Marino Mercante, Lic. en Logistica y Transporte, y actualmente estudiando la tecnicatura superior en Programacion. Cursos finalizados de Javascript y Wordpress.
 
 Sitios de referencia:
+
 https://abaco.la/
 
 https://www.canadatimerelojes.com.ar/
