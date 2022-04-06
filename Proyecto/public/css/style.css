@@ -1,0 +1,26 @@
+/* Colores rolex
+#A37E2C 
+#006039 */
+
+#logo {
+    text-align: center;
+    color: #A37E2C;
+    border: solid 2px #A37E2C ;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: #006039;
+    margin-top: 10%;
+    margin-left: 50%;
+}
+
+#fechanac {
+    width: 45px;
+}
+
+body {
+    background-color: white;
+}
+
+main {
+    background-color: #A37E2C;
+}
