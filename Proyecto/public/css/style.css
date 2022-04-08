@@ -1,30 +1,50 @@
 body{
     width: 100%;
 }
+
 video{
     width: 100%;
-    opacity: 1;
-    z-index: 1;
+    opacity: 0.7;
+    z-index: -1;
 }
 #navBarHome{
-    background-color: antiquewhite;
+    background-color: grey;
     opacity: 1;
-    z-index: 2;
+    z-index: 1;
     padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color:white
 }
     #menuBurger{
-        margin-left: 5%;
+        margin-left: 4%;
+    }
+    #menuBurger:hover{
+        font-size: 110%;
+        color: darkgoldenrod;
     }
     #logo{
-        margin-left: 40%;
+        margin-left: 42.5%;
+    }
+    #logo:hover{
+        font-size: 110%;
+        color: darkgoldenrod;
     }
     #buscar{
-        margin-left: 26%;
+        margin-left: 40%;
     } 
+    #buscar:hover{
+        font-size: 110%;
+        color: darkgoldenrod;
+    }
     #ingreso{
         margin-left: 4%;
     }
-
+    #ingreso:hover{
+        font-size: 110%;
+        color: darkgoldenrod;
+    }
 footer{
     background-color: darkslategrey;
     color: aliceblue;
