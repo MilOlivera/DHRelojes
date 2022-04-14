@@ -55,3 +55,45 @@ footer{
     background-color: lightgray;
     padding: 10%;
 }
+
+/* --- carrito --- */
+
+main {
+    font-family:'Roboto';
+}
+
+.title-cart {
+    font-size: 24px;
+    margin: 14px 14px 5px 14px; 
+    font-weight:400;
+}
+
+.cart-products {
+    font-size: 14px;
+}
+
+.product {
+    display: flex;
+    margin: 10px;
+    background-color: #ebebeb;
+    border: 3px solid #ebebeb;
+}
+
+.product-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price-text, .price, .quantity-text, .quantity {
+    margin: 5px;
+}
+
+.facturacion {
+    font-size: 12px;
+}
+
+.purchase-summary{
+    margin: 5px;
+}
