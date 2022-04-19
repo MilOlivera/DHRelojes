@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     width: 100%;
 }
@@ -57,6 +61,9 @@ footer{
 }
 
 /* --- carrito --- */
+.body-cart {
+    margin: 0;
+}
 
 main {
     font-family:'Roboto';
@@ -86,7 +93,7 @@ main {
     justify-content: center;
 }
 
-.price-text, .price, .quantity-text, .quantity {
+.price-text, .price, .quantity-text, .quantity, .product-desc {
     margin: 5px;
 }
 
@@ -95,5 +102,37 @@ main {
 }
 
 .purchase-summary{
-    margin: 5px;
+    margin: 10px;
 }
+
+.purchase-summary-div {
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+/*.nombre-sum {
+    float: left;
+    text-align: left;
+    font-weight: 300;
+}
+
+.precio-sum {
+    text-align: right;
+    float: right;
+    clear: right;
+}
+
+.boton-cruz {
+    border-radius: 5px;
+}
+
+/* --- carrito --- */
