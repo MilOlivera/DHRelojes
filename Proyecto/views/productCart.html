@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="contenedorHeader">
+            <nav id="navBarHome">
+                    <i class="fa-solid fa-equals" id="menuBurger"></i>
+                    <i class="fa-solid fa-clock" id="logo"></i>
+                    <i class="fa-solid fa-magnifying-glass" id="buscar"></i>
+                    <i class="fa-solid fa-user" id="ingreso"></i>
+                    <!-- <video src="video/home.mp4" loop autoplay muted id="video"></video> -->
+            </nav>
+        </div>
+    </header> 
+
+    <main>
+        <h1 class="title-cart">Carrito</h1>
+        <hr>
+
+        <div class="cart-products">
+            <article class="product">
+
+                <img width="60%" src="images/product-reloj-verde.PNG" alt="reloj-negro">
+
+                <div class="product-info">
+                    <p class="price-text">Precio:</p>
+                    <p class="price">$####</p>
+
+                    <div>
+                        <label class="quantity-text" for="cantidad">Cantidad:</label>
+                        <br>
+                        <select width="10%" class="quantity" name="cantidad" id="cantidad">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product">
+
+                <img width="60%" src="images/product-reloj-fondo-negro.PNG" alt="reloj-negro">
+
+                <div class="product-info">
+                    <p class="price-text">Precio:</p>
+                    <p class="price">$####</p>
+
+                    <div>
+                        <label class="quantity-text" for="cantidad">Cantidad:</label>
+                        <br>
+                        <select class="quantity" name="cantidad" id="cantidad">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <br>
+
+        <div class="purchase-summary">
+            <div>
+                <p>Subtotal: $###</p>
+                <p>Envio: $###</p>
+                <p>TOTAL: $###</p>
+            </div>
+
+        <br>
+
+            <div class="facturacion">
+                <label>Dirección de envío es la misma que la dirección de facturación?</label> 
+                <label value="si"><input type="checkbox" name="si"> Si</label>
+            </div>  
+        </div>
+
+    </main>   
+</body>
+</html>
