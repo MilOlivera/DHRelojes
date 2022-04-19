@@ -1,53 +1,84 @@
-* {
+*{
     box-sizing: border-box;
 }
 
+
 body{
     width: 100%;
+    font-family: 'Old Standard TT', serif;
+    
+    font-family: 'Times New Roman', Times, serif;
+}
+html{
+    background-color: whitesmoke;
+}
+body{
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 video{
     width: 100%;
-    opacity: 0.7;
+    opacity: 0.9;
     z-index: -1;
 }
 #navBarHome{
-    background-color: grey;
+    background-color: darkslategray;
     opacity: 1;
     z-index: 1;
     padding: 2%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    color:white
+    justify-content: space-around;
+    color:white;
 }
-    #menuBurger{
-        margin-left: 4%;
+.dhLogo{
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+.navClasicos, .navProfesionales{
+    display: none;
+}
+.navBarra{
+    display: none;
+}
+   #divBurger, #divLogo, #divBuscar, #divIngresar{
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: row;
+   }
+        #divBurger{
+            width: 40%;
+            justify-content: flex-start;
+        }
+        #divLogo{    
+            width: 20%;
+            justify-content: center;
+        }
+        #divBuscar{
+            width: 20%;
+            justify-content: flex-end;
+        }
+        #divIngresar{
+            width: 20%;
+            justify-content: flex-end;
+        }
+
+   
+    .inputNavBar{
+        display: none;
     }
-    #menuBurger:hover{
-        font-size: 110%;
-        color: darkgoldenrod;
+    #buscar2{
+        display: none;
     }
-    #logo{
-        margin-left: 42.5%;
-    }
-    #logo:hover{
-        font-size: 110%;
-        color: darkgoldenrod;
-    }
-    #buscar{
-        margin-left: 40%;
-    } 
-    #buscar:hover{
-        font-size: 110%;
-        color: darkgoldenrod;
-    }
-    #ingreso{
-        margin-left: 4%;
-    }
-    #ingreso:hover{
-        font-size: 110%;
-        color: darkgoldenrod;
+
+    div #prueba{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
     }
 footer{
     background-color: darkslategrey;
@@ -55,9 +86,152 @@ footer{
     padding: 5%;
 }
 
-.iconos{
+.compartirHome{
     background-color: lightgray;
     padding: 10%;
+}
+
+/*Daniel pagina producto*/
+
+.talle-cantidad{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-bottom: 20px;    
+}
+
+.botonDeCompra{
+    padding-bottom: 10px;
+    text-align: center;
+
+}
+
+.reloj{ 
+    max-width:  60%;
+    height: 30%;
+}
+
+.fotoReloj{
+    text-align: center;
+}
+
+.marcaReloj{
+    text-align: center;
+}
+
+.infoPrecio{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.precio{
+    margin: 0px;
+}
+
+.cuotasSinInteres{
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.tituloHome{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.iconosHome{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#twitter, #facebook, #pinterest, #instagram{
+    background-color: aliceblue;
+    color: darkslategray;
+    padding: 12px;
+    border-radius: 30px;
+}
+#twitter:hover, #facebook:hover, #pinterest:hover, #instagram:hover{
+    background-color: darkslategray;
+    color: aliceblue;
+}
+
+.tituloFlex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.tituloHome{
+    text-transform: uppercase;
+    padding: 10px;
+    color: darkslategray;
+    text-align: left;
+}
+
+.parrafoFlex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.parrafo1{
+    padding: 10px;
+    color: darkslategray;
+    text-align: justify;
+}
+
+.imgFlex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#clasicoHome, #profesionalHome{
+    border-radius: 800px;
+    width: 180%;
+    padding: 30px;
+}
+.relHyM{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.hombreYMujer{
+    border-radius: 20px;
+    padding: 2px;
+    width: 48%;
+}
+.divSeparador{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+.separadores{
+    display: none;
+}
+
+li{
+    padding: 5px;
+}
+li:hover{
+    font-size: 20px;
+}
+
+.coleccionFooter{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 450px;
+}
+
+.separadorIconos{
+    display: none;
 }
 
 /* --- carrito --- */
@@ -119,20 +293,154 @@ main {
     flex: 50%;
 }
 
-/*.nombre-sum {
-    float: left;
-    text-align: left;
-    font-weight: 300;
+
+@media(min-width: 769px){
+    
+    #clasicoHome, #profesionalHome{
+        border-radius: 400px;
+        width: 80%;
+        padding: 30px;
+    }
+    .relHyM{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+    .hombreYMujer{
+        border-radius: 20px;
+        padding: 10px;
+        width: 40%;
+    }
+    .divHYM{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 40%;
+        padding: 10px;
+    }
+    .separadores{
+        display: flex;
+        width: 10%;
+    }
+
 }
 
-.precio-sum {
-    text-align: right;
-    float: right;
-    clear: right;
+@media(min-width: 1280px){
+    .dhLogo{
+        width: 250px;
+        height: 180px;
+        display: inline;
+    }
+    #divLogo{
+        display: none;
+    }
+    #divBuscar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    #divIngresar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+   
+
+    #menuBurger{
+        display: none;
+    }
+    #divIngresar{
+        background-color: lightgray;
+        border-radius: 10px;
+    }
+    .inputNavBar{
+        display: flex;
+        justify-content: flex-start;
+        border: none;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: lightgray;
+    }
+    #buscar{
+        display: none;
+    }
+    #buscar2{
+        display: flex;
+    }
+    #buscar2, #ingreso, .navBarra{
+        color: black;
+        padding: 5px;
+    }
+    #buscar2:hover, #ingreso:hover{
+        background-color: grey;
+        padding: 6px;
+        border-radius: 10px;
+    }
+    .navBarra{
+        display: block;
+    }
+
+
+    .navClasicos, .navProfesionales{
+        display: inline;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 5px;
+    }
+    .navClasicos:hover, .navProfesionales:hover{
+        color: lightgray;
+    }
+    .navClasicos{
+        justify-content: flex-start;
+    }
+    .navProfesionales{
+        justify-content: flex-end;
+    }
+    #clasicoHome, #profesionalHome{
+        border-radius: 400px;
+        width: 90%;
+        padding: 40px;
+    }
+    
+    .relHyM{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+    .hombreYMujer{
+        border-radius: 30px;
+        padding: 20px;
+        width: 35%;
+    }
+    .divHYM{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 25%;
+        padding: 30px;
+    }
+    .separadores{
+        width: 5%;
+    }
+    .iconosHome{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around
+    }
+    .separadorIconos{
+        display: flex;
+        width: 10%;
+    }
 }
 
-.boton-cruz {
-    border-radius: 5px;
-}
-
-/* --- carrito --- */
