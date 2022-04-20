@@ -90,7 +90,6 @@ footer{
     background-color: lightgray;
     padding: 10%;
 }
-<<<<<<< HEAD
 
 /*Daniel pagina producto*/
 
@@ -133,8 +132,8 @@ footer{
 .cuotasSinInteres{
     margin-top: 2px;
     margin-bottom: 8px;
-=======
-.tituloHome{
+}
+    .tituloHome{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -424,5 +423,4 @@ main {
 
 .purchase-summary{
     margin: 5px;
->>>>>>> b1dbb92fa958ad7949863cd7fa3321037005dfd7
 }
