@@ -293,6 +293,22 @@ main {
     flex: 50%;
 }
 
+/* Guido Registro y Login*/
+
+.main form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.inputBusqueda {
+    width: 60%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
 
 @media(min-width: 769px){
     
