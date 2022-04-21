@@ -106,7 +106,6 @@ footer{
 
 }
 
-
 .reloj{ 
     max-width:  60%;
     height: 30%;
@@ -133,7 +132,9 @@ footer{
     margin-top: 2px;
     margin-bottom: 8px;
 }
-    .tituloHome{
+  
+
+.tituloHome{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -233,6 +234,82 @@ li:hover{
 .separadorIconos{
     display: none;
 }
+
+/* --- carrito --- */
+.body-cart {
+    margin: 0;
+}
+
+main {
+    font-family:'Roboto';
+}
+
+.title-cart {
+    font-size: 24px;
+    margin: 14px 14px 5px 14px; 
+    font-weight:400;
+}
+
+.cart-products {
+    font-size: 14px;
+}
+
+.product {
+    display: flex;
+    margin: 10px;
+    background-color: #ebebeb;
+    border: 3px solid #ebebeb;
+}
+
+.product-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price-text, .price, .quantity-text, .quantity, .product-desc {
+    margin: 5px;
+}
+
+.facturacion {
+    font-size: 12px;
+}
+
+.purchase-summary{
+    margin: 10px;
+}
+
+.purchase-summary-div {
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+/* Guido Registro y Login*/
+
+.main form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.inputBusqueda {
+    width: 60%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
 
 @media(min-width: 769px){
     
@@ -382,35 +459,6 @@ li:hover{
         display: flex;
         width: 10%;
     }
-}
-/* --- carrito --- */
-
-main {
-    font-family:'Roboto';
-}
-
-.title-cart {
-    font-size: 24px;
-    margin: 14px 14px 5px 14px; 
-    font-weight:400;
-}
-
-.cart-products {
-    font-size: 14px;
-}
-
-.product {
-    display: flex;
-    margin: 10px;
-    background-color: #ebebeb;
-    border: 3px solid #ebebeb;
-}
-
-.product-info {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .price-text, .price, .quantity-text, .quantity {

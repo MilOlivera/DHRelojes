@@ -13,7 +13,7 @@ rel="stylesheet"/>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="body-cart">
     <header>
         <div id="contenedorHeader">
             <nav id="navBarHome">
@@ -36,6 +36,7 @@ rel="stylesheet"/>
                 <img width="60%" src="images/product-reloj-verde.PNG" alt="reloj-negro">
 
                 <div class="product-info">
+                    <p class="product-desc"> <strong>38mm Gold / Green Strap</strong> </p>
                     <p class="price-text">Precio:</p>
                     <p class="price">$####</p>
 
@@ -56,6 +57,7 @@ rel="stylesheet"/>
                 <img width="60%" src="images/product-reloj-fondo-negro.PNG" alt="reloj-negro">
 
                 <div class="product-info">
+                    <p class="product-desc"> <strong>38mm Silver / Midnight Limited Edition</strong> </p>
                     <p class="price-text">Precio:</p>
                     <p class="price">$####</p>
 
@@ -71,23 +73,32 @@ rel="stylesheet"/>
                 </div>
             </article>
         </div>
-
-        <br>
-
+        
         <div class="purchase-summary">
-            <div>
-                <p>Subtotal: $###</p>
-                <p>Envio: $###</p>
-                <p>TOTAL: $###</p>
-            </div>
+            <div class="purchase-summary-div">
+                <div class="row">
+                    <p class="column">Subtotal:</p>
+                    <p class="column">$###</p>
+                </div>
 
-        <br>
+                <div>
+                    <p class="nombre-sum">Envio:</p>
+                    <p class="precio-sum">$###</p>
+                </div>
+
+                <div>
+                    <p class="nombre-sum"> <strong>Total:</strong> </p>
+                    <p class="precio-sum"> <strong>$###</strong> </p>
+                </div>
+            </div>
 
             <div class="facturacion">
                 <label>Dirección de envío es la misma que la dirección de facturación?</label> 
                 <label value="si"><input type="checkbox" name="si"> Si</label>
             </div>  
         </div>
+
+        <button class="boton-cruz" type="reset"><i class="fa-solid fa-xmark"></i></button>
 
     </main>   
 </body>
