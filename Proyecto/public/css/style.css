@@ -237,10 +237,17 @@ li:hover{
 /* --- carrito --- */
 .body-cart {
     margin: 0;
+    background-color: #f5f5f5;
 }
 
 main {
     font-family:'Roboto';
+}
+
+.cart{
+    display: flex;
+	flex-direction: column;
+
 }
 
 .title-cart {
@@ -253,11 +260,14 @@ main {
     font-size: 14px;
 }
 
-.product {
+article.product {
     display: flex;
     margin: 10px;
-    background-color: #ebebeb;
-    border: 3px solid #ebebeb;
+    background-color: rgb(226 226 226);
+    border: 3px solid rgb(226 226 226);
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
 }
 
 .product-info {
@@ -269,28 +279,118 @@ main {
 
 .price-text, .price, .quantity-text, .quantity, .product-desc {
     margin: 5px;
+    font-size: 16px;
 }
 
-.facturacion {
-    font-size: 12px;
+.img {
+    width: 30%;
+}
+
+.product-desc {
+    font-size: 18px;
 }
 
 .purchase-summary{
-    margin: 10px;
+	margin: 10px;
+	padding: 0px 20px 20px 20px;
+	border: 1px solid silver;
+	border-radius: 5px;
 }
 
-.purchase-summary-div {
-    display: flex;
-    flex-direction: column;
-    margin: 12px;
+.purchase-summary li {
+    margin-bottom: 10px;
 }
 
-.row {
-    display: flex;
+.purchase-summary ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.column {
-    flex: 50%;
+.purchase-summary a {
+    text-decoration: none;
+}
+
+
+.facturacion {
+    font-size: 12px;
+    margin-left: 14px;
+    position: absolute;
+    display: none;
+}
+
+.send-btn-cart {
+    border: 0;
+    padding: 7px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgb(47, 79, 79);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.add-btn-cart{
+    border: 0;
+    padding: 7px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgba(67, 112, 112, 0.9);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.product-remove{
+    position: absolute;
+    cursor: pointer;
+    top: 1px;
+    right: 12px;
+}
+
+.product-remove:hover{
+	color: #252525;
+} 
+ 
+.remove {
+    display: none;
+}
+
+.shipping, .resume {
+    display: none;
+}
+
+.ship, .sub {
+    color: #252525;
+}
+
+hr.divider {
+    border-top: 1px solid silver;
+}
+
+.footer-cart {
+    background-color: lightgrey;
+    padding: 20px;
+    position: relative;
+    bottom: 0px;
+}
+
+.credit-card {
+    float: left;
+    font-size: 34px;
+    color: darkslategrey;
+    margin-right: 10px;
+}
+
+.payment-data {
+    margin: 0;
+    cursor: pointer;
+}
+
+.payment-data li {
+    color: darkslategrey;
+    padding: 0;
 }
 
 /* Guido Registro y Login*/
@@ -341,6 +441,104 @@ main {
         display: flex;
         width: 10%;
     }
+
+    /* carrito */
+    .product-remove {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    .product:hover {
+        box-shadow: 0 0 10px rgb(100, 100, 100, 0.5);
+        transition: all 450ms;
+    }
+
+	.remove{
+		display: block;
+        margin-left: 5px;
+	}
+
+    article.product {
+        margin: 20px;
+    }
+
+    .purchase-summary {
+        margin: 20px;
+        height: 325px;
+        padding: 20px;
+    }
+
+    .send-btn-cart, .add-btn-cart {
+        font-size: 16px;
+        padding: 9px;
+    }
+
+    .send-btn-cart:hover {
+        background-color: rgb(35, 58, 58);
+        transition: all 450ms;
+    }
+
+    .add-btn-cart:hover {
+        background-color: rgb(68, 100, 100);
+        transition: all 450ms;
+    }
+
+	.product-desc, .price-text, .price, .quantity-text, .quantity {
+		margin-bottom: 10px;
+	}
+
+    .purchase-summary li {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .cart{
+		flex-direction: row;
+	}
+
+    .container{
+		max-width: 95%;
+	}
+
+	.purchase-summary {
+		margin-left: 0;
+		margin-bottom: 20px;
+	}
+
+    .shipping, .resume {
+        display: block;
+    }
+    
+    .ship {
+        display: none;
+    }
+
+    .shipping {
+        margin-bottom: 10px;
+        border: 1px solid silver;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .resume {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .quantity {
+        margin-top: 10px;
+        border: 0;
+        padding: 5px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 5px;
+        background-color: whitesmoke;
+    }
+
 
 }
 
@@ -457,6 +655,32 @@ main {
     .separadorIconos{
         display: flex;
         width: 10%;
+    }
+
+    /* carrito */
+    .shipping {
+        width: 100%;
+    }
+
+    article.product {
+        margin-left: 20px;
+    }
+
+    .cart-products {
+        width: 70%;
+    }
+
+    .img {
+        max-width: 330px;
+    }
+
+    div.purchase-summary {
+        width: 25%;
+        height: 340px;
+    }
+
+    .send-btn-cart, .add-btn-cart {
+        padding: 12px;
     }
 }
 
