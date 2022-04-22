@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -282,6 +283,16 @@ article.product {
     font-size: 16px;
 }
 
+.quantity {
+    margin-top: 10px;
+    border: 0;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
 .img {
     width: 30%;
 }
@@ -465,7 +476,7 @@ hr.divider {
 
     .purchase-summary {
         margin: 20px;
-        height: 325px;
+        height: 390px;
         padding: 20px;
     }
 
@@ -528,17 +539,6 @@ hr.divider {
         font-weight: bold;
         margin-bottom: 10px;
     }
-
-    .quantity {
-        margin-top: 10px;
-        border: 0;
-        padding: 5px;
-        cursor: pointer;
-        text-align: center;
-        border-radius: 5px;
-        background-color: whitesmoke;
-    }
-
 
 }
 
@@ -676,7 +676,7 @@ hr.divider {
 
     div.purchase-summary {
         width: 25%;
-        height: 340px;
+        height: 380px;
     }
 
     .send-btn-cart, .add-btn-cart {
