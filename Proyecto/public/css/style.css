@@ -100,10 +100,47 @@ footer{
     padding-bottom: 20px;    
 }
 
-.botonDeCompra{
-    padding-bottom: 10px;
-    text-align: center;
+   .botonDeCompra{
+       text-align: center;
+   } 
 
+.boton{
+    border: 0;
+    padding: 15px;
+    width: 100%;
+    margin-top:  10px;
+    margin-bottom: 10px;
+    background-color: rgba(67, 112, 112, 0.9);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    
+}
+
+
+.talle-cantidad{
+    display: flex;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    align-content: space-around;
+    justify-content: center;
+    }
+
+.selectorTalle ,
+.selectorCantidad{
+    font-weight: bold;
+    padding: 3px;
+}
+
+.selectorCantidad{
+    margin-left: 10px;
+}
+
+.selectorTalle{
+    margin-right: 10px;
 }
 
 .reloj{ 
@@ -539,6 +576,12 @@ hr.divider {
         background-color: whitesmoke;
     }
 
+    .boton{
+        width: auto;
+        margin: 10px;
+    }
+
+    
 
 }
 

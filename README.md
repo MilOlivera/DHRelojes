@@ -31,3 +31,8 @@ https://unitimeargentina.com/
 https://www.timeshop.com.ar/
 
 https://www.rolex.com/es/watches.html
+
+
+Enlace Tablero Trello:
+
+https://trello.com/b/jLrDihal/grupo4relojesdh
