@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -319,6 +320,16 @@ article.product {
     font-size: 16px;
 }
 
+.quantity {
+    margin-top: 10px;
+    border: 0;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
 .img {
     width: 30%;
 }
@@ -432,6 +443,14 @@ hr.divider {
 
 /* Guido Registro y Login*/
 
+.main-register {
+    padding: 3%;
+    border: grey solid 1px;
+    border-radius: 10%;
+    margin: 5%;
+    background-color: rgb(226 226 226);
+}
+
 .main form div {
     display: flex;
     flex-direction: column;
@@ -446,6 +465,26 @@ hr.divider {
     padding: 5px;
 }
 
+.bot-enviar {
+    background-color: black;
+    color: white;
+    border-radius: 20%;
+    margin-left: 3%;
+}
+
+.selection {
+    margin-bottom: 1%;
+}
+
+.logo-back {
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-register {
+    width: 50%;
+}
 
 @media(min-width: 769px){
     
@@ -502,7 +541,7 @@ hr.divider {
 
     .purchase-summary {
         margin: 20px;
-        height: 325px;
+        height: 390px;
         padding: 20px;
     }
 
@@ -719,7 +758,7 @@ hr.divider {
 
     div.purchase-summary {
         width: 25%;
-        height: 340px;
+        height: 380px;
     }
 
     .send-btn-cart, .add-btn-cart {

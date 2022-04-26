@@ -10,15 +10,49 @@
     rel="stylesheet" />
         <link rel="stylesheet" href="/css/style.css">
     </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DH RELOJES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 <body>
-    <header>
+    <header class="headerHome">
         <div id="contenedorHeader">
             <nav id="navBarHome">
+                <div id="divBurger">
                     <i class="fa-solid fa-equals" id="menuBurger"></i>
+                    <!-- <img src="img/DHlogo.png" alt="" class="dhLogo"> -->
+                </div>
+                <div id="divLogo">
                     <i class="fa-solid fa-clock" id="logo"></i>
-                    <i class="fa-solid fa-magnifying-glass" id="buscar"></i>
-                    <i class="fa-solid fa-user" id="ingreso"></i>
-                    <!-- <video src="video/home.mp4" loop autoplay muted id="video"></video> -->
+                    <!-- <img src="img/logoDH.png" alt="" width="30px" height="30px" class="logoDH"> -->
+                </div>
+                    <div id="divBuscar">
+                        <!-- <span>                             -->
+                            <span class="navClasicos">CLASICOS</span>
+                            <span class="navProfesionales">PROFESIONALES</span>
+                            <i class="fa-solid fa-magnifying-glass" id="buscar"></i>                           
+                        <!-- </span> -->
+                    </div>
+                    <div id="divIngresar">
+                        <span>
+                            <input type="text" value="   Busque su reloj " class="inputNavBar">
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-magnifying-glass" id="buscar2"></i>
+                        </span>
+                        <span class="navBarra"> | </span>
+                        <span>
+                            <i class="fa-solid fa-user" id="ingreso"></i>
+                        </span>
+                    </div>
             </nav>
             <video src="video/home.mp4" loop autoplay muted id="video"></video>
         </div>
