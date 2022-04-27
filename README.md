@@ -1,4 +1,5 @@
 URL del repositorio: https://github.com/MilOlivera/Grupo_4_relojesDH.git
+URL de Trello: https://trello.com/invite/b/jLrDihal/0dab0eedbb122d469a7dbabd22fa5a6c/grupo4relojesdh
 
 Descripción del sitio:
 El proyecto estará orientado a la venta de relojes formales de alta gama. El sitio tendrá una estetica minimalista y tomará ideas de otros sitios que consideramos competencia.
