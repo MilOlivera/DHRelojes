@@ -1,20 +1,14 @@
 *{
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
 body{
     width: 100%;
-    font-family: 'Old Standard TT', serif;
-    
-    font-family: 'Times New Roman', Times, serif;
 }
 html{
     background-color: whitesmoke;
-}
-body{
-    width: 100%;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 video{
@@ -24,8 +18,7 @@ video{
 }
 #navBarHome{
     background-color: darkslategray;
-    opacity: 1;
-    z-index: 1;
+    opacity: 0.7;
     padding: 2%;
     display: flex;
     flex-wrap: wrap;
@@ -33,11 +26,11 @@ video{
     justify-content: space-around;
     color:white;
 }
-.dhLogo{
-    width: 20px;
-    height: 20px;
+/* .dhLogo{
+    width: 5px;
+    height: 5px;
     display: none;
-}
+} */
 .navClasicos, .navProfesionales{
     display: none;
 }
@@ -190,8 +183,7 @@ footer{
 }
 
 #clasicoHome, #profesionalHome{
-    border-radius: 800px;
-    width: 180%;
+    width: 120%;
     padding: 30px;
 }
 .relHyM{
@@ -414,8 +406,6 @@ hr.divider {
 @media(min-width: 769px){
     
     #clasicoHome, #profesionalHome{
-        border-radius: 400px;
-        width: 80%;
         padding: 30px;
     }
     .relHyM{
@@ -544,11 +534,11 @@ hr.divider {
 }
 
 @media(min-width: 1280px){
-    .dhLogo{
-        width: 250px;
-        height: 180px;
+    /* .dhLogo{
+        width: 120px;
+        height: 80px;
         display: inline;
-    }
+    } */
     #divLogo{
         display: none;
     }
@@ -592,10 +582,17 @@ hr.divider {
         color: black;
         padding: 5px;
     }
-    #buscar2:hover, #ingreso:hover{
+    #buscar2:hover{
         background-color: grey;
         padding: 6px;
         border-radius: 10px;
+    }
+    
+    #ingreso:hover{
+        background-color: grey;
+        padding: 6px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
     .navBarra{
         display: block;
@@ -619,8 +616,6 @@ hr.divider {
         justify-content: flex-end;
     }
     #clasicoHome, #profesionalHome{
-        border-radius: 400px;
-        width: 90%;
         padding: 40px;
     }
     
@@ -659,6 +654,7 @@ hr.divider {
     }
 
     /* carrito */
+
     .shipping {
         width: 100%;
     }
