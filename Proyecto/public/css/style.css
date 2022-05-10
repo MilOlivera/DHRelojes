@@ -457,6 +457,12 @@ hr.divider {
     padding: 5px;
 }
 
+.botonEditar{
+    margin-left: 10px;
+    width: 5%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
 .bot-enviar {
     background-color: black;
     color: white;

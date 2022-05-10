@@ -18,6 +18,15 @@ let mainController = {
     registro: (req, res) => {
         res.render("./users/registro")
     },
+    
+    add: (req, res) => {
+        res.render("./products/productAdd")
+    },
+
+    edit: (req, res) => {
+        res.render("./products/productEdit")
+    }
+
 }
 
 module.exports = mainController
