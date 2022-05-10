@@ -1,0 +1,64 @@
+---------------FOOTER INDEX----------------
+    <footer>
+
+        <h4 class="tituloFooter">RELOJES DH</h4>
+        <hr>
+        
+        <ul>
+            <li type="none">Clasicos</li>
+            <li type="none">Profesionales</li>
+        </ul>
+
+        <h4 class="tituloFooter">SERVICIOS</h4>
+        <hr>
+        
+        <ul>
+            <li type="none">Comprar un DH</li>
+            <li type="none">Buscar un distribuidor</li>
+            <li type="none">Mantenimiento y cuidado del reloj</li>
+            <li type="none">Mantenimiento y cuidado del reloj</li>
+        </ul>
+        
+        <h4 class="tituloFooter">COLECCION</h4>
+        <hr>
+        
+        <div class="coleccionFooter">
+            <ul>
+                <li type="none">Air-King</li>
+                <li type="none">Day-Just</li>
+                <li type="none">GMT-Master II</li>
+                <li type="none">Oyster Perpetual</li>
+                <li type="none">Sky-Dweller</li>
+                <li type="none">Yacht-Master</li>
+                <li type="none">Cosmograph</li>
+            </ul>
+       
+        
+            <ul>
+                <li type="none">Daytona</li>
+                <li type="none">Lady-Datejust</li>
+                <li type="none">Explorer</li>
+                <li type="none">Milgauss</li>
+                <li type="none">Sea-Dweller</li>
+                <li type="none">Submariner</li>
+                <li type="none">Cellini</li>
+            </ul>
+        </div>
+
+        <h4 class="tituloFooter">AVISO LEGAL</h4>
+        <hr>
+        
+        <ul>
+            <li type="none">Términos de uso</li>
+            <li type="none">Aviso de privacidad</li>
+            <li type="none">Cookies</li>
+        </ul>
+        
+        <h4 class="tituloFooter">SOPORTE</h4>
+        <hr>
+        
+        <ul>
+            <li type="none">Guía del usuario</li>
+            <li type="none">Contacto</li>
+        </ul>
+    </footer>

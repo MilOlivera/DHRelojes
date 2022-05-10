@@ -6,27 +6,19 @@ const publicPath = path.resolve(__dirname, "./public")
 
 app.use(express.static(publicPath));
 
-app.listen(3035, () => {
-    console.log("Servidor Corriendo")
-})
+const rutasIndex = require("./routes/index.js")
+const rutasProducts = require("./routes/products.js")
+const rutasUsers = require("./routes/users.js")
 
-app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname + '/views/index.html'))
-})
-app.get('/home', function(req, res){
-    res.sendFile(path.join(__dirname + '/views/index.html'))
-})
+app.listen(3035, () => { console.log("Servidor Corriendo") })
 
-app.get('/login', function(req, res){
-    res.sendFile(path.join(__dirname + '/views/login.html'))
-})
+app.set ("view engine", "ejs")
 
-app.get('/registro', function(req, res){
-    res.sendFile(path.join(__dirname + '/views/registro.html'))
-})
-app.get('/productDetail', function(req, res){
-    res.sendFile(path.join(__dirname + '/views/productDetail.html'))
-})
-app.get('/cart', function(req, res){
-    res.sendFile(path.join(__dirname + '/views/productCart.html'))
-})
+app.use ("/", rutasIndex)
+app.use ("/products", rutasProducts)
+app.use ("/users", rutasUsers)
+
+// app.use ("/productDetail", rutasIndex)
+// app.use ("/login", rutasIndex)
+// app.use ("/cart", rutasIndex)
+// app.use ("/registro", rutasIndex)
