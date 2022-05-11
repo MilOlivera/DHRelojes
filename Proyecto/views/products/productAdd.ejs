@@ -1,21 +1,23 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %>
-    <main class="main-register">
-        <h2>Agregar Item</h2>
-        <form action="/registro" method="POST">
-            <div><input type="text" class="inputBusqueda" placeholder="Codigo del Producto" name="codigoProduco" id="codigoProducto" required></div>
-            <div><input type="text" class="inputBusqueda" placeholder="Nombre del Producto" name="nombreProduco" id="nombreProducto" required></div>
-            <div><input type="text" class="inputBusqueda" placeholder="Descripción del Producto" name="descripcionProducto" id="descripcionProducto" required></div>
-            <div><input type="tel" class="inputBusqueda" placeholder="Precio" name="precio" id="precio"></div>
-            <button> 
-                <i class="fa-solid fa-folder-plus"> <spam>Add Picture</spam></i>
-            </button>
-            <br></br>
-            <div><input type="submit" value="Save" class="bot-save"></div>
+    <main class="main-register">\
+        <section class="section-register"></section>
+            <h2 class="product-add-title">Agregar Item</h2>
+            <form class="center-register" action="/registro" method="POST">
+                <div><input class="inputBusqueda-add" type="text" class="inputBusqueda" placeholder="Codigo del Producto" name="codigoProduco" id="codigoProducto" required></div>
+                <div><input class="inputBusqueda-add" type="text" class="inputBusqueda" placeholder="Nombre del Producto" name="nombreProduco" id="nombreProducto" required></div>
+                <div><input class="inputBusqueda-add" type="text" class="inputBusqueda" placeholder="Descripción del Producto" name="descripcionProducto" id="descripcionProducto" required></div>
+                <div><input class="inputBusqueda-add" type="tel" class="inputBusqueda" placeholder="Precio" name="precio" id="precio"></div>
+                <button class="botonEditar-2"> 
+                    <i class="fa-solid fa-folder-plus"> <spam>Add Picture</spam></i>
+                </button>
+                <br></br>
+                <div><input type="submit" value="Save" class="send-btn-register"></div>
 
-    
-        </form>
+        
+            </form>
+    </section>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
