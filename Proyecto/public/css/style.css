@@ -1,14 +1,19 @@
 *{
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', Sans-Serif;
+
 }
 
+@font-face {
+    src: url("../fonts/newyork.otf");
+    font-family: 'New york';
+}
 
 body{
     width: 100%;
 }
 html{
-    background-color: whitesmoke;
+    background-color: #ffffff;
 }
 
 video{
@@ -17,14 +22,14 @@ video{
     z-index: -1;
 }
 #navBarHome{
-    background-color: darkslategray;
-    opacity: 0.7;
-    padding: 2%;
+    background-color: #ffffff;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    color:white;
+    align-items: center;
+    color: #363636;
 }
 /* .dhLogo{
     width: 5px;
@@ -34,6 +39,9 @@ video{
 
 /* HOME HOME HOME HOME HOME HOME HOME  */
 
+#logo-reloj {
+    width: 1%;
+}
 
 .navClasicos, .navProfesionales{
     display: none;
@@ -78,14 +86,125 @@ video{
         justify-content: space-around;
     }
 footer{
-    background-color: darkslategrey;
-    color: aliceblue;
+    background-color: #efefef;
+    color: #363636;
     padding: 5%;
+    font-weight: 100;
 }
 
 .compartirHome{
-    background-color: lightgray;
+    background-color: #fafafa;
     padding: 10%;
+}
+
+/*Daniel pagina producto*/
+.main-product {
+    background-color: #ffffff;
+    margin: 0;
+}
+
+.section-product {
+    padding: 10px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.img-box {
+    background-color: #fafafa;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.product-img{
+    width: 60%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.marcaReloj{
+    margin: 20px 0px 20px 20px;
+    font-family: 'New york', serif;
+    text-align: left;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.short-desc-product {
+    font-family: 'New York', Sans-Serif;
+    margin-left: 20px;
+    font-size: 20px;
+    font-style: bold;
+    text-align: left;
+}
+
+.desc-product {
+    font-family: 'Raleway', Sans-Serif;;
+    text-align: left;
+    margin: 15px 0px 20px 20px;
+}
+
+.talle-cantidad, .cantidad{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;  
+    margin-left: 20px;
+    font-family: 'Raleway', Sans-Serif;
+}
+
+.selectorCantidad, .selectorTalle {
+    border: 0;
+    font-size: 15px;
+    font-family: 'Raleway', Sans-Serif;
+}
+
+.precio{
+    margin: 30px 0px 10px 20px;
+    font-family: 'New York', Sans-Serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.cuotasSinInteres {
+    font-family: 'Raleway', Sans-Serif;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.product-btn {
+    font-family: 'Raleway', Sans-Serif;
+    line-height: 18px;
+    letter-spacing: 1px;
+    border: 0;
+    padding: 1rem;
+    width: 90%;
+    background-color: #efefef;
+    transition: all 400ms;
+    color: #363636;
+    margin: 20px 0 30px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.botonDeCompra{
+    text-align: center;
+} 
+
+.product-btn:hover {
+    background-color: #363636;
+    transition: all 400ms;
+    color: #ffffff;
+}
+
+.product-financing {
+    color: #363636;
+    font-family: 'Raleway', Sans-Serif;
+    text-decoration: none;
+    text-align: center;
+    font-style: italic;
 }
 
 .tituloHome{
@@ -102,14 +221,14 @@ footer{
 }
 
 #twitter, #facebook, #pinterest, #instagram{
-    background-color: aliceblue;
-    color: darkslategray;
+    background-color: #efefef;
+    color: #9a9a9a;
     padding: 12px;
     border-radius: 30px;
 }
 #twitter:hover, #facebook:hover, #pinterest:hover, #instagram:hover{
-    background-color: darkslategray;
-    color: aliceblue;
+    background-color: #9a9a9a;
+    color: #efefef;
 }
 
 .tituloFlex{
@@ -120,7 +239,7 @@ footer{
 .tituloHome{
     text-transform: uppercase;
     padding: 10px;
-    color: darkslategray;
+    color: #363636;
     text-align: left;
 }
 
@@ -132,7 +251,7 @@ footer{
 
 .parrafo1{
     padding: 10px;
-    color: darkslategray;
+    color: #363636;
     text-align: justify;
 }
 
@@ -245,12 +364,12 @@ li:hover{
 
 /* --- carrito --- */
 .body-cart {
+    background-color: #fafafa;
     margin: 0;
-    background-color: #f5f5f5;
 }
 
 main {
-    font-family:'Roboto';
+    font-family:'Open Sans', Sans-Serif;
 }
 
 .cart{
@@ -260,9 +379,14 @@ main {
 }
 
 .title-cart {
-    font-size: 24px;
-    margin: 14px 14px 5px 14px; 
-    font-weight:400;
+    font-size: 40px;
+    letter-spacing: 0.035rem;
+    font-weight: 300;
+    font-family: 'new york', serif;
+    font-weight: 400;
+    margin: 20px 20px 10px 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #9b9b9b;
 }
 
 .cart-products {
@@ -272,8 +396,8 @@ main {
 article.product {
     display: flex;
     margin: 10px;
-    background-color: rgb(226 226 226);
-    border: 3px solid rgb(226 226 226);
+    background-color: #efefef;
+    border: 3px solid #efefef;
     align-items: center;
     position: relative;
     border-radius: 5px;
@@ -312,12 +436,12 @@ article.product {
 .purchase-summary{
 	margin: 10px;
 	padding: 0px 20px 20px 20px;
-	border: 1px solid silver;
 	border-radius: 5px;
 }
 
 .purchase-summary li {
     margin-bottom: 10px;
+    font-family: 'Raleway', Sans-Serif;
 }
 
 .purchase-summary ul {
@@ -338,27 +462,37 @@ article.product {
 }
 
 .send-btn-cart {
+    font-family: 'Raleway', Sans-Serif;
+    line-height: 18px;
+    letter-spacing: 0.6px;
     border: 0;
-    padding: 7px;
+    padding: 1rem;
     width: 100%;
     margin-top: 10px;
-    background-color: rgb(47, 79, 79);
-    color: #fff;
+    background-color: #d3d3d3;
+    transition: all 400ms;
+    color: #363636;
     cursor: pointer;
     text-align: center;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .add-btn-cart{
+    font-family: 'Raleway', Sans-Serif;
+    line-height: 18px;
+    letter-spacing: 0.6px;
     border: 0;
-    padding: 7px;
+    padding: 1rem;
     width: 100%;
     margin-top: 10px;
-    background-color: rgba(67, 112, 112, 0.9);
-    color: #fff;
+    background-color: #efefef;
+    transition: all 400ms;
+    color: #363636;
     cursor: pointer;
     text-align: center;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .product-remove{
@@ -398,7 +532,7 @@ hr.divider {
 .credit-card {
     float: left;
     font-size: 34px;
-    color: darkslategrey;
+    color: #363636;
     margin-right: 10px;
 }
 
@@ -408,49 +542,165 @@ hr.divider {
 }
 
 .payment-data li {
-    color: darkslategrey;
+    color: #363636;
     padding: 0;
 }
 
 /* Guido Registro y Login*/
-
-.main-register {
-    padding: 3%;
-    border: grey solid 1px;
-    border-radius: 10%;
-    margin: 5%;
-    background-color: rgb(226 226 226);
+.title-login {
+    font-size: 40px;
+    letter-spacing: 0.035rem;
+    font-weight: 300;
+    font-family: 'new york', serif;
+    font-weight: 400;
+    margin: 50px 0px 40px 0px;
 }
 
-.main form div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
+.main-login {
+    background-color: #fafafa;
+    margin: 0;
 }
 
-.inputBusqueda {
-    width: 60%;
-    margin-bottom: 10px;
-    padding: 5px;
+.section-login {
+    padding: 10px;
+    line-height: 30px;
+    text-align: center;
 }
 
-.bot-enviar {
-    background-color: black;
-    color: white;
-    border-radius: 20%;
-    margin-left: 3%;
+.inputBusqueda-login{
+    font-family: 'Raleway', Sans-Serif;
+    width: 90%;
+    background-color: #fafafa;
+    font-size: 15px;
+    margin-top: 1.5rem;
+    border: 0;
+    border-bottom: solid 1px #9b9b9b;
+    color: #252525;
+    height: 3rem;
 }
 
-.selection {
-    margin-bottom: 1%;
+.send-btn-login {
+    font-family: 'Raleway', Sans-Serif;
+    line-height: 18px;
+    letter-spacing: 0.6px;
+    border: 0;
+    padding: 1rem;
+    width: 40%;
+    background-color: #efefef(52, 131, 250);
+    transition: all 400ms;
+    color: #363636;
+    margin: 40px 0 30px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.send-btn-login:hover {
+    background-color: #363636;
+    transition: all 400ms;
+    color: #ffffff;
+}
+
+.text-login , .text-login-end {
+    font-family: 'Raleway', Sans-Serif;
+    color: #363636;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.text-login-end {
+    margin-bottom: 20rem;
 }
 
 .logo-back {
     background-color: #252525;
     display: flex;
     justify-content: center;
+}
+
+/* registro */
+.register-txt {
+    font-size: 40px;
+    letter-spacing: 0.035rem;
+    font-weight: 300;
+    font-family: 'new york', serif;
+    font-weight: 400;
+    margin: 50px 0px 40px 0px;
+}
+
+.main-register {
+    margin: 0;
+    background-color: #fafafa;
+}
+
+.section-register {
+    padding: 10px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.center-register {
+    background-color: #fafafa;
+    text-align: center;
+    max-width: 90%;
+    margin: auto
+}
+ 
+.inputBusqueda-register {
+    font-family: 'Raleway', Sans-Serif;
+    width: 100%;
+    background-color: #fafafa;
+    font-size: 15px;
+    margin-top: 1.5rem;
+    border: 0;
+    border-bottom: solid 1px #9b9b9b;
+    color: #252525;
+    height: 3rem;
+}
+
+.inputBusqueda-input {
+    width: 100%;
+    background-color: #fafafa;
+    font-size: 15px;
+    margin-top: 1.9rem;
+    border-bottom: solid 1px #9b9b9b;
+    height: 2.6rem;
+    text-align: left;
+    font-family: 'Raleway', Sans-Serif;
+}
+
+.input-register {
+    font-family: 'Raleway', Sans-Serif;
+    font-size: 15px;
+    border: 0;
+    font-size: 15px;
+    color: #73777c;
+    background-color: #fafafa;
+}
+
+.send-btn-register {
+    font-family: 'Raleway', Sans-Serif;
+    line-height: 18px;
+    letter-spacing: 0.6px;
+    border: 0;
+    padding: 1rem;
+    width: 40%;
+    background-color: #efefef;
+    transition: all 400ms;
+    color: #363636;
+    margin: 40px 0 50px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.send-btn-register:hover {
+    background-color: #363636;
+    transition: all 400ms;
+    color: #ffffff;
 }
 
 .logo-register {
@@ -479,6 +729,44 @@ hr.divider {
     margin-bottom: 10px;
     background-color: rgba(67, 112, 112, 0.9);
     color: #fff;
+}
+
+/* edit & add */
+.product-add-title, .product-edit-title {
+    font-size: 40px;
+    letter-spacing: 0.035rem;
+    font-weight: 300;
+    font-family: 'new york', serif;
+    font-weight: 400;
+    margin: 50px 0px 40px 0px;
+    text-align: center;
+}
+
+.inputBusqueda-edit,  .inputBusqueda-add {
+    font-family: 'Raleway', Sans-Serif;
+    width: 80%;
+    background-color: #fafafa;
+    font-size: 15px;
+    margin-top: 1.5rem;
+    border: 0;
+    border-bottom: solid 1px #9b9b9b;
+    color: #252525;
+    height: 3rem;
+}
+
+.inputBusqueda-edit {
+    width: 65%;
+}
+
+.botonEditar, .botonEditar-2 {
+    font-family: 'Raleway', Sans-Serif;
+    line-height: 18px;
+    letter-spacing: 1px;
+    border: 0;
+    width: 10%;
+    background-color: #fafafa;
+    transition: all 400ms;
+    color: #363636;
     cursor: pointer;
     text-align: center;
     border-radius: 5px;
@@ -538,6 +826,12 @@ hr.divider {
 }
   
 
+.botonEditar-2 {
+    width: 40%;
+    background-color: #efefef;
+    margin: 10px 10px;
+    padding: 0.5rem;
+}
 
 @media(min-width: 769px){
     
@@ -567,6 +861,16 @@ hr.divider {
     .separadores{
         display: flex;
         width: 10%;
+    }
+
+    /* product-detail */
+    .product-img {
+        width: 40%;
+    }   
+    
+    /* login y registro */
+    .inputBusqueda-login, .center-register {
+        width: 70%
     }
 
     /* carrito */
@@ -794,6 +1098,65 @@ hr.divider {
         display: flex;
         width: 10%;
     }
+
+    /* product-detail */
+    .product-img {
+        width: 350px;
+    }
+
+    .img-box {
+        width: 50%;
+        background-color: #ffffff;
+        margin: 3rem -4.4rem 0.4rem 0.4rem
+    }
+
+    .product-detail {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+    }
+
+    .section-product {
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .desc-product {
+        font-size: 14px;
+    }
+
+    .talle-cantidad, .cantidad, .cuotasSinInteres {
+        font-size: 14px;
+    }
+
+    .precio {
+        margin: 30px 0px 10px 0px;
+    }
+
+    .product-btn {
+        width: 40%;
+    }
+    
+    /* login y registro */
+    .inputBusqueda-login, .center-register {
+        width: 40%
+    }
+
+    .center-register {
+        width: 40%;
+    }
+
+    .register-txt, .title-cart, .login-is {
+        font-size: 50px;
+    }
+
+    .register-txt, .login-is {
+        margin-top: 7rem;
+    }    
 
     /* carrito */
 
