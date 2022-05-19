@@ -2,22 +2,23 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main class="main-register">
-        <h2>Editar Item</h2>
-        <form action="/registro" method="POST">
-            <button><i class="fa-solid fa-magnifying-glass"></i> Buscar Item</button>
-            <br> </br>
-            <div><input type="text" class="inputBusqueda" placeholder= "Codigo del Producto" name="codigoProduco" id="codigoProducto" required><button class = "botonEditar">Edit</button></div>
-            <div><input type="text" class="inputBusqueda" placeholder="Nombre del Producto" name="nombreProduco" id="nombreProducto" required><button class = "botonEditar">Edit</button></div>
-            <div><input type="text" class="inputBusqueda" placeholder="Descripción del Producto" name="descripcionProducto" id="descripcionProducto" required><button class = "botonEditar">Edit</button></div>
-            <div><input type="tel" class="inputBusqueda" placeholder="Precio" name="precio" id="precio"><button class = "botonEditar">Edit</button></div>
-            <button> 
-                <i class="fa-solid fa-folder-plus"> <spam>Edit Picture</spam></i>
-            </button>
-            <br></br>
-            <div><input type="submit" value="Confirmar Cambios" class="bot-confirmar"></div>
-
-    
-        </form>
+        <section class="section-register">
+            <h2 class="product-edit-title">Editar Item</h2>
+            <form class="center-register" action="/registro" method="POST">
+                <button class="botonEditar-2"><i class="fa-solid fa-magnifying-glass"></i> Buscar Item</button>
+                <br> </br>
+                <div><input class="inputBusqueda-edit" type="text" class="inputBusqueda" placeholder= "Codigo del Producto" name="codigoProduco" id="codigoProducto" required><button class = "botonEditar">Edit</button></div>
+                <div><input class="inputBusqueda-edit" type="text" class="inputBusqueda" placeholder="Nombre del Producto" name="nombreProduco" id="nombreProducto" required><button class = "botonEditar">Edit</button></div>
+                <div><input class="inputBusqueda-edit" type="text" class="inputBusqueda" placeholder="Descripción del Producto" name="descripcionProducto" id="descripcionProducto" required><button class = "botonEditar">Edit</button></div>
+                <div><input class="inputBusqueda-edit" type="tel" class="inputBusqueda" placeholder="Precio" name="precio" id="precio"><button class = "botonEditar">Edit</button></div>
+                <button class="botonEditar-2"> 
+                    <i class="fa-solid fa-folder-plus"> <spam>Edit Picture</spam></i>
+                </button>
+                <br></br>
+                <div><input type="submit" value="Confirmar Cambios" class="send-btn-register"></div>
+        
+            </form>
+        </section>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>

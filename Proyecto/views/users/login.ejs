@@ -1,16 +1,15 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %>
-    <main class="main-register">
-        <div> <input type="text" class="inputBusqueda" placeholder="username"> </div>
-        <div> <input type="text" class="inputBusqueda" placeholder="password"> </div>
-        <div>
-            <label>Recordame</label> 
-            <input type="checkbox" name="recordarme" value="recordarme">
-        </div>
-        <div><input type="submit" value="Iniciar Sesión"></div>
-        <div>¿No tenes cuenta?<a href="/registro">Registrate</a></div>
-        <div> ¿Olvidó su password? </divZ>
+    <main class="main-login">
+        <section class="section-login">
+            <h1 class="title-login">Iniciar sesion</h1> 
+            <div> <input type="text" class="inputBusqueda-login" placeholder="Email"> </div>
+            <div> <input type="text" class="inputBusqueda-login" placeholder="Password"> </div> 
+            <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>
+            <div class="text-login">¿No tenes cuenta? <a href="/registro">Registrate</a></div>
+            <div class="text-login-end"> ¿Olvidó su password? </div>
+        </section>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>

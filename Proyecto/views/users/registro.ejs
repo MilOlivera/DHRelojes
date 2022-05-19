@@ -2,32 +2,36 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main class="main-register">
-        <h2>Registrarme</h2>
-        <form action="/registro" method="POST">
-            <div><input type="text" class="inputBusqueda" placeholder="Nombre" name="nombre" id="nombre" required></div>
-            <div><input type="text" class="inputBusqueda" placeholder="Apellido" name="apellido" id="apellido" required></div>
-            <div><input type="tel" class="inputBusqueda" placeholder="Tel. Fijo" name="tel-fijo" id="tel-fijo"></div>
-            <div><input type="tel" class="inputBusqueda" placeholder="Tel. Celular" name="tel-cel" id="tel-cel"></div>
-            <div><input type="email" class="inputBusqueda" placeholder="Mail" name="mail" id="mail" required></div>
-            <div><input type="email" class="inputBusqueda" placeholder="Confirmar Mail" name="mail-confirm" id="mail-confirm" required></div>
-            <div class="selection"><label>Fecha de Nacimiento:</label>
-                <input type="date" name="nacimiento" name="nacimiento" id="nacimiento" required>
-            </div>
-            <div><input type="number" class="inputBusqueda" placeholder="Documento" name="documento" id="documento" required></div>
-            <div class="selection"><label>Genero:</label>
-                <select name="genero" required>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
-                </select>
-            </div>
-            <div><input type="text" class="inputBusqueda" placeholder="Dirección 1" name="direccion1" id="direccion1" required></div>
-            <div><input type="text" class="inputBusqueda" placeholder="Dirección 2" name="direccion2" id="direccion2"></div>
-            <div><input type="number" class="inputBusqueda" placeholder="Codigo Postal" name="codigopostal" id="codigopostal" required></div>
-            <div><input type="password" class="inputBusqueda" placeholder="Contraseña" name="contraseña" id="contraseña" required></div>
-            <div><input type="password" class="inputBusqueda" placeholder="Repetir contraseña" name="contraseña-confirm" id="contraseña-confirm" required></div>
-            <div><input type="submit" value="Enviar" class="bot-enviar"></div>
-        </form>
+        <section class="section-register">
+            <h1 class="register-txt">Registro</h4>
+            <form class="center-register" action="/registro" method="POST">
+                <div><input type="text" class="inputBusqueda-register" placeholder="Nombre" name="nombre" id="nombre" required></div>
+                <div><input type="text" class="inputBusqueda-register" placeholder="Apellido" name="apellido" id="apellido" required></div>
+                <div><input type="tel" class="inputBusqueda-register" placeholder="Tel. Fijo" name="tel-fijo" id="tel-fijo"></div>
+                <div><input type="tel" class="inputBusqueda-register" placeholder="Tel. Celular" name="tel-cel" id="tel-cel"></div>
+                <div><input type="email" class="inputBusqueda-register" placeholder="Mail" name="mail" id="mail" required></div>
+                <div><input type="email" class="inputBusqueda-register" placeholder="Confirmar Mail" name="mail-confirm" id="mail-confirm" required></div>
+                <div class="inputBusqueda-input"><label class="input-register">Fecha de Nacimiento:</label>
+                    <input class="input-register" type="date" name="nacimiento" name="nacimiento" id="nacimiento" required>
+                </div>
+
+                <div><input type="number" class="inputBusqueda-register" placeholder="Documento" name="documento" id="documento" required></div>
+
+                <div class="inputBusqueda-input"><label class="input-register">Genero:</label>
+                    <select class="input-register" name="genero" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div><input type="text" class="inputBusqueda-register" placeholder="Dirección 1" name="direccion1" id="direccion1" required></div>
+                <div><input type="text" class="inputBusqueda-register" placeholder="Dirección 2" name="direccion2" id="direccion2"></div>
+                <div><input type="number" class="inputBusqueda-register" placeholder="Codigo Postal" name="codigopostal" id="codigopostal" required></div>
+                <div><input type="password" class="inputBusqueda-register" placeholder="Contraseña" name="contraseña" id="contraseña" required></div>
+                <div><input type="password" class="inputBusqueda-register" placeholder="Repetir contraseña" name="contraseña-confirm" id="contraseña-confirm" required></div>
+                <div><input type="submit" value="Enviar" class="send-btn-register"></div>
+            </form>
+        </section>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
