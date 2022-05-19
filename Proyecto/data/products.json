@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Reloj 5",
+    "description": "lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus",
+    "price": 7986.72,
+    "discount": 4,
+    "category": "gama baja",
+    "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png"
+  },
+  {
+    "id": 2,
+    "name": "Reloj 3",
+    "description": "gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet",
+    "price": 7609.62,
+    "discount": 1,
+    "category": "gama media",
+    "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png"
+  },
+  {
+    "id": 3,
+    "name": "Reloj 9",
+    "description": "est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in",
+    "price": 7158.63,
+    "discount": 0,
+    "category": "gama baja",
+    "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png"
+  },
+  {
+    "id": 4,
+    "name": "Reloj 6",
+    "description": "congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum",
+    "price": 7163.49,
+    "discount": 3,
+    "category": "gama baja",
+    "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png"
+  },
+  {
+    "id": 5,
+    "name": "Reloj 7",
+    "description": "arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris",
+    "price": 8852.85,
+    "discount": 9,
+    "category": "gama media",
+    "image": "PRODUCTS-ROOIBOS-CARAMELO.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Reloj 1",
+    "description": "quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut",
+    "price": 9598.87,
+    "discount": 6,
+    "category": "gama baja",
+    "image": "PRODUCTS-product_f_i_filtro_detalle_tacita.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Reloj 9",
+    "description": "at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum",
+    "price": 5663.56,
+    "discount": 3,
+    "category": "gama alta",
+    "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png"
+  },
+  {
+    "id": 8,
+    "name": "Reloj 4",
+    "description": "in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae",
+    "price": 5742.88,
+    "discount": 1,
+    "category": "gama baja",
+    "image": "PRODUCTS-product_f_i_filtro_detalle_tacita.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Reloj 10",
+    "description": "aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet",
+    "price": 9486.5,
+    "discount": 8,
+    "category": "gama media",
+    "image": "PRODUCTS-xanela-paraiso.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Reloj 3",
+    "description": "eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor",
+    "price": 9311.89,
+    "discount": 9,
+    "category": "gama alta",
+    "image": "PRODUCTS-xanela-paraiso.jpg"
+  }
+]
