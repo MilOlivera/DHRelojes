@@ -5,6 +5,8 @@ const router = express.Router()
 const productsController = require("../controllers/productsController.js")
 const mainControllers = require("../controllers/mainControllers.js")
 
+
+
 var storage = multer.diskStorage({
     destination:function(req,file,cb){
         cb(null, 'public/images/products')
@@ -18,20 +20,24 @@ var cargaArchivo = multer({storage: storage})
 
 // VER TODOS LOS PRODUCTOS .get + controler.index "/"
 
+router.get("/", productsController.list)
 
 // CREAR UN PRODUCTO ** CREAR UN PRODUCTO 
-router.get("/", productsController.create)
+router.get("/create", productsController.create)
 router.post("/", cargaArchivo.any(), productsController.store)
 
 // VER UN PRODUCTO ** VER UN PRODUCTO
 router.get("/:id", productsController.productDetail)
+
 // borrar detail y poner ":id"
 
 // EDITAR UN PRODUCTO ** EDITAR UN PRODUCTO
-router.get("/:id/edit", mainControllers.edit)
+router.get("/:id/edit", productsController.edit)
+// router.put('/:id', productsController.confirm)
+
+// router.delete('/:id', productsController.destroy)
 // hacer otra ruta con put. methodOverride
-// falta uno que elimine productos ** :id
-// no olvidar en ejs el enctype..etc
+
 
 
 // VER CARRITO ** VER CARRITO

@@ -1,3 +1,4 @@
+const { hyphenToCamel } = require("ejs/lib/utils");
 const fs = require("fs");
 const path = require("path");
 
@@ -5,6 +6,14 @@ const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const productsController = {
+
+
+// VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
+    list: (req,res) => {
+
+        res.render('productList', {products})  
+},
+    
 
 // CREAR UN PRODUCTO ** CREAR UN PRODUCTO
 
@@ -35,7 +44,14 @@ const productsController = {
         res.redirect('/');
 },
     productDetail: (req, res) => {
-    res.render("./products/productDetail")
+    
+    let idDetail = req.params.id
+    let detalle = products.find(elemento => elemento.id == idDetail)
+    res.render("productDetail", {detalle})
+    },
+
+    edit: (req,res) => {
+        res.render('productEdit')
     }
 }
 

@@ -21,8 +21,3 @@ app.set ("view engine", "ejs")
 app.use ("/", rutasIndex)
 app.use ("/products", rutasProducts)
 app.use ("/users", rutasUsers)
-
-// app.use ("/productDetail", rutasIndex)
-// app.use ("/login", rutasIndex)
-// app.use ("/cart", rutasIndex)
-// app.use ("/registro", rutasIndex)

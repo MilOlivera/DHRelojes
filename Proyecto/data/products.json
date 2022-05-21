@@ -97,5 +97,14 @@
   "discount": 100,
   "category": "clasicos",
   "image": "image-1653004072453.jpg"
+ },
+ {
+  "id": "11",
+  "name": "Zapatillas",
+  "description": "Reloj Dorado",
+  "price": 7000,
+  "discount": 11,
+  "category": "gama-alta",
+  "image": "image-1653157052856.jpeg"
  }
 ]

@@ -3,16 +3,16 @@
     <%- include('./partials/header.ejs') %>
     <main class="main-product">
         <section class="section-product">
-            
+            <% for (let i = 0; i < products.length; i++) { %>
             <div class="img-box">
                 
-                <img class="product-img" src="/images/<%= detalle.image %>" alt="Foto de Reloj">
+                    <img class="product-img" src="/images/<%= products[i].image %>" alt="Foto de Reloj">
             </div>
                 
             <article class="product-detail">
-                <h3 class = "marcaReloj"> <%= detalle.name %> </h3>
+                <h3 class = "marcaReloj"> <%= products[i].name %> </h3>
 
-                <p class="short-desc-product"><%= detalle.description %></p>
+                <p class="short-desc-product"><%= products[i].description %></p>
 
                 <!-- <p class="desc-product">Este es tu nuevo reloj favorito. Cuenta con una caja de acero inoxidable de 38 mm pulido a mano, hecho de un acero de grado extra bajo en carbono que se usa a menudo en aplicaciones marinas debido a su alta resistencia a la corrosión. Una ventana de cristal de zafiro, conocida por su notable dureza (casi tan dura como el diamante) y resistencia a los arañazos. Las correas, flexibles pero resistentes, están hechas 100% con cuero italiano de alta calidad teñido al vegetal.</p> -->
             
@@ -37,11 +37,11 @@
                 </div> -->
 
                 <div class = "infoPrecio">
-                    <h3 class = "precio"><%= detalle.price %></h3>
-                    <p class = "cuotasSinInteres"><%= detalle.discount%> </p>
+                    <h3 class = "precio"><%= products[i].price %></h3>
+                    <p class = "cuotasSinInteres"><%= products[i].discount%> </p>
                 </div>
             </article>
-
+            <% } %>
         </section>
 
         <div class = "botonDeCompra">
