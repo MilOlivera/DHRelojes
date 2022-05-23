@@ -21,6 +21,8 @@ HEADER SIN VIDEO ** HEADER SIN VIDEO */
 
 .headerSinVideo{
     background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .linksNav2{
