@@ -14,7 +14,7 @@ const rutasIndex = require("./routes/index.js")
 const rutasProducts = require("./routes/products.js")
 const rutasUsers = require("./routes/users.js")
 
-app.listen(3035, () => { console.log("Servidor Corriendo") })
+app.listen(3035, () => { console.log("Servidor Corriendo en 3035") })
 
 app.set ("view engine", "ejs")
 

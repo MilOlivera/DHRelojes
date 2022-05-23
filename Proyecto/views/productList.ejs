@@ -1,55 +1,36 @@
 <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/header.ejs') %>
-    <main class="main-product">
-        <section class="section-product">
+    <main>
+
+        <div class="container">
+
+            <h2 class="prodlist-txt">Todos los productos</h2>
+
+            <div class="products-container">
+
             <% for (let i = 0; i < products.length; i++) { %>
-            <div class="img-box">
-                
-                    <img class="product-img" src="/images/<%= products[i].image %>" alt="Foto de Reloj">
-            </div>
-                
-            <article class="product-detail">
-                <h3 class = "marcaReloj"> <%= products[i].name %> </h3>
 
-                <p class="short-desc-product"><%= products[i].description %></p>
+                <section class="product">
+                    <a href="/products/<%= products[i].id %>" class="ref-link">
+                    <div class="box-image">
+                        <img src="/images/<%= products[i].image %>" alt="imagen de producto" class="img-pl">
+                    </div>
+                    <article>
+                        <p class="product-name"><%= products[i].name %></p>
+                        <p class="product-price">$<%= products[i].price %></p>
+                        <p class="short-description-hover"><%= products[i].short_description %></p>
+                    </article>
+                    </a>
+                </section>
 
-                <!-- <p class="desc-product">Este es tu nuevo reloj favorito. Cuenta con una caja de acero inoxidable de 38 mm pulido a mano, hecho de un acero de grado extra bajo en carbono que se usa a menudo en aplicaciones marinas debido a su alta resistencia a la corrosión. Una ventana de cristal de zafiro, conocida por su notable dureza (casi tan dura como el diamante) y resistencia a los arañazos. Las correas, flexibles pero resistentes, están hechas 100% con cuero italiano de alta calidad teñido al vegetal.</p> -->
-            
-                <!-- <div class = "talle-cantidad">
-                    <p>Seleccionar talle</p>
-                    <select name = "talle" class="selectorTalle"> <label for="">Talle</label>
-                        <option value = "small">Small</option>
-                        <option value = "medium">Medium</option>
-                        <option value = "large">Large</option>
-                    </select>
-                </div>
-                <br>
-                <div class = "cantidad">
-                    <p>Cantidad</p>
-                    <select name = "cantidad" class = "selectorCantidad">
-                        <option value = "SeleccionarCantidad">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                    </select>
-                </div> -->
-
-                <div class = "infoPrecio">
-                    <h3 class = "precio"><%= products[i].price %></h3>
-                    <p class = "cuotasSinInteres"><%= products[i].discount%> </p>
-                </div>
-            </article>
             <% } %>
-        </section>
-
-        <div class = "botonDeCompra">
-            <input class ="product-btn" type="submit" value = "Comprar">
+            </div>
+        
         </div>
 
-        <a href="planesDeFinanciacion" class="product-financing">Ver planes de financiacion</a> 
     </main>
+    
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>

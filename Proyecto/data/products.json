@@ -1,110 +1,101 @@
 [
- {
-  "id": 1,
-  "name": "Reloj 5",
-  "description": "lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus",
-  "price": 7986.72,
-  "discount": 4,
-  "category": "gama baja",
-  "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png"
- },
- {
-  "id": 2,
-  "name": "Reloj 3",
-  "description": "gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet",
-  "price": 7609.62,
-  "discount": 1,
-  "category": "gama media",
-  "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png"
- },
- {
-  "id": 3,
-  "name": "Reloj 9",
-  "description": "est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in",
-  "price": 7158.63,
-  "discount": 0,
-  "category": "gama baja",
-  "image": "PRODUCTS-cafe-origen-tolima-juan-valdez.png"
- },
- {
-  "id": 4,
-  "name": "Reloj 6",
-  "description": "congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum",
-  "price": 7163.49,
-  "discount": 3,
-  "category": "gama baja",
-  "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png"
- },
- {
-  "id": 5,
-  "name": "Reloj 7",
-  "description": "arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris",
-  "price": 8852.85,
-  "discount": 9,
-  "category": "gama media",
-  "image": "PRODUCTS-ROOIBOS-CARAMELO.jpg"
- },
- {
-  "id": 6,
-  "name": "Reloj 1",
-  "description": "quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut",
-  "price": 9598.87,
-  "discount": 6,
-  "category": "gama baja",
-  "image": "PRODUCTS-product_f_i_filtro_detalle_tacita.jpg"
- },
- {
-  "id": 7,
-  "name": "Reloj 9",
-  "description": "at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum",
-  "price": 5663.56,
-  "discount": 3,
-  "category": "gama alta",
-  "image": "PRODUCTS-cafe-organico-balanceado-juan-valdez.png"
- },
- {
-  "id": 8,
-  "name": "Reloj 4",
-  "description": "in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae",
-  "price": 5742.88,
-  "discount": 1,
-  "category": "gama baja",
-  "image": "PRODUCTS-product_f_i_filtro_detalle_tacita.jpg"
- },
- {
-  "id": 9,
-  "name": "Reloj 10",
-  "description": "aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet",
-  "price": 9486.5,
-  "discount": 8,
-  "category": "gama media",
-  "image": "PRODUCTS-xanela-paraiso.jpg"
- },
- {
-  "id": 10,
-  "name": "Reloj 3",
-  "description": "eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor",
-  "price": 9311.89,
-  "discount": 9,
-  "category": "gama alta",
-  "image": "PRODUCTS-xanela-paraiso.jpg"
- },
- {
-  "id": "100000",
-  "name": "prueba1",
-  "description": "prueba1",
-  "price": 10000,
-  "discount": 100,
-  "category": "clasicos",
-  "image": "image-1653004072453.jpg"
- },
- {
-  "id": "11",
-  "name": "Zapatillas",
-  "description": "Reloj Dorado",
-  "price": 7000,
-  "discount": 11,
-  "category": "gama-alta",
-  "image": "image-1653157052856.jpeg"
- }
-]
+    {
+     "id": 1,
+     "name": "Reloj 1",
+     "short_description": "faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti",
+     "description": "ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper",
+     "price": 2698,
+     "category": "gama alta",
+     "image": "all-black.png"
+    },
+    {
+     "id": 2,
+     "name": "Reloj 2",
+     "short_description": "mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea",
+     "description": "quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas",
+     "price": 4742,
+     "category": "gama alta",
+     "image": "bird.png"
+    },
+    {
+     "id": 3,
+     "name": "Reloj 3",
+     "short_description": "morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus",
+     "description": "augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo",
+     "price": 2320,
+     "category": "gama baja",
+     "image": "black-strap.png"
+    },
+    {
+     "id": 4,
+     "name": "Reloj 4",
+     "short_description": "sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis",
+     "description": "hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit",
+     "price": 2562,
+     "category": "gama baja",
+     "image": "black-white.png"
+    },
+    {
+     "id": 5,
+     "name": "Reloj 5",
+     "short_description": "sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue",
+     "description": "lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci",
+     "price": 1742,
+     "category": "gama baja",
+     "image": "blue-sky.png"
+    },
+    {
+     "id": 6,
+     "name": "Reloj 6",
+     "short_description": "enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis",
+     "description": "consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus",
+     "price": 3607,
+     "category": "gama alta",
+     "image": "butterfly.png"
+    },
+    {
+     "id": 7,
+     "name": "Reloj 7",
+     "short_description": "eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci",
+     "description": "massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat",
+     "price": 3640,
+     "category": "gama baja",
+     "image": "camel-strap.png"
+    },
+    {
+     "id": 8,
+     "name": "Reloj 8",
+     "short_description": "pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea",
+     "description": "turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum",
+     "price": 3909,
+     "category": "gama media",
+     "image": "clear.png"
+    },
+    {
+     "id": 9,
+     "name": "Reloj 9",
+     "short_description": "ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis",
+     "description": "velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam",
+     "price": 1418,
+     "category": "gama media",
+     "image": "eiffel-tower.png"
+    },
+    {
+     "id": 10,
+     "name": "Reloj 10",
+     "short_description": "fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi",
+     "description": "cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum",
+     "price": 4344,
+     "category": "gama baja",
+     "image": "magic-lotus.png"
+    },
+    {
+     "id": "34",
+     "name": "Reloj frida",
+     "description": "sss",
+     "price": 1500,
+     "discount": 0,
+     "category": "alta gama",
+     "image": "frida.png"
+    }
+   ]

@@ -486,7 +486,7 @@ footer{
     margin: 15px 0px 20px 20px;
 }
 
-.talle-cantidad, .cantidad{
+.talle-cantidad, .cantidad {
     display: flex;
     justify-content: space-between;
     padding-right: 30px;  
@@ -906,8 +906,9 @@ hr.divider {
 .talle-cantidad{
     display: flex;
     justify-content: space-between;
+    align-content: space-around;
     padding-right: 30px;
-    padding-bottom: 20px;    
+    padding-bottom: 20px; 
 }
 
    .botonDeCompra{
@@ -973,8 +974,6 @@ hr.divider {
     display: flex;
     padding-right: 30px;
     padding-bottom: 20px;
-    align-content: space-around;
-    justify-content: center;
     }
 
 .selectorTalle ,
@@ -1025,6 +1024,91 @@ hr.divider {
     margin: 10px 10px;
     padding: 0.5rem;
 }
+
+/* ---edicion ---- */
+.main-list {
+    margin: 0;
+}
+
+.prodlist-txt {
+    font-size: 40px;
+    letter-spacing: 0.035rem;
+    font-weight: 300;
+    font-family: 'new york', serif;
+    font-weight: 400;
+    margin: 50px 0px 40px 0px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+.ref-link {
+    text-decoration: none;
+    color: #252525;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+}
+
+.product{
+    text-align: center;
+    padding:3rem 2rem;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+}
+
+.img-pl {
+    max-width: 200px;
+}
+
+.box-image {
+    height: 320px;
+}
+
+.short-description-hover {
+    display: none;
+}
+
+.product-name {
+    font-family: 'New York', Sans-Serif;
+}
+
+.product-price {
+    font-family: 'Raleway', Sans-Serif;
+}
+
+/* --- product edit --- */
+.img-pl {
+    width: 200px;
+}
+
+.desc-pl {
+    font-family: 'Raleway', Sans-Serif;
+    text-align: left;
+}
+
+.inputBusqueda-prodlist {
+    font-family: 'Raleway', Sans-Serif;
+    width: 100%;
+    background-color: #fafafa;
+    font-size: 15px;
+    border: 0;
+    border-bottom: solid 1px #9b9b9b;
+    color: #252525;
+    margin-bottom: 30;
+}
+
+.detail-box {
+    width: 80%;
+    margin: auto;
+}
+
 
 @media(min-width: 769px){
     

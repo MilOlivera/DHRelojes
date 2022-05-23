@@ -12,11 +12,11 @@
             <article class="product-detail">
                 <h3 class = "marcaReloj"> <%= detalle.name %> </h3>
 
-                <p class="short-desc-product"><%= detalle.description %></p>
+                <p class="short-desc-product"> <%= detalle.short_description %> </p>
 
-                <!-- <p class="desc-product">Este es tu nuevo reloj favorito. Cuenta con una caja de acero inoxidable de 38 mm pulido a mano, hecho de un acero de grado extra bajo en carbono que se usa a menudo en aplicaciones marinas debido a su alta resistencia a la corrosión. Una ventana de cristal de zafiro, conocida por su notable dureza (casi tan dura como el diamante) y resistencia a los arañazos. Las correas, flexibles pero resistentes, están hechas 100% con cuero italiano de alta calidad teñido al vegetal.</p> -->
+                <p class="desc-product"><%= detalle.description %></p>
             
-                <!-- <div class = "talle-cantidad">
+                <div class = "talle-cantidad">
                     <p>Seleccionar talle</p>
                     <select name = "talle" class="selectorTalle"> <label for="">Talle</label>
                         <option value = "small">Small</option>
@@ -34,18 +34,20 @@
                         <option value = "4">4</option>
                         <option value = "5">5</option>
                     </select>
-                </div> -->
+                </div>
 
-                <div class = "infoPrecio">
+                <!-- <div class = "infoPrecio">
                     <h3 class = "precio"><%= detalle.price %></h3>
                     <p class = "cuotasSinInteres"><%= detalle.discount%> </p>
-                </div>
+                </div> -->
             </article>
 
         </section>
 
         <div class = "botonDeCompra">
-            <input class ="product-btn" type="submit" value = "Comprar">
+            <a href="/products/<%= detalle.id %>/edit" class="product-btn">Editar producto</a>
+
+            <input class ="product-btn" type="submit" value = "Borrar">
         </div>
 
         <a href="planesDeFinanciacion" class="product-financing">Ver planes de financiacion</a> 
