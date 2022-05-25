@@ -44,11 +44,12 @@
 
         </section>
 
-        <div class = "botonDeCompra">
+        <form class = "botonDeCompra">
             <a href="/products/<%= detalle.id %>/edit" class="product-btn">Editar producto</a>
-
-            <input class ="product-btn" type="submit" value = "Borrar">
-        </div>
+        </form>
+        <form class = "botonDeCompra" method="POST" action="/products/delete/<%= detalle.id %>?_method=DELETE" >
+            <button class ="product-btn" type="submit" > Delete </button> 
+        </form>
 
         <a href="planesDeFinanciacion" class="product-financing">Ver planes de financiacion</a> 
     </main>

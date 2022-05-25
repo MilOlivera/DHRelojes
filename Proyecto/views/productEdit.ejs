@@ -9,31 +9,41 @@
                 <img class="img-pl" src="/images/<%= detalle.image %>" alt="Foto de Reloj">
             </div>
 
-            <form class="center-register" action="/products/<%= detalle.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="center-register" method="POST" action="/products/<%= detalle.id %>/edit?_method=PUT" >
                 <button class="botonEditar-2"> 
-                    <i class="fa-solid fa-folder-plus"> <spam>Edit Picture</spam></i>
+                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image" > <span>Edit Picture</span>
                 </button>
-        
+
                 <br></br>
 
                 <div class="detail-box">
                     <p class="desc-pl">Nombre:</p>
-                    <input class="inputBusqueda-prodlist" type="text"  name="nombreProduco" id="nombreProducto" placeholder="<%= detalle.name %>">
+                    <input class="inputBusqueda-prodlist" type="text"  name="name" id="name" value="<%= detalle.name %>" >
                 </div>
 
                 <div class="detail-box">
                     <p class="desc-pl">Breve descripción:</p>
-                    <textarea class="inputBusqueda-prodlist" type="text" name="descripcionProducto" id="descripcionProducto" required> <%= detalle.short_description %> </textarea>
+                    <input class="inputBusqueda-prodlist" type="text" name="short_descriptio" id="short_descriptio" value="<%= detalle.short_description %>" >
                 </div>
 
                 <div class="detail-box">
                     <p class="desc-pl">Descripción:</p>
-                    <textarea class="inputBusqueda-prodlist" type="text" name="descripcionProducto" id="descripcionProducto" required> <%= detalle.description %> </textarea>
+                    <input class="inputBusqueda-prodlist" type="text" name="description" id="description" value="<%= detalle.description %>" >
                 </div>
 
                 <div class="detail-box">
                     <p class="desc-pl">Precio:</p>
-                    <input class="inputBusqueda-prodlist" type="tel" placeholder="$ <%= detalle.price %>" name="precio" id="precio">
+                    <input class="inputBusqueda-prodlist" type="number"  name="price" id="price" value="<%= detalle.price %>">
+                </div>
+
+                <!-- <div class="detail-box">
+                    <p class="desc-pl">Precio:</p>
+                    <input class="inputBusqueda-prodlist" type="number"  name="discount" id="discount" value="<%= detalle.discount %>">
+                </div> -->
+
+                <div class="detail-box">
+                    <p class="desc-pl">Precio:</p>
+                    <input class="inputBusqueda-prodlist" type="tel"  name="category" id="category" value="<%= detalle.category %>">
                 </div>
                 
                 <div><input type="submit" value="Confirmar Cambios" class="send-btn-register"></div>

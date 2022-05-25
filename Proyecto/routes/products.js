@@ -19,7 +19,6 @@ var cargaArchivo = multer({storage: storage})
 
 
 // VER TODOS LOS PRODUCTOS .get + controler.index "/"
-
 router.get("/", productsController.list)
 
 // CREAR UN PRODUCTO ** CREAR UN PRODUCTO 
@@ -29,16 +28,12 @@ router.post("/", cargaArchivo.any(), productsController.store)
 // VER UN PRODUCTO ** VER UN PRODUCTO
 router.get("/:id", productsController.productDetail)
 
-// borrar detail y poner ":id"
-
 // EDITAR UN PRODUCTO ** EDITAR UN PRODUCTO
 router.get("/:id/edit", productsController.edit)
-// router.put('/:id', productsController.confirm)
+router.put('/:id/edit', productsController.confirm)
 
-// router.delete('/:id', productsController.destroy)
-// hacer otra ruta con put. methodOverride
-
-
+// DELETE ** DELETE
+router.delete("/delete/:id", productsController.delete)
 
 // VER CARRITO ** VER CARRITO
 router.get("/cart", mainControllers.cart)
