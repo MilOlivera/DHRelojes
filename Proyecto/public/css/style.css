@@ -523,7 +523,7 @@ footer{
     background-color: #efefef;
     transition: all 400ms;
     color: #363636;
-    margin: 20px 0 30px;
+    margin: auto;
     cursor: pointer;
     text-align: center;
     border-radius: 5px;
