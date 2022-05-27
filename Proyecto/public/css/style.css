@@ -537,6 +537,11 @@ footer{
     color: #363636;
     text-decoration: none;
 }
+/* .product-btn-detail:hover {
+    background-color: #363636;
+    transition: all 400ms;
+    color: #ffffff;
+} */
 
 .botonDeCompra{
     text-align: center;
@@ -810,9 +815,6 @@ hr.divider {
     margin-top: 10px;
 }
 
-.text-login-end {
-    margin-bottom: 20rem;
-}
 
 .logo-back {
     background-color: #252525;

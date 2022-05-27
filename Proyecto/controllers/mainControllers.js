@@ -13,9 +13,7 @@ let mainController = {
     login: (req, res) => {
         res.render("./users/login")
     },
-    cart: (req, res) => {
-        res.render("./products/productCart")
-    },
+    
     registro: (req, res) => {
         res.render("./users/registro")
     },

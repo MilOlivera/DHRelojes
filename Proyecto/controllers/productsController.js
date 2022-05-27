@@ -5,17 +5,19 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
+const productsPath = path.join(__dirname, "../views/products");
+
 const productsController = {
 // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
     list: (req,res) => {
-        res.render('productList', {products})  
+        res.render(productsPath + '/productList', {products})  
     },
     
 
 // CREAR UN PRODUCTO ** CREAR UN PRODUCTO
     create: (req, res) => {
         console.log();
-        res.render('productAdd');
+        res.render(productsPath + '/productAdd');
     },
 
 // GUARDAR UN PRODUCTO CREADO ** GUARDAR UN PRODUCTO CREADO
@@ -46,7 +48,7 @@ const productsController = {
     
     let idDetail = req.params.id
     let detalle = products.find(elemento => elemento.id == idDetail)
-    res.render("productDetail", {detalle})
+    res.render(productsPath + '/productDetail', {detalle})
     },
 
 
@@ -54,7 +56,7 @@ const productsController = {
     edit: (req,res) => {
         let idDetail = req.params.id
         let detalle = products.find(elemento => elemento.id == idDetail)
-        res.render("productEdit", { detalle })
+        res.render(productsPath + "/productEdit", { detalle })
     },
 
 // ACTUALIZACION DE DATOS ** ACTUALIZACION DE DATOS
@@ -74,7 +76,6 @@ const productsController = {
             id: Number(searchedId),
             ...req.body,
             price: Number(req.body.price),
-            discount: Number(req.body.discount),
             image: image
         };
     
@@ -102,8 +103,12 @@ const productsController = {
         fs.writeFileSync(productsFilePath, JSON.stringify(destroy, null, ' '));
         res.redirect('/');
     },
-// BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS
-// BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS
+
+    // CARRITO ** CARRITO
+
+    productCart: (req, res) => {
+        res.render(productsPath + "/productCart")
+    },
 
      
     }

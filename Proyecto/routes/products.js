@@ -3,7 +3,7 @@ const path = require("path");
 const multer = require('multer')
 const router = express.Router()
 const productsController = require("../controllers/productsController.js")
-const mainControllers = require("../controllers/mainControllers.js")
+// const mainControllers = require("../controllers/mainControllers.js")
 
 
 
@@ -25,6 +25,9 @@ router.get("/", productsController.list)
 router.get("/create", productsController.create)
 router.post("/", cargaArchivo.any(), productsController.store)
 
+// VER CARRITO ** VER CARRITO
+router.get("/carrito", productsController.productCart)
+
 // VER UN PRODUCTO ** VER UN PRODUCTO
 router.get("/:id", productsController.productDetail)
 
@@ -32,19 +35,12 @@ router.get("/:id", productsController.productDetail)
 router.get("/:id/edit", productsController.edit)
 // router.put('/:id', productsController.confirm)
 
-// router.delete('/delete/:id', productsController.destroy)
-router.delete('/delete/:id', function(req,res){
-    res.send("SOY DELETE")
-})
-// hacer otra ruta con put. methodOverride
-
 router.put('/:id/edit', productsController.confirm)
 
 // DELETE ** DELETE
 router.delete("/delete/:id", productsController.delete)
 
-// VER CARRITO ** VER CARRITO
-router.get("/cart", mainControllers.cart)
+
 // falta edit del carrito
 
 
