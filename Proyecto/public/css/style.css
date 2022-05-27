@@ -533,6 +533,11 @@ footer{
     font-size: 1rem;
 }
 
+.product-btn-detail {
+    color: #363636;
+    text-decoration: none;
+}
+
 .botonDeCompra{
     text-align: center;
 } 
@@ -781,7 +786,7 @@ hr.divider {
     border: 0;
     padding: 1rem;
     width: 40%;
-    background-color: #efefef(52, 131, 250);
+    background-color: #efefef;
     transition: all 400ms;
     color: #363636;
     margin: 40px 0 30px;
@@ -1415,10 +1420,6 @@ hr.divider {
     .precio {
         margin: 30px 0px 10px 0px;
     }
-
-    .product-btn {
-        width: 40%;
-    }
     
     /* login y registro */
     .inputBusqueda-login, .center-register {
@@ -1463,6 +1464,18 @@ hr.divider {
     .send-btn-cart, .add-btn-cart {
         padding: 12px;
     }
+
+    .pbox-prod-detail-btn {
+        display: flex;
+        column-gap: 10px;
+    }
+
+    .box-prod-detail-btn {
+        width: 50%;
+        height: 100px;
+        box-sizing: border-box;
+    }
+
 }
 
 .price-text, .price, .quantity-text, .quantity {

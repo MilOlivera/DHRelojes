@@ -40,18 +40,29 @@
                     <h3 class = "precio"><%= detalle.price %></h3>
                     <p class = "cuotasSinInteres"><%= detalle.discount%> </p>
                 </div> -->
+
+                <div class="pbox-prod-detail-btn">
+                    <div class="box-prod-detail-btn">
+                        <form class= "product-btn">
+                            <a href="/products/<%= detalle.id %>/edit" class="product-btn-detail">Editar producto</a>
+                        </form>
+                    </div>
+
+                    <div class="box-prod-detail-btn">
+                        <form class = "botonDeCompra" method="POST" action="/products/delete/<%= detalle.id %>?_method=DELETE" >
+                            <button class ="product-btn" type="submit" > Delete </button> 
+                        </form>
+                    </div>
+                </div>
+
             </article>
-
-        </section>
-
-        <div class = "botonDeCompra">
-            <a href="/products/<%= detalle.id %>/edit" class="product-btn">Editar producto</a>
 
             <form action="POST" method="delete/id?_method=DELETE" enctype="multipart/form-data">
                 <input class ="product-btn" type="submit" value = "Borrar">
             </form>
 
         </div>
+        </section>
 
         <!-- <a href="planesDeFinanciacion" class="product-financing">Ver planes de financiacion</a>  -->
     </main>

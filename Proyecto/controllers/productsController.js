@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const productsController = {
 // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
@@ -29,8 +29,8 @@ const productsController = {
                 image = 'default-image.png'
             }
         let newProduct = {
-            id: products[products.length - 1].id + 1,
             ...req.body,
+            id: products[products.length - 1].id + 1,
             price: Number(req.body.price),
             discount: Number(req.body.discount),
             image: image
@@ -60,30 +60,54 @@ const productsController = {
 // ACTUALIZACION DE DATOS ** ACTUALIZACION DE DATOS
     confirm: (req, res) => {
         let searchedId = req.params.id
-        let productToEdit = products.find(currentProduct => currentProduct.id == searchedId);
-        /*let image;   
+        let productFind = products.find(currentProduct => currentProduct.id == searchedId);
 
-        if(req.files[0] != undefined) {
-            image = req.files[0].filename
+        let image;
+        console.log(req.file);
+        if(req.files){
+            image = req.files
         } else {
-            image = detalle.image
-        }*/
-
-        let auxilaryProduct = {
-            id: productToEdit.id,
+            image = productFind.image
+        }
+    
+        let productToEdit = {
+            id: Number(searchedId),
             ...req.body,
-            image: image, 
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            image: image
         };
-
-        Object.assign(productToEdit, auxilaryProduct);
+    
+        for (let i = 0; i < products.length; i ++) {
+            if (productToEdit.id == products[i].id) {
+                products[i] = productToEdit
+            }
+        }
 
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+        res.redirect ("/");
+    },
+
+// DELETE ** DELETE
+    delete: (req, res) => {
+
+        let destroy = products.filter(elem => elem.id != req.params.id);
+
+        let auxilaryProduct = {
+            id: destroy.id,
+            ...req.body,
+        };
+        Object.assign(destroy, auxilaryProduct);
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(destroy, null, ' '));
         res.redirect('/');
     },
 // BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS
 // BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS
 
      
-}
+    }
+
+
 
 module.exports = productsController;
