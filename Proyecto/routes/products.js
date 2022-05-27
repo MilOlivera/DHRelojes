@@ -35,7 +35,10 @@ router.get("/:id", productsController.productDetail)
 router.get("/:id/edit", productsController.edit)
 // router.put('/:id', productsController.confirm)
 
-// router.delete('/:id', productsController.destroy)
+// router.delete('/delete/:id', productsController.destroy)
+router.delete('/delete/:id', function(req,res){
+    res.send("SOY DELETE")
+})
 // hacer otra ruta con put. methodOverride
 
 

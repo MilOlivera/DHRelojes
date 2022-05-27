@@ -47,10 +47,13 @@
         <div class = "botonDeCompra">
             <a href="/products/<%= detalle.id %>/edit" class="product-btn">Editar producto</a>
 
-            <input class ="product-btn" type="submit" value = "Borrar">
+            <form action="POST" method="delete/id?_method=DELETE" enctype="multipart/form-data">
+                <input class ="product-btn" type="submit" value = "Borrar">
+            </form>
+
         </div>
 
-        <a href="planesDeFinanciacion" class="product-financing">Ver planes de financiacion</a> 
+        <!-- <a href="planesDeFinanciacion" class="product-financing">Ver planes de financiacion</a>  -->
     </main>
     <%- include('./partials/footer.ejs') %>
 </body>

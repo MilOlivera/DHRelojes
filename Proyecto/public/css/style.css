@@ -46,6 +46,7 @@ HEADER SIN VIDEO ** HEADER SIN VIDEO */
     padding: 10px;
     color: #fff;
     border: none;
+    width: 73%;
 }
 .linksNav2 li input::placeholder{
    color: #fff;
@@ -71,7 +72,7 @@ HEADER SIN VIDEO ** HEADER SIN VIDEO */
     position: relative;
 }
 .linksNav2 li a i{
-    margin: 0px 3px;
+    margin: 0px 15px;
 }
 
 
@@ -131,6 +132,7 @@ ul{
     padding: 10px;
     color: #fff;
     border: none;
+    width: 73%;
 }
 .linksNav li input::placeholder{
    color: #fff;
@@ -156,7 +158,7 @@ ul{
     position: relative;
 }
 .linksNav li a i{
-    margin: 0px 3px;
+    margin: 0px 15px;
 }
 
 

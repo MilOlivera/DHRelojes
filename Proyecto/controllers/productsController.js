@@ -80,6 +80,10 @@ const productsController = {
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
         res.redirect('/');
     },
+// BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS
+// BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS ** BORRAR DATOS
+
+     
 }
 
 module.exports = productsController;
