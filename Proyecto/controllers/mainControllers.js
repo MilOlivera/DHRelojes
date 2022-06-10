@@ -4,19 +4,6 @@ let mainController = {
     index: (req, res) => {
         res.render("index")
     },
-    // productDetail: (req, res) => {
-    //     res.render("./products/productDetail")
-    //     let idProducto = req.params.id
-    //     res.send ("elegiste el producto " + idProducto)
-    // },
-    
-    login: (req, res) => {
-        res.render("./users/login")
-    },
-    
-    registro: (req, res) => {
-        res.render("./users/registro")
-    },
     
     add: (req, res) => {
         res.render("./products/productAdd")
