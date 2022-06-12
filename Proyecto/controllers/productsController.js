@@ -101,7 +101,12 @@ const productsController = {
 
         fs.writeFileSync(productsFilePath, JSON.stringify(destroy, null, ' '));
         res.redirect('/');
-    }
+    },
+
+    // CARRITO ** CARRITO
+    cart: (req, res) => {
+        res.render("./products/productCart")
+    },
 
 }
 

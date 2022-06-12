@@ -3,9 +3,6 @@ const path = require("path");
 const multer = require('multer')
 const router = express.Router()
 const productsController = require("../controllers/productsController.js")
-const mainControllers = require("../controllers/mainControllers.js")
-
-
 
 var storage = multer.diskStorage({
     destination:function(req,file,cb){
@@ -23,7 +20,7 @@ router.get("/", productsController.list)
 
 // CREAR UN PRODUCTO ** CREAR UN PRODUCTO 
 router.get("/create", productsController.create)
-router.post("/", cargaArchivo.any(), productsController.store)
+router.post("/", cargaArchivo.any("image"), productsController.store)
 
 // VER UN PRODUCTO ** VER UN PRODUCTO
 router.get("/:id", productsController.productDetail)
@@ -36,7 +33,7 @@ router.put('/:id/edit', productsController.confirm)
 router.delete("/delete/:id", productsController.delete)
 
 // VER CARRITO ** VER CARRITO
-router.get("/cart", mainControllers.cart)
+router.get("/cart", productsController.cart)
 // falta edit del carrito
 
 

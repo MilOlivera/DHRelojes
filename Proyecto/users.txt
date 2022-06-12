@@ -1,0 +1,180 @@
+  {
+    "Identificador": 1,
+    "Nombre": "Maury",
+    "Apellido": "Galgey",
+    "Email": "mgalgey0@intel.com",
+    "Contraseña": "ztxHqDCrquXD",
+    "Categoria": "Fire Protection",
+    "Imagen": "Ipsum.avi"
+  },
+  {
+    "Identificador": 2,
+    "Nombre": "Zane",
+    "Apellido": "Gilffilland",
+    "Email": "zgilffilland1@scientificamerican.com",
+    "Contraseña": "fG4YUhwPxZ",
+    "Categoria": "Landscaping & Irrigation",
+    "Imagen": "At.ppt"
+  },
+  {
+    "Identificador": 3,
+    "Nombre": "Camile",
+    "Apellido": "Jerman",
+    "Email": "cjerman2@whitehouse.gov",
+    "Contraseña": "vXygJ8JM8",
+    "Categoria": "Overhead Doors",
+    "Imagen": "MontesNasceturRidiculus.gif"
+  },
+  {
+    "Identificador": 4,
+    "Nombre": "Agretha",
+    "Apellido": "Labram",
+    "Email": "alabram3@cmu.edu",
+    "Contraseña": "HN5xw9vDlXTF",
+    "Categoria": "Retaining Wall and Brick Pavers",
+    "Imagen": "PrimisIn.avi"
+  },
+  {
+    "Identificador": 5,
+    "Nombre": "Irina",
+    "Apellido": "Ward",
+    "Email": "iward4@stumbleupon.com",
+    "Contraseña": "H995ePRSKkb",
+    "Categoria": "Prefabricated Aluminum Metal Canopies",
+    "Imagen": "ConvallisTortorRisus.mpeg"
+  },
+  {
+    "Identificador": 6,
+    "Nombre": "Shelagh",
+    "Apellido": "Grimbleby",
+    "Email": "sgrimbleby5@squarespace.com",
+    "Contraseña": "Rso5yojG6gk",
+    "Categoria": "Exterior Signage",
+    "Imagen": "DapibusNulla.tiff"
+  },
+  {
+    "Identificador": 7,
+    "Nombre": "Celestia",
+    "Apellido": "Sexton",
+    "Email": "csexton6@fda.gov",
+    "Contraseña": "UnGJCksCraY",
+    "Categoria": "Drywall & Acoustical (MOB)",
+    "Imagen": "Aenean.xls"
+  },
+  {
+    "Identificador": 8,
+    "Nombre": "Byron",
+    "Apellido": "Drezzer",
+    "Email": "bdrezzer7@imageshack.us",
+    "Contraseña": "YqFNDH0bX",
+    "Categoria": "HVAC",
+    "Imagen": "IntegerPede.xls"
+  },
+  {
+    "Identificador": 9,
+    "Nombre": "Yelena",
+    "Apellido": "Pionter",
+    "Email": "ypionter8@google.com.br",
+    "Contraseña": "PPQdrvGZ",
+    "Categoria": "Doors, Frames & Hardware",
+    "Imagen": "BlanditUltrices.ppt"
+  },
+  {
+    "Identificador": 10,
+    "Nombre": "Courtney",
+    "Apellido": "Boman",
+    "Email": "cboman9@earthlink.net",
+    "Contraseña": "qWPTWsRzVPWo",
+    "Categoria": "Marlite Panels (FED)",
+    "Imagen": "ProinInterdum.jpeg"
+  },
+  {
+    "Identificador": 11,
+    "Nombre": "Rennie",
+    "Apellido": "Stickels",
+    "Email": "rstickelsa@ca.gov",
+    "Contraseña": "oWN1FaU3e",
+    "Categoria": "Asphalt Paving",
+    "Imagen": "SedAugue.xls"
+  },
+  {
+    "Identificador": 12,
+    "Nombre": "Nolly",
+    "Apellido": "Calverd",
+    "Email": "ncalverdb@mozilla.com",
+    "Contraseña": "EyrgzlbW9VZ",
+    "Categoria": "Curb & Gutter",
+    "Imagen": "PlateaDictumst.mp3"
+  },
+  {
+    "Identificador": 13,
+    "Nombre": "Alfred",
+    "Apellido": "Borton",
+    "Email": "abortonc@aol.com",
+    "Contraseña": "kgwZTmTEOv",
+    "Categoria": "Structural & Misc Steel Erection",
+    "Imagen": "PlateaDictumst.pdf"
+  },
+  {
+    "Identificador": 14,
+    "Nombre": "Cherish",
+    "Apellido": "Howsley",
+    "Email": "chowsleyd@instagram.com",
+    "Contraseña": "rRR9aZ23",
+    "Categoria": "Ornamental Railings",
+    "Imagen": "NullaDapibusDolor.avi"
+  },
+  {
+    "Identificador": 15,
+    "Nombre": "Bordie",
+    "Apellido": "Bosley",
+    "Email": "bbosleye@gizmodo.com",
+    "Contraseña": "dFv8OaK",
+    "Categoria": "EIFS",
+    "Imagen": "Felis.txt"
+  },
+  {
+    "Identificador": 16,
+    "Nombre": "Barbe",
+    "Apellido": "Ebbage",
+    "Email": "bebbagef@nps.gov",
+    "Contraseña": "SRXTNN1y",
+    "Categoria": "Temp Fencing, Decorative Fencing and Gates",
+    "Imagen": "OrciMauris.ppt"
+  },
+  {
+    "Identificador": 17,
+    "Nombre": "Ranna",
+    "Apellido": "Sharpin",
+    "Email": "rsharping@hugedomains.com",
+    "Contraseña": "NPcYVzeP4K",
+    "Categoria": "Construction Clean and Final Clean",
+    "Imagen": "Vivamus.xls"
+  },
+  {
+    "Identificador": 18,
+    "Nombre": "Danna",
+    "Apellido": "Jorry",
+    "Email": "djorryh@bbb.org",
+    "Contraseña": "czyUPhYW2",
+    "Categoria": "Waterproofing & Caulking",
+    "Imagen": "Et.tiff"
+  },
+  {
+    "Identificador": 19,
+    "Nombre": "Violante",
+    "Apellido": "Michael",
+    "Email": "vmichaeli@umn.edu",
+    "Contraseña": "5bN1hCQ3",
+    "Categoria": "Electrical and Fire Alarm",
+    "Imagen": "QuisLectusSuspendisse.gif"
+  },
+  {
+    "Identificador": 20,
+    "Nombre": "Piper",
+    "Apellido": "Lindley",
+    "Email": "plindleyj@cdbaby.com",
+    "Contraseña": "KPllNosSfZ",
+    "Categoria": "RF Shielding",
+    "Imagen": "AnteIpsum.ppt"
+  }

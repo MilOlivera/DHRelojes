@@ -9,7 +9,7 @@
                 <img class="img-pl" src="/images/<%= detalle.image %>" alt="Foto de Reloj">
             </div>
 
-            <form class="center-register" method="POST" action="/products/<%= detalle.id %>/edit?_method=PUT" >
+            <form class="center-register" method="POST" action="/products/<%= detalle.id %>/edit?_method=PUT" enctype="multipart/form-data">
                 <button class="botonEditar-2"> 
                     <input class="fa-solid fa-folder-plus" type="file" name="image" id="image" > <span>Edit Picture</span>
                 </button>

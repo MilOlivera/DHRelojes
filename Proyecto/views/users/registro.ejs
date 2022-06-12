@@ -2,33 +2,130 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main class="main-register">
+
         <section class="section-register">
-            <h1 class="register-txt">Registro</h4>
-            <form class="center-register" action="/registro" method="POST">
-                <div><input type="text" class="inputBusqueda-register" placeholder="Nombre" name="nombre" id="nombre" required></div>
-                <div><input type="text" class="inputBusqueda-register" placeholder="Apellido" name="apellido" id="apellido" required></div>
-                <div><input type="tel" class="inputBusqueda-register" placeholder="Tel. Fijo" name="tel-fijo" id="tel-fijo"></div>
-                <div><input type="tel" class="inputBusqueda-register" placeholder="Tel. Celular" name="tel-cel" id="tel-cel"></div>
-                <div><input type="email" class="inputBusqueda-register" placeholder="Mail" name="mail" id="mail" required></div>
-                <div><input type="email" class="inputBusqueda-register" placeholder="Confirmar Mail" name="mail-confirm" id="mail-confirm" required></div>
-                <div class="inputBusqueda-input"><label class="input-register">Fecha de Nacimiento:</label>
-                    <input class="input-register" type="date" name="nacimiento" name="nacimiento" id="nacimiento" required>
-                </div>
+            <h2 class="register-txt">Registro</h2>
+            <form class="center-register" action="/users" method="POST" enctype="multipart/form-data">
+                <!-- NOMBRE -->
+                <div><input 
+                    type="text"
+                    class="inputBusqueda-register <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                    placeholder="Nombre"
+                    name="name"
+                    id="name"
+                    value="<%= locals.oldData ? oldData.name : null %>"></div>
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
+                <!-- APELLIDO -->
+                <div><input
+                    type="text"
+                    class="inputBusqueda-register <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
+                    placeholder="Apellido"
+                    name="lastName"
+                    id="lastName"
+                    value="<%= locals.oldData ? oldData.lastName : null %>"></div>
+                    <% if (locals.errors && errors.lastName) { %>
+                        <div class="text-danger">
+                            <%= errors.lastName.msg %>
+                        </div>
+                    <% } %>
+                <!-- MAIL -->
+                <div><input
+                    type="email"
+                    class="inputBusqueda-register <%= locals.errors && errors.mail ? 'is-invalid' : null %>"
+                    placeholder="Mail"
+                    name="mail"
+                    id="mail"
+                    value="<%= locals.oldData ? oldData.mail : null %>"></div>
+                    <% if (locals.errors && errors.mail) { %>
+                        <div class="text-danger">
+                            <%= errors.mail.msg %>
+                        </div>
+                    <% } %>
+                <!-- NACIMIENTO -->
+                <div><label><b>Fecha de nacimiento</b></label>
+                <input
+                class="input-register <%= locals.errors && errors.birth ? 'is-invalid' : null %>"
+                type="date"
+                name="Nacimiento"
+                name="birth"
+                id="birth"
+                value="<%= locals.oldData ? oldData.birth : null %>"></div>
+                    <% if (locals.errors && errors.birth) { %>
+                        <div class="text-danger">
+                            <%= errors.birth.msg %>
+                        </div>
+                    <% } %>
+                <!-- DNI -->
+                <div><input
+                    type="number"
+                    class="inputBusqueda-register <%= locals.errors && errors.dni ? 'is-invalid' : null %>"
+                    placeholder="DNI"
+                    name="dni"
+                    id="dni"
+                    value="<%= locals.oldData ? oldData.dni : null %>"></div>
+                    <% if (locals.errors && errors.dni) { %>
+                        <div class="text-danger">
+                            <%= errors.dni.msg %>
+                        </div>
+                    <% } %>
+                <!-- GENERO -->
+                <!-- <label><b>Género</b></label>
+                <div><select
+                class="input-register <%= locals.errors && errors.genero ? 'is-invalid' : null %>"
+                name="genero">
+                    <option value=""> Elegí tu género </option>
+                    <% let generos = ["Masculino", "Femenino", "Otro"] %>
+                    <% for (const unGenero of generos) { %>
+                        <option
+                            value="<%= unGenero %>"
 
-                <div><input type="number" class="inputBusqueda-register" placeholder="Documento" name="documento" id="documento" required></div>
-
-                <div class="inputBusqueda-input"><label class="input-register">Genero:</label>
-                    <select class="input-register" name="genero" required>
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="otro">Otro</option>
-                    </select>
-                </div>
-                <div><input type="text" class="inputBusqueda-register" placeholder="Dirección 1" name="direccion1" id="direccion1" required></div>
-                <div><input type="text" class="inputBusqueda-register" placeholder="Dirección 2" name="direccion2" id="direccion2"></div>
-                <div><input type="number" class="inputBusqueda-register" placeholder="Codigo Postal" name="codigopostal" id="codigopostal" required></div>
-                <div><input type="password" class="inputBusqueda-register" placeholder="Contraseña" name="contraseña" id="contraseña" required></div>
-                <div><input type="password" class="inputBusqueda-register" placeholder="Repetir contraseña" name="contraseña-confirm" id="contraseña-confirm" required></div>
+                            > <%= unGenero %>
+                        </option>
+                    <% } %>
+                </select></div>
+                    <% if (locals.errors && errors.genero) { %>
+                        <div class="text-danger">
+                            <%= errors.genero.msg %>
+                        </div>
+                    <% } %> -->
+                <!-- DIRECCION -->
+                <div><input
+                    type="text"
+                    class="inputBusqueda-register <%= locals.errors && errors.address ? 'is-invalid' : null %>"
+                    placeholder="Dirección"
+                    name="address"
+                    id="address"
+                    value="<%= locals.oldData ? oldData.address : null %>"></div>
+                    <% if (locals.errors && errors.address) { %>
+                        <div class="text-danger">
+                            <%= errors.address.msg %>
+                        </div>
+                    <% } %>
+                <!-- CONTRASEÑA -->
+                <div><input
+                    type="password"
+                    class="inputBusqueda-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                    placeholder="Contraseña"
+                    name="password"
+                    id="password"
+                    value="<%= locals.oldData ? oldData.password : null %>"></div>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+                    <% } %>
+                <!-- IMAGEN -->
+                <div><input class="inputBusqueda-add <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" class="inputBusqueda" placeholder="image" name="image" id="image"></div>
+                    <!-- <% if (locals.errors && errors.image) { %>
+                        <div class="text-danger">
+                            <%= errors.image.msg %>
+                        </div>
+                    <% } %> -->
+                <br></br>
                 <div><input type="submit" value="Enviar" class="send-btn-register"></div>
             </form>
         </section>

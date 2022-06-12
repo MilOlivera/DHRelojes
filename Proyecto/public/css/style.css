@@ -1474,3 +1474,10 @@ hr.divider {
 .purchase-summary{
     margin: 5px;
 }
+
+.text-danger {
+    color: red;
+    margin-left: 20px;
+    font-size: 20px;
+    font-style: bold;
+}
