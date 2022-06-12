@@ -1,19 +1,8 @@
-¿Qué fue lo más dificil que les tocó hacer? 
-    
-        Lo mas dificil quiza fue realizar el primer "Git pull". Se presentaron inconvenientes que nos quitaron tiempo.
+- Comenzar a hacer: Repartir tareas al comienzo del sprint.
 
-¿Qué fue lo que más les gustó hacer?
-        
-         El diseño en sí. Llevar el wireframe a CSS. 
+- Hacer más: Mas reuniones daily/weekly, ya que resultaron efectivas.
 
-¿Qué modificarían para el próximo sprint?
-        
-         La administración de los tiempos, en relacion a definir temas puntuales.
+- Continuar haciendo: La buena comunicacion al momento de actualizar el proyecto, y mantenernos al tanto sobre cambios y posibles errores.
 
-¿Cómo manejaron los tiempos? 
-        
-        Como pudimos realmente, ya que al trabajar hasta tarde se complica. Pero mantuvimos comunicacion constante por el canal de comunicación de Slack. 
+- Hacer menos: No organizar el proyecto (carpetas, rutas) al principio del sprint.
 
-¿Cómo manejaron la asignación de tareas? 
-
-        Lo dividimos según el gusto de cada uno, y con lo que se sentia más comodo cada uno de los integrantes. 

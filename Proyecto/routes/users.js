@@ -2,6 +2,7 @@ const express = require("express")
 const path = require("path");
 const multer = require('multer')
 const router = express.Router()
+<<<<<<< HEAD
 const mainControllers = require("../controllers/mainControllers.js")
 const {body} = require("express-validator")
 // const validations = [
@@ -42,5 +43,15 @@ var cargaArchivo = multer({storage: storage})
 router.get("/login", mainControllers.login)
 router.get("/registro", mainControllers.registro)
 router.post("/", cargaArchivo.any("image"), mainControllers.store)
+=======
+const usersControllers = require("../controllers/usersControllers.js")
+
+router.get("/login", usersControllers.login)
+
+router.get("/registro", usersControllers.registro)
+// router.post("/registro", usersControllers.??)
+
+router.get("/profile", usersControllers.profile)
+>>>>>>> 8a13d56de54d129f0f27afa204e02cd946389bf1
 
 module.exports = router
