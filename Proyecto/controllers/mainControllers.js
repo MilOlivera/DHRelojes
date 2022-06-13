@@ -1,7 +1,8 @@
 const { hyphenToCamel } = require("ejs/lib/utils");
 const fs = require("fs");
 const path = require("path");
-const {validationResult} = require("express-validator")
+const {validationResult} = require("express-validator");
+const bcryptjs = require('bcryptjs');
 
 const productsFilePath = path.join(__dirname, "../data/users.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -25,14 +26,14 @@ let mainController = {
 
 // GUARDAR REGISTRO ** GUARDAR REGISTRO
     store: (req, res) => {
-        // const validacion = validationResult(req)
+         const validacion = validationResult(req)
 
-        // if (validacion.errors.length > 0) {
-        //     return res.render("./users/registro", {
-        //         errors: validacion.mapped(),
-        //         oldData: req.body
-        //     })
-        // }
+         if (validacion.errors.length > 0) {
+             return res.render("./users/registro", {
+                 errors: validacion.mapped(),
+                 oldData: req.body
+             })
+         }
     
         let image;
             console.log(req.file);
@@ -45,7 +46,7 @@ let mainController = {
             ...req.body,
             id: products[products.length - 1].id + 1,
             documento: Number(req.body.documento),
-            password: Number(req.body.password),
+            password: bcryptjs.hashSync(req.body.password, 10),
             image: image
             };
         products.push(newProduct)

@@ -1,14 +1,24 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %>
+
     <main class="main-login">
         <section class="section-login">
             <h1 class="title-login">Iniciar sesion</h1> 
-            <div> <input type="text" class="inputBusqueda-login" placeholder="Email"> </div>
-            <div> <input type="text" class="inputBusqueda-login" placeholder="Password"> </div> 
-            <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>
-            <div class="text-login">¿No tenes cuenta? <a href="/users/registro">Registrate</a></div>
-            <div class="text-login-end"> ¿Olvidó su password? </div>
+            <form action="/users/login" method="POST">
+                <!-- <div> <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email"> </div>
+                <div> <input name="password" type="text" class="inputBusqueda-login" placeholder="Password"> </div>  -->
+                <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email"> <br>
+                <% if (locals.errors && errors.mail) { %>
+                    <div>
+                        <%= errors.mail.msg %>
+                    </div>
+                <% } %>
+                <input name="password" type="password" class="inputBusqueda-login" placeholder="Password">
+                <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>
+                <div class="text-login">¿No tenes cuenta? <a href="/users/registro">Registrate</a></div>
+                <div class="text-login-end"> ¿Olvidó su password? </div>
+            </form>
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>

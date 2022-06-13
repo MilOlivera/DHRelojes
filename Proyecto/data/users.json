@@ -35,5 +35,53 @@
   "id": 3,
   "documento": null,
   "image": "image-1654894803147.png"
+ },
+ {
+  "name": "",
+  "lastName": "",
+  "mail": "",
+  "Nacimiento": "",
+  "dni": "",
+  "address": "",
+  "password": 0,
+  "id": 4,
+  "documento": null,
+  "image": "default-image.png"
+ },
+ {
+  "name": "er",
+  "lastName": "fdg",
+  "mail": "",
+  "Nacimiento": "",
+  "dni": "",
+  "address": "",
+  "password": 0,
+  "id": 5,
+  "documento": null,
+  "image": "default-image.png"
+ },
+ {
+  "name": "fr",
+  "lastName": "rgrgrg",
+  "mail": "",
+  "Nacimiento": "",
+  "dni": "",
+  "address": "",
+  "password": 0,
+  "id": 6,
+  "documento": null,
+  "image": "default-image.png"
+ },
+ {
+  "name": "Valeria",
+  "lastName": "Mirenzi",
+  "mail": "valeriamirenzi@gmail.com",
+  "Nacimiento": "2002-09-10",
+  "dni": "4444444",
+  "address": "123 calle",
+  "password": "$2a$10$92.XjpoejakycgOCMnEcPuBYNb2EHLduVQvuwb4h2gQ3hzm2F9mAi",
+  "id": 7,
+  "documento": null,
+  "image": "image-1655078200786.JPG"
  }
 ]

@@ -1,10 +1,14 @@
-const express = require("express")
+const express = require("express");
 const path = require("path");
-const multer = require('multer')
-const router = express.Router()
-<<<<<<< HEAD
-const mainControllers = require("../controllers/mainControllers.js")
-const {body} = require("express-validator")
+const multer = require('multer');
+const router = express.Router();
+const mainControllers = require("../controllers/mainControllers.js");
+const userController = require("../controllers/userController.js");
+
+const guestMiddleware = require('../middleware/guestMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
+
+const { check, validationResult, body } = require("express-validator");
 // const validations = [
 //     body("name").notEmpty().withMessage("Tenes que escribir un nombre"),
 //     body("lastName").notEmpty().withMessage("Tenes que escribir un apellido"),
@@ -32,26 +36,26 @@ const {body} = require("express-validator")
 
 var storage = multer.diskStorage({
     destination:function(req,file,cb){
-        cb(null, 'public/images/users')
+        cb(null, 'public/images/users');
     },
     filename: function(req,file,cb){
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 })
-var cargaArchivo = multer({storage: storage})
+var cargaArchivo = multer({storage: storage});
 
-router.get("/login", mainControllers.login)
-router.get("/registro", mainControllers.registro)
-router.post("/", cargaArchivo.any("image"), mainControllers.store)
-=======
-const usersControllers = require("../controllers/usersControllers.js")
+router.post('/', cargaArchivo.any('image'), mainControllers.store);
 
-router.get("/login", usersControllers.login)
+router.get('/registro', guestMiddleware, mainControllers.registro);
 
-router.get("/registro", usersControllers.registro)
-// router.post("/registro", usersControllers.??)
+router.get('/login', guestMiddleware, userController.login);
 
-router.get("/profile", usersControllers.profile)
->>>>>>> 8a13d56de54d129f0f27afa204e02cd946389bf1
+router.post('/login', userController.loginProcess);
+//[check('mail').isEmail().withMessage('Email invalido')]
+
+router.get('/profile', authMiddleware, userController.profile);
+
+router.get('/logout', userController.logOut);
+
 
 module.exports = router
