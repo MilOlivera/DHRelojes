@@ -882,6 +882,23 @@ hr.divider {
     background-color: #fafafa;
 }
 
+.input-register b {
+    font-family: 'Raleway', Sans-Serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+::-webkit-file-upload-button {
+    color: #73777c;
+    background-color: #efefef;
+    border-radius: 5px;
+    padding: 4px;
+    font-family: 'Raleway', Sans-Serif;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
 .send-btn-register {
     font-family: 'Raleway', Sans-Serif;
     line-height: 18px;
@@ -1117,6 +1134,14 @@ hr.divider {
     width: 80%;
     margin: auto;
 }
+
+
+/* --- perfil de usuario --- */
+.profile-pic {
+    width: 200px;
+    clip-path: circle();
+}
+
 
 
 @media(min-width: 769px){

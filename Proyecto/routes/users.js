@@ -50,7 +50,7 @@ router.get('/registro', guestMiddleware, mainControllers.registro);
 
 router.get('/login', guestMiddleware, userController.login);
 
-router.post('/login', userController.loginProcess);
+router.post('/login', [check('mail').isEmail().withMessage('Email invalido')], userController.loginProcess);
 //[check('mail').isEmail().withMessage('Email invalido')]
 
 router.get('/profile', authMiddleware, userController.profile);

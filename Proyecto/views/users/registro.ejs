@@ -46,7 +46,7 @@
                         </div>
                     <% } %>
                 <!-- NACIMIENTO -->
-                <div><label><b>Fecha de nacimiento</b></label>
+                <div class="inputBusqueda-input"><label class="input-register"><b>Fecha de nacimiento:</b></label>
                 <input
                 class="input-register <%= locals.errors && errors.birth ? 'is-invalid' : null %>"
                 type="date"
@@ -119,7 +119,7 @@
                         </div>
                     <% } %>
                 <!-- IMAGEN -->
-                <div><input class="inputBusqueda-add <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" class="inputBusqueda" placeholder="image" name="image" id="image"></div>
+                <div class="inputBusqueda-input"><input class="input-register <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" class="inputBusqueda" placeholder="image" name="image" id="image"></div>
                     <!-- <% if (locals.errors && errors.image) { %>
                         <div class="text-danger">
                             <%= errors.image.msg %>
