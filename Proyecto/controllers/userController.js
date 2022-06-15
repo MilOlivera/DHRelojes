@@ -36,7 +36,9 @@ let userController = {
            documento: Number(req.body.documento),
            password: bcryptjs.hashSync(req.body.password, 10),
            image: image
-           };
+        };
+
+        
        products.push(newProduct)
        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
        res.redirect('/');
@@ -63,7 +65,8 @@ let userController = {
     },
 
     login: (req, res) => {
-        res.render("./users/login")
+        res.render("./users/login");
+
     },
 
     // procesar login ** procesar login
@@ -75,8 +78,13 @@ let userController = {
             if (passwordMatched) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+
+                if(req.body.recordarme) {
+                    res.cookies('userEmail', req.body.mail, { maxAge: ( 10000 )})
+                }
+
                 return res.redirect('/users/profile');
-            }
+            };
 
             return res.render ('./users/login', {
                 errors: {
@@ -105,6 +113,7 @@ let userController = {
     },
 
     logOut: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     }

@@ -94,5 +94,27 @@
   "id": 8,
   "documento": null,
   "image": "image-1655251163950.JPG"
+ },
+ {
+  "name": "dsad",
+  "lastName": "asdasd",
+  "mail": "dfgf@gfdgdf.com",
+  "dni": "3333",
+  "address": "3333",
+  "password": "$2a$10$pDsKW.xS/zAn/X7ZrsFJA.oKNMv8eylCH7FnSIPO2S7bdmvaay.m2",
+  "id": 9,
+  "documento": null,
+  "image": "default-image.png"
+ },
+ {
+  "name": "www",
+  "lastName": "wwww",
+  "mail": "www@gmail.com",
+  "dni": "2222",
+  "address": "222",
+  "password": "$2a$10$bEYkxR4Jg5lxFQulNAYIhu4gMHlk/evgHnCiMP4AXRxN.br5P8Tea",
+  "id": 10,
+  "documento": null,
+  "image": "image-1655333164761.png"
  }
 ]

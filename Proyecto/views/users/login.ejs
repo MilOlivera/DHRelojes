@@ -21,8 +21,12 @@
                     <div class="text-danger1">
                         <%= errors.password.msg %>
                     </div>
-                <% } %>
+                <% } %> 
+
                 <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>
+
+                <input type="checkbox" class="recordarme" name="recordarme" value="recordarme">Recordarme
+
                 <div class="text-login">¿No tenes cuenta? <a href="/users/registro">Registrate</a></div>
                 <div class="text-login-end"> ¿Olvidó su password? </div>
             </form>

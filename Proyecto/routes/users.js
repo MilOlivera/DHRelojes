@@ -7,7 +7,7 @@ const userController = require("../controllers/userController.js");
 const guestMiddleware = require('../middleware/guestMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
 
-const { check, validationResult, body } = require("express-validator");
+const { validationResult, body } = require("express-validator");
 const validations = [
     body("name").notEmpty().withMessage("Tenes que escribir un nombre"),
     body("lastName").notEmpty().withMessage("Tenes que escribir un apellido"),
@@ -20,17 +20,14 @@ const validations = [
     // body("image").custom((value, {req}) => {
     //     let file = req.file
     //     let aceptado = [".jpg", ".png", ".gif"]
-    //     if (!file) {
-    //         throw new Error ("Tenes que subir una imagen")
-    //     } else {
-    //         let extencion = path.extname(file.originalname)
+    //     let extencion = path.extname(file.originalname)
+    //     if (file) {
     //         if (!aceptado.includes(extencion)) {
     //             throw new Error ("Solo podes subir una imagen JPG, PNG o GIF")
     //         }
     //     }
     //     return true;
     // }),
-
 ]
 
 var storage = multer.diskStorage({

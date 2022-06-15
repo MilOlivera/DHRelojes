@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const path = require('path')
-const session = require('express-session')
+const path = require('path');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const methodOverride = require("method-override");
 const publicPath = path.resolve(__dirname, "./public")
@@ -27,3 +28,4 @@ app.set ("view engine", "ejs")
 app.use ("/", rutasIndex)
 app.use ("/products", rutasProducts)
 app.use ("/users", rutasUsers)
+app.use(cookies());
