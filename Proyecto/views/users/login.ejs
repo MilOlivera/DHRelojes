@@ -10,11 +10,16 @@
                 <div> <input name="password" type="text" class="inputBusqueda-login" placeholder="Password"> </div>  -->
                 <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email"> <br>
                 <% if (locals.errors && errors.mail) { %>
-                    <div>
+                    <div class="text-danger">
                         <%= errors.mail.msg %>
                     </div>
                 <% } %>
                 <input name="password" type="password" class="inputBusqueda-login" placeholder="Password">
+                <% if (locals.errors && errors.mail) { %>
+                    <div class="text-danger">
+                        <%= errors.mail.msg %>
+                    </div>
+                <% } %>
                 <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>
                 <div class="text-login">¿No tenes cuenta? <a href="/users/registro">Registrate</a></div>
                 <div class="text-login-end"> ¿Olvidó su password? </div>

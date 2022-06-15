@@ -83,5 +83,16 @@
   "id": 7,
   "documento": null,
   "image": "image-1655078200786.JPG"
+ },
+ {
+  "name": "fsdgfdfsg",
+  "lastName": "fgdsg",
+  "mail": "dfgf@gfdgdf.com",
+  "dni": "33333",
+  "address": "4444",
+  "password": "$2a$10$0qPnellS9EnnbPbsyxWSHee/VwSS4Op9EsGTNHpRtOg2AfZ8oWTYi",
+  "id": 8,
+  "documento": null,
+  "image": "image-1655251163950.JPG"
  }
 ]
