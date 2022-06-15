@@ -8,16 +8,18 @@
             <form action="/users/login" method="POST">
                 <!-- <div> <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email"> </div>
                 <div> <input name="password" type="text" class="inputBusqueda-login" placeholder="Password"> </div>  -->
-                <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email"> <br>
+                <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email" value="<%= locals.oldData ? oldData.mail : null %>"> <br>
                 <% if (locals.errors && errors.mail) { %>
-                    <div class="text-danger">
+                    <div class="text-danger1">
                         <%= errors.mail.msg %>
                     </div>
                 <% } %>
+            
+                
                 <input name="password" type="password" class="inputBusqueda-login" placeholder="Password">
-                <% if (locals.errors && errors.mail) { %>
-                    <div class="text-danger">
-                        <%= errors.mail.msg %>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger1">
+                        <%= errors.password.msg %>
                     </div>
                 <% } %>
                 <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>

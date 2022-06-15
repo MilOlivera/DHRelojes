@@ -80,20 +80,21 @@ let userController = {
 
             return res.render ('./users/login', {
                 errors: {
-                    mail: {
-                        msg: 'Credenciales invalidas'
+                    password: {
+                        msg: 'Contraseña incorrecta'
                     }
-                }
+                },
+                oldData: req.body
             });
-
         }
 
         return res.render ('./users/login', {
             errors: {
                 mail: {
-                    msg: 'Este mail no esta registrado'
+                    msg: 'El correo electrónico ingresado es inválido'
                 }
-            }
+            },
+            oldData: req.body
         });
     },
 
