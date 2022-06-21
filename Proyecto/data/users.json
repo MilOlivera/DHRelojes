@@ -116,5 +116,27 @@
   "id": 10,
   "documento": null,
   "image": "image-1655333164761.png"
+ },
+ {
+  "name": "Juan",
+  "lastName": "Perez",
+  "mail": "juanperez@hotmail.com",
+  "dni": "38388383",
+  "address": "calle falsa 123",
+  "password": "$2a$10$XL9k9BZHxZ7PaNPdyy39.uJen.rPiWuq/bciV1Cw6HWNwbjvYX3nW",
+  "id": 11,
+  "documento": null,
+  "image": "image-1655820044841.jpg"
+ },
+ {
+  "name": "Lio",
+  "lastName": "Messi",
+  "mail": "liomessi@gmail.com",
+  "dni": "12345678",
+  "address": "falsa 123 ",
+  "password": "$2a$10$ZiU6aWwxrAp1/lxLsQ/jYOzH.96jElnhRuEM.WZ9e1tmG7JxcdK06",
+  "id": 12,
+  "documento": null,
+  "image": "image-1655838586576.jpeg"
  }
 ]

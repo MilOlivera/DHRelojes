@@ -83,7 +83,7 @@ let userController = {
                     res.cookies('userEmail', req.body.mail, { maxAge: ( 10000 )})
                 }
 
-                return res.redirect('/users/profile');
+                return res.redirect('/users/login');
             };
 
             return res.render ('./users/login', {
@@ -112,7 +112,7 @@ let userController = {
         })
     },
 
-    logOut: (req, res) => {
+    logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');

@@ -45,6 +45,7 @@ router.post('/', cargaArchivo.any('image'),validations, userController.store);
 
 router.get('/registro', guestMiddleware, userController.registro);
 
+
 router.get('/login', guestMiddleware, userController.login);
 
 router.post('/login', userController.loginProcess);
@@ -52,7 +53,7 @@ router.post('/login', userController.loginProcess);
 
 router.get('/profile', authMiddleware, userController.profile);
 
-router.get('/logout', userController.logOut);
+router.get('/logout', userController.logout);
 
 
-module.exports = router
+module.exports = router;

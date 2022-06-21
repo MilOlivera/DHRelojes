@@ -7,21 +7,27 @@ const cookies = require('cookie-parser');
 const methodOverride = require("method-override");
 const publicPath = path.resolve(__dirname, "./public")
 
+const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
+
 app.use(session({
     secret: 'secreto!',
     resave: false,
     saveUninitialized: false
 }));
+app.use(userLoggedMiddleware);
+
 app.use(express.static(publicPath));
 app.use(methodOverride("_method"))
 app.use(express.urlencoded({extended : false}))
 app.use(express.json())
 
+
 const rutasIndex = require("./routes/index.js")
 const rutasProducts = require("./routes/products.js")
-const rutasUsers = require("./routes/users.js")
+const rutasUsers = require("./routes/users.js");
 
-app.listen(3035, () => { console.log("Servidor Corriendo en 3035") })
+
+app.listen(3036, () => { console.log("Servidor Corriendo en 3036") })
 
 app.set ("view engine", "ejs")
 

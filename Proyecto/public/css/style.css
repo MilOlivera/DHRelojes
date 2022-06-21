@@ -89,7 +89,11 @@ HEADER SIN VIDEO ** HEADER SIN VIDEO */
 .linksNav2 li a:hover::after{
     width: 90%;
 }
+.imgUserNav{
+    border-radius: 10px;
+    margin: -5px 15px;
 
+}
 /* HEADER CON VIDEO ** HEADER CON VIDEO
 HEADER CON VIDEO ** HEADER CON VIDEO */
 
@@ -101,6 +105,14 @@ nav{
     border: none;
 
 }
+/* nav:hover{
+    background-color: white;
+    color: black;
+    opacity: 0.8;
+}
+.linksNav li:hover{
+    color: black;
+} */
 
 .logoHeader{
     width: 80px;
@@ -822,7 +834,9 @@ hr.divider {
     justify-content: center;
 }
 
-/* registro */
+/* REGISTRO ** REGISTRO ** REGISTRO 
+REGISTRO ** REGISTRO ** REGISTRO */
+
 .register-txt {
     font-size: 40px;
     letter-spacing: 0.035rem;
@@ -1051,7 +1065,10 @@ hr.divider {
     padding: 0.5rem;
 }
 
-/* ---edicion ---- */
+/* EDICION ** EDICION ** EDICION 
+EDICION ** EDICION ** EDICION  */
+
+
 .main-list {
     margin: 0;
 }
@@ -1108,8 +1125,10 @@ hr.divider {
 .product-price {
     font-family: 'Raleway', Sans-Serif;
 }
+/* 
+PRODUCT EDIT ** PRODUCT EDIT ** PRODUCT EDIT 
+PRODUCT EDIT ** PRODUCT EDIT ** PRODUCT EDIT  */
 
-/* --- product edit --- */
 .img-pl {
     width: 200px;
 }
@@ -1136,10 +1155,43 @@ hr.divider {
 }
 
 
-/* --- perfil de usuario --- */
+/* PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO
+PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
+.contenedorProfile{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.divCardProfile{
+    margin: 60px;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 30px;
+    text-transform: uppercase;
+}
+.hrProfile{
+    width: 190px;
+    height: 10px;
+    background-color: #252525;
+}
 .profile-pic {
-    width: 200px;
+    width: 300px;
     clip-path: circle();
+}
+.logoutProfile{
+    width: 90%;
+    border: none;
+    padding: 10px;
+    margin: 25px;
+    border-radius: 10px;
+}
+.logoutProfile:hover{
+    color: white;
+    background-color: black;
+    transition: all 1s;
 }
 
 
@@ -1174,17 +1226,23 @@ hr.divider {
         width: 10%;
     }
 
-    /* product-detail */
+ /* PRODUCT DETAIL ** PRODUCT DETAIL ** PRODUCT DETAIL 
+ PRODUCT DETAIL ** PRODUCT DETAIL ** PRODUCT DETAIL */
+
     .product-img {
         width: 40%;
     }   
     
-    /* login y registro */
+ /* LOGIN Y REGISTRO ** LOGIN Y REGISTRO
+ LOGIN Y REGISTRO ** LOGIN Y REGISTRO */
+
     .inputBusqueda-login, .center-register {
         width: 70%
     }
 
-    /* carrito */
+/* CARRITO ** CARRITO ** CARRITO
+CARRITO ** CARRITO ** CARRITO */
+
     .product-remove {
         display: flex;
         align-items: center;
