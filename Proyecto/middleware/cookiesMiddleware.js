@@ -3,7 +3,7 @@ const User = require('../controllers/userController');
 function userLoggedMiddleware(req, res, next) {
 	res.locals.isLogged = false;
 
-	let emailInCookie = req.cookies.userEmail;
+	let emailInCookie = req.cookie.recordarme;
 	let userFromCookie = User.findByField('mail', emailInCookie);
 
 	if (userFromCookie) {

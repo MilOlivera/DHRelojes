@@ -1,142 +1,32 @@
 [
  {
-  "name": "Leonel",
-  "lastName": "Schultz",
-  "mail": "dsa@hotmail.com",
-  "dni": "36158697",
-  "genero": "masculino",
-  "address": "Rafael Obligado 5655",
-  "password": null,
-  "id": 1,
-  "documento": null,
-  "image": "image-1654886394992.png"
- },
- {
-  "name": "Guido",
-  "lastName": "Biagioni",
-  "mail": "guido@gmail.com",
-  "Nacimiento": "1991-06-02",
-  "dni": "36158697",
-  "genero": "masculino",
-  "address": "6511 NW 87th Ave",
-  "password": 123456,
-  "id": 2,
-  "documento": null,
-  "image": "image-1654886624665.png"
- },
- {
-  "name": "Leonel",
-  "lastName": "Schultz",
-  "mail": "asdsadsad@gasd.com",
-  "Nacimiento": "2022-05-13",
-  "dni": "16111648",
-  "address": "Rafael Obligado 5655",
-  "password": 1231231231,
-  "id": 3,
-  "documento": null,
-  "image": "image-1654894803147.png"
- },
- {
-  "name": "",
-  "lastName": "",
-  "mail": "",
-  "Nacimiento": "",
-  "dni": "",
-  "address": "",
-  "password": 0,
-  "id": 4,
-  "documento": null,
-  "image": "default-image.png"
- },
- {
-  "name": "er",
-  "lastName": "fdg",
-  "mail": "",
-  "Nacimiento": "",
-  "dni": "",
-  "address": "",
-  "password": 0,
-  "id": 5,
-  "documento": null,
-  "image": "default-image.png"
- },
- {
-  "name": "fr",
-  "lastName": "rgrgrg",
-  "mail": "",
-  "Nacimiento": "",
-  "dni": "",
-  "address": "",
-  "password": 0,
-  "id": 6,
-  "documento": null,
-  "image": "default-image.png"
- },
- {
-  "name": "Valeria",
-  "lastName": "Mirenzi",
-  "mail": "valeriamirenzi@gmail.com",
-  "Nacimiento": "2002-09-10",
-  "dni": "4444444",
-  "address": "123 calle",
-  "password": "$2a$10$92.XjpoejakycgOCMnEcPuBYNb2EHLduVQvuwb4h2gQ3hzm2F9mAi",
-  "id": 7,
-  "documento": null,
-  "image": "image-1655078200786.JPG"
- },
- {
-  "name": "fsdgfdfsg",
-  "lastName": "fgdsg",
-  "mail": "dfgf@gfdgdf.com",
-  "dni": "33333",
-  "address": "4444",
-  "password": "$2a$10$0qPnellS9EnnbPbsyxWSHee/VwSS4Op9EsGTNHpRtOg2AfZ8oWTYi",
-  "id": 8,
-  "documento": null,
-  "image": "image-1655251163950.JPG"
- },
- {
-  "name": "dsad",
-  "lastName": "asdasd",
-  "mail": "dfgf@gfdgdf.com",
-  "dni": "3333",
-  "address": "3333",
-  "password": "$2a$10$pDsKW.xS/zAn/X7ZrsFJA.oKNMv8eylCH7FnSIPO2S7bdmvaay.m2",
-  "id": 9,
-  "documento": null,
-  "image": "default-image.png"
- },
- {
-  "name": "www",
-  "lastName": "wwww",
-  "mail": "www@gmail.com",
-  "dni": "2222",
-  "address": "222",
-  "password": "$2a$10$bEYkxR4Jg5lxFQulNAYIhu4gMHlk/evgHnCiMP4AXRxN.br5P8Tea",
-  "id": 10,
-  "documento": null,
-  "image": "image-1655333164761.png"
- },
- {
-  "name": "Juan",
-  "lastName": "Perez",
-  "mail": "juanperez@hotmail.com",
-  "dni": "38388383",
-  "address": "calle falsa 123",
-  "password": "$2a$10$XL9k9BZHxZ7PaNPdyy39.uJen.rPiWuq/bciV1Cw6HWNwbjvYX3nW",
-  "id": 11,
-  "documento": null,
-  "image": "image-1655820044841.jpg"
- },
- {
   "name": "Lio",
   "lastName": "Messi",
-  "mail": "liomessi@gmail.com",
-  "dni": "12345678",
-  "address": "falsa 123 ",
-  "password": "$2a$10$ZiU6aWwxrAp1/lxLsQ/jYOzH.96jElnhRuEM.WZ9e1tmG7JxcdK06",
-  "id": 12,
-  "documento": null,
-  "image": "image-1655838586576.jpeg"
+  "mail": "messi@gmail.com",
+  "dni": 123123123,
+  "address": "falsa 1234",
+  "password": "$2a$10$e2/aqIu/tZDpoJCZUoVYquqkerdDmoOwpMx/PcSlNenDVpuqmdfuy",
+  "id": 1,
+  "image": "image-1655857672138.png"
+ },
+ {
+  "name": "lll",
+  "lastName": "www",
+  "mail": "ww@gmail.com",
+  "dni": 1234,
+  "address": "4444",
+  "password": "$2a$10$/xbsEz3GdlnGIALATzI2rej0rIp6VVdQHhxEpc.PkFJhC6nPmq4Hu",
+  "id": 2,
+  "image": "image-1655857871588.png"
+ },
+ {
+  "name": "Carlos",
+  "lastName": "Perez",
+  "mail": "carlos23@gmail.com",
+  "dni": 123123123,
+  "address": "asdasd",
+  "password": "$2a$10$1eLTx0eV7IcvfeDvgRkKCO/cY9A27R9HGKVxZ0YUNJX/xS2M52XKq",
+  "id": 3,
+  "image": "default-image.png"
  }
 ]

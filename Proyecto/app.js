@@ -14,12 +14,14 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
 app.use(userLoggedMiddleware);
 
 app.use(express.static(publicPath));
 app.use(methodOverride("_method"))
 app.use(express.urlencoded({extended : false}))
 app.use(express.json())
+app.use(cookies());
 
 
 const rutasIndex = require("./routes/index.js")
@@ -34,4 +36,3 @@ app.set ("view engine", "ejs")
 app.use ("/", rutasIndex)
 app.use ("/products", rutasProducts)
 app.use ("/users", rutasUsers)
-app.use(cookies());

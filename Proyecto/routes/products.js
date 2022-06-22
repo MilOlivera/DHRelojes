@@ -26,7 +26,7 @@ router.get("/create", productsController.create)
 router.post("/", cargaArchivo.any("image"), productsController.store)
 
 // VER CARRITO ** VER CARRITO
-router.get("/carrito", productsController.productCart)
+router.get("/cart", productsController.cart)
 
 // VER UN PRODUCTO ** VER UN PRODUCTO
 router.get("/:id", productsController.productDetail)
@@ -40,8 +40,7 @@ router.put('/:id/edit', productsController.confirm)
 // DELETE ** DELETE
 router.delete("/delete/:id", productsController.delete)
 
-// VER CARRITO ** VER CARRITO
-router.get("/cart", productsController.cart)
+
 
 // falta edit del carrito
 

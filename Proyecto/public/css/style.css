@@ -1178,7 +1178,7 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
     background-color: #252525;
 }
 .profile-pic {
-    width: 300px;
+    width: 500px;
     clip-path: circle();
 }
 .logoutProfile{

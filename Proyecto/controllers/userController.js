@@ -33,7 +33,7 @@ let userController = {
        let newProduct = {
            ...req.body,
            id: products[products.length - 1].id + 1,
-           documento: Number(req.body.documento),
+           dni: Number(req.body.dni),
            password: bcryptjs.hashSync(req.body.password, 10),
            image: image
         };
@@ -41,7 +41,7 @@ let userController = {
         
        products.push(newProduct)
        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-       res.redirect('/');
+       res.redirect('users/login');
    },
 
     // obtener datos de un usuario ** obtener datos de un usuario
@@ -74,13 +74,16 @@ let userController = {
         let userToLogin = userController.findByField('mail', req.body.mail);
 
         if (userToLogin) {
+            console.log(req.body)
             let passwordMatched = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if (passwordMatched) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+                console.log(req.body)
+                console.log(userToLogin)
 
                 if(req.body.recordarme) {
-                    res.cookies('userEmail', req.body.mail, { maxAge: ( 10000 )})
+                    res.cookie('recordarme', req.body.mail, { maxAge:  100000 })
                 }
 
                 return res.redirect('/users/login');
@@ -91,9 +94,11 @@ let userController = {
                     password: {
                         msg: 'Contraseña incorrecta'
                     }
+    
                 },
-                oldData: req.body
+                // oldData: req.body
             });
+            
         }
 
         return res.render ('./users/login', {
@@ -102,7 +107,7 @@ let userController = {
                     msg: 'El correo electrónico ingresado es inválido'
                 }
             },
-            oldData: req.body
+            // oldData: req.body
         });
     },
 
@@ -113,10 +118,10 @@ let userController = {
     },
 
     logout: (req, res) => {
-        res.clearCookie('userEmail');
+        res.clearCookie('recordarme');
         req.session.destroy();
         return res.redirect('/');
     }
 }
 
-module.exports = userController
+module.exports = userController;

@@ -106,13 +106,14 @@ const productsController = {
 
     // CARRITO ** CARRITO
     cart: (req, res) => {
-        res.render("./products/productCart")
+    
+    let idDetail = req.params.id
+    let detalle = products.find(elemento => elemento.id == idDetail)
+    // res.render(productsPath + '/productDetail', {detalle})
+    res.render(productsPath + '/productCart', {detalle})
+
     },
 
-
-    productCart: (req, res) => {
-        res.render(productsPath + "/productCart")
-    },
 
      
     }
