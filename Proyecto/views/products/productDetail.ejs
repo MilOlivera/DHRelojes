@@ -40,8 +40,9 @@
                     <h3 class = "precio"><%= detalle.price %></h3>
                     <p class = "cuotasSinInteres"><%= detalle.discount%> </p>
                 </div> -->
+              <!-- BOTONES DE EDIT Y DELETE BOTONES DE EDIT Y DELETE -->
 
-                <div class="pbox-prod-detail-btn">
+                <!-- <div class="pbox-prod-detail-btn">
                     <div class="box-prod-detail-btn">
                         <form class= "product-btn">
                             <a href="/products/<%= detalle.id %>/edit" class="product-btn-detail">Editar producto</a>
@@ -55,8 +56,17 @@
                             <button class ="product-btn" type="submit" > Delete </button> 
                         </form>
                     </div>
-                </div>
+                    <br> -->
 
+               
+                </div>
+                <% if (locals.isLogged) { %>
+                <div class="box-prod-detail-btn">
+                    <!-- <form class = "botonDeCompra" method="POST" action="/"> -->
+                        <button class ="product-btn" type="submit" id="btnComprarProduct"> Comprar </button> 
+                    <!-- </form> -->
+                </div>
+                <% } %>
             </article>
 <!-- 
             <form action="POST" method="delete/id?_method=DELETE" enctype="multipart/form-data">

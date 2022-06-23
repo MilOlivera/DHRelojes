@@ -28,5 +28,16 @@
   "password": "$2a$10$1eLTx0eV7IcvfeDvgRkKCO/cY9A27R9HGKVxZ0YUNJX/xS2M52XKq",
   "id": 3,
   "image": "default-image.png"
+ },
+ {
+  "name": "Juan",
+  "lastName": "Perez",
+  "mail": "juanperez@hotmail.com",
+  "dni": 12345678,
+  "address": "falsa 123 ",
+  "password": "$2a$10$IOfc0V6QHR0iS8yrEgj2euJvCLyxpzYiJyUGlAbDO2B/UjZQyWrES",
+  "user": "guest",
+  "id": 4,
+  "image": "image-1655940826311.jpeg"
  }
 ]

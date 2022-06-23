@@ -4,7 +4,7 @@ const { check, validationResult, body } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 const userFilePath = path.join(__dirname, "../data/users.json");
-let users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+let users = () => JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 const productsFilePath = path.join(__dirname, "../data/users.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -35,7 +35,8 @@ let userController = {
            id: products[products.length - 1].id + 1,
            dni: Number(req.body.dni),
            password: bcryptjs.hashSync(req.body.password, 10),
-           image: image
+           image: image,
+           user: 'guest'
         };
 
         
@@ -46,17 +47,20 @@ let userController = {
 
     // obtener datos de un usuario ** obtener datos de un usuario
     findByPk: (id) => {
-        let userFound = users.find(oneUser => oneUser.id === id);
+        let dataset = users();
+        let userFound = dataset.find(oneUser => oneUser.id === id);
         return userFound;
     },
 
     findByEmail: (mail) => {
-        let userFound = users.find(oneUser => oneUser.mail === mail);
+        let dataset = users();
+        let userFound = dataset.find(oneUser => oneUser.mail === mail);
         return userFound;
     },
     
     findByField: (field, text) => {
-        let userFound = users.find(oneUser => oneUser[field] === text);
+        let dataset = users();
+        let userFound = dataset.find(oneUser => oneUser[field] === text);
         return userFound;
     },
 

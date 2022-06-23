@@ -118,6 +118,12 @@
                             <%= errors.password.msg %>
                         </div>
                     <% } %>
+                <div><input
+                    type="text"
+                    class='nullRegister'
+                    name="user"
+                    id="user" ></div>
+
                 <!-- IMAGEN -->
                 <div class="inputBusqueda-input"><input class="input-register <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" class="inputBusqueda" placeholder="image" name="image" id="image"></div>
                     <!-- <% if (locals.errors && errors.image) { %>
