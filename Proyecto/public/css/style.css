@@ -21,8 +21,7 @@ HEADER SIN VIDEO ** HEADER SIN VIDEO */
 
 .headerSinVideo{
     background-color: black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    margin: -10px;
 }
 
 .linksNav2{
@@ -336,7 +335,7 @@ ul{
 }
 
 .primeraParteParrafo{
-    text-align: justify;
+    /* text-align: justify; */
     text-indent: 40px;
     color: gray;
 }
@@ -377,9 +376,6 @@ ul{
 
 
 
-.section2Home{
-    margin-top: -35%;
-}
 .contenedorHome3{
     width: 100%;
     display: flex;
@@ -1387,59 +1383,76 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
     /* HOME HOME HOME HOME 
     HOME HOME HOME HOME  */
 
-    /* .sectionHome{
-        margin-top: -10%;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-       justify-content: center;
+    .logoHeader{
+        margin-left: 20px;
     }
-    .primeraParteHome{
-        margin-top: 100%;
-        margin-left: 0%;
+    ul{
+        margin-left: 0;
     }
-    .primeraParteHome hr{
+    .linksNav #buscarProducto, .buscarHome{
         display: none;
     }
+    .linksNav li{
+        margin-top: 30px;
+        font-size: 10px;
+    }
+    .videoHeader{
+        right: 0;
+    }
+    .sectionHome{
+        margin-left: -50px;
+    }
+    .primeraParteHome{
+        margin-top: 130%;
+    }
     .contenedorHome2{
-        width: 150px;
-        height: 210px;
+        width: 250px;
+        height: 320px;
     }
     .contenedorHome2-1{
-        width: 100%;
-        margin-top: -10%;
-        margin-left: -15%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        width: 250px;
+        height: 300px;
+        margin-top: -80px;
     }
-   .contenedorHome2-1 .primeraParteH1{
-    font-size: large;
-    margin-top: 8%;
+    .primeraParteH3{
+        display: none;
+    }
+    .primeraParteParrafo{
+        text-indent: 0;
+    
+    }
+    .contenido3{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card3{
+        width: 180%;
+        padding: 0;
+    }
+    .div3{
+        margin-top: -100px;
+    }
+    .divTextos3{
+        width: 100%;
+        padding: 0px;
+    }
+    .divImg3-2 .imgFondo3 img{
+        width: 350px;
+        height: 200px;
+        margin-left: -125px;
+        margin-top: 40px;
+    }
+    .divImg3-1 .imgReloj3 img{
+        width: 250px;
+        height: 300px;
+        margin-top: 140px;
+        margin-left: 15px;
+    }
+   .wave{
+    width: 100%;
+    height: 2500px;
    }
-   .contenedorHome2-1 .primeraParteParrafo{
-    font-size: xx-small;
-    text-indent: 0;
-    width: 90%;
-    margin-top: -70%;
-   }
-   .otraSectionHome{
-    display: none;
-   }
-
-   footer{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-   }
-   .waveFooter{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-   }
-
    @keyframes w1{
     0%{
         display: none;
@@ -1447,28 +1460,56 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
     100%{
         display: none;
     }
-   }*/
+   }
 } 
 
 @media(min-width: 769px){
     
    /* HOME HOME HOME HOME HOME 
    HOME HOME HOME HOME HOME */
-/* 
-    .primeraParteHome{
-        width: 60%;
-        height: 70%;
-        margin-top: 60%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    .contenedorHome2-1{
-        margin-top: -20%;
-    } */
 
+   .linksNav #buscarProducto, .buscarHome{
+    display: inline-block;
+}
+.linksNav li{
+    margin-top: 30px;
+    font-size: 15px;
+}
+.sectionHome{
+    margin-left: 0;
+}
+.primeraParteHome{
+    margin-top: 80%;
+    width: 90%;
+    margin-left: 0;
+}
 
-    
+.primeraParteH3{
+    display: inline;
+}
+.section2Home{
+    margin-top: -250px;
+}
+.div3{
+    margin-top: -200px;
+}
+.divImg3-2 .imgFondo3 img{
+    width: 580px;
+    height: 200px;
+    margin-left: -170px;
+    margin-top: 40px;
+}
+.divImg3-1 .imgReloj3 img{
+    width: 300px;
+    height: 400px;
+    margin-top: 120px;
+    margin-left: 160px;
+}
+.wave{
+width: 100%;
+height: 1400px;
+}
+
 
  /* PRODUCT DETAIL ** PRODUCT DETAIL ** PRODUCT DETAIL 
  PRODUCT DETAIL ** PRODUCT DETAIL ** PRODUCT DETAIL */
@@ -1593,124 +1634,82 @@ CARRITO ** CARRITO ** CARRITO */
 }
 
 @media(min-width: 1280px){
-    /* .dhLogo{
-        width: 120px;
-        height: 80px;
-        display: inline;
-    } */
-    #divLogo{
-        display: none;
-    }
-    #divBuscar{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
     
-    #divIngresar{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    .logoHeader{
+        margin-left: 0px;
     }
-   
-
-    #menuBurger{
-        display: none;
+    ul{
+        margin-left: 50%;
     }
-    #divIngresar{
-        background-color: lightgray;
-        border-radius: 10px;
+    .linksNav #buscarProducto, .buscarHome{
+        display: inline-block;
     }
-    .inputNavBar{
-        display: flex;
-        justify-content: flex-start;
-        border: none;
-        padding: 5px;
-        border-radius: 10px;
-        background-color: lightgray;
+    .linksNav li{
+        margin-top: 30px;
     }
-    #buscar{
-        display: none;
+    .videoHeader{
+        right: -20%;
     }
-    #buscar2{
-        display: flex;
-    }
-    #buscar2, #ingreso, .navBarra{
-        color: black;
-        padding: 5px;
-    }
-    #buscar2:hover{
-        background-color: grey;
-        padding: 6px;
-        border-radius: 10px;
-    }
-    
-    #ingreso:hover{
-        background-color: grey;
-        padding: 6px;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-    .navBarra{
-        display: block;
-    }
-
-
-    .navClasicos, .navProfesionales{
-        display: inline;
+    .primeraParteHome{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        padding: 5px;
+        margin: 50% 15%;
+        width: 70%;
+        padding: 20px;
     }
-    .navClasicos:hover, .navProfesionales:hover{
-        color: lightgray;
+    .contenedorHome2{
+        width: 420px;
+        height: 520px;
     }
-    .navClasicos{
-        justify-content: flex-start;
+    .contenedorHome2-1{
+        width: 420px;
+        height: 480px;
+        margin-top: 10px;
+        padding: 20px;
     }
-    .navProfesionales{
-        justify-content: flex-end;
+    .primeraParteH3{
+        display: inline-block;
     }
-    #clasicoHome, #profesionalHome{
+    .section2Home{
+        margin-top: -600px;
+    }
+    .div3{
+        margin-top: 10%;
+    }
+    .divTextos3{
+        width: 40%;
         padding: 40px;
     }
-    
-    .relHyM{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
+    .divImg3-2 .imgFondo3 img{
         width: 100%;
+        height: 800px;
+        margin-left: 0px;
+        display: block;
+        background-size: cover;
+        object-fit: cover;
     }
-    .hombreYMujer{
-        border-radius: 30px;
-        padding: 20px;
-        width: 35%;
-    }
-    .divHYM{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 25%;
-        padding: 30px;
-    }
-    .separadores{
-        width: 5%;
-    }
-    .iconosHome{
-        display: flex;
-        flex-wrap: wrap;
+    .divImg3-1 .imgReloj3 img{
         width: 100%;
-        justify-content: space-around
+        height: 500px;
+        margin-top: 50%;
+        margin-left: 50%;
+        object-fit: cover;
+        position: relative;
+        z-index: 2;
     }
-    .separadorIconos{
-        display: flex;
-        width: 10%;
+   .wave{
+    width: 300%;
+    height: 150%;
+   }
+   @keyframes w1{
+    0%{
+        margin-left: 0px;
     }
+    100%{
+        margin-left: -1600px;
+    }
+   }
 
     /* product-detail */
     .product-img {
