@@ -39,5 +39,16 @@
   "user": "guest",
   "id": 4,
   "image": "image-1655940826311.jpeg"
+ },
+ {
+  "name": "prueba",
+  "lastName": "prueba",
+  "mail": "prueba@gmail.com",
+  "dni": 12345678,
+  "address": "prueba123",
+  "password": "$2a$10$G0OnVoYw52PEB1SU.pk6F.Q3BA/z4SyjwikY/hiqJ.fNJulmRSaMu",
+  "user": "guest",
+  "id": 5,
+  "image": "image-1657554689079.jpg"
  }
 ]
