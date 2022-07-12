@@ -19,10 +19,6 @@
     "method-override": "^3.0.0",
     "multer": "^1.4.4",
     "mysql2": "^2.3.3",
-<<<<<<< HEAD
-    "sequelize": "5.21"
-=======
-    "sequelize": "^6.21.2"
->>>>>>> e63ce884e0231dbc908a29214b51bd3cf50ef810
+    "sequelize": "^6.21.3"
   }
 }

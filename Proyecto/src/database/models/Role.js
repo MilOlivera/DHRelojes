@@ -1,4 +1,4 @@
-modolue.exports = function (sequelize, dataTypes) {
+module.exports = function (sequelize, dataTypes) {
   let alias = "Rol";
 
   let cols = {
@@ -21,14 +21,11 @@ modolue.exports = function (sequelize, dataTypes) {
 
   let Rol = sequelize.define(alias, cols, config);
 
-  Rol.associate(function(models){
-
+  Rol.associate = function (models) {
     Rol.hasMany(models.Usuario, {
-
-      as: 'roles',
-      foreignKey: 'idRoleFK'
-      
-    })
-  })
+      as: "roles",
+      foreignKey: "idRoleFK",
+    });
+  };
   return Rol;
 };

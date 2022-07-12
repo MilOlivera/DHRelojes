@@ -1,4 +1,4 @@
-modolue.exports = function (sequelize, dataTypes) {
+module.exports = function (sequelize, dataTypes) {
   let alias = "Talle";
 
   let cols = {
@@ -21,14 +21,11 @@ modolue.exports = function (sequelize, dataTypes) {
 
   let Talle = sequelize.define(alias, cols, config);
 
-  Talle.associate(function(models){
-    
+  Talle.associate = function (models) {
     Talle.hasMany(models.Producto, {
-
-      as: 'talles',
-      foreignKey: 'idSizeFK'
-      
-    })
-  })
+      as: "talles",
+      foreignKey: "idSizeFK",
+    });
+  };
   return Talle;
 };

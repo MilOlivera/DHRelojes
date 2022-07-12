@@ -1,4 +1,4 @@
-modolue.exports = function (sequelize, dataTypes) {
+module.exports = function (sequelize, dataTypes) {
   let alias = "Producto";
 
   let cols = {
@@ -44,25 +44,22 @@ modolue.exports = function (sequelize, dataTypes) {
 
   let Producto = sequelize.define(alias, cols, config);
 
-    Producto.associate(function(models){
+  Producto.associate = function (models) {
+    Producto.belongsTo(models.Categoria, {
+      as: "categorias",
+      foreign: "idCategoryFK",
+    });
 
-      Producto.belongsTo(models.Categoria, {
-        
-        as: 'categorias',
-        foreign: 'idCategoryFK'
+    Producto.belongsTo(models.Categoria, {
+      as: "talles",
+      foreign: "idSizeFK",
+    });
 
-      })
+    Producto.belongsTo(models.Orden, {
+      as: "ordenes",
+      foreign: "idOrderFK",
+    });
+  };
 
-      Producto.belongsTo(models.Categoria, {
-        as: 'talles',
-        foreign: 'idSizeFK'
-      })
-
-      Producto.belongsTo(models.Orden, {
-        as: 'ordenes',
-        foreign: 'idOrderFK'
-      })
-
-    })
   return Producto;
 };
