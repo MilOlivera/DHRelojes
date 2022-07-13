@@ -55,5 +55,7 @@ module.exports = function (sequelize, dataTypes) {
       foreignKey: "idRoleFK",
     });
   };
+
   return Usuario;
+  
 };
