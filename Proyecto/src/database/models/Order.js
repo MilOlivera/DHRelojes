@@ -2,13 +2,13 @@ module.exports = function (sequelize, dataTypes) {
   let alias = "Orden";
 
   let cols = {
-    idOrdenes: {
+    idOrder: {
       type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
     },
-    idUsuarioFK: {
+    idUserFK: {
       type: dataTypes.INTEGER,
       allowNull: false,
     },

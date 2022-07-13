@@ -15,13 +15,13 @@ const productsController = {
 
   // CREAR UN PRODUCTO ** CREAR UN PRODUCTO
   create: (req, res) => {
-    let categorias = db.Categorias.findAll();
+    let categorias = db.Categoria.findAll();
     let productos = db.Producto.findAll();
     let talles = db.Talle.findAll()
       .all([categorias, productos, talles])
       .then(function (allCategorys, allProducts, allTalles) {
         return res.render(productsPath + "/productAdd", {
-          products: allProducts,
+          productos: allProducts,
           categorias: allCategorys,
           talles: allTalles,
         });

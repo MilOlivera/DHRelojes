@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
   let alias = "Producto";
 
   let cols = {
-    idProducto: {
+    idProduct: {
       type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -24,14 +24,14 @@ module.exports = function (sequelize, dataTypes) {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
-    idTalleFK: {
+    idSizeFK: {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
-    idProductImageFK: {
+    idProduct_imageFK: {
       type: dataTypes.INTEGER,
     },
-    Ordenes_idOrdenes: {
+    idOrderFK: {
       type: dataTypes.INTEGER,
       allowNull: false,
     },

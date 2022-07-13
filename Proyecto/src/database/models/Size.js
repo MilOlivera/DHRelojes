@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
   let alias = "Talle";
 
   let cols = {
-    idTalle: {
+    idSize: {
       type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,

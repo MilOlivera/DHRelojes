@@ -7,7 +7,7 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const productsPath = path.join(__dirname, "../views/products");
 
-const productsController = {
+const productsController2 = {
 // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
     list: (req,res) => {
         res.render(productsPath + '/productList', {products})  
@@ -122,4 +122,4 @@ const productsController = {
 
 
 
-module.exports = productsController;
+module.exports = productsController2;
