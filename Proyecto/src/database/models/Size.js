@@ -27,5 +27,6 @@ module.exports = function (sequelize, dataTypes) {
       foreignKey: "idSizeFK",
     });
   };
+
   return Talle;
 };

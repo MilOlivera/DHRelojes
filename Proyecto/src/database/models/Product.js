@@ -17,7 +17,7 @@ module.exports = function (sequelize, dataTypes) {
       allowNull: false,
     },
     price: {
-      type: dataTypes.DECIMAL(50),
+      type: dataTypes.DECIMAL(9,2),
       allowNull: false,
     },
     idCategoryFK: {
@@ -47,17 +47,17 @@ module.exports = function (sequelize, dataTypes) {
   Producto.associate = function (models) {
     Producto.belongsTo(models.Categoria, {
       as: "categorias",
-      foreign: "idCategoryFK",
+      foreignKey: "idCategoryFK",
     });
 
     Producto.belongsTo(models.Categoria, {
       as: "talles",
-      foreign: "idSizeFK",
+      foreignKey: "idSizeFK",
     });
 
     Producto.belongsTo(models.Orden, {
       as: "ordenes",
-      foreign: "idOrderFK",
+      foreignKey: "idOrderFK",
     });
   };
 

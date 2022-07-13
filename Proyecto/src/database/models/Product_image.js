@@ -27,5 +27,6 @@ module.exports = function (sequelize, dataTypes) {
       foreignKey: "idProduct_imageFK",
     });
   };
+
   return Imagen;
 };

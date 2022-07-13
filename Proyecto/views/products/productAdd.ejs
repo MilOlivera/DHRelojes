@@ -11,15 +11,10 @@
                 <div><select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category">
                     <option value="" disabled selected>- Seleccione categoría - </option>
                     <% categorias.forEach(categoria => { %>
-                        <option value="<%= categoria.id %>"><%= categoria.name %></option>
+                        <option value="<%= categoria.idCategory %>"><%= categoria.name %></option>
                     <% }); %>
                 </div>
-                <div><select class="inputBusqueda-add" type="text" placeholder="Talle" name="size" id="talle">
-                    <option value="" disabled selected>- Seleccione categoría - </option>
-                    <% talles.forEach(talle => { %>
-                        <option value="<%= talle.id %>"><%= talle.name %></option>
-                    <% }); %>
-                </div>
+               
                 <div><input class="inputBusqueda-add" type="file" placeholder="image" name="image" id="image"></div>
                 <br></br>
                 <div><input type="submit" value="Save" class="send-btn-register"></div>

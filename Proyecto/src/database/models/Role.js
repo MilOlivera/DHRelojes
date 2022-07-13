@@ -9,7 +9,7 @@ module.exports = function (sequelize, dataTypes) {
       allowNull: false,
     },
     name: {
-      type: dataTypes.STRING(45),
+      type: dataTypes.STRING(255),
       allowNull: false,
     },
   };
@@ -27,5 +27,6 @@ module.exports = function (sequelize, dataTypes) {
       foreignKey: "idRoleFK",
     });
   };
+
   return Rol;
 };

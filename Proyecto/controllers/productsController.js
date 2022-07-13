@@ -8,8 +8,12 @@ const productsPath = path.join(__dirname, "../views/products");
 const productsController = {
   // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
   list: (req, res) => {
-    db.Producto.findAll().then(function (products) {
-      res.render(productsPath + "/productList", { products });
+    let producto = db.Producto.findAll()
+    let imagen = db.Imagen.findAll()
+    Promise
+    .all([producto, imagen])
+    .then(function (products, imagen) {
+      res.render(productsPath + "/productList", { products, imagen });
     });
   },
 
@@ -17,12 +21,13 @@ const productsController = {
   create: (req, res) => {
     let categorias = db.Categoria.findAll();
     let productos = db.Producto.findAll();
-    let talles = db.Talle.findAll()
-      .all([categorias, productos, talles])
-      .then(function (allCategorys, allProducts, allTalles) {
+    // let talles = db.Talle.findAll();
+    Promise
+      .all([categorias, productos])
+      .then(function (allCategories, allProducts, allTalles) {
         return res.render(productsPath + "/productAdd", {
           productos: allProducts,
-          categorias: allCategorys,
+          categorias: allCategories,
           talles: allTalles,
         });
       });
