@@ -9,17 +9,20 @@
 
             <div class="products-container">
 
-            <% for (let i = 0; i < products.length; i++) { %>
+            <% for (let i = 0; i < producto.length; i++) { %>
 
                 <section class="product">
-                    <a href="/products/<%= products[i].id %>" class="ref-link">
+                    
+                    <a href="/products/<%= producto[i].id %>" class="ref-link">
                     <div class="box-image">
-                        <img src="/images/<%= imagen.name %>" alt="<%= imagen.name %>" class="img-pl">
+                 
+                        <img src="/images/<%= imagen[i].name %>" alt="Foto Reloj" class="img-pl">
+                    
                     </div>
                     <article>
-                        <p class="product-name"><%= products[i].name %></p>
-                        <p class="product-price">$<%= products[i].price %></p>
-                        <p class="short-description-hover"><%= products[i].short_description %></p>
+                        <p class="product-name"><%= producto[i].name %></p>
+                        <p class="product-price">$<%= producto[i].price %></p>
+                        <p class=""><%= producto[i].description %></p>
                     </article>
                     </a>
                 </section>

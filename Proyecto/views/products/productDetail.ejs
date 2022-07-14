@@ -6,22 +6,24 @@
             
             <div class="img-box">
                 
-                <img class="product-img" src="/images/<%= detalle.image %>" alt="Foto de Reloj">
+                <img class="product-img" src="/images/<%= promesaImagen.name %>" alt="Foto Imagen">
             </div>
                 
             <article class="product-detail">
-                <h3 class = "marcaReloj"> <%= detalle.name %> </h3>
+                <h3 class = "marcaReloj"> <%= promesaProducto.name %> </h3>
 
-                <!-- <p class="short-desc-product"> <%= detalle.short_description %> </p> -->
 
-                <p class="desc-product"><%= detalle.description %></p>
+                <p class="desc-product"><%= promesaProducto.description %></p>
             
                 <div class = "talle-cantidad">
                     <p>Seleccionar talle</p>
                     <select name = "talle" class="selectorTalle"> <label for="">Talle</label>
-                        <option value = "small">Small</option>
-                        <option value = "medium">Medium</option>
-                        <option value = "large">Large</option>
+                        <option value="" disabled selected>- Seleccione talle - </option>
+                        <% promesaTalle.forEach(categoria => { %>
+                            <option value="<%= categoria.idCategory %>">
+                                <%= categoria.name %>
+                            </option>
+                        <% }); %>
                     </select>
                 </div>
                 <br>
@@ -36,47 +38,20 @@
                     </select>
                 </div>
 
-                <!-- <div class = "infoPrecio">
-                    <h3 class = "precio"><%= detalle.price %></h3>
-                    <p class = "cuotasSinInteres"><%= detalle.discount%> </p>
-                </div> -->
-              <!-- BOTONES DE EDIT Y DELETE BOTONES DE EDIT Y DELETE -->
-
-                <!-- <div class="pbox-prod-detail-btn">
-                    <div class="box-prod-detail-btn">
-                        <form class= "product-btn">
-                            <a href="/products/<%= detalle.id %>/edit" class="product-btn-detail">Editar producto</a>
-                        </form>
-                    </div>
-
-                    <br>
-
-                    <div class="box-prod-detail-btn">
-                        <form class = "botonDeCompra" method="POST" action="/products/delete/<%= detalle.id %>?_method=DELETE" >
-                            <button class ="product-btn" type="submit" > Delete </button> 
-                        </form>
-                    </div>
-                    <br> -->
-
+    
                
                 </div>
                 <% if (locals.isLogged) { %>
                 <div class="box-prod-detail-btn">
-                    <!-- <form class = "botonDeCompra" method="POST" action="/"> -->
                         <button class ="product-btn" type="submit" id="btnComprarProduct"> Comprar </button> 
-                    <!-- </form> -->
                 </div>
                 <% } %>
             </article>
-<!-- 
-            <form action="POST" method="delete/id?_method=DELETE" enctype="multipart/form-data">
-                <input class ="product-btn" type="submit" value = "Borrar">
-            </form> -->
+
 
         </div>
         </section>
 
-        <!-- <a href="planesDeFinanciacion" class="product-financing">Ver planes de financiacion</a>  -->
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>

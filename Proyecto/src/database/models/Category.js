@@ -21,12 +21,12 @@ module.exports = function (sequelize, dataTypes) {
 
   let Categoria = sequelize.define(alias, cols, config);
 
-  // Categoria.associate = function (models) {
-  //   Categoria.hasMany(models.Producto, {
-  //     as: "categorias",
-  //     foreignKey: "idCategoryFK",
-  //   });
-  // };
+  Categoria.associate = function (models) {
+    Categoria.hasMany(models.Producto, {
+      as: "categorias",
+      foreignKey: "idCategoryFK",
+    });
+  };
 
   return Categoria;
 };

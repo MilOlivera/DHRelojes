@@ -21,12 +21,16 @@ var cargaArchivo = multer({ storage: storage });
 // VER TODOS LOS PRODUCTOS .get + controler.index "/"
 router.get("/", productsController.list);
 
+
 // CREAR UN PRODUCTO ** CREAR UN PRODUCTO
 router.get("/create", productsController.create);
 router.post("/", cargaArchivo.any("image"), productsController.store);
 
 // VER CARRITO ** VER CARRITO
 router.get("/cart", productsController.cart);
+
+// DELETE ** DELETE
+router.delete("/delete/:id", productsController.delete);
 
 // VER UN PRODUCTO ** VER UN PRODUCTO
 router.get("/:id", productsController.productDetail);
@@ -36,9 +40,6 @@ router.get("/:id/edit", productsController.edit);
 // router.put('/:id', productsController.confirm)
 
 router.put("/:id/edit", productsController.confirm);
-
-// DELETE ** DELETE
-router.delete("/delete/:id", productsController.delete);
 
 // falta edit del carrito
 
