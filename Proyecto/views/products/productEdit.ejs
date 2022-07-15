@@ -10,9 +10,6 @@
             </div>
 
             <form class="center-register" method="POST" action="/products/<%= promesaProducto.idProduct %>/edit?_method=PUT" >
-                <!-- <button class="botonEditar-2"> 
-                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image" > <span>Edit Picture</span>
-                </button> -->
 
                 <br></br>
 
@@ -37,12 +34,24 @@
                 </div>
 
                 <div class="detail-box">
-                    <p class="desc-pl">Categoria:</p>
-                    <input class="inputBusqueda-prodlist" type="tel"  name="category" id="category" value="<%= promesaProducto.category %>">
+                    <select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category">
+                        <option value="" disabled selected>- Seleccione Categoría - </option>
+                        <% categorias.forEach(categoria => { %>
+                            <option value="<%= categoria.idCategory %>">
+                                <%= categoria.name %>
+                            </option>
+                        <% }); %>
+                    </select>
+                    <!-- <p class="desc-pl">Categoria:</p>
+                    <input class="inputBusqueda-prodlist" type="tel"  name="category" id="category" value="<%= promesaProducto.category %>"> -->
                 </div>
+
+                <button class="botonEditar-2"> 
+                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image"><span>Edit Picture</span>
+                </button>
                 
                 <div><input type="submit" value="Confirmar Cambios" class="send-btn-register"></div>
-        
+
             </form>
         </section>
     </main>

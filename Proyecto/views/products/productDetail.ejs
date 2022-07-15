@@ -48,6 +48,13 @@
                 <% } %>
             </article>
 
+            <div>
+                <form class = "botonDeCompra" method="POST" action="/products/delete/<%= promesaProducto.idProduct %>?_method=DELETE" >
+                    <button class ="product-btn" type="submit" > Delete </button> 
+                </form>
+            </div>
+    
+
 
         </div>
         </section>

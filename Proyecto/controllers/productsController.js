@@ -4,6 +4,7 @@ const path = require("path");
 let db = require("../src/database/models");
 
 const productsPath = path.join(__dirname, "../views/products");
+const caminito = path.join(__dirname, "../views");
 
 const productsController = {
   // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
@@ -43,7 +44,7 @@ const productsController = {
       description: req.body.description,
       price: req.body.price,
       idCategoryFK: req.body.category,
-      idSizeFK: req.body.size,
+      idSizeFK: req.body.size
     },
       db.Imagen.create({
         name: idProduct_image
@@ -68,47 +69,68 @@ const productsController = {
   edit: (req, res) => {
     let promesaImagen = db.Imagen.findByPk(req.params.id);
     let promesaProducto = db.Producto.findByPk(req.params.id);
+    let categorias = db.Categoria.findAll();
     Promise
-    .all([promesaImagen, promesaProducto])
-    .then(function ([promesaImagen, promesaProducto]) {
-      res.render(productsPath + "/productEdit", { promesaImagen, promesaProducto });
+    .all([promesaImagen, promesaProducto, categorias])
+    .then(function ([promesaImagen, promesaProducto, categorias]) {
+      res.render(productsPath + "/productEdit", { promesaImagen, promesaProducto, categorias });
     });
   },
+
+
   // ACTUALIZACION DE DATOS ** ACTUALIZACION DE DATOS
   confirm: (req, res) => {
-    let productFind = db.Imagen.findByPk(req.params.id);
+    let productFind = req.params.id;
+    
+    let idProduct_image;
+    console.log(req.file);
+    if (req.files) {
+      idProduct_image = req.files;
+    } else {
+      idProduct_image = db.Imagen.findByPk(productFind).name;
+    }
 
-    // let idProduct_image;
-    // console.log(req.file);
-    // if (req.files) {
-    //   idProduct_image = req.files;
-    // } else {
-    //   idProduct_image = productFind.name;
-    // }
+    let imagen = db.Imagen.update({
+      name: idProduct_image
+    }, {
+      where: {
+        idProduct_image: productFind
+      }
+    })
 
-
-    db.Producto.update({
+    let producto = 
+      db.Producto.update({
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
       idCategoryFK: req.body.category,
-      idSizeFK: req.body.size,
-    }),
-      // db.Imagen.update({
-      //   name: idProduct_image
-      // })
+    },
+
     {
       where: {
-        id: req.params.id,
+        idProduct: productFind,
       },
-    };
-    res.redirect("/");
+    })
+
+    Promise
+    .all([imagen, producto])
+    .then(function ([imagen, producto]) {
+      res.redirect("/", {imagen, producto});
+    });
   },
+
+
   // DELETE ** DELETE
   delete: (req, res) => {
+    db.Imagen.destroy({
+      where: {
+        idProduct_image: req.params.id,
+      },
+    })
+
     db.Producto.destroy({
       where: {
-        id: req.params.id,
+        idProduct: req.params.id,
       },
     });
     res.redirect("/");
