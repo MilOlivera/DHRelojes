@@ -1,8 +1,8 @@
-- Comenzar a hacer: Repartir tareas al comienzo del sprint.
+Sprint 5
+- Comenzar a hacer: Dividir tareas al comienzo del sprint, asi se evita que dos personas trabajen sobre lo mismo.
 
-- Hacer más: Mas reuniones daily/weekly, ya que resultaron efectivas.
+- Continuar haciendo: Daily meetings.
 
-- Continuar haciendo: La buena comunicacion al momento de actualizar el proyecto, y mantenernos al tanto sobre cambios y posibles errores.
+- Hacer menos: No pedir ayuda, ni comunicar errores.
 
-- Hacer menos: No organizar el proyecto (carpetas, rutas) al principio del sprint.
-
+- Dejar de hacer: Postergar tareas pendientes y no organizar adecuadamente al comienzo del sprint.
