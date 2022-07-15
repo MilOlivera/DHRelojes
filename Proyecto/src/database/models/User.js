@@ -22,6 +22,7 @@ module.exports = function (sequelize, dataTypes) {
     },
     dni: {
       type: dataTypes.INTEGER,
+      allowNull: false,
     },
     address: {
       type: dataTypes.STRING(255),

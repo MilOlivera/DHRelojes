@@ -30,31 +30,31 @@ let userController = {
   },
 
   store: (req, res, next) => {
-    const validacion = validationResult(req);
+    // const validacion = validationResult(req);
 
-    if (validacion.errors.length > 0) {
-      return res.render("./users/registro", {
-        errors: validacion.mapped(),
-        oldData: req.body,
-      });
-    }
-    next();
-    let image;
-    console.log(req.file);
-    if (req.files[0] != undefined) {
-      image = req.files[0].filename;
-    } else {
-      image = "default-image.png";
-    }
+    // if (validacion.errors.length > 0) {
+    //   return res.render("./users/registro", {
+    //     errors: validacion.mapped(),
+    //     oldData: req.body,
+    //   });
+    // }
+    // next();
+    // let image;
+    // console.log(req.file);
+    // if (req.files[0] != undefined) {
+    //   image = req.files[0].filename;
+    // } else {
+    //   image = "default-image.png";
+    // }
     let idRolesFK = "guest";
     db.Usuario.create({
       name: req.body.name,
-      lastname: req.body.lastName,
+      lastName: req.body.lastName,
       mail: req.body.mail,
       dni: req.body.dni,
       address: req.body.address,
       password: bcryptjs.hashSync(req.body.password, 10),
-      idRolesFK: idRolesFK,
+      idRoleFK: 2,
     });
     res.redirect("users/login");
   },
