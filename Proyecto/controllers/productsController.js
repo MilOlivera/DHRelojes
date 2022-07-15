@@ -31,12 +31,12 @@ const productsController = {
 
   // GUARDAR UN PRODUCTO CREADO ** GUARDAR UN PRODUCTO CREADO
   store: (req, res) => {
-    let image;
+    let idProduct_image;
     console.log(req.file);
     if (req.files[0] != undefined) {
-      image = req.files[0].filename;
+      idProduct_image = req.files[0].filename;
     } else {
-      image = "default-image.png";
+      idProduct_image = "default-image.png";
     }
     db.Producto.create({
       name: req.body.name,
@@ -44,8 +44,12 @@ const productsController = {
       price: req.body.price,
       idCategoryFK: req.body.category,
       idSizeFK: req.body.size,
-      idProduct_image: req.body.image,
-    });
+    },
+      db.Imagen.create({
+        name: idProduct_image
+      })
+    );
+    console.log(req.body)
     res.redirect("/");
   },
 
@@ -62,34 +66,42 @@ const productsController = {
   },
   // EDICION DE UN PRODUCTO ** EDICION DE UN PRODUCTO
   edit: (req, res) => {
-    db.Producto.findByPk(req.params.id).then(function (detalle) {
-      res.render(productsPath + "/productEdit", { detalle });
+    let promesaImagen = db.Imagen.findByPk(req.params.id);
+    let promesaProducto = db.Producto.findByPk(req.params.id);
+    Promise
+    .all([promesaImagen, promesaProducto])
+    .then(function ([promesaImagen, promesaProducto]) {
+      res.render(productsPath + "/productEdit", { promesaImagen, promesaProducto });
     });
   },
   // ACTUALIZACION DE DATOS ** ACTUALIZACION DE DATOS
   confirm: (req, res) => {
-    let image;
-    console.log(req.file);
-    if (req.files) {
-      image = req.files;
-    } else {
-      image = productFind.image;
-    }
+    let productFind = db.Imagen.findByPk(req.params.id);
 
-    db.Producto.update(
-      {
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        category: req.body.category,
-        image: req.body.image,
+    // let idProduct_image;
+    // console.log(req.file);
+    // if (req.files) {
+    //   idProduct_image = req.files;
+    // } else {
+    //   idProduct_image = productFind.name;
+    // }
+
+
+    db.Producto.update({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      idCategoryFK: req.body.category,
+      idSizeFK: req.body.size,
+    }),
+      // db.Imagen.update({
+      //   name: idProduct_image
+      // })
+    {
+      where: {
+        id: req.params.id,
       },
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    );
+    };
     res.redirect("/");
   },
   // DELETE ** DELETE

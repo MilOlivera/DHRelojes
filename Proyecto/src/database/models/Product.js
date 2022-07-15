@@ -30,10 +30,11 @@ module.exports = function (sequelize, dataTypes) {
     },
     idProduct_imageFK: {
       type: dataTypes.INTEGER,
+      allowNull: true,
     },
     idOrderFK: {
       type: dataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   };
 
