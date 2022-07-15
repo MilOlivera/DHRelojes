@@ -1,12 +1,11 @@
+const { check, validationResult, body } = require("express-validator");
 let db = require("../src/database/models");
 const path = require("path");
-// const fs = require('fs')
-const { check, validationResult, body } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 let userController = {
   // obtener datos de un usuario ** obtener datos de un usuario
-  findByPk: (id) => {
+  findByPk1: (id) => {
     let userFound = db.Usuario.findByPk(id);
     return userFound;
   },
@@ -16,8 +15,8 @@ let userController = {
     return userFound;
   },
 
-  findByField: (field, text) => {
-    let userFound = db.Usuario.findByField(field, text);
+  findByField1: (field, text) => {
+    let userFound = db.Usuario.find((oneUser) => oneUser[field] === text);
     return userFound;
   },
 
@@ -46,7 +45,7 @@ let userController = {
     // } else {
     //   image = "default-image.png";
     // }
-    let idRolesFK = "guest";
+
     db.Usuario.create({
       name: req.body.name,
       lastName: req.body.lastName,
@@ -61,44 +60,35 @@ let userController = {
 
   // procesar login ** procesar login
   loginProcess: (req, res) => {
-    let userToLogin = userController.findByField("mail", req.body.mail);
-
-    if (userToLogin) {
-      console.log(req.body);
-      let passwordMatched = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-      if (passwordMatched) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-        console.log(req.body);
-        console.log(userToLogin);
-
-        if (req.body.recordarme) {
-          res.cookie("recordarme", req.body.mail, { maxAge: 100000 });
+    let userToLogin = db.Usuario.findOne({
+      where: { mail: req.body.mail },
+    }).then((resultado) => {
+      console.log(resultado.password);
+      return resultado.password;
+    });
+    Promise.all(userToLogin).then(function (userToLogin) {
+      if (userToLogin) {
+        let passwordMatched = bcryptjs.compareSync(
+          req.body.password,
+          userToLogin
+        );
+        if (passwordMatched) {
+          delete userToLogin.password;
+          req.session.userLogged = userToLogin;
+          if (req.body.recordarme) {
+            res.cookie("recordarme", req.body.mail, { maxAge: 100000 });
+          }
+          return res.redirect("/users/login");
         }
-
-        return res.redirect("/users/login");
+        return res.render("./users/login", {
+          errors: { password: { msg: "Contraseña incorrecta" } },
+        });
       }
-
       return res.render("./users/login", {
         errors: {
-          password: {
-            msg: "Contraseña incorrecta",
-          },
+          mail: { msg: "El correo electrónico ingresado es inválido" },
         },
-        // oldData: req.body
       });
-    }
-
-    return res.render("./users/login", {
-      errors: {
-        mail: {
-          msg: "El correo electrónico ingresado es inválido",
-        },
-      },
-      // oldData: req.body
     });
   },
 
