@@ -1,12 +1,11 @@
+const { check, validationResult, body } = require("express-validator");
 let db = require("../src/database/models");
 const path = require("path");
-// const fs = require('fs')
-const { check, validationResult, body } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 let userController = {
   // obtener datos de un usuario ** obtener datos de un usuario
-  findByPk: (id) => {
+  findByPk1: (id) => {
     let userFound = db.Usuario.findByPk(id);
     return userFound;
   },
@@ -16,8 +15,8 @@ let userController = {
     return userFound;
   },
 
-  findByField: (field, text) => {
-    let userFound = db.Usuario.findByField(field, text);
+  findByField1: (field, text) => {
+    let userFound = db.Usuario.find((oneUser) => oneUser[field] === text);
     return userFound;
   },
 
@@ -30,8 +29,24 @@ let userController = {
   },
 
   store: (req, res, next) => {
-    const validacion = validationResult(req);
+    // const validacion = validationResult(req);
 
+    // if (validacion.errors.length > 0) {
+    //   return res.render("./users/registro", {
+    //     errors: validacion.mapped(),
+    //     oldData: req.body,
+    //   });
+    // }
+    // next();
+    // let image;
+    // console.log(req.file);
+    // if (req.files[0] != undefined) {
+    //   image = req.files[0].filename;
+    // } else {
+    //   image = "default-image.png";
+    // }
+
+<<<<<<< HEAD
     if (validacion.errors.length > 0) {
       return res.render("./users/registro", {
         errors: validacion.mapped(),
@@ -47,6 +62,8 @@ let userController = {
       image = "default-image.png";
     }
     let idRoleFK = "guest";
+=======
+>>>>>>> e55c1638699c172e9eed4cc278efa58ddd23e6ed
     db.Usuario.create({
       name: req.body.name,
       lastName: req.body.lastName,
@@ -54,58 +71,54 @@ let userController = {
       dni: req.body.dni,
       address: req.body.address,
       password: bcryptjs.hashSync(req.body.password, 10),
+<<<<<<< HEAD
       idRoleFK: idRoleFK,
+=======
+      idRoleFK: 2,
+      image: req.files[0].filename,
+>>>>>>> e55c1638699c172e9eed4cc278efa58ddd23e6ed
     });
     res.redirect("users/login");
   },
 
   // procesar login ** procesar login
   loginProcess: (req, res) => {
-    let userToLogin = userController.findByField("mail", req.body.mail);
-
-    if (userToLogin) {
-      console.log(req.body);
-      let passwordMatched = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-      if (passwordMatched) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-        console.log(req.body);
-        console.log(userToLogin);
-
-        if (req.body.recordarme) {
-          res.cookie("recordarme", req.body.mail, { maxAge: 100000 });
+    let userToLogin = db.Usuario.findOne({
+      where: { mail: req.body.mail },
+    })
+      .then((resultado) => {
+        return resultado;
+      })
+      .then(function (userToLogin) {
+        if (userToLogin) {
+          let passwordMatched = bcryptjs.compareSync(
+            req.body.password,
+            userToLogin.password
+          );
+          if (passwordMatched) {
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin;
+            if (req.body.recordarme) {
+              res.cookie("recordarme", req.body.mail, { maxAge: 100000 });
+            }
+            return res.redirect("/users/login");
+          }
+          return res.render("./users/login", {
+            errors: { password: { msg: "Contraseña incorrecta" } },
+          });
         }
-
-        return res.redirect("/users/login");
-      }
-
-      return res.render("./users/login", {
-        errors: {
-          password: {
-            msg: "Contraseña incorrecta",
+        return res.render("./users/login", {
+          errors: {
+            mail: { msg: "El correo electrónico ingresado es inválido" },
           },
-        },
-        // oldData: req.body
+        });
       });
-    }
-
-    return res.render("./users/login", {
-      errors: {
-        mail: {
-          msg: "El correo electrónico ingresado es inválido",
-        },
-      },
-      // oldData: req.body
-    });
   },
 
   profile: (req, res) => {
-    res.render("./users/profile", {
-      user: req.session.userLogged,
-    });
+    let user = req.session.userLogged;
+    res.render("./users/profile", { user });
+    console.log(user, "error");
   },
 
   logout: (req, res) => {

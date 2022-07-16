@@ -1,22 +1,22 @@
 module.exports = {
   development: {
     username: "root",
-    password: 'Taladrorex09',
-    database: "relojesDH",
+    password: '',
+    database: "dhrelojes",
     host: "127.0.0.1",
     dialect: "mysql",
   },
   test: {
     username: "root",
     password: '',
-    database: "relojesDH",
+    database: "dhrelojes",
     host: "127.0.0.1",
     dialect: "mysql",
   },
   production: {
     username: "root",
     password: '',
-    database: "relojesDH",
+    database: "dhrelojes",
     host: "127.0.0.1",
     dialect: "mysql",
   },

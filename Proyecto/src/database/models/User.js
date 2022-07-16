@@ -22,6 +22,7 @@ module.exports = function (sequelize, dataTypes) {
     },
     dni: {
       type: dataTypes.INTEGER,
+      allowNull: false,
     },
     address: {
       type: dataTypes.STRING(255),
@@ -34,6 +35,10 @@ module.exports = function (sequelize, dataTypes) {
     idRoleFK: {
       type: dataTypes.INTEGER,
       allowNull: false,
+    },
+    image: {
+      type: dataTypes.STRING(255),
+      allowNull: true,
     },
   };
 
@@ -57,5 +62,4 @@ module.exports = function (sequelize, dataTypes) {
   };
 
   return Usuario;
-  
 };

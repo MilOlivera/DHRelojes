@@ -3,116 +3,58 @@
     <%- include('../partials/header.ejs') %>
     <main class="main-register">
         <section class="section-register">
-            <h2 class="product-edit-title">Editar <%= detalle.name %></h2>
+            <h2 class="product-edit-title">Editar <%=promesaProducto.name %></h2>
 
             <div class="box-img">
-                <img class="img-pl" src="/images/<%= detalle.image %>" alt="Foto de Reloj">
+                <img class="img-pl" src="/images/products/<%= promesaImagen.name %>" alt="Foto de Reloj">
             </div>
 
-            <form class="center-register" method="POST" action="/products/<%= detalle.id %>/edit?_method=PUT" enctype="multipart/form-data">
-                <button class="botonEditar-2"> 
-                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image" > <span>Edit Picture</span>
-                </button>
+            <form class="center-register" method="POST" action="/products/<%= promesaProducto.idProduct %>/edit?_method=PUT" >
 
                 <br></br>
 
                 <div class="detail-box">
                     <p class="desc-pl">Nombre:</p>
-                    <input class="inputBusqueda-prodlist" type="text"  name="name" id="name" value="<%= detalle.name %>" >
-                </div>
-
-                <div class="detail-box">
-                    <p class="desc-pl">Breve descripción:</p>
-                    <input class="inputBusqueda-prodlist" type="text" name="short_descriptio" id="short_descriptio" value="<%= detalle.short_description %>" >
-                </div>
-
-                <div class="detail-box">
-                    <p class="desc-pl">Descripción:</p>
-                    <input class="inputBusqueda-prodlist" type="text" name="description" id="description" value="<%= detalle.description %>" >
-                </div>
-
-                <div class="detail-box">
-                    <p class="desc-pl">Precio:</p>
-                    <input class="inputBusqueda-prodlist" type="number"  name="price" id="price" value="<%= detalle.price %>">
+                    <input class="inputBusqueda-prodlist" type="text"  name="name" id="name" value="<%= promesaProducto.name %>" >
                 </div>
 
                 <!-- <div class="detail-box">
-                    <p class="desc-pl">Precio:</p>
-                    <input class="inputBusqueda-prodlist" type="number"  name="discount" id="discount" value="<%= detalle.discount %>">
+                    <p class="desc-pl">Breve descripción:</p>
+                    <input class="inputBusqueda-prodlist" type="text" name="short_descriptio" id="short_descriptio" value="<%= promesaProducto.description %>" >
                 </div> -->
 
                 <div class="detail-box">
-                    <p class="desc-pl">Categoria:</p>
-                    <input class="inputBusqueda-prodlist" type="tel"  name="category" id="category" value="<%= detalle.category %>">
+                    <p class="desc-pl">Descripción:</p>
+                    <input class="inputBusqueda-prodlist" type="text" name="description" id="description" value="<%= promesaProducto.description %>" >
                 </div>
+
+                <div class="detail-box">
+                    <p class="desc-pl">Precio:</p>
+                    <input class="inputBusqueda-prodlist" type="number"  name="price" id="price" value="<%= promesaProducto.price %>">
+                </div>
+
+                <div class="detail-box">
+                    <select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category">
+                        <option value="" disabled selected>- Seleccione Categoría - </option>
+                        <% categorias.forEach(categoria => { %>
+                            <option value="<%= categoria.idCategory %>">
+                                <%= categoria.name %>
+                            </option>
+                        <% }); %>
+                    </select>
+                    <!-- <p class="desc-pl">Categoria:</p>
+                    <input class="inputBusqueda-prodlist" type="tel"  name="category" id="category" value="<%= promesaProducto.category %>"> -->
+                </div>
+
+                <button class="botonEditar-2"> 
+                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image"><span>Edit Picture</span>
+                </button>
                 
                 <div><input type="submit" value="Confirmar Cambios" class="send-btn-register"></div>
-        
+
             </form>
         </section>
     </main>
-
-    <!--     <main class="main-product">
-        <section class="section-product">
-            
-            <div class="img-box">
-                <img class="product-img" src="/images/<%= detalle.image %>" alt="Foto de Reloj">
-            </div>
-                
-            <article class="product-detail">
-                <form class="center-edit" action="/products/<%= detalle.id %>/edit?_method=PUT" method="PUT" enctype="multipart/form-data">
-                    <div>
-                        <label for="name" class="desc-product1">Nombre del producto:</label>
-                        <input type="text" id="name" name="name" placeholder="<%= detalle.name %>" class="inputBusqueda-edit1">
-                    </div>
-
-                    <div>
-                        <label for="description" class="desc-product1">Descripción:</label>
-                        <textarea name="description" id="description" class="inputBusqueda-ta"><%= detalle.description %></textarea>
-                    </div>   
-
-                <div class = "talle-cantidad">
-                    <p>Seleccionar talle</p>
-                    <select name = "talle" class="selectorTalle"> <label for="">Talle</label>
-                        <option value = "small">Small</option>
-                        <option value = "medium">Medium</option>
-                        <option value = "large">Large</option>
-                    </select>
-                </div>
-                <br>
-                <div class = "cantidad">
-                    <p>Cantidad</p>
-                    <select name = "cantidad" class = "selectorCantidad">
-                        <option value = "SeleccionarCantidad">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                    </select>
-                </div> 
-
-                    <div>
-                        <label for="price" class="desc-product1">Precio del producto:</label>
-                        <input type="text" id="price" name="price" placeholder="<%= detalle.price%>" class="inputBusqueda-edit1">
-                    </div>
-
-                    <div>
-                        <label for="discount" class="desc-product1">Descuento:</label>
-				        <input type="text" id="discount" name="discount" placeholder="<%= detalle.discount%>" class="inputBusqueda-edit1">
-                    </div>
-                <div class = "infoPrecio">
-                    <h3 class = "precio"><%= detalle.price %></h3>
-                    <p class = "cuotasSinInteres"><%= detalle.discount%> </p>
-                </div>
-            </article>
-            </form>
-
-        </section>
-
-        <button type="submit" class="product-btn">Guardar producto</button>
-
-    </main>
-    -->
 
     <%- include('../partials/footer.ejs') %>
 </body>
