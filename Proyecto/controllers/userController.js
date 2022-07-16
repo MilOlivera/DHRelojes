@@ -46,15 +46,15 @@ let userController = {
     } else {
       image = "default-image.png";
     }
-    let idRolesFK = "guest";
+    let idRoleFK = "guest";
     db.Usuario.create({
       name: req.body.name,
-      lastname: req.body.lastName,
+      lastName: req.body.lastName,
       mail: req.body.mail,
       dni: req.body.dni,
       address: req.body.address,
       password: bcryptjs.hashSync(req.body.password, 10),
-      idRolesFK: idRolesFK,
+      idRoleFK: idRoleFK,
     });
     res.redirect("users/login");
   },
