@@ -54,6 +54,7 @@ let userController = {
       address: req.body.address,
       password: bcryptjs.hashSync(req.body.password, 10),
       idRoleFK: 2,
+      image: req.files[0].filename,
     });
     res.redirect("users/login");
   },
@@ -62,40 +63,40 @@ let userController = {
   loginProcess: (req, res) => {
     let userToLogin = db.Usuario.findOne({
       where: { mail: req.body.mail },
-    }).then((resultado) => {
-      console.log(resultado.password);
-      return resultado.password;
-    });
-    Promise.all(userToLogin).then(function (userToLogin) {
-      if (userToLogin) {
-        let passwordMatched = bcryptjs.compareSync(
-          req.body.password,
-          userToLogin
-        );
-        if (passwordMatched) {
-          delete userToLogin.password;
-          req.session.userLogged = userToLogin;
-          if (req.body.recordarme) {
-            res.cookie("recordarme", req.body.mail, { maxAge: 100000 });
+    })
+      .then((resultado) => {
+        return resultado;
+      })
+      .then(function (userToLogin) {
+        if (userToLogin) {
+          let passwordMatched = bcryptjs.compareSync(
+            req.body.password,
+            userToLogin.password
+          );
+          if (passwordMatched) {
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin;
+            if (req.body.recordarme) {
+              res.cookie("recordarme", req.body.mail, { maxAge: 100000 });
+            }
+            return res.redirect("/users/login");
           }
-          return res.redirect("/users/login");
+          return res.render("./users/login", {
+            errors: { password: { msg: "Contraseña incorrecta" } },
+          });
         }
         return res.render("./users/login", {
-          errors: { password: { msg: "Contraseña incorrecta" } },
+          errors: {
+            mail: { msg: "El correo electrónico ingresado es inválido" },
+          },
         });
-      }
-      return res.render("./users/login", {
-        errors: {
-          mail: { msg: "El correo electrónico ingresado es inválido" },
-        },
       });
-    });
   },
 
   profile: (req, res) => {
-    res.render("./users/profile", {
-      user: req.session.userLogged,
-    });
+    let user = req.session.userLogged;
+    res.render("./users/profile", { user });
+    console.log(user, "error");
   },
 
   logout: (req, res) => {

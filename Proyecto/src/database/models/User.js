@@ -36,6 +36,10 @@ module.exports = function (sequelize, dataTypes) {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
+    image: {
+      type: dataTypes.STRING(255),
+      allowNull: true,
+    },
   };
 
   let config = {
@@ -58,5 +62,4 @@ module.exports = function (sequelize, dataTypes) {
   };
 
   return Usuario;
-  
 };
