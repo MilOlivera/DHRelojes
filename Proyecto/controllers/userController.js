@@ -97,7 +97,9 @@ let userController = {
   edit: (req, res) => {
     let user = req.session.userLogged;
     let promesaUsuario = db.Usuario.findByPk(req.params.id);
-    Promise.all([user, promesaUsuario]).then(function ([promesaUsuario, user]) {
+    Promise
+    .all([user, promesaUsuario])
+    .then(function ([promesaUsuario, user]) {
       res.render("./users/edit", { promesaUsuario, user });
     });
   },
@@ -107,25 +109,26 @@ let userController = {
 
     console.log(userFind, "ACA ESTA");
 
-    let cambio = db.Usuario.update(
+    db.Usuario.update(
       {
         name: req.body.name,
         lastName: req.body.lastName,
         mail: req.body.mail,
         dni: req.body.dni,
         address: req.body.address,
-        // password: "",
+        // password: req.body.password,
         // image: "req.files[0].filename",
       },
       {
         where: {
           idUser: userFind,
         },
-      }
-    );
-    Promise.all([cambio]).then(function ([cambio]) {
-      console.log(cambio.name, "ACA EL SEGUNDO");
-      res.redirect("/", cambio);
+      },
+    )
+    .then(function (cambio) {
+      console.log(cambio.name, "ACA EL SEGUNDO CONSOLE LOG");
+      // res.redirect("/", cambio);
+      res.send("funciona")
     });
   },
 };
