@@ -18,7 +18,9 @@ const productsController = {
   create: (req, res) => {
     let categorias = db.Categoria.findAll();
     let talles = db.Talle.findAll();
-    Promise.all([categorias, talles]).then(function ([categorias, talles]) {
+    Promise
+    .all([categorias, talles])
+    .then(function ([categorias, talles]) {
       return res.render(productsPath + "/productAdd", { categorias, talles });
     });
   },

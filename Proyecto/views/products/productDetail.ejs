@@ -46,17 +46,19 @@
                         <button class ="product-btn" type="submit" id="btnComprarProduct"> Comprar </button> 
                 </div>
                 <% } %>
-            </article>
-
-            <div>
+            <div class="divDelete">
                 <form class = "botonDeCompra" method="POST" action="/products/delete/<%= promesaProducto.idProduct %>?_method=DELETE" >
                     <button class ="product-btn" type="submit" > Delete </button> 
                 </form>
             </div>
+
+            </article>
+
+           
     
 
 
-        </div>
+            </div>
         </section>
 
     </main>

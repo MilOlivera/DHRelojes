@@ -408,6 +408,7 @@ ul{
     justify-content: center;
     margin-top: 10px;
     padding: 10px;
+    padding: 25px;
 }
 .cardNombre{
     font-weight: 900;
@@ -415,9 +416,9 @@ ul{
 }
 .contenido3 .card3 .cardImg3{
     padding: 3px;
-    width: 90%;
-    margin-left: 5%;
-    padding: 5px;
+    width: 75%;
+    margin-left: 15%;
+    padding: 20px;
 }
 .contenido3 .card3 .cardImg3 img{
     height: 100%;
@@ -1030,6 +1031,7 @@ REGISTRO ** REGISTRO ** REGISTRO */
 
 .main-register {
     margin: 0;
+    margin-top: 10px;
     background-color: #fafafa;
 }
 

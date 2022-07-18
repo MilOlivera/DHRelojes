@@ -29,41 +29,7 @@ let userController = {
   },
 
   store: (req, res, next) => {
-    // const validacion = validationResult(req);
 
-    // if (validacion.errors.length > 0) {
-    //   return res.render("./users/registro", {
-    //     errors: validacion.mapped(),
-    //     oldData: req.body,
-    //   });
-    // }
-    // next();
-    // let image;
-    // console.log(req.file);
-    // if (req.files[0] != undefined) {
-    //   image = req.files[0].filename;
-    // } else {
-    //   image = "default-image.png";
-    // }
-
-<<<<<<< HEAD
-    if (validacion.errors.length > 0) {
-      return res.render("./users/registro", {
-        errors: validacion.mapped(),
-        oldData: req.body,
-      });
-    }
-    next();
-    let image;
-    console.log(req.file);
-    if (req.files[0] != undefined) {
-      image = req.files[0].filename;
-    } else {
-      image = "default-image.png";
-    }
-    let idRoleFK = "guest";
-=======
->>>>>>> e55c1638699c172e9eed4cc278efa58ddd23e6ed
     db.Usuario.create({
       name: req.body.name,
       lastName: req.body.lastName,
@@ -71,12 +37,8 @@ let userController = {
       dni: req.body.dni,
       address: req.body.address,
       password: bcryptjs.hashSync(req.body.password, 10),
-<<<<<<< HEAD
-      idRoleFK: idRoleFK,
-=======
       idRoleFK: 2,
       image: req.files[0].filename,
->>>>>>> e55c1638699c172e9eed4cc278efa58ddd23e6ed
     });
     res.redirect("users/login");
   },
