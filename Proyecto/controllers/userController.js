@@ -29,7 +29,13 @@ let userController = {
   },
 
   store: (req, res, next) => {
-
+    let avatar;
+    console.log(req.file);
+    if (req.files[0] != undefined) {
+      avatar = req.files[0].filename;
+    } else {
+      avatar = "default-image.jfif";
+    }
     db.Usuario.create({
       name: req.body.name,
       lastName: req.body.lastName,
@@ -38,7 +44,7 @@ let userController = {
       address: req.body.address,
       password: bcryptjs.hashSync(req.body.password, 10),
       idRoleFK: 2,
-      image: req.files[0].filename,
+      image: avatar,
     });
     res.redirect("users/login");
   },
@@ -87,6 +93,40 @@ let userController = {
     res.clearCookie("recordarme");
     req.session.destroy();
     return res.redirect("/");
+  },
+  edit: (req, res) => {
+    let user = req.session.userLogged;
+    let promesaUsuario = db.Usuario.findByPk(req.params.id);
+    Promise.all([user, promesaUsuario]).then(function ([promesaUsuario, user]) {
+      res.render("./users/edit", { promesaUsuario, user });
+    });
+  },
+
+  confirmEdit: (req, res) => {
+    let userFind = req.params.id;
+
+    console.log(userFind, "ACA ESTA");
+
+    let cambio = db.Usuario.update(
+      {
+        name: req.body.name,
+        lastName: req.body.lastName,
+        mail: req.body.mail,
+        dni: req.body.dni,
+        address: req.body.address,
+        // password: "",
+        // image: "req.files[0].filename",
+      },
+      {
+        where: {
+          idUser: userFind,
+        },
+      }
+    );
+    Promise.all([cambio]).then(function ([cambio]) {
+      console.log(cambio.name, "ACA EL SEGUNDO");
+      res.redirect("/", cambio);
+    });
   },
 };
 

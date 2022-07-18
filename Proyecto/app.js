@@ -1,38 +1,40 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
-const session = require('express-session');
-const cookies = require('cookie-parser');
+const path = require("path");
+const session = require("express-session");
+const cookies = require("cookie-parser");
 
 const methodOverride = require("method-override");
-const publicPath = path.resolve(__dirname, "./public")
+const publicPath = path.resolve(__dirname, "./public");
 
-const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
+const userLoggedMiddleware = require("./middleware/userLoggedMiddleware");
 
-app.use(session({
-    secret: 'secreto!',
+app.use(
+  session({
+    secret: "secreto!",
     resave: false,
-    saveUninitialized: false
-}));
+    saveUninitialized: false,
+  })
+);
 
 app.use(userLoggedMiddleware);
 
 app.use(express.static(publicPath));
-app.use(methodOverride("_method"))
-app.use(express.urlencoded({extended : false}))
-app.use(express.json())
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(cookies());
 
-
-const rutasIndex = require("./routes/index.js")
-const rutasProducts = require("./routes/products.js")
+const rutasIndex = require("./routes/index.js");
+const rutasProducts = require("./routes/products.js");
 const rutasUsers = require("./routes/users.js");
 
+app.listen(3042, () => {
+  console.log("Servidor Corriendo en 3042");
+});
 
-app.listen(3036, () => { console.log("Servidor Corriendo en 3036") })
+app.set("view engine", "ejs");
 
-app.set ("view engine", "ejs")
-
-app.use ("/", rutasIndex)
-app.use ("/products", rutasProducts)
-app.use ("/users", rutasUsers)
+app.use("/", rutasIndex);
+app.use("/products", rutasProducts);
+app.use("/users", rutasUsers);
