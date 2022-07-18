@@ -198,6 +198,12 @@ ul{
     z-index: -1;
 }
 
+/* EDITAR PROFILE */
+#imageEdit {
+    height: 50px;
+    width: 50px;
+}
+
 @media(mix-aspect-ratio: 16/9){
     .videoHeader{
         width: 100%;

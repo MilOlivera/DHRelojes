@@ -10,6 +10,9 @@
 
             <img src="/images/users/<%= user.image %>" alt="profile picture" class="profile-pic">
             <div>
+                <a href="/users/edit/<%= user.idUser %>"><input type='button' name="edit" id="editProfile" class="editProfile" value="EDITAR USUARIO"></a>
+            </div>
+            <div>
                 <a href="/users/logout"><input type='button' name="logout" id="logoutProfile" class="logoutProfile" value="CERRAR SESION"></a>
             </div>
         </div>
