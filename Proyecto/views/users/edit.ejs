@@ -4,78 +4,89 @@
     <main class="main-register">
 
         <section class="section-register">
-            <h2 class="register-txt">Registro</h2>
+            <h2 class="register-txt">Editar perfil</h2>
+
+            <!-- <img src="/images/users/<%= user.image %>" alt="profile picture" class="profile-pic-edit"> -->
+
+            <div class="img-upload">
+                <img src="/images/users/<%= user.image %>" alt="profile picture">
+                <div class="round">
+                  <input class="inputfile" type="file">
+                  <i class = "fa-solid fa-plus"></i>
+                </div>
+            </div>
+
+            <br>
             <form class="center-register" action="/users/edit/<%= promesaUsuario.idUser %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <!-- NOMBRE -->
-                <div><input 
+                <div>
+                    <p class="desc-ep">Nombre:</p>
+                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.name %>" >
+                </div>
+                
+                <!-- <div>
+                    <p class="desc-pl">Nombre:</p>
+                    <input 
                     type="text"
-                    class="inputBusqueda-register <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                    class="inputBusqueda-register"
                     placeholder="<%= promesaUsuario.name %>"
                     name="name"
-                    id="name"
-                    value="<%= locals.oldData ? oldData.name : null %>"></div>
-                    <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                            <%= errors.name.msg %>
-                        </div>
-                    <% } %>
-                    <p id="errores-name"></p>
+                    id="name"></div> -->
+
                 <!-- APELLIDO -->
-                <div><input
+                <div>
+                    <p class="desc-ep">Apellido:</p>
+                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.lastName %>" >
+                </div>
+
+                <!-- <div><input
                     type="text"
-                    class="inputBusqueda-register <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
+                    class="inputBusqueda-register"
                     placeholder="<%= promesaUsuario.lastName %>"
                     name="lastName"
-                    id="lastName"
-                    value="<%= locals.oldData ? oldData.lastName : null %>"></div>
-                    <% if (locals.errors && errors.lastName) { %>
-                        <div class="text-danger">
-                            <%= errors.lastName.msg %>
-                        </div>
-                    <% } %>
-                    <p id="errores-lastName"></p>
+                    id="lastName"></div> -->
+
                 <!-- MAIL -->
-                <div><input
+                <div>
+                    <p class="desc-ep">Mail:</p>
+                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.mail %>" >
+                </div>
+
+                <!-- <div><input
                     type="email"
-                    class="inputBusqueda-register <%= locals.errors && errors.mail ? 'is-invalid' : null %>"
+                    class="inputBusqueda-register"
                     placeholder="<%= promesaUsuario.mail%>"
                     name="mail"
-                    id="mail"
-                    value="<%= locals.oldData ? oldData.mail : null %>"></div>
-                    <% if (locals.errors && errors.mail) { %>
-                        <div class="text-danger">
-                            <%= errors.mail.msg %>
-                        </div>
-                    <% } %>
-                    <p id="errores-mail"></p>
+                    id="mail"></div> -->
+
                 <!-- DNI -->
-                <div><input
+                <div>
+                    <p class="desc-ep">Dni:</p>
+                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.dni %>" >
+                </div>
+
+
+                <!-- <div><input
                     type="number"
-                    class="inputBusqueda-register <%= locals.errors && errors.dni ? 'is-invalid' : null %>"
+                    class="inputBusqueda-register"
                     placeholder="<%= promesaUsuario.dni %>"
                     name="dni"
-                    id="dni"
-                    value="<%= locals.oldData ? oldData.dni : null %>"></div>
-                    <% if (locals.errors && errors.dni) { %>
-                        <div class="text-danger">
-                            <%= errors.dni.msg %>
-                        </div>
-                    <% } %>
-                    <p id="errores-dni"></p>
+                    id="dni"></div> -->
+
                 <!-- DIRECCION -->
-                <div><input
+                <div>
+                    <p class="desc-ep">Direccion:</p>
+                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.address %>" >
+                </div>
+
+
+                <!-- <div><input
                     type="text"
-                    class="inputBusqueda-register <%= locals.errors && errors.address ? 'is-invalid' : null %>"
+                    class="inputBusqueda-register"
                     placeholder="<%= promesaUsuario.address %>"
                     name="address"
-                    id="address"
-                    value="<%= locals.oldData ? oldData.address : null %>"></div>
-                    <% if (locals.errors && errors.address) { %>
-                        <div class="text-danger">
-                            <%= errors.address.msg %>
-                        </div>
-                    <% } %>
-                    <p id="errores-address"></p>
+                    id="address"></div> -->
+
                  <!-- CONTRASEÑA
                  <div><input
                     type="password"
@@ -101,11 +112,12 @@
                             <%= errors.image.msg %>
                         </div>
                     <% } %> -->
-                <br></br>
+                
                 <div><input type="submit" value="Enviar" class="send-btn-register" id="boton"></div>
             </form>
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
+
 </body>
 </html>

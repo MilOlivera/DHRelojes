@@ -33,7 +33,7 @@
                     <input class="inputBusqueda-prodlist" type="number"  name="price" id="price" value="<%= promesaProducto.price %>">
                 </div>
 
-                <div class="detail-box">
+                <div>
                     <select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category">
                         <option value="" disabled selected>- Seleccione Categoría - </option>
                         <% categorias.forEach(categoria => { %>
@@ -46,8 +46,9 @@
                     <input class="inputBusqueda-prodlist" type="tel"  name="category" id="category" value="<%= promesaProducto.category %>"> -->
                 </div>
 
+                <br>
                 <button class="botonEditar-2"> 
-                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image"><span>Edit Picture</span>
+                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image">
                 </button>
                 
                 <div><input type="submit" value="Confirmar Cambios" class="send-btn-register"></div>

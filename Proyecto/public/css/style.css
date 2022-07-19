@@ -1208,7 +1208,13 @@ REGISTRO ** REGISTRO ** REGISTRO */
     border-radius: 5px;
     font-weight: bold;
     font-size: 1rem;
-    
+}
+
+
+.botonEditar-2 {
+    width: 80%;
+    background-color: #efefef;
+    padding: 0.5rem;
 }
 
 
@@ -1257,14 +1263,6 @@ REGISTRO ** REGISTRO ** REGISTRO */
 .cuotasSinInteres{
     margin-top: 2px;
     margin-bottom: 8px;
-}
-  
-
-.botonEditar-2 {
-    width: 40%;
-    background-color: #efefef;
-    margin: 10px 10px;
-    padding: 0.5rem;
 }
 
 /* EDICION ** EDICION ** EDICION 
@@ -1396,6 +1394,60 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
     transition: all 1s;
 }
 
+
+/* Edit profile -- edit profile */
+.desc-ep {
+    font-family: 'Raleway', Sans-Serif;
+    font-size: 15px;
+    color: #73777c;
+    text-align: left;
+    margin-bottom: -3px;
+}
+
+.inputBusqueda-editprof {
+    font-family: 'Raleway', Sans-Serif;
+    width: 100%;
+    height: 2rem;
+    background-color: #fafafa;
+    font-size: 15px;
+    border: 0;
+    border-bottom: solid 1px #9b9b9b;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.img-upload{
+    width: 100px;
+    position: relative;
+    margin: auto;
+}
+  
+.img-upload img{
+    clip-path: circle();
+    width: 100%; 
+  }
+  
+.img-upload .round{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: #efefef;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .img-upload .round .inputfile{
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .inputfile::-webkit-file-upload-button{
+      cursor: pointer;
+  }
 
 
 @media(min-width: 368px){
@@ -1649,6 +1701,17 @@ CARRITO ** CARRITO ** CARRITO */
         margin: 10px;
     }
 
+    .img-upload{
+        width: 150px;
+    }
+
+    .img-upload .round{
+        bottom: 5px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        line-height: 33px;
+    }
     
 
 }
@@ -1774,10 +1837,6 @@ CARRITO ** CARRITO ** CARRITO */
         width: 40%
     }
 
-    .center-register {
-        width: 40%;
-    }
-
     .register-txt, .title-cart, .login-is {
         font-size: 50px;
     }
@@ -1826,6 +1885,18 @@ CARRITO ** CARRITO ** CARRITO */
     #btnComprarProduct{
         width: 200%;
     }
+
+    .img-upload{
+        width: 170px;
+        position: relative;
+        margin: auto;
+    }
+
+    .img-upload .round{
+        bottom: 5px;
+        right: 22px
+    }
+
 }
 
 .price-text, .price, .quantity-text, .quantity {
