@@ -3,17 +3,13 @@
     <%- include('../partials/header.ejs') %>
     <div class="contenedorProfile">
         <div class="divCardProfile">
-        
-            <h2>Perfil de usuario</h2>
-            <hr class="hrProfile">
-            <p> Bienvenido <%= user.name %> </p>
-
             <img src="/images/users/<%= user.image %>" alt="profile picture" class="profile-pic">
+            <p class="welcome-text"> Bienvenido <%= user.name %></p>
             <div>
-                <a href="/users/edit/<%= user.idUser %>"><input type='button' name="edit" id="editProfile" class="logoutProfile" value="EDITAR USUARIO"></a>
+                <a href="/users/edit/<%= user.idUser %>"><input type='button' name="edit" id="editProfile" class="logoutProfile" value="Editar perfil"></a>
             </div>
             <div>
-                <a href="/users/logout"><input type='button' name="logout" id="logoutProfile" class="logoutProfile" value="CERRAR SESION"></a>
+                <a href="/users/logout"><input type='button' name="logout" id="logoutProfile" class="logoutProfile" value="Cerrar sesion"></a>
             </div>
         </div>
     
