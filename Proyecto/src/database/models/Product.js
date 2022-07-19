@@ -13,7 +13,7 @@ module.exports = function (sequelize, dataTypes) {
       allowNull: false,
     },
     description: {
-      type: dataTypes.STRING(255),
+      type: dataTypes.STRING(2000),
       allowNull: false,
     },
     price: {

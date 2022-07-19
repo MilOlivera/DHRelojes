@@ -9,8 +9,9 @@ const productsController = {
   list: (req, res) => {
     let producto = db.Producto.findAll();
     let imagen = db.Imagen.findAll();
-    Promise.all([producto, imagen]).then(function ([producto, imagen]) {
-      return res.render(productsPath + "/productList", { producto, imagen });
+    let categorias = db.Categoria.findAll();
+    Promise.all([producto, imagen, categorias]).then(function ([producto, imagen, categorias]) {
+      return res.render(productsPath + "/productList", { producto, imagen, categorias });
     });
   },
 

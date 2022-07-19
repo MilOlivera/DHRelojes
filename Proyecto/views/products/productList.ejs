@@ -5,7 +5,14 @@
 
         <div class="container">
 
-            <h2 class="prodlist-txt">Todos los productos</h2>
+            <div>
+                <h2 class="prodlist-txt">Todos los productos</h2>
+                <button class="all-button" category="all">all</button>
+                    <% categorias.forEach(categoria => { %>
+                        <button class="button-category" category='<%= categoria.idCategory %>' value="<%= categoria.idCategory %>">
+                            <%= categoria.name %>
+                    <% }); %>
+            </div>
 
             <div class="products-container">
 
@@ -13,7 +20,7 @@
 
                 <section class="product">
                     
-                    <a href="/products/<%=producto[i].idProduct %>" class="ref-link">
+                    <a href="/products/<%=producto[i].idProduct %>" category="producto[i].idCategoryFK" class="ref-link">
                     <div class="box-image">
                  
                         <img src="/images/products/<%= imagen[i].name %>" alt="Foto Reloj" class="img-pl">
@@ -22,7 +29,7 @@
                     <article>
                         <p class="product-name"><%= producto[i].name %></p>
                         <p class="product-price">$<%= producto[i].price %></p>
-                        <p class=""><%= producto[i].description %></p>
+                        <!-- <p class=""><%= producto[i].description %></p> -->
                     </article>
                     </a>
                 </section>
@@ -35,5 +42,6 @@
     </main>
     
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/listado-js.js"></script>
 </body>
 </html>

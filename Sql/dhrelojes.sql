@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `dhrelojes` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `dhrelojes`;
 -- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Win64 (AMD64)
 --
 -- Host: 127.0.0.1    Database: dhrelojes
@@ -35,7 +37,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Profesional'),(2,'Deportivo'),(3,'Urbano');
+INSERT INTO `category` VALUES (1,'Center Pompidou'),(2,'Jaquet Droze'),(3,'Tinker');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,7 +79,7 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `idProduct` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
+  `description` varchar(2000) NOT NULL,
   `price` decimal(9,2) NOT NULL,
   `idCategoryFK` int(11) NOT NULL,
   `idSizeFK` int(11) NOT NULL,
@@ -91,7 +93,7 @@ CREATE TABLE `product` (
   CONSTRAINT `idCategoryFK` FOREIGN KEY (`idCategoryFK`) REFERENCES `category` (`idCategory`),
   CONSTRAINT `idOrderFK` FOREIGN KEY (`idOrderFK`) REFERENCES `order` (`idOrder`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `idSizeFK` FOREIGN KEY (`idSizeFK`) REFERENCES `size` (`idSize`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +102,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Alfa','lorem ipsuuum',2222.00,1,1,1,NULL),(2,'Fridasyyyyysss','lfaffooodasdasdorem',3333.00,1,2,2,NULL),(3,'Mariposasiii','1111dd',4444.00,1,3,3,NULL),(4,'Noche','imppppppppppp',5555.00,1,2,4,NULL),(7,'erw','rew',55.00,2,1,0,NULL),(8,'clear','aaa',3333.00,1,1,0,NULL);
+INSERT INTO `product` VALUES (1,'Midnight','Nuestra clásica forma DH, en un elegante diseño totalmente negro, con detalles sutiles de manecillas blancas luminiscentes e índices de acero en relieve. La Midnight Limited Edition se creó como una edición muy limitada de solo 100 relojes.',300.00,1,1,1,NULL),(2,'Birds','Esfera de nácar blanco y ónice negro con apliques en oro rojo 18 quilates grabados y pintados a mano. Caja en oro rojo 18 quilates. Mecanismo autómata con animación de pájaros, eclosión y río. Movimiento mecánico de repetición de minutos de cuerda manual. Reserva de marcha de 48 horas.',50000.00,2,2,2,NULL),(3,'Black & White','Este reloj New Gent artístico conmemora el cuadro más famoso de Piet Mondrian, Composition en Rouge, Bleu et Blanc II. Lo hace con una correa de silicona negra mate y un estampado de colores en el estilo característico del artista. La esfera negra sirve de telón de fondo para unas agujas blanca y roja que completan el look de este reloj.',700.00,1,3,3,NULL),(4,'Blue sky','Este modelo New Gent artístico rinde homenaje a la obra Bleu de Ciel de Vassily Kandinsky. Su correa de silicona semitransparente azul claro presenta un estampado de colores basado en el cuadro del conocido pintor. El color azul sigue extendiéndose por toda la caja de plástico mate semitransparente y también por la trabilla y la hebilla de silicona. ¡Los amantes del arte sabrán apreciarlo!',1300.00,2,1,4,NULL),(5,'Butterfly','Esfera en madera petrificada Chinchilla Red y ónice negro con apliques en oro rojo 18 quilates grabados a mano. Caja en oro rojo 18 quilates. Mecanismo autómata de cuerda manual con sistema de activación mediante pulsador que acciona las alas de la mariposa y la rueda de la carroza. Movimiento mecánico de horas y minutos de cuerda automática. Reserva de marcha de 68 horas.',35000.00,2,1,5,NULL),(6,'Camel strap','Este es tu nuevo reloj favorito. Cuenta con una caja de acero inoxidable 316L pulido a mano de 38 mm, un acero de grado extra bajo en carbono que se usa a menudo en aplicaciones marinas debido a su alta resistencia a la corrosión. Una ventana de cristal de zafiro, conocida por su notable dureza (casi tan dura como el diamante) y resistencia a los arañazos, protege la esfera mínima y el movimiento Swiss Ronda. Las correas, flexibles pero resistentes, están hechas 100 % con cuero italiano de alta calidad teñido al vegetal.',150.00,3,3,6,NULL),(7,'Clear','Translúcido y clásico, este reloj tiene una caja transparente fabricada con plástico de origen biológico y una correa de TPU igualmente transparente. La esencia del tiempo es cristalina: Alrededor de la esfera, brilla un anillo plateado con índices negros y manecillas rojas, azules y amarillas.',700.00,1,3,7,NULL),(8,'Eiffel Tower','Este reloj Gent artístico homenajea el clásico cuadro de Robert Delaunay, La Tour Eiffel. Con él, el autor hace honor al ángulo «desde abajo» que se muestra en el cuadro original. El colorido de este reloj de la colección Centre Pompidou se vuelca sobre una correa de silicona semitransparente de color azul claro mate, una caja de plástico azul claro mate y una esfera de color plateado. Todo este reloj refleja a la perfección los dinámicos colores del cuadro original.',1250.00,1,2,8,NULL),(9,'Frida','Este reloj New Gent artístistico conmemora el icónico cuadro de Frida Kahlo, El marco, como parte de la colección Centre Pompidou. Su correa de silicona rosa mate semitransparente recubierta por un estampado que llega hasta la esfera, refleja el arte popular y los colores tradicionales mexicanos. La hebilla de plástico rosa mate semitransparente y la trabilla de silicona del mismo color hacen que la fiesta no pare en este reloj.',1500.00,1,1,9,NULL),(10,'Green strap','Este es tu nuevo reloj favorito. Cuenta con una caja de acero inoxidable 316L pulido a mano de 38 mm, un acero de grado extra bajo en carbono que se usa a menudo en aplicaciones marinas debido a su alta resistencia a la corrosión. Una ventana de cristal de zafiro, conocida por su notable dureza (casi tan dura como el diamante) y resistencia a los arañazos, protege la esfera mínima y el movimiento Swiss Ronda. Las correas, flexibles pero resistentes, están hechas 100 % con cuero italiano de alta calidad teñido al vegetal.',150.00,3,3,10,NULL),(11,'Magic Lotus','Esfera nácar blanco grabada y pintada a mano, centro de ónice negro. Caja y aureola en oro rojo 18 quilates. Decoración aplicada en oro rojo y amarillo 18 quilates grabada y pintada a mano. Movimiento autómata mecánico de cuerda manual con sistema de activación mediante pulsador. Mecanismo autómata con animación del estanque, la carpa y la flor de loto. Movimiento mecánico de horas y minutos de cuerda automática. Reserva de marcha de 68 horas. Diámetro 43 mm.',45000.00,2,2,11,NULL),(12,'Black strap','Este es tu nuevo reloj favorito. Cuenta con una caja de acero inoxidable 316L pulido a mano de 38 mm, un acero de grado extra bajo en carbono que se usa a menudo en aplicaciones marinas debido a su alta resistencia a la corrosión. Una ventana de cristal de zafiro, conocida por su notable dureza (casi tan dura como el diamante) y resistencia a los arañazos, protege la esfera mínima y el movimiento Swiss Ronda. Las correas, flexibles pero resistentes, están hechas 100 % con cuero italiano de alta calidad teñido al vegetal.',150.00,3,3,12,NULL),(13,'Tropical bird','Esfera nácar blanco grabado y pintado a mano, centro de nácar blanco. Caja y aureola en oro rojo 18 quilates. Decoración aplicada en oro rojo 18 quilates grabada y pintada a mano. Movimiento mecánico de repetición de minutos de cuerda manual. Animación autómata del pavo real, las hojas tropicales, el colibrí, el tucán, las libélulas y la cascada. Reserva de marcha de 50 horas. Diámetro 47 mm',60000.00,2,2,13,NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +117,7 @@ CREATE TABLE `product_image` (
   `idProduct_image` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`idProduct_image`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +126,7 @@ CREATE TABLE `product_image` (
 
 LOCK TABLES `product_image` WRITE;
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
-INSERT INTO `product_image` VALUES (1,'black-white.png'),(2,'frida.png'),(3,'butterfly.png'),(4,'noche.jpg'),(7,'image-1657840409419.png'),(8,'image-1657850677363.png');
+INSERT INTO `product_image` VALUES (1,'all-black.png'),(2,'bird.png'),(3,'black-white.png'),(4,'blue-sky.png'),(5,'butterfly.png'),(6,'camel-strap.png'),(7,'clear.png'),(8,'eiffel-tower.png'),(9,'frida.png'),(10,'green-watch.png'),(11,'magic-lotus.png'),(12,'new-black.png'),(13,'tropical-bird.png');
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,8 +194,9 @@ CREATE TABLE `user` (
   `address` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `idRoleFK` int(11) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +205,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'carl','tompson','carl@tomson.com',123,'123','$2a$10$LmPRWta33DlYW.FgmOsyV.DJ1q2djvtSUTMzG/4A987xIzcEJeKAS',2),(2,'121','11','11@11.com',2,'423','$2a$10$x9KFMN36HbwAMD2ryVI/2OhkLX1h8obODfxynxzR85rpcHlMAEzVm',2);
+INSERT INTO `user` VALUES (1,'carl','tompson','carl@tomson.com',123,'123','$2a$10$LmPRWta33DlYW.FgmOsyV.DJ1q2djvtSUTMzG/4A987xIzcEJeKAS',2,NULL),(2,'121','11','11@11.com',2,'423','$2a$10$x9KFMN36HbwAMD2ryVI/2OhkLX1h8obODfxynxzR85rpcHlMAEzVm',2,NULL),(3,'Guido','Biagioni','g@g.com',36158697,'Siempre Viva 123','$2a$10$mQ4vX7l3r7zXt45uo.Hyh.6DPUV.GVT9kHfsLnKMGV2TAspINnq1C',2,'image-1654886394992.png'),(4,'Carlos','Sucio','x@x.com',99999999,'Algo 123','$2a$10$legK.ECd24RA8DLcZQZQWOIrzOMYpHILv1VUQKPeHmr4AjhG/IO8G',2,'image-1657990472125.png'),(5,'Marcelo','Tip','marce@tip.com',123123,'123','$2a$10$YGOa0Mi4xT3KBzLgZC7D3uHAeRZam2c9zwT9RN0xCQ7e2ufWV9jxa',2,'image-1658271294621.jpg');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -215,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-14 23:31:34
+-- Dump completed on 2022-07-19 19:55:52

@@ -105,8 +105,14 @@ let userController = {
   },
 
   confirmEdit: (req, res) => {
-    let userFind = req.params.id;
+    // let image;
+    // if (req.files[0] != undefined) {
+    //   image = req.files[0].filename;
+    // } else {
+    //   image = db.Usuario.image;
+    // }
 
+    let userFind = req.params.id;
     console.log(userFind, "ACA ESTA");
 
     db.Usuario.update(
@@ -117,7 +123,7 @@ let userController = {
         dni: req.body.dni,
         address: req.body.address,
         // password: req.body.password,
-        // image: "req.files[0].filename",
+        // image: req.files[0].filename,
       },
       {
         where: {
