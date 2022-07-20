@@ -30,12 +30,21 @@ let userController = {
 
   store: (req, res, next) => {
     let avatar;
-    console.log(req.file);
     if (req.files[0] != undefined) {
       avatar = req.files[0].filename;
     } else {
       avatar = "default-image.jfif";
     }
+
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("./users/registro", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
     db.Usuario.create({
       name: req.body.name,
       lastName: req.body.lastName,
@@ -97,9 +106,7 @@ let userController = {
   edit: (req, res) => {
     let user = req.session.userLogged;
     let promesaUsuario = db.Usuario.findByPk(req.params.id);
-    Promise
-    .all([user, promesaUsuario])
-    .then(function ([promesaUsuario, user]) {
+    Promise.all([user, promesaUsuario]).then(function ([promesaUsuario, user]) {
       res.render("./users/edit", { promesaUsuario, user });
     });
   },
@@ -129,12 +136,11 @@ let userController = {
         where: {
           idUser: userFind,
         },
-      },
-    )
-    .then(function (cambio) {
+      }
+    ).then(function (cambio) {
       console.log(cambio.name, "ACA EL SEGUNDO CONSOLE LOG");
       // res.redirect("/", cambio);
-      res.send("funciona")
+      res.send("funciona");
     });
   },
 };

@@ -91,7 +91,7 @@
                     <% } %>
                     <p id="errores-password"></p>
                 <!-- IMAGEN -->
-                <div class="inputBusqueda-input"><input class="input-register <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" class="inputBusqueda" placeholder="image" name="image" id="image"></div>
+                <div class="inputBusqueda-input"><input class="input-register <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" accept=".png, .jpg, .jpeg" class="inputBusqueda" placeholder="image" name="image" id="image"></div>
                     <% if (locals.errors && errors.image) { %>
                         <div class="text-danger">
                             <%= errors.image.msg %>
@@ -103,6 +103,6 @@
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/registro-js.js"></script>
+    <!-- <script src="/js/registro-js.js"></script> -->
 </body>
 </html>
