@@ -5,27 +5,26 @@
         <section class="section-register"></section>
             <h2 class="product-add-title">Agregar Item</h2>
             <form class="center-register" action="/products" method="POST" enctype="multipart/form-data">
-                <div><input class="inputBusqueda-add" type="text" placeholder="Nombre del Producto" name="name" id="name"></div>
+                <div><input class="inputBusqueda-add" type="text" placeholder="Nombre del Producto" name="name" id="name">
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
+                    <p id="errores-name"></p>
+                </div>
+
                 <div><input class="inputBusqueda-add" type="text"  placeholder="Descripción del Producto" name="description" id="description"></div>
                 <div><input class="inputBusqueda-add" type="number" placeholder="Precio" name="price" id="price" value="price"></div>
                 <div><select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category">
                     <option value="" disabled selected>- Seleccione Categoría - </option>
-                    <% categorias.forEach(categoria => { %>
-                        <option value="<%= categoria.idCategory %>">
-                            <%= categoria.name %>
-                        </option>
-                    <% }); %>
+                    <option value="1" > Profesional </option>
+                    <option value="2" > Deportivo </option>
+                    <option value="3" > Urbano </option>
+                    
                     </select>
                 </div>
-                <div><select class="inputBusqueda-add" type="text" placeholder="Talles" name="size" id="size">
-                    <option value="" disabled selected>- Seleccione Talle - </option>
-                    <% talles.forEach(talle => { %>
-                        <option value="<%= talle.idSize %>">
-                            <%= talle.name %>
-                        </option>
-                    <% }); %>
-                    </select>
-                </div>
+                
                
                 <div><input class="inputBusqueda-add" type="file" placeholder="image" name="image" id="image"></div>
                 <br></br>

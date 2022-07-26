@@ -4,6 +4,10 @@ const path = require("path");
 
 const productsPath = path.join(__dirname, "../views/products");
 
+const { check, validationResult, body } = require("express-validator");
+
+
+
 const productsController = {
   // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
   list: (req, res) => {
@@ -17,17 +21,18 @@ const productsController = {
 
   // CREAR UN PRODUCTO ** CREAR UN PRODUCTO
   create: (req, res) => {
-    let categorias = db.Categoria.findAll();
-    let talles = db.Talle.findAll();
-    Promise
-    .all([categorias, talles])
-    .then(function ([categorias, talles]) {
-      return res.render(productsPath + "/productAdd", { categorias, talles });
+    db.Categoria.findAll()
+    .then(function (categorias) {
+      return res.render(productsPath + "/productAdd", { categorias});
     });
   },
 
   // GUARDAR UN PRODUCTO CREADO ** GUARDAR UN PRODUCTO CREADO
   store: (req, res) => {
+
+
+
+
     let idProduct_image;
     console.log(req.file);
     if (req.files[0] != undefined) {
@@ -35,13 +40,23 @@ const productsController = {
     } else {
       idProduct_image = "default-image.png";
     }
-    db.Producto.create(
+
+    
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render(productsPath + "/productAdd", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
+      db.Producto.create(
       {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
         idCategoryFK: req.body.category,
-        idSizeFK: req.body.size,
       },
       db.Imagen.create({
         name: idProduct_image,
@@ -49,6 +64,7 @@ const productsController = {
     );
     console.log(req.body);
     res.redirect("/");
+
   },
 
   // DETALLE DE UN PRODUCTO ** DETALLE DE UN PRODUCTO
