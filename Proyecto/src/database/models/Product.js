@@ -26,7 +26,7 @@ module.exports = function (sequelize, dataTypes) {
     },
     idSizeFK: {
       type: dataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     idProduct_imageFK: {
       type: dataTypes.INTEGER,

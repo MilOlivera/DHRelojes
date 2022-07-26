@@ -17,23 +17,35 @@ window.onload = function () {
     if (name.value === "") {
       e.preventDefault();
       eName.innerHTML = "Debes completar el campo con tu nombre";
-      eName.classList.add('text-danger1');
-      name.classList.replace('inputBusqueda-register', 'register-error');
+      eName.classList.add("text-danger1");
+      name.classList.replace("inputBusqueda-register", "register-error");
+    } else if (name.value.length < 2) {
+      e.preventDefault();
+      eName.innerHTML =
+        "Debes completar el campo con un nombre de al menos dos letras";
+      eName.classList.add("text-danger1");
+      name.classList.replace("inputBusqueda-register", "register-error");
     } else {
       eName.innerHTML = "";
-      eName.classList.remove('text-danger1');
-      name.classList.replace('register-error', 'inputBusqueda-register')
+      eName.classList.remove("text-danger1");
+      name.classList.replace("register-error", "inputBusqueda-register");
     }
 
     if (lastName.value === "") {
       e.preventDefault();
       eLastName.innerHTML = "Debes completar el campo con tu apellido";
-      eLastName.classList.add('text-danger1');
-      lastName.classList.replace('inputBusqueda-register', 'register-error');
+      eLastName.classList.add("text-danger1");
+      lastName.classList.replace("inputBusqueda-register", "register-error");
+    } else if (lastName.value.length < 2) {
+      e.preventDefault();
+      eLastName.innerHTML =
+        "Debes completar el campo con un apellido de al menos dos letras";
+      eLastName.classList.add("text-danger1");
+      lastName.classList.replace("inputBusqueda-register", "register-error");
     } else {
       eLastName.innerHTML = "";
-      eLastName.classList.remove('text-danger1');
-      lastName.classList.replace('register-error', 'inputBusqueda-register')
+      eLastName.classList.remove("text-danger1");
+      lastName.classList.replace("register-error", "inputBusqueda-register");
     }
 
     if (mail.value === "") {
@@ -41,6 +53,11 @@ window.onload = function () {
       eMail.innerHTML = "Debes completar el campo con tu mail";
       eMail.classList.add('text-danger1');
       mail.classList.replace('inputBusqueda-register', 'register-error');
+      // } else if (/\S+@\S+.\S+/.test(mail.value)) {
+      //   e.preventDefault();
+      //   eMail.innerHTML = "Debes completar el campo con un mail válido";
+      //   eMail.classList.add("text-danger1");
+      //   mail.classList.replace("inputBusqueda-register", "register-error");
     } else {
       eMail.innerHTML = "";
       eMail.classList.remove('text-danger1');
@@ -72,12 +89,18 @@ window.onload = function () {
     if (password.value === "") {
       e.preventDefault();
       ePassword.innerHTML = "Debes completar el campo con una password";
-      ePassword.classList.add('text-danger1');
-      password.classList.replace('inputBusqueda-register', 'register-error');
+      ePassword.classList.add("text-danger1");
+      password.classList.replace("inputBusqueda-register", "register-error");
+    } else if (password.value.length < 8) {
+      e.preventDefault();
+      ePassword.innerHTML =
+        "Debes completar el campo con un password mayor de ocho caracteres";
+      ePassword.classList.add("text-danger1");
+      password.classList.replace("inputBusqueda-register", "register-error");
     } else {
       ePassword.innerHTML = "";
-      ePassword.classList.remove('text-danger1');
-      password.classList.replace('register-error', 'inputBusqueda-register')
+      ePassword.classList.remove("text-danger1");
+      password.classList.replace("register-error", "inputBusqueda-register");
     }
   });
 };

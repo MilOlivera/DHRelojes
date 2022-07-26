@@ -24,8 +24,6 @@ const validation = [
     .notEmpty()
     .withMessage("Debe elegir una categoria"),
 ];
-
-
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public/images/products");
@@ -37,6 +35,8 @@ var storage = multer.diskStorage({
     );
   },
 });
+
+
 var cargaArchivo = multer({ storage: storage });
 
 // VER TODOS LOS PRODUCTOS .get + controler.index "/"
