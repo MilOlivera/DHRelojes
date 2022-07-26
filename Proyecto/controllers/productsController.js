@@ -1,6 +1,7 @@
 const { hyphenToCamel } = require("ejs/lib/utils");
 let db = require("../src/database/models");
 const path = require("path");
+const { check, validationResult, body } = require("express-validator");
 
 const productsPath = path.join(__dirname, "../views/products");
 
@@ -35,13 +36,22 @@ const productsController = {
     } else {
       idProduct_image = "default-image.png";
     }
+
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render(productsPath + "/productAdd", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
     db.Producto.create(
       {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        idCategoryFK: req.body.category,
-        idSizeFK: req.body.size,
+        idCategoryFK: req.body.category
       },
       db.Imagen.create({
         name: idProduct_image,
