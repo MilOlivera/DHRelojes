@@ -1053,8 +1053,10 @@ REGISTRO ** REGISTRO ** REGISTRO */
     max-width: 90%;
     margin: auto
 }
- 
-.inputBusqueda-register {
+#formValidacion input{
+    position: relative;
+}
+.formInput {
     font-family: 'Raleway', Sans-Serif;
     width: 100%;
     background-color: #fafafa;
@@ -1078,7 +1080,7 @@ REGISTRO ** REGISTRO ** REGISTRO */
     height: 3rem;
 }
 
-.inputBusqueda-input {
+.formInput {
     width: 100%;
     background-color: #fafafa;
     font-size: 15px;
@@ -1089,7 +1091,7 @@ REGISTRO ** REGISTRO ** REGISTRO */
     font-family: 'Raleway', Sans-Serif;
 }
 
-.input-register {
+.formInput {
     font-family: 'Raleway', Sans-Serif;
     font-size: 15px;
     border: 0;
@@ -1098,12 +1100,24 @@ REGISTRO ** REGISTRO ** REGISTRO */
     background-color: #fafafa;
 }
 
-.input-register b {
+.formInput b {
     font-family: 'Raleway', Sans-Serif;
     font-size: 15px;
     font-weight: 500;
 }
-
+.formInput:focus{
+    border: 3px solid;
+    /* padding: 15px; */
+}
+.formValidacion-estado{
+    position: relative;
+    left: 230px;
+    bottom: 35px;
+    z-index: -1;   
+}
+.formError{
+    display: none;
+}
 ::-webkit-file-upload-button {
     color: #73777c;
     background-color: #efefef;
@@ -1141,6 +1155,33 @@ REGISTRO ** REGISTRO ** REGISTRO */
 .logo-register {
     width: 50%;
 }
+
+/* ESTILOS PARA VALIDACION *//* ESTILOS PARA VALIDACION */
+/* ESTILOS PARA VALIDACION *//* ESTILOS PARA VALIDACION */
+
+.divGrupo-correcto .formValidacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+    z-index: 1;
+}
+.divGrupo-incorrecto .formValidacion-estado{
+    color: #bb2929;
+    opacity: 1;
+    z-index: 1;
+}
+.divGrupo-correcto .formInput{
+    border: 3px solid #1ed12d;
+}
+.divGrupo-incorrecto .formInput{
+   border: 3px solid #bb2929;
+}
+
+.formError-activo{
+    display: block;
+}
+
+
+
 
 
 /*Daniel pagina producto*/
@@ -1469,6 +1510,11 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
   .inputfile::-webkit-file-upload-button{
       cursor: pointer;
   }
+
+
+/* SCRIPT JS SCRIPT JS SCRIPT JS 
+SCRIPT JS SCRIPT JS SCRIPT JS */
+
 
 
 @media(min-width: 368px){
