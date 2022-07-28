@@ -24,7 +24,7 @@
                             <%= errors.name.msg %>
                         </div>
                     <% } %>
-                    <p class="formError">El nombre debe al menos dos caracteres</p>
+                    <p class="formError">El nombre debe tener al menos dos caracteres y no puede incluir numeros</p>
                 </div>
                 <!-- APELLIDO -->
                 <div class="divGrupo" id="grupo-lastName">
@@ -43,7 +43,7 @@
                             <%= errors.lastName.msg %>
                         </div>
                     <% } %>
-                    <p class="formError">El nombre debe al menos dos caracteres</p>
+                    <p class="formError">El apellido debe tener al menos dos caracteres y no puede incluir numeros</p>
                 </div>
                 <!-- MAIL -->
                 <div class="divGrupo" id="grupo-mail">
@@ -62,61 +62,94 @@
                             <%= errors.mail.msg %>
                         </div>
                     <% } %>
-                    <p class="formError">El nombre debe al menos dos caracteres</p>
+                    <p class="formError">Ingrese un formato de email válido</p>
                 </div>
                 <!-- DNI -->
-                <div class="divInput"><input
+                <div class="divGrupo" id="grupo-dni">
+                    <div class="formGrupoInput">
+                    <input
                     type="number"
-                    class="inputBusqueda-register"
+                    class="formInput"
                     placeholder="DNI"
                     name="dni"
                     id="dni"
-                    value="<%= locals.oldData ? oldData.dni : null %>"></div>
+                    value="<%= locals.oldData ? oldData.dni : null %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
                     <% if (locals.errors && errors.dni) { %>
                         <div class="text-danger">
                             <%= errors.dni.msg %>
                         </div>
                     <% } %>
+                    <p class="formError">Ingrese un DNI valido sin puntos</p>
+                </div>
                 <!-- DIRECCION -->
-                <div class="divInput"><input
+                <div class="divGrupo" id="grupo-address">
+                    <div class="formGrupoInput">
+                    <input
                     type="text"
-                    class="inputBusqueda-register"
+                    class="formInput"
                     placeholder="Dirección"
                     name="address"
                     id="address"
-                    value="<%= locals.oldData ? oldData.address : null %>"></div>
+                    value="<%= locals.oldData ? oldData.address : null %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
                     <% if (locals.errors && errors.address) { %>
                         <div class="text-danger">
                             <%= errors.address.msg %>
                         </div>
                     <% } %>
+                    <p class="formError">Ingrese una dirección válida</p>
+                </div>
                 <!-- CONTRASEÑA -->
-                <div class="divInput"><input
+                <div class="divGrupo" id="grupo-password">
+                    <div class="formGrupoInput">
+                    <input
                     type="password"
-                    class="inputBusqueda-register"
+                    class="formInput"
                     placeholder="Contraseña"
                     name="password"
                     id="password"
-                    value="<%= locals.oldData ? oldData.password : null %>"></div>
+                    value="<%= locals.oldData ? oldData.password : null %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
                     <% if (locals.errors && errors.password) { %>
                         <div class="text-danger">
                             <%= errors.password.msg %>
                         </div>
                     <% } %>
-                <div class="divInput"><input
+                    <p class="formError">La contraseña debe tener al menos 8 caracteres, y debe incluir una mayúscula, una minúscula, un número y un caracter especial</p>
+                </div>
+                <div class="divGrupo" id="grupo-password2">
+                    <div class="formGrupoInput">
+                    <input
                     type="password"
-                    class="inputBusqueda-register"
+                    class="formInput"
                     placeholder="Repetir contraseña"
                     name="password"
                     id="password2"
-                    value="<%= locals.oldData ? oldData.password : null %>"></div>
+                    value="<%= locals.oldData ? oldData.password : null %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
                     <% if (locals.errors && errors.password) { %>
                         <div class="text-danger">
                             <%= errors.password.msg %>
                         </div>
                     <% } %>
+                    <p class="formError">Debe coincidir con la contraseña</p>
+                </div>
                 <!-- IMAGEN -->
-                <div class="divInput" id="inputBusqueda-input" ><input class="input-register <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" accept=".png, .jpg, .jpeg" class="inputBusqueda" placeholder="image" name="image" id="image"></div>
+                <div class="divGrupo" id="grupo-address">
+                    <div class="formGrupoInput">
+                    <input 
+                    class="formInput <%= locals.errors && errors.image ? 'is-invalid' : null %>" 
+                    type="file" accept=".png, .jpg, .jpeg" 
+                    class="inputBusqueda" 
+                    placeholder="image" 
+                    name="image" 
+                    id="image">
+                    </div>
                     <% if (locals.errors && errors.image) { %>
                         <div class="text-danger">
                             <%= errors.image.msg %>
@@ -128,7 +161,7 @@
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/script.js"></script>
+    <script src="/js/registerValidator.js"></script>
     
 </body>
 </html>

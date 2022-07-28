@@ -962,6 +962,7 @@ hr.divider {
 }
 
 .section-login {
+    margin-top: 10px;
     padding: 10px;
     line-height: 30px;
     text-align: center;
@@ -973,7 +974,7 @@ hr.divider {
     z-index: -10;
 }
 
-.inputBusqueda-login{
+#inputBusqueda-login, #inputBusqueda-login2{
     font-family: 'Raleway', Sans-Serif;
     width: 90%;
     background-color: #fafafa;
@@ -1061,11 +1062,12 @@ REGISTRO ** REGISTRO ** REGISTRO */
     width: 100%;
     background-color: #fafafa;
     font-size: 15px;
-    margin-top: 1.5rem;
+    padding: 5px;
     border: 0;
     border-bottom: solid 1px #9b9b9b;
     color: #252525;
     height: 3rem;
+   
 }
 
 .register-error {
@@ -1084,7 +1086,7 @@ REGISTRO ** REGISTRO ** REGISTRO */
     width: 100%;
     background-color: #fafafa;
     font-size: 15px;
-    margin-top: 1.9rem;
+    margin-top: 0.2rem;
     border-bottom: solid 1px #9b9b9b;
     height: 2.6rem;
     text-align: left;
@@ -1094,7 +1096,7 @@ REGISTRO ** REGISTRO ** REGISTRO */
 .formInput {
     font-family: 'Raleway', Sans-Serif;
     font-size: 15px;
-    border: 0;
+    border: 1;
     font-size: 15px;
     color: #73777c;
     background-color: #fafafa;
@@ -1107,7 +1109,8 @@ REGISTRO ** REGISTRO ** REGISTRO */
 }
 .formInput:focus{
     border: 3px solid;
-    /* padding: 15px; */
+    padding: 15px;
+    border-radius: 10px;
 }
 .formValidacion-estado{
     position: relative;
@@ -1156,8 +1159,8 @@ REGISTRO ** REGISTRO ** REGISTRO */
     width: 50%;
 }
 
-/* ESTILOS PARA VALIDACION *//* ESTILOS PARA VALIDACION */
-/* ESTILOS PARA VALIDACION *//* ESTILOS PARA VALIDACION */
+/* ESTILOS PARA VALIDACION REGISTER *//* ESTILOS PARA VALIDACION REGISTER*/
+/* ESTILOS PARA VALIDACION REGISTER *//* ESTILOS PARA VALIDACION REGISTER*/
 
 .divGrupo-correcto .formValidacion-estado{
     color: #1ed12d;
@@ -1171,13 +1174,18 @@ REGISTRO ** REGISTRO ** REGISTRO */
 }
 .divGrupo-correcto .formInput{
     border: 3px solid #1ed12d;
+    border-radius: 10px;
 }
 .divGrupo-incorrecto .formInput{
    border: 3px solid #bb2929;
+   border-radius: 10px;
 }
 
 .formError-activo{
     display: block;
+    color: #CD113B;
+    box-shadow: 2px;
+    margin-top: -20px;
 }
 
 
@@ -1388,6 +1396,7 @@ PRODUCT EDIT ** PRODUCT EDIT ** PRODUCT EDIT  */
     border-bottom: solid 1px #9b9b9b;
     color: #252525;
     margin-bottom: 30;
+    padding: 15px;
 }
 
 .detail-box {
@@ -1660,9 +1669,43 @@ height: 1400px;
  /* LOGIN Y REGISTRO ** LOGIN Y REGISTRO
  LOGIN Y REGISTRO ** LOGIN Y REGISTRO */
 
-    .inputBusqueda-login, .center-register {
+    #inputBusqueda-login, #inputBusqueda-login2, .center-register {
         width: 70%
     }
+
+    /* .loginValidator-estado{
+        position: relative;
+        left: -30px;
+        bottom: -2px;
+        z-index: 1;   
+    } */
+    .divGrupo-correcto{
+        color: #1ed12d;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-incorrecto{
+        color: #bb2929;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-correcto .formInput{
+        border: 3px solid #1ed12d;
+        border-radius: 10px;
+    }
+    .divGrupo-incorrecto .formInput{
+       border: 3px solid #bb2929;
+       border-radius: 10px;
+    }
+    .loginError{
+        display: none;
+    }
+    .loginError-activo{
+        display: block;
+        color: #CD113B;
+        box-shadow: 2px;
+        margin-top: -20px;
+    }    
 
 /* CARRITO ** CARRITO ** CARRITO
 CARRITO ** CARRITO ** CARRITO */
@@ -1900,7 +1943,7 @@ CARRITO ** CARRITO ** CARRITO */
     }
     
     /* login y registro */
-    .inputBusqueda-login, .center-register {
+    #inputBusqueda-login, #inputBusqueda-login2, .center-register {
         width: 40%
     }
 
@@ -1996,4 +2039,119 @@ CARRITO ** CARRITO ** CARRITO */
 .none {
     display:none
 }
+/* 
+VALIDACION LOGIN ** VALIDACION LOGIN
+VALIDACION LOGIN ** VALIDACION LOGIN */
+
+    .loginValidator-estado{
+        position: relative;
+        left: -30px;
+        bottom: -2px;
+        z-index: -1;   
+    }
+    .divGrupo-correcto .loginValidator-estado{
+        color: #1ed12d;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-incorrecto .loginValidator-estado{
+        color: #bb2929;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-correcto .formInput{
+        border: 3px solid #1ed12d;
+        border-radius: 10px;
+    }
+    .divGrupo-incorrecto .formInput{
+       border: 3px solid #bb2929;
+       border-radius: 10px;
+    }
+    .loginError{
+        display: none;
+    }
+    .loginError-activo{
+        display: block;
+        color: #CD113B;
+        box-shadow: 2px;
+        margin-top: 0px;
+    }    
+
+
+/* VALIDACION PRODUCTOS VALIDACION PRODUCTOS
+VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
+
+    .productValidacion-estado{
+        position: relative;
+        left: -30px;
+        bottom: -2px;
+        z-index: -1;   
+    }
+    .divGrupo-correcto .productValidacion-estado{
+        color: #1ed12d;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-incorrecto .productValidacion-estado{
+        color: #bb2929;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-correcto .inputBusqueda-add{
+        border: 3px solid #1ed12d;
+        border-radius: 10px;
+    }
+    .divGrupo-incorrecto .inputBusqueda-add{
+       border: 3px solid #bb2929;
+       border-radius: 10px;
+    }
+    .productError{
+        display: none;
+    }
+    .productError-activo{
+        display: block;
+        color: #CD113B;
+        box-shadow: 2px;
+        margin-top: 8px;
+        font-size: small;
+    }    
+
+/* 
+    VALIDACION PRODUCT-EDIT ** VALIDACION PRODUCT-EDIT
+    VALIDACION PRODUCT-EDIT ** VALIDACION PRODUCT-EDIT */
+
+    .productEditValidacion-estado{
+        position: relative;
+        left: 200px;
+        bottom: 40px;
+        z-index: -1;   
+    }
+    .divGrupo-correcto .productEditValidacion-estado{
+        color: #1ed12d;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-incorrecto .productEditValidacion-estado{
+        color: #bb2929;
+        opacity: 1;
+        z-index: 1;
+    }
+    .divGrupo-correcto .inputBusqueda-prodlist{
+        border: 3px solid #1ed12d;
+        border-radius: 10px;
+    }
+    .divGrupo-incorrecto .inputBusqueda-prodlist{
+       border: 3px solid #bb2929;
+       border-radius: 10px;
+    }
+    /* .productError{
+        display: none;
+    }
+    .productError-activo{
+        display: block;
+        color: #CD113B;
+        box-shadow: 2px;
+        margin-top: 8px;
+        font-size: small;
+    }     */
 

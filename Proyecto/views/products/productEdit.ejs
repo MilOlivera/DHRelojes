@@ -9,13 +9,17 @@
                 <img class="img-pl" src="/images/products/<%= promesaImagen.name %>" alt="Foto de Reloj">
             </div>
 
-            <form class="center-register" method="POST" action="/products/<%= promesaProducto.idProduct %>/edit?_method=PUT" >
+            <form class="center-register" method="POST" action="/products/<%= promesaProducto.idProduct %>/edit?_method=PUT" id="productsValidator">
 
                 <br></br>
 
                 <div class="detail-box">
                     <p class="desc-pl">Nombre:</p>
-                    <input class="inputBusqueda-prodlist" type="text"  name="name" id="name" value="<%= promesaProducto.name %>" >
+                    <div class="divGrupo" id="grupo-name">
+                        <input class="inputBusqueda-prodlist" type="text"  name="name" id="name" value="<%= promesaProducto.name %>" >
+                        <i class="productEditValidacion-estado fas fa-times-circle"></i>
+                        <p class="productError">El nombre debe tener al menos cinco caracteres y no puede incluir numeros</p>
+                    </div>
                 </div>
 
                 <!-- <div class="detail-box">
@@ -25,12 +29,20 @@
 
                 <div class="detail-box">
                     <p class="desc-pl">Descripción:</p>
-                    <input class="inputBusqueda-prodlist" type="text" name="description" id="description" value="<%= promesaProducto.description %>" >
+                    <div class="divGrupo" id="grupo-description">
+                        <input class="inputBusqueda-prodlist" type="text" name="description" id="description" value="<%= promesaProducto.description %>" >
+                        <i class="productEditValidacion-estado fas fa-times-circle"></i>
+                        <p class="productError">La descripcion debe tener al menos 20 caracteres</p>
+                    </div>
                 </div>
 
                 <div class="detail-box">
                     <p class="desc-pl">Precio:</p>
-                    <input class="inputBusqueda-prodlist" type="number"  name="price" id="price" value="<%= promesaProducto.price %>">
+                    <div class="divGrupo" id="grupo-price">
+                        <input class="inputBusqueda-prodlist" type="number"  name="price" id="price" value="<%= promesaProducto.price %>">
+                        <i class="productEditValidacion-estado fas fa-times-circle"></i>
+                        <p class="productError">Utilice el "." como separador decimal</p>
+                    </div>
                 </div>
 
                 <div>
@@ -58,5 +70,6 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/productsValidator.js"></script>
 </body>
 </html>

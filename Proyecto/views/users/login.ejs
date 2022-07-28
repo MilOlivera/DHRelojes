@@ -5,24 +5,28 @@
     <main class="main-login">
         <section class="section-login">
             <h1 class="title-login">Iniciar sesion</h1> 
-            <form action="/users/login" method="POST">
-                <!-- <div> <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email"> </div>
-                <div> <input name="password" type="text" class="inputBusqueda-login" placeholder="Password"> </div>  -->
-                <input name="mail" type="text" class="inputBusqueda-login" placeholder="Email" value="<%= locals.oldData ? oldData.mail : null %>"> <br>
-                <% if (locals.errors && errors.mail) { %>
-                    <div class="text-danger1">
-                        <%= errors.mail.msg %>
-                    </div>
-                <% } %>
-            
+            <form action="/users/login" method="POST" id="loginValidator">
                 
-                <input name="password" type="password" class="inputBusqueda-login" placeholder="Password">
-                <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger1">
-                        <%= errors.password.msg %>
-                    </div>
-                <% } %> 
-
+                <div class="divGrupo" id="grupo-mail">
+                    <input name="mail" type="text" class="formInput" id="inputBusqueda-login" placeholder="Email" value="<%= locals.oldData ? oldData.mail : null %>" required>
+                    <i class="loginValidator-estado fas fa-times-circle"></i>
+                    <% if (locals.errors && errors.mail) { %>
+                        <div class="text-danger1">
+                            <%= errors.mail.msg %>
+                        </div>
+                    <% } %>
+                    <p class="loginError">Ingrese un formato de email válido</p>
+                </div>
+               <div class="divGrupo" id="grupo-password"></div> 
+                    <input name="password" type="password" class="formInput" id="inputBusqueda-login2" placeholder="Password" required>
+                    
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger1">
+                            <%= errors.password.msg %>
+                        </div>
+                    <% } %> 
+                    
+                </div>
                 <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>
 
                 <input type="checkbox" class="recordarme" name="recordarme" value="recordarme">Recordarme
@@ -33,5 +37,6 @@
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/loginValidator.js"></script>
 </body>
 </html>

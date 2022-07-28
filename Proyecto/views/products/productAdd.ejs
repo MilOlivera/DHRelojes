@@ -4,35 +4,55 @@
     <main class="main-register">
         <section class="section-register"></section>
             <h2 class="product-add-title">Agregar Item</h2>
-            <form class="center-register" action="/products" method="POST" enctype="multipart/form-data">
-                <div><input class="inputBusqueda-add" type="text" placeholder="Nombre del Producto" name="name" id="name" value="<%= locals.oldData ? oldData.name : null %>">
+            <form class="center-register" action="/products" method="POST" enctype="multipart/form-data" id="productsValidator">
+                <div class="divGrupo" id="grupo-name">
+                    <input 
+                    class="inputBusqueda-add" 
+                    type="text" 
+                    placeholder="Nombre del Producto" 
+                    name="name" id="name" 
+                    value="<%= locals.oldData ? oldData.name : null %>">
+                    <i class="productValidacion-estado fas fa-times-circle"></i>
                     <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
                             <%= errors.name.msg %>
                         </div>
                     <% } %>
-                    <p id="errores-name"></p>
+                    <!-- <p id="errores-name"></p> -->
+                    <p class="productError">El nombre debe tener al menos cinco caracteres y no puede incluir numeros</p>
                 </div>
 
-                <div><input class="inputBusqueda-add" type="text"  placeholder="Descripción del Producto" name="description" id="description" value="<%= locals.oldData ? oldData.description : null %>">
+                <div class="divGrupo" id="grupo-description">
+                    <input 
+                    class="inputBusqueda-add" 
+                    type="text"  
+                    placeholder="Descripción del Producto" 
+                    name="description" 
+                    id="description" 
+                    value="<%= locals.oldData ? oldData.description : null %>">
+                    <i class="productValidacion-estado fas fa-times-circle"></i>
                     <% if (locals.errors && errors.description) { %>
                         <div class="text-danger">
                             <%= errors.description.msg %>
                         </div>
                     <% } %>
-                    <p id="errores-description"></p>
+                    <!-- <p id="errores-description"></p> -->
+                    <p class="productError">La descripcion debe tener al menos 20 caracteres</p>
                 </div>
 
-                <div><input class="inputBusqueda-add" type="number" placeholder="Precio" name="price" id="price" value="<%= locals.oldData ? oldData.price : null %>">
+                <div class="divGrupo" id="grupo-price">
+                    <input class="inputBusqueda-add" type="number" placeholder="Precio" name="price" id="price" value="<%= locals.oldData ? oldData.price : null %>" required>
+                    <i class="productValidacion-estado fas fa-times-circle"></i>
                     <% if (locals.errors && errors.price) { %>
                         <div class="text-danger">
                             <%= errors.price.msg %>
                         </div>
                     <% } %>
-                    <p id="errores-price"></p>
+                    <!-- <p id="errores-price"></p> -->
+                    <p class="productError">Utilice el "." como separador decimal</p>
                 </div>
 
-                <div><select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category">
+                <div><select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category" required>
 
                     <option value="" disabled selected>- Seleccione Categoría - </option>
                     <option value="1" > Center Pompidou </option>
@@ -46,7 +66,7 @@
                             <%= errors.category.msg %>
                         </div>
                     <% } %>
-                    <p id="errores-price"></p>
+                    <!-- <p id="errores-price"></p> -->
 
                 </div>
                 <div><input class="inputBusqueda-add" type="file" placeholder="image" name="image" id="image"></div>
@@ -56,6 +76,6 @@
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
-    <script></script>
+    <script src="/js/productsValidator.js"></script>
 </body>
 </html>
