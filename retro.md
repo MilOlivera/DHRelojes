@@ -1,8 +1,8 @@
-Sprint 5
-- Comenzar a hacer: Dividir tareas al comienzo del sprint, asi se evita que dos personas trabajen sobre lo mismo.
+Sprint 7
+- Comenzar a hacer: Organizar el sprint al comienzo. 
 
-- Continuar haciendo: Daily meetings.
+- Continuar haciendo: Weekly meetings y comunicar errores.
 
-- Hacer menos: No pedir ayuda, ni comunicar errores.
+- Hacer menos: No anotar pendientes, no dividir tareas.
 
-- Dejar de hacer: Postergar tareas pendientes y no organizar adecuadamente al comienzo del sprint.
+- Dejar de hacer: Dejar de postergar pendientes.
