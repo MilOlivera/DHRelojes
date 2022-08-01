@@ -110,8 +110,7 @@
                     class="formInput"
                     placeholder="Contraseña"
                     name="password"
-                    id="password"
-                    value="<%= locals.oldData ? oldData.password : null %>">
+                    id="password">
                     <i class="formValidacion-estado fas fa-times-circle"></i>
                     </div>
                     <% if (locals.errors && errors.password) { %>
@@ -128,8 +127,7 @@
                     class="formInput"
                     placeholder="Repetir contraseña"
                     name="password"
-                    id="password2"
-                    value="<%= locals.oldData ? oldData.password : null %>">
+                    id="password2">
                     <i class="formValidacion-estado fas fa-times-circle"></i>
                     </div>
                     <% if (locals.errors && errors.password) { %>

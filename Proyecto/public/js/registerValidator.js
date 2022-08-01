@@ -45,6 +45,7 @@ const validarFormulario = (e) => {
         case "password2":
             validarPassword2()
         break;
+        
     }
 }
 

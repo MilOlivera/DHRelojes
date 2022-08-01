@@ -42,23 +42,16 @@ const validation = [
     }),
   body("dni").notEmpty().withMessage("Tenes que escribir tu DNI"),
   body("address").notEmpty().withMessage("Tenes que escribir una dirección"),
-  body("password")
-    .isString()
-    .notEmpty()
-    .withMessage("Tenes que escribir una contraseña")
-    .isLength({ min: 8 })
-    .withMessage("La contraseña debe tener al menos 8 caracteres")
-    .isStrongPassword()
-    .withMessage(
-      "La contraseña debe tener al una letra mayuscula, una letra minuscula, un número y un caracter especial"
-    ),
-  body("image").custom((value, { req }) => {
-    let file = req.file;
-    if (!file) {
-      throw new Error("Debes incluir una imagen de tu producto");
-    }
-    return true;
-  }),
+  // body("password")
+  //   .isString()
+  //   .notEmpty()
+  //   .withMessage("Tenes que escribir una contraseña")
+  //   .isLength({ min: 8 })
+  //   .withMessage("La contraseña debe tener al menos 8 caracteres"),
+    // .isStrongPassword()
+    // .withMessage(
+    //   "La contraseña debe tener al una letra mayuscula, una letra minuscula, un número y un caracter especial"
+    // ),
   // body("image").custom((value, req) => {
   //   let file = req.file;
   //   console.log(file, "error 1");

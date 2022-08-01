@@ -24,10 +24,10 @@ module.exports = function (sequelize, dataTypes) {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
-    idSizeFK: {
-      type: dataTypes.INTEGER,
-      allowNull: true,
-    },
+    // idSizeFK: {
+    //   type: dataTypes.INTEGER,
+    //   allowNull: true,
+    // },
     idProduct_imageFK: {
       type: dataTypes.INTEGER,
       allowNull: true,
@@ -51,10 +51,10 @@ module.exports = function (sequelize, dataTypes) {
       foreignKey: "idCategoryFK",
     });
 
-    Producto.belongsTo(models.Categoria, {
-      as: "talles",
-      foreignKey: "idSizeFK",
-    });
+    // Producto.belongsTo(models.Categoria, {
+    //   as: "talles",
+    //   foreignKey: "idSizeFK",
+    // });
 
     Producto.belongsTo(models.Orden, {
       as: "ordenes",
