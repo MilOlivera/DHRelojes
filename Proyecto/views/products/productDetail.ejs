@@ -12,21 +12,8 @@
             <article class="product-detail">
                 <h3 class = "marcaReloj"> <%= promesaProducto.name %> </h3>
 
-
                 <p class="desc-product"><%= promesaProducto.description %></p>
-            
-                <div class = "talle-cantidad">
-                    <p>Seleccionar talle</p>
-                    <select name = "talle" class="selectorTalle"> <label for="">Talle</label>
-                        <option value="" disabled selected>- Seleccione talle - </option>
-                        <% promesaTalle.forEach(categoria => { %>
-                            <option value="<%= categoria.idCategory %>">
-                                <%= categoria.name %>
-                            </option>
-                        <% }); %>
-                    </select>
-                </div>
-                
+                            
                 <div class = "cantidad">
                     <p>Cantidad</p>
                     <select name = "cantidad" class = "selectorCantidad">
@@ -37,8 +24,6 @@
                         <option value = "5">5</option>
                     </select>
                 </div>
-
-    
                
                 </div>
                 <% if (locals.isLogged) { %>

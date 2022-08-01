@@ -5,34 +5,34 @@ const { check, validationResult, body } = require("express-validator");
 
 const productsPath = path.join(__dirname, "../views/products");
 
-
-
-
 const productsController = {
   // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
   list: (req, res) => {
     let producto = db.Producto.findAll();
     let imagen = db.Imagen.findAll();
     let categorias = db.Categoria.findAll();
-    Promise.all([producto, imagen, categorias]).then(function ([producto, imagen, categorias]) {
-      return res.render(productsPath + "/productList", { producto, imagen, categorias });
+    Promise.all([producto, imagen, categorias]).then(function ([
+      producto,
+      imagen,
+      categorias,
+    ]) {
+      return res.render(productsPath + "/productList", {
+        producto,
+        imagen,
+        categorias,
+      });
     });
   },
 
   // CREAR UN PRODUCTO ** CREAR UN PRODUCTO
   create: (req, res) => {
-    db.Categoria.findAll()
-    .then(function (categorias) {
-      return res.render(productsPath + "/productAdd", { categorias});
+    db.Categoria.findAll().then(function (categorias) {
+      return res.render(productsPath + "/productAdd", { categorias });
     });
   },
 
   // GUARDAR UN PRODUCTO CREADO ** GUARDAR UN PRODUCTO CREADO
   store: (req, res) => {
-
-
-
-
     let idProduct_image;
     console.log(req.file);
     if (req.files[0] != undefined) {
@@ -55,7 +55,7 @@ const productsController = {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        idCategoryFK: req.body.category
+        idCategoryFK: req.body.category,
       },
       db.Imagen.create({
         name: idProduct_image,
@@ -63,22 +63,20 @@ const productsController = {
     );
     console.log(req.body);
     res.redirect("/");
-
   },
 
   // DETALLE DE UN PRODUCTO ** DETALLE DE UN PRODUCTO
   productDetail: (req, res) => {
     let promesaProducto = db.Producto.findByPk(req.params.id);
-    let promesaTalle = db.Talle.findAll();
+    // let promesaTalle = db.Talle.findAll();
     let promesaImagen = db.Imagen.findByPk(req.params.id);
-    Promise.all([promesaProducto, promesaTalle, promesaImagen]).then(function ([
+    Promise.all([promesaProducto, promesaImagen]).then(function ([
       promesaProducto,
-      promesaTalle,
       promesaImagen,
     ]) {
       return res.render(productsPath + "/productDetail", {
         promesaProducto,
-        promesaTalle,
+
         promesaImagen,
       });
     });

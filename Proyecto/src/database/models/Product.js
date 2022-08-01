@@ -17,7 +17,7 @@ module.exports = function (sequelize, dataTypes) {
       allowNull: false,
     },
     price: {
-      type: dataTypes.DECIMAL(9,2),
+      type: dataTypes.DECIMAL(9, 2),
       allowNull: false,
     },
     idCategoryFK: {
