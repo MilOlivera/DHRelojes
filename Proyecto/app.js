@@ -28,6 +28,7 @@ app.use(cookies());
 const rutasIndex = require("./routes/index.js");
 const rutasProducts = require("./routes/products.js");
 const rutasUsers = require("./routes/users.js");
+const rutasApi = require("./routes/Api/Api");
 
 app.listen(3042, () => {
   console.log("Servidor Corriendo en 3042");
@@ -38,3 +39,4 @@ app.set("view engine", "ejs");
 app.use("/", rutasIndex);
 app.use("/products", rutasProducts);
 app.use("/users", rutasUsers);
+app.use("/api", rutasApi);

@@ -15,7 +15,6 @@ let user = db.Usuario;
 const validation = [
   body("name")
     .notEmpty()
-    // .withMessage("Tenes que escribir un nombre")
     .isLength({ min: 2 })
     .withMessage("El nombre debe ser más largo que dos caracteres"),
   body("lastName")
@@ -52,28 +51,6 @@ const validation = [
     .withMessage(
       "La contraseña debe tener al una letra mayuscula, una letra minuscula, un número y un caracter especial"
     ),
-  // body("image").custom((value, { req }) => {
-  //   let file = req.file;
-  //   if (!file) {
-  //     throw new Error("Debes incluir una imagen de tu producto");
-  //   }
-  //   return true;
-  // }),
-  // body("image").custom((value, req) => {
-  //   let file = req.file;
-  //   console.log(file, "error 1");
-  //   let acceptedExtensions = [".jpg", ".png", ".gif"];
-
-  //     let fileExtension = path.extname(file);
-
-  //     if (!acceptedExtensions.includes(fileExtension)) {
-  //       throw new Error(
-  //         `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-  //           ", "
-  //         )}`
-  //       );
-  //     }
-  //   })
 ];
 
 var storage = multer.diskStorage({
