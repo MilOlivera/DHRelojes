@@ -34,9 +34,14 @@ app.listen(3042, () => {
   console.log("Servidor Corriendo en 3042");
 });
 
+
 app.set("view engine", "ejs");
 
 app.use("/", rutasIndex);
 app.use("/products", rutasProducts);
 app.use("/users", rutasUsers);
 app.use("/api", rutasApi);
+
+app.use((req, res, next) => {
+  res.status(404).render('not-found')
+})
