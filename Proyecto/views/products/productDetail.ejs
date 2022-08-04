@@ -24,33 +24,36 @@
                         <option value = "5">5</option>
                     </select>
                 </div>
-               
+
                 </div>
-                <% if (locals.isLogged) { %>
-                <div class="box-prod-detail-btn">
-                        <button class ="product-btn" type="submit" id="btnComprarProduct"> Comprar </button> 
+
+                <div class="botones">
+                    <% if (locals.isLogged) { %>
+                    <div class="box-prod-detail-btn">
+                            <button class ="product-btn-buy" type="submit" id="btnComprarProduct"> Comprar </button> 
+                    </div>
+                    <% } %>
+                    <% if (locals.isLogged) { %>
+                    <br>
+                    <div class="edit-delete">
+                        <div class="divDelete">
+                            <form class = "botonDeCompra" method="" action="/products/<%= promesaProducto.idProduct %>/edit" >
+                                <button class ="product-btn" type="submit" > Edit </button> 
+                            </form>
+                        </div>
+                        <% } %>
+                        <% if (locals.isLogged) { %>
+                            <br>
+                        <div class="divDelete">
+                            <form class = "botonDeCompra" method="POST" action="/products/delete/<%= promesaProducto.idProduct %>?_method=DELETE" >
+                                <button class ="product-btn" type="submit" > Delete </button> 
+                            </form>
+                        </div>
+                        <% } %>
+                    </div>
                 </div>
-                <% } %>
-                <% if (locals.isLogged) { %>
-            <div class="divDelete">
-                <form class = "botonDeCompra" method="" action="/products/<%= promesaProducto.idProduct %>/edit" >
-                    <button class ="product-btn" type="submit" > Edit </button> 
-                </form>
-            </div>
-            <% } %>
-            <% if (locals.isLogged) { %>
-            <div class="divDelete">
-                <form class = "botonDeCompra" method="POST" action="/products/delete/<%= promesaProducto.idProduct %>?_method=DELETE" >
-                    <button class ="product-btn" type="submit" > Delete </button> 
-                </form>
-            </div>
-            <% } %>
 
             </article>
-
-           
-    
-
 
             </div>
         </section>
