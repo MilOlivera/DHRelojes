@@ -5,7 +5,7 @@
     <main class="main-login">
         <section class="section-login">
             <h1 class="title-login">Iniciar sesion</h1> 
-            <form action="/users/login" method="POST" id="loginValidator">
+            <form action="/users/login" method="POST" id="loginValidator" class="width-login">
                 
                 <div class="divGrupo" id="grupo-mail">
                     <input name="mail" type="text" class="formInput" id="inputBusqueda-login" placeholder="Email" value="<%= locals.oldData ? oldData.mail : null %>" required>
@@ -29,7 +29,7 @@
                 </div>
                 <div><input type="submit" value="Iniciar Sesión" class="send-btn-login"></div>
 
-                <input type="checkbox" class="recordarme" name="recordarme" value="recordarme">Recordarme
+                <input type="checkbox" class="recordarme" name="recordarme" value="recordarme"> <span class="span-recordar">Recordarme</span>
 
                 <div class="text-login">¿No tenes cuenta? <a href="/users/registro">Registrate</a></div>
                 <div class="text-login-end"> ¿Olvidó su password? </div>

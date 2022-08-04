@@ -95,7 +95,6 @@ let userController = {
   profile: (req, res) => {
     let user = req.session.userLogged;
     res.render("./users/profile", { user });
-    console.log(user, "error");
   },
 
   logout: (req, res) => {
@@ -120,7 +119,6 @@ let userController = {
     // }
 
     let userFind = req.params.id;
-    console.log(userFind, "ACA ESTA");
 
     db.Usuario.update(
       {
@@ -138,7 +136,6 @@ let userController = {
         },
       }
     ).then(function (cambio) {
-      console.log(cambio.name, "ACA EL SEGUNDO CONSOLE LOG");
       // res.redirect("/", cambio);
       res.send("funciona");
     });

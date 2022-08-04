@@ -12,15 +12,90 @@
 body{
     width: 100%;
 }
+
 html{
     background-color: #ffffff;
 }
+
+
+/* mi navbar */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.header-info {
+    color: #252525;
+    font-family: 'Raleway', Sans-Serif;
+}
+
+.primary-navigation li a i {
+    color: #252525;
+}
+
+#nopad {
+    padding: 0;
+    margin: 0;
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    margin-inline-end: 0.7rem;
+    color: #363636;
+}
+
+@media (max-width: 769px) {
+    .primary-navigation{
+        --gap: 1.5em;
+        z-index: 9;
+        position: fixed;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: 3rem 2rem;
+        background-color: hsl(0 0% 0% / 0.1);
+        backdrop-filter: blur(0.5rem);
+        transform: translateX(100%);
+        transition: transform 350ms ease-in;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        width: 2rem;
+        aspect-ratio: 1;
+        right: 2rem;
+        border: 0 ;
+        z-index: 10;
+        background: none;
+    }
+}
+
+
 
 /* HEADER SIN VIDEO ** HEADER SIN VIDEO
 HEADER SIN VIDEO ** HEADER SIN VIDEO */
 
 .headerSinVideo{
-    background-color: black;
+    background-color: #ffffff;
     margin: -10px;
 }
 
@@ -114,9 +189,8 @@ nav{
 } */
 
 .logoHeader{
-    width: 80px;
-    margin-left: 0%;
-    margin-top: 20px;
+    width: 50px;
+    margin: 5px 0 0 10px
 }
 
 ul{
@@ -948,25 +1022,34 @@ hr.divider {
 
 /* Guido Registro y Login*/
 .title-login {
-    font-size: 40px;
+    font-size: 25px;
     letter-spacing: 0.035rem;
     font-weight: 300;
     font-family: 'new york', serif;
     font-weight: 400;
-    margin: 50px 0px 40px 0px;
+    margin: 30px 0px 15px 0px;
+}
+
+.loginError-activo{
+    font-size: 14px;
+}
+
+.width-login {
+    width: 90%;
+    margin: auto;
 }
 
 .main-login {
     background-color: #fafafa;
-    margin: 0;
+    padding-bottom: 10rem;
 }
 
 .section-login {
-    margin-top: 10px;
     padding: 10px;
     line-height: 30px;
     text-align: center;
 }
+
 .nullRegister{
     border: none;
     color: transparent;
@@ -979,11 +1062,11 @@ hr.divider {
     width: 90%;
     background-color: #fafafa;
     font-size: 15px;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     border: 0;
     border-bottom: solid 1px #9b9b9b;
     color: #252525;
-    height: 3rem;
+    height: 2.5rem;
 }
 
 .send-btn-login {
@@ -991,8 +1074,8 @@ hr.divider {
     line-height: 18px;
     letter-spacing: 0.6px;
     border: 0;
-    padding: 1rem;
-    width: 40%;
+    padding: 0.75rem;
+    width: 100%;
     background-color: #efefef;
     transition: all 400ms;
     color: #363636;
@@ -1015,8 +1098,17 @@ hr.divider {
     text-align: center;
     font-size: 13px;
     margin-top: 10px;
+    width: 100%;
 }
 
+.span-recordar {
+    font-family: 'Raleway', Sans-Serif;
+    font-size: 13px;
+}
+
+.recordarme [type="checkbox"] {
+    size: 10px;
+}
 
 .logo-back {
     background-color: #252525;
@@ -1027,19 +1119,23 @@ hr.divider {
 /* REGISTRO ** REGISTRO ** REGISTRO 
 REGISTRO ** REGISTRO ** REGISTRO */
 
-.register-txt {
-    font-size: 40px;
+.register-txt, .profile-txt {
+    font-size: 25px;
     letter-spacing: 0.035rem;
     font-weight: 300;
     font-family: 'new york', serif;
     font-weight: 400;
-    margin: 50px 0px 40px 0px;
+    margin: 30px 0px 15px 0px;
 }
 
 .main-register {
-    margin: 0;
-    margin-top: 10px;
     background-color: #fafafa;
+    padding-bottom: 10rem;
+}
+
+.width-registro {
+    width: 90%;
+    margin: auto;
 }
 
 .section-register {
@@ -1048,25 +1144,20 @@ REGISTRO ** REGISTRO ** REGISTRO */
     text-align: center;
 }
 
-.center-register {
-    background-color: #fafafa;
-    text-align: center;
-    max-width: 90%;
-    margin: auto
-}
 #formValidacion input{
     position: relative;
 }
+
 .formInput {
     font-family: 'Raleway', Sans-Serif;
     width: 100%;
     background-color: #fafafa;
     font-size: 15px;
-    padding: 5px;
+    margin-top: 0.5rem;
     border: 0;
     border-bottom: solid 1px #9b9b9b;
     color: #252525;
-    height: 3rem;
+    height: 2.5rem;
    
 }
 
@@ -1090,10 +1181,6 @@ REGISTRO ** REGISTRO ** REGISTRO */
     border-bottom: solid 1px #9b9b9b;
     height: 2.6rem;
     text-align: left;
-    font-family: 'Raleway', Sans-Serif;
-}
-
-.formInput {
     font-family: 'Raleway', Sans-Serif;
     font-size: 15px;
     border: 1;
@@ -1137,8 +1224,8 @@ REGISTRO ** REGISTRO ** REGISTRO */
     line-height: 18px;
     letter-spacing: 0.6px;
     border: 0;
-    padding: 1rem;
-    width: 40%;
+    padding: 0.75rem;
+    width: 100%;
     background-color: #efefef;
     transition: all 400ms;
     color: #363636;
@@ -1162,23 +1249,27 @@ REGISTRO ** REGISTRO ** REGISTRO */
 /* ESTILOS PARA VALIDACION REGISTER *//* ESTILOS PARA VALIDACION REGISTER*/
 /* ESTILOS PARA VALIDACION REGISTER *//* ESTILOS PARA VALIDACION REGISTER*/
 
+.divGrupo {
+    position: relative;
+}
+
+
 .divGrupo-correcto .formValidacion-estado{
     color: #1ed12d;
     opacity: 1;
     z-index: 1;
+    position: absolute;
 }
 .divGrupo-incorrecto .formValidacion-estado{
-    color: #bb2929;
+    color: #CD113B;
     opacity: 1;
     z-index: 1;
 }
 .divGrupo-correcto .formInput{
     border: 3px solid #1ed12d;
-    border-radius: 10px;
 }
 .divGrupo-incorrecto .formInput{
-   border: 3px solid #bb2929;
-   border-radius: 10px;
+   border: 3px solid #CD113B;
 }
 
 .formError-activo{
@@ -1187,9 +1278,6 @@ REGISTRO ** REGISTRO ** REGISTRO */
     box-shadow: 2px;
     margin-top: -20px;
 }
-
-
-
 
 
 /*Daniel pagina producto*/
@@ -1415,19 +1503,20 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
     flex-direction: column;
     align-items: center;
     background-color: #fafafa;
+    padding-bottom: 200px;
 }
 
 .divCardProfile{
-    margin: 60px;
+    margin: 30px 5px 5px 5px;
     background-color: rgba(239, 239, 239, 0.5);
     border-radius: 10px;
     padding: 30px;
-    width: 40%;
+    width: 90%;
 }
 
 .welcome-text {
     font-family: 'Raleway', Sans-Serif;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -1438,7 +1527,7 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
 } */
 
 .profile-pic {
-    width: 250px;
+    width: 60px;
     clip-path: circle();
 }
 
@@ -1488,7 +1577,7 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
 }
 
 .img-upload{
-    width: 100px;
+    width: 60px;
     position: relative;
     margin: auto;
 }
@@ -1528,11 +1617,42 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
 @media(min-width: 368px){
 
+    /* Profile */
+    .divCardProfile{
+        margin: 30px 5px 5px 5px;
+        background-color: rgba(239, 239, 239, 0.5);
+        border-radius: 10px;
+        padding: 30px;
+        width: 90%;
+    }
+
+    .profile-pic {
+        width: 100px;
+        clip-path: circle();
+    }
+
+    .img-upload {
+        width: 100px;
+    }
+
+    .welcome-text {
+        font-size: 20px;
+    }
+
     /* HOME HOME HOME HOME 
     HOME HOME HOME HOME  */
+    .header-info {
+        color: #363636;
+        font-family: 'Raleway', Sans-Serif;
+    }
+    
+    .primary-navigation li a i {
+        color: #363636;
+    }
 
     .logoHeader{
         margin-left: 20px;
+        width: 60px;
     }
     ul{
         margin-left: 0;
@@ -1612,13 +1732,22 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 } 
 
 @media(min-width: 769px){
+
+    .header-info {
+        color: #363636;
+        font-family: 'Raleway', Sans-Serif;
+    }
+    
+    .primary-navigation li a i {
+        color: #363636;
+    }
     
    /* HOME HOME HOME HOME HOME 
    HOME HOME HOME HOME HOME */
 
    .linksNav #buscarProducto, .buscarHome{
     display: inline-block;
-}
+    }
 .linksNav li{
     margin-top: 30px;
     font-size: 15px;
@@ -1669,8 +1798,35 @@ height: 1400px;
  /* LOGIN Y REGISTRO ** LOGIN Y REGISTRO
  LOGIN Y REGISTRO ** LOGIN Y REGISTRO */
 
+
+    .width-login, .width-registro {
+        width: 70%;
+    }
+
     #inputBusqueda-login, #inputBusqueda-login2, .center-register {
-        width: 70%
+        width: 90%;
+        height: 3rem;
+    }
+
+    .send-btn-login, .text-login , .text-login-end {
+        width: 100%;
+    }
+
+    .title-login, .register-txt {
+        font-size: 30px;
+        margin: 50px 0 40px 0;
+    }
+
+    .profile-txt {
+        font-size: 30px;
+    }
+
+    .span-recordar {
+        font-size: 15px;
+    }
+
+    .main-register{
+        padding-bottom: 20rem;
     }
 
     /* .loginValidator-estado{
@@ -1691,11 +1847,9 @@ height: 1400px;
     }
     .divGrupo-correcto .formInput{
         border: 3px solid #1ed12d;
-        border-radius: 10px;
     }
     .divGrupo-incorrecto .formInput{
        border: 3px solid #bb2929;
-       border-radius: 10px;
     }
     .loginError{
         display: none;
@@ -1706,6 +1860,28 @@ height: 1400px;
         box-shadow: 2px;
         margin-top: -20px;
     }    
+
+/* PERFIL PERFIL PERIFL */
+    .divCardProfile {
+        width: 50%;
+    }
+
+    .welcome-text {
+        font-size: 25px;
+    }
+
+    .contenedorProfile {
+        padding: 50px 0 300px 0;
+    }
+
+    .profile-pic, .img-upload {
+        width: 150px;
+    }
+
+    .logoutProfile {
+        font-size: 15px;
+    }
+
 
 /* CARRITO ** CARRITO ** CARRITO
 CARRITO ** CARRITO ** CARRITO */
@@ -1822,15 +1998,35 @@ CARRITO ** CARRITO ** CARRITO */
         height: 32px;
         line-height: 33px;
     }
+
+    .header-info {
+        display: none;
+        color: #252525;
+    }
     
 
 }
 
 @media(min-width: 1280px){
-    
-    .logoHeader{
-        margin-left: 0px;
+
+    /* header */
+    .header-info {
+        color: #363636;
+        font-family: 'Raleway', Sans-Serif;
     }
+    
+    .primary-navigation li a i {
+        color: #363636;
+    }
+    
+    .header-info {
+        display: inline;
+    }
+
+    .logoHeader{
+        margin: 10px 0 10px 30px;
+    }
+
     ul{
         margin-left: 50%;
     }
@@ -1944,16 +2140,48 @@ CARRITO ** CARRITO ** CARRITO */
     
     /* login y registro */
     #inputBusqueda-login, #inputBusqueda-login2, .center-register {
-        width: 40%
+        width: 95%
     }
 
-    .register-txt, .title-cart, .login-is {
-        font-size: 50px;
+    .register-txt, .title-cart, .title-login, .profile-txt {
+        font-size: 35px;
     }
 
-    .register-txt, .login-is {
+    .register-txt, .title-login, .profile-txt {
         margin-top: 7rem;
     }    
+
+    .text-login, .text-login-end {
+        font-size: 15px;
+    }
+
+    .width-login, .width-registro {
+        width: 40%;
+        padding-bottom: 15rem;
+    }
+
+    /* perfil */
+    .divCardProfile {
+        width: 40%;
+    }
+
+    .welcome-text {
+        font-size: 25px;
+    }
+
+    .contenedorProfile {
+        padding: 50px 0 300px 0;
+    }
+
+    .profile-pic, .img-upload {
+        width: 250px;
+    }
+
+    .logoutProfile {
+        font-size: 15px;
+        margin: 10px 0 15px 0;
+        padding: 12px;
+    }
 
     /* carrito */
 
@@ -2061,11 +2289,9 @@ VALIDACION LOGIN ** VALIDACION LOGIN */
     }
     .divGrupo-correcto .formInput{
         border: 3px solid #1ed12d;
-        border-radius: 10px;
     }
     .divGrupo-incorrecto .formInput{
        border: 3px solid #bb2929;
-       border-radius: 10px;
     }
     .loginError{
         display: none;
@@ -2099,11 +2325,9 @@ VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
     }
     .divGrupo-correcto .inputBusqueda-add{
         border: 3px solid #1ed12d;
-        border-radius: 10px;
     }
     .divGrupo-incorrecto .inputBusqueda-add{
        border: 3px solid #bb2929;
-       border-radius: 10px;
     }
     .productError{
         display: none;
