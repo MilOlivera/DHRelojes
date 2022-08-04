@@ -740,7 +740,7 @@ footer{
     font-family: 'New york', serif;
     text-align: left;
     font-weight: 500;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .short-desc-product {
@@ -754,7 +754,8 @@ footer{
 .desc-product {
     font-family: 'Raleway', Sans-Serif;;
     text-align: left;
-    margin: 15px 0px 20px 20px;
+    font-size: 13px;
+    margin: 10px 0px 20px 10px;
 }
 
 .talle-cantidad, .cantidad {
@@ -763,11 +764,12 @@ footer{
     padding-right: 30px;  
     margin-left: 20px;
     font-family: 'Raleway', Sans-Serif;
+    font-size: 13px;
 }
 
 .selectorCantidad, .selectorTalle {
     border: 0;
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Raleway', Sans-Serif;
 }
 
@@ -830,8 +832,16 @@ footer{
     font-style: italic;
 }
 
-
-
+.button-category, .all-button {
+    font-size: 13px;
+    font-family: 'Raleway', Sans-Serif;
+    cursor: pointer;
+    background-color: #fafafa;
+    margin-top: 1rem;
+    border: 0;
+    color: #252525;
+    height: 2.5rem;
+}
 
 /* CARRITO CARRITO CARRITO CARRITO 
 CARRITO CARRITO CARRITO CARRITO  */
@@ -1119,7 +1129,7 @@ hr.divider {
 /* REGISTRO ** REGISTRO ** REGISTRO 
 REGISTRO ** REGISTRO ** REGISTRO */
 
-.register-txt, .profile-txt {
+.register-txt, .profile-txt, .prodlist-txt {
     font-size: 25px;
     letter-spacing: 0.035rem;
     font-weight: 300;
@@ -1410,19 +1420,10 @@ EDICION ** EDICION ** EDICION  */
     margin: 0;
 }
 
-.prodlist-txt {
-    font-size: 40px;
-    letter-spacing: 0.035rem;
-    font-weight: 300;
-    font-family: 'new york', serif;
-    font-weight: 400;
-    margin: 50px 0px 40px 0px;
-}
-
 .container {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 2rem 2rem;
+    background-color: #fafafa;
 }
 
 .ref-link {
@@ -1433,22 +1434,14 @@ EDICION ** EDICION ** EDICION  */
 .products-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .product{
     text-align: center;
-    padding:3rem 2rem;
+    margin:3rem 2rem 1rem 2rem;
     outline-offset: -1.5rem;
     cursor: pointer;
-}
-
-.img-pl {
-    max-width: 200px;
-}
-
-.box-image {
-    height: 320px;
 }
 
 .short-description-hover {
@@ -1467,8 +1460,10 @@ PRODUCT EDIT ** PRODUCT EDIT ** PRODUCT EDIT
 PRODUCT EDIT ** PRODUCT EDIT ** PRODUCT EDIT  */
 
 .img-pl {
-    width: 200px;
+    width: 100px;
+    max-width: 100px;
 }
+
 
 .desc-pl {
     font-family: 'Raleway', Sans-Serif;
@@ -1639,6 +1634,30 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         font-size: 20px;
     }
 
+    /* product */
+
+    .button-category {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .all-button {
+        font-size: 14px;
+    }
+
+    .img-pl {
+        width: 150px;
+        max-width: 150px;
+    }
+
+    .product-img{
+        max-width: 50%;
+    }
+
+    .desc-product, .talle-cantidad, .cantidad, .selectorCantidad, .selectorTalle {
+        font-size: 15px;
+    }
+
     /* HOME HOME HOME HOME 
     HOME HOME HOME HOME  */
     .header-info {
@@ -1791,9 +1810,44 @@ height: 1400px;
  /* PRODUCT DETAIL ** PRODUCT DETAIL ** PRODUCT DETAIL 
  PRODUCT DETAIL ** PRODUCT DETAIL ** PRODUCT DETAIL */
 
+    .prod-width {
+        width: 85%;
+        margin: auto;
+    }
+
+    .product-name {
+        font-size: 20px;
+    }
+
+    .img-pl {
+        width: 200px;
+        max-width: 200px;
+    }
+
     .product-img {
-        width: 40%;
+        width: 300px;
     }   
+
+    .button-category {
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+    .all-button {
+        font-size: 15px;
+    }
+
+    .marcaReloj{
+        font-size: 30px;
+    }
+
+    .desc-product, .talle-cantidad, .cantidad, .selectorCantidad, .selectorTalle {
+        font-size: 15px;
+    }
+    
+    .product-detail {
+        margin: 15px;
+    }
     
  /* LOGIN Y REGISTRO ** LOGIN Y REGISTRO
  LOGIN Y REGISTRO ** LOGIN Y REGISTRO */
@@ -1815,6 +1869,12 @@ height: 1400px;
     .title-login, .register-txt {
         font-size: 30px;
         margin: 50px 0 40px 0;
+    }
+
+    .prodlist-txt {
+        font-size: 30px;
+        margin: 50px 0 50px 0;
+        text-align: center;
     }
 
     .profile-txt {
@@ -1941,7 +2001,7 @@ CARRITO ** CARRITO ** CARRITO */
 	}
 
     .container{
-		max-width: 95%;
+		max-width: 100%;
 	}
 
 	.purchase-summary {
@@ -2008,6 +2068,15 @@ CARRITO ** CARRITO ** CARRITO */
 }
 
 @media(min-width: 1280px){
+
+    .button-category {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .all-button {
+        font-size: 16px;
+    }
 
     /* header */
     .header-info {
@@ -2101,14 +2170,47 @@ CARRITO ** CARRITO ** CARRITO */
    }
 
     /* product-detail */
-    .product-img {
+    .main-product {
+        background-color: #fafafa;
+    }
+
+    .product-detail {
+        margin: 0
+    }
+
+    .product-img{
         width: 350px;
     }
 
+    .marcaReloj{
+        font-size: 35px;
+    }
+
+    .desc-product, .talle-cantidad, .cantidad, .selectorCantidad, .selectorTalle {
+        font-size: 16px;
+    }
+
+    .selectorCantidad {
+        background-color: #fafafa;
+    }
+    
+    .prod-width {
+        width: 80%;
+    }
+
+    .product-name {
+        font-size: 24px;
+    }
+
+    .products-container {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 2rem;
+    }
+
     .img-box {
+        background-color: #fafafa;
         width: 50%;
-        background-color: #ffffff;
-        margin: 3rem -4.4rem 0.4rem 0.4rem
+        margin: 3rem -10rem 0.4rem 0.4rem
     }
 
     .product-detail {
@@ -2123,15 +2225,7 @@ CARRITO ** CARRITO ** CARRITO */
         display: flex;
         position: relative;
         align-items: center;
-        margin-top: 2rem;
-    }
-
-    .desc-product {
-        font-size: 14px;
-    }
-
-    .talle-cantidad, .cantidad, .cuotasSinInteres {
-        font-size: 14px;
+        padding: 2rem 0 25rem 0;
     }
 
     .precio {
@@ -2143,8 +2237,12 @@ CARRITO ** CARRITO ** CARRITO */
         width: 95%
     }
 
-    .register-txt, .title-cart, .title-login, .profile-txt {
+    .register-txt, .title-cart, .title-login, .profile-txt, .prodlist-txt {
         font-size: 35px;
+    }
+
+    .prodlist-txt {
+        margin: 70px 0 70px 0;;
     }
 
     .register-txt, .title-login, .profile-txt {
