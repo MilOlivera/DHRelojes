@@ -1,0 +1,25 @@
+.AppSup {
+    display: flex;
+    height: 800px;
+}
+
+.App {
+    background-color: rgba(250,241,234,255)    ;
+    /* border: 1px solid black; */
+    height: 800px;
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 1px;
+}
+
+.FotoReloj {
+    width: 45%;
+
+}
+
+
+/* fbf3eb */

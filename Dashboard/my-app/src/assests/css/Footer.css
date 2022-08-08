@@ -1,0 +1,14 @@
+.Footer {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.Footer p {
+    color: #424343;
+    padding-left: 5px;
+}
+
+.LogoFS {
+    height: 40px;
+}

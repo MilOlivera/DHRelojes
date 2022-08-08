@@ -1,0 +1,53 @@
+.GranContenedor {
+    display:flex;
+    padding: 0px;
+    margin: 0px;
+    justify-content: space-around;
+    color: #424343
+}
+
+.Contenedores {
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between
+}
+
+.Contenedor {
+    background-color: #fe8c2e;
+    margin: 10px;
+    padding: 10px;
+    width:200px;
+    min-height: 100px;
+}
+
+.Contenedor h2 {
+    font-size: 20px;
+}
+
+.ContenedorListado {
+    background-color: #fe8c2e;
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    height: 95%;
+}
+
+.ContenedorListado h2 {
+    font-size: 20px;
+}
+
+.Listado {
+    margin-bottom: 5px;
+}
+
+.ContenedorEs {
+    background-color: #fe8c2e;
+    margin: 10px;
+    padding: 10px;
+    width:200px;
+    min-height: 150px;
+}
+
+.ContenedorEs h2 {
+    font-size: 20px;
+}
