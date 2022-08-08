@@ -9,44 +9,44 @@
                 <img class="img-pl" src="/images/products/<%= promesaImagen.name %>" alt="Foto de Reloj">
             </div>
 
-            <form class="center-register" method="POST" action="/products/<%= promesaProducto.idProduct %>/edit?_method=PUT" id="productsValidator">
+            <form class="width-registro" method="POST" action="/products/<%= promesaProducto.idProduct %>/edit?_method=PUT" id="productsValidator">
 
                 <br></br>
 
-                <div class="detail-box">
-                    <p class="desc-pl">Nombre:</p>
+                <div>
+                    <p class="desc-ep">Nombre:</p>
                     <div class="divGrupo" id="grupo-name">
-                        <input class="inputBusqueda-prodlist" type="text"  name="name" id="name" value="<%= promesaProducto.name %>" >
+                        <input class="formInput" type="text"  name="name" id="name" value="<%= promesaProducto.name %>" >
                         <i class="productEditValidacion-estado fas fa-times-circle"></i>
                         <p class="productError">El nombre debe tener al menos cinco caracteres y no puede incluir numeros</p>
                     </div>
                 </div>
 
-                <!-- <div class="detail-box">
-                    <p class="desc-pl">Breve descripción:</p>
-                    <input class="inputBusqueda-prodlist" type="text" name="short_descriptio" id="short_descriptio" value="<%= promesaProducto.description %>" >
+                <!-- <div>
+                    <p class="desc-ep">Breve descripción:</p>
+                    <input class="formInput" type="text" name="short_descriptio" id="short_descriptio" value="<%= promesaProducto.description %>" >
                 </div> -->
 
-                <div class="detail-box">
-                    <p class="desc-pl">Descripción:</p>
+                <div>
+                    <p class="desc-ep">Descripción:</p>
                     <div class="divGrupo" id="grupo-description">
-                        <input class="inputBusqueda-prodlist" type="text" name="description" id="description" value="<%= promesaProducto.description %>" >
+                        <input class="formInput" type="text" name="description" id="description" value="<%= promesaProducto.description %>" >
                         <i class="productEditValidacion-estado fas fa-times-circle"></i>
                         <p class="productError">La descripcion debe tener al menos 20 caracteres</p>
                     </div>
                 </div>
 
-                <div class="detail-box">
-                    <p class="desc-pl">Precio:</p>
+                <div>
+                    <p class="desc-ep">Precio:</p>
                     <div class="divGrupo" id="grupo-price">
-                        <input class="inputBusqueda-prodlist" type="number"  name="price" id="price" value="<%= promesaProducto.price %>">
+                        <input class="formInput" type="number"  name="price" id="price" value="<%= promesaProducto.price %>">
                         <i class="productEditValidacion-estado fas fa-times-circle"></i>
                         <p class="productError">Utilice el "." como separador decimal</p>
                     </div>
                 </div>
 
                 <div>
-                    <select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category">
+                    <select class="formInput" type="text" placeholder="Categoria" name="category" id="category">
                         <option value="" disabled selected>- Seleccione Categoría - </option>
                         <% categorias.forEach(categoria => { %>
                             <option value="<%= categoria.idCategory %>">
@@ -54,15 +54,13 @@
                             </option>
                         <% }); %>
                     </select>
-                    <!-- <p class="desc-pl">Categoria:</p>
-                    <input class="inputBusqueda-prodlist" type="tel"  name="category" id="category" value="<%= promesaProducto.category %>"> -->
+                    <!-- <p class="desc-ep">Categoria:</p>
+                    <input class="formInput" type="tel"  name="category" id="category" value="<%= promesaProducto.category %>"> -->
                 </div>
 
                 <br>
-                <button class="botonEditar-2"> 
-                    <input class="fa-solid fa-folder-plus" type="file" name="image" id="image">
-                </button>
-                
+                <div><input class="formInput-edit" type="file" placeholder="image" name="image" id="image"></div>
+                <br>
                 <div><input type="submit" value="Confirmar Cambios" class="send-btn-register"></div>
 
             </form>

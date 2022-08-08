@@ -2,12 +2,12 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main class="main-register">
-        <section class="section-register"></section>
+        <section class="section-register">
             <h2 class="product-add-title">Agregar Item</h2>
-            <form class="center-register" action="/products" method="POST" enctype="multipart/form-data" id="productsValidator">
+            <form class="width-registro" action="/products" method="POST" enctype="multipart/form-data" id="productsValidator">
                 <div class="divGrupo" id="grupo-name">
                     <input 
-                    class="inputBusqueda-add" 
+                    class="formInput" 
                     type="text" 
                     placeholder="Nombre del Producto" 
                     name="name" id="name" 
@@ -24,7 +24,7 @@
 
                 <div class="divGrupo" id="grupo-description">
                     <input 
-                    class="inputBusqueda-add" 
+                    class="formInput" 
                     type="text"  
                     placeholder="Descripción del Producto" 
                     name="description" 
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="divGrupo" id="grupo-price">
-                    <input class="inputBusqueda-add" type="number" placeholder="Precio" name="price" id="price" value="<%= locals.oldData ? oldData.price : null %>" required>
+                    <input class="formInput" type="number" placeholder="Precio" name="price" id="price" value="<%= locals.oldData ? oldData.price : null %>" required>
                     <i class="productValidacion-estado fas fa-times-circle"></i>
                     <% if (locals.errors && errors.price) { %>
                         <div class="text-danger">
@@ -52,7 +52,7 @@
                     <p class="productError">Utilice el "." como separador decimal</p>
                 </div>
 
-                <div><select class="inputBusqueda-add" type="text" placeholder="Categoria" name="category" id="category" required>
+                <div><select class="formInput" type="text" placeholder="Categoria" name="category" id="category" required>
 
                     <option value="" disabled selected>- Seleccione Categoría - </option>
                     <option value="1" > Center Pompidou </option>
@@ -69,7 +69,7 @@
                     <!-- <p id="errores-price"></p> -->
 
                 </div>
-                <div><input class="inputBusqueda-add" type="file" placeholder="image" name="image" id="image"></div>
+                <div><input class="formInput-edit" type="file" placeholder="image" name="image" id="image"></div>
                 <br></br>
                 <div><input type="submit" value="Save" class="send-btn-register"></div>
             </form>

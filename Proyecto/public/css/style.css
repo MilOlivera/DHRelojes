@@ -1153,7 +1153,7 @@ hr.divider {
 /* REGISTRO ** REGISTRO ** REGISTRO 
 REGISTRO ** REGISTRO ** REGISTRO */
 
-.register-txt, .profile-txt, .prodlist-txt {
+.register-txt, .profile-txt, .prodlist-txt, .product-add-title, .product-edit-title {
     font-size: 25px;
     letter-spacing: 0.035rem;
     font-weight: 300;
@@ -1182,17 +1182,23 @@ REGISTRO ** REGISTRO ** REGISTRO */
     position: relative;
 }
 
-.formInput {
+.formInput, .formInput-edit {
     font-family: 'Raleway', Sans-Serif;
     width: 100%;
     background-color: #fafafa;
     font-size: 15px;
-    margin-top: 0.5rem;
     border: 0;
     border-bottom: solid 1px #9b9b9b;
     color: #252525;
     height: 2.5rem;
-   
+}
+
+.formInput {
+    margin-top: 0.5rem;
+}
+
+.formInput-edit {
+    margin-top: 2rem;
 }
 
 .register-error {
@@ -1207,11 +1213,10 @@ REGISTRO ** REGISTRO ** REGISTRO */
     height: 3rem;
 }
 
-.formInput {
+.formInput, .formInput-edit {
     width: 100%;
     background-color: #fafafa;
     font-size: 15px;
-    margin-top: 0.2rem;
     border-bottom: solid 1px #9b9b9b;
     height: 2.6rem;
     text-align: left;
@@ -1221,6 +1226,14 @@ REGISTRO ** REGISTRO ** REGISTRO */
     font-size: 15px;
     color: #73777c;
     background-color: #fafafa;
+}
+
+.formInput {
+    margin-top: 0.2rem;
+}
+
+.formInput-edit {
+    margin-top: 2rem;
 }
 
 .formInput b {
@@ -1233,6 +1246,13 @@ REGISTRO ** REGISTRO ** REGISTRO */
     padding: 15px;
     border-radius: 10px;
 }
+
+.formInput-edit:focus{
+    border: 3px solid;
+    padding: 15px;
+    border-radius: 10px;
+}
+
 .formValidacion-estado{
     position: relative;
     left: 230px;
@@ -1339,7 +1359,7 @@ REGISTRO ** REGISTRO ** REGISTRO */
 }
 
 /* edit & add */
-.product-add-title, .product-edit-title {
+/* .product-edit-title {
     font-size: 40px;
     letter-spacing: 0.035rem;
     font-weight: 300;
@@ -1347,7 +1367,7 @@ REGISTRO ** REGISTRO ** REGISTRO */
     font-weight: 400;
     margin: 50px 0px 40px 0px;
     text-align: center;
-}
+} */
 
 .inputBusqueda-edit,  .inputBusqueda-add {
     font-family: 'Raleway', Sans-Serif;
@@ -1687,6 +1707,10 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         font-size: 14px;
     }
 
+    .box-img {
+        margin-top: 30px;
+    }
+
     .img-pl {
         width: 150px;
         max-width: 150px;
@@ -1870,6 +1894,10 @@ height: 1400px;
         font-size: 20px;
     }
 
+    .box-img {
+        margin-top: 60px;
+    }
+
     .img-pl {
         width: 200px;
         max-width: 200px;
@@ -1922,14 +1950,14 @@ height: 1400px;
         margin: 50px 0 40px 0;
     }
 
+    .profile-txt, .product-edit-title {
+        font-size: 30px;
+    }
+
     .prodlist-txt {
         font-size: 30px;
         margin: 50px 0 50px 0;
         text-align: center;
-    }
-
-    .profile-txt {
-        font-size: 30px;
     }
 
     .span-recordar {
@@ -2288,7 +2316,7 @@ CARRITO ** CARRITO ** CARRITO */
         width: 95%
     }
 
-    .register-txt, .title-cart, .title-login, .profile-txt, .prodlist-txt {
+    .register-txt, .product-add-title, .title-cart, .title-login, .profile-txt, .prodlist-txt, .product-edit-title {
         font-size: 35px;
     }
 
@@ -2296,7 +2324,7 @@ CARRITO ** CARRITO ** CARRITO */
         margin: 70px 0 70px 0;;
     }
 
-    .register-txt, .title-login, .profile-txt {
+    .register-txt, .title-login, .profile-txt, .product-add-title, .product-edit-title {
         margin-top: 7rem;
     }    
 
