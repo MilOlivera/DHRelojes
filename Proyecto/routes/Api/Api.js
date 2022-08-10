@@ -14,6 +14,6 @@ router.get("/users/:id", userController.apiUserId);
 
 router.get("/products", productController.apiProduct);
 
-router.get("/products/:id", productController.apiProductId);
+// router.get("/products/:id", productController.apiProductId);
 
 module.exports = router;

@@ -2,6 +2,39 @@ const { promiseImpl } = require("ejs");
 let db = require("../../src/database/models");
 // let imagePath = require("../../public/images/products");
 
+// products: (req, res) =>
+//     db.Product.findAll({ include: [{ association: "categorias" }] }).then(
+//       (productos) => {
+
+//         let productosNew = [];
+
+//         productos.forEach(function (productos) {
+//           let categorias = productos.categorias.map((categoria) => {
+//             return categoria.categoria;
+//           });
+
+//           productosNew.push({
+//             id: productos.id,
+//             name: productos.nombre,
+//             descripcion: productos.descripcion,
+//             detail: "users/detail/" + productos.id,
+//             categoria: categorias
+//           });
+//         });
+
+// async function countByCategory() {
+//   const categoriasDb = await db.Category.findAll({include: [{ association: "categorias" }]})
+//   const categorias_info = await categoriasDb
+//   return categorias_info
+// }
+// let objetoLiteral = {
+//   count: productos.length,
+//   products: productosNew,
+//   // countByCategory: ,
+// };
+// res.send(countByCategory());
+// }
+
 let productControllerApi = {
   apiProduct: (req, res) => {
     let productos = db.Producto.findAll({
@@ -9,7 +42,7 @@ let productControllerApi = {
         "idProduct",
         "name",
         "description",
-        { detail: "localhost:3042/products/" + "idProduct" },
+        // { includes: [{ detail: "localhost:3042/products/" }] },
       ],
       order: [["idProduct", "ASC"]],
     }).then(function (productos) {
