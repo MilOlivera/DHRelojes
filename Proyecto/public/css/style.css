@@ -573,6 +573,11 @@ footer{
     margin-top: 10%;
 }
 
+.footer-title {
+    font-family: 'Raleway', Sans-Serif;
+    font-weight: 700;
+}
+
 .waveFooter{
     width: 300%;
     background-color: black;    
@@ -1093,7 +1098,7 @@ hr.divider {
 
 #inputBusqueda-login, #inputBusqueda-login2{
     font-family: 'Raleway', Sans-Serif;
-    width: 90%;
+    width: 100%;
     background-color: #fafafa;
     font-size: 15px;
     margin-top: 1rem;
@@ -1305,32 +1310,44 @@ REGISTRO ** REGISTRO ** REGISTRO */
 
 .divGrupo {
     position: relative;
+    width: 100%;
 }
 
 
 .divGrupo-correcto .formValidacion-estado{
-    color: #1ed12d;
+    color: #47C252;
     opacity: 1;
     z-index: 1;
+    width: 100%;
+    left: 48%;
+    bottom: 41px;
     position: absolute;
 }
+
 .divGrupo-incorrecto .formValidacion-estado{
     color: #CD113B;
     opacity: 1;
     z-index: 1;
+    width: 100%;
+    left: 48%;
+    bottom: 35px;
 }
+
 .divGrupo-correcto .formInput{
-    border: 3px solid #1ed12d;
+    border-bottom: solid 1px #47C252;
 }
+
 .divGrupo-incorrecto .formInput{
-   border: 3px solid #CD113B;
+    border-bottom: solid 1px #CD113B;
 }
+
 
 .formError-activo{
     display: block;
     color: #CD113B;
     box-shadow: 2px;
     margin-top: -20px;
+    font-size: 14px;
 }
 
 
@@ -1936,9 +1953,13 @@ height: 1400px;
         width: 70%;
     }
 
-    #inputBusqueda-login, #inputBusqueda-login2, .center-register {
+    .center-register {
         width: 90%;
         height: 3rem;
+    }
+
+    #inputBusqueda-login, #inputBusqueda-login2 {
+        width: 100%;
     }
 
     .send-btn-login, .text-login , .text-login-end {
@@ -1974,31 +1995,41 @@ height: 1400px;
         bottom: -2px;
         z-index: 1;   
     } */
+
+    .formError-activo, .loginError-activo, .productError-activo {
+        font-size: 15px;
+    }
+
     .divGrupo-correcto{
-        color: #1ed12d;
+        color: #47C252;
         opacity: 1;
         z-index: 1;
     }
+
     .divGrupo-incorrecto{
         color: #bb2929;
         opacity: 1;
         z-index: 1;
     }
+
     .divGrupo-correcto .formInput{
-        border: 3px solid #1ed12d;
+        border-bottom: solid 1px #47C252;
     }
+
     .divGrupo-incorrecto .formInput{
-       border: 3px solid #bb2929;
+        border-bottom: solid 1px #CD113B;
     }
+
     .loginError{
         display: none;
     }
+
     .loginError-activo{
-        display: block;
+        display: inline;
         color: #CD113B;
         box-shadow: 2px;
         margin-top: -20px;
-    }    
+    }  
 
 /* PERFIL PERFIL PERIFL */
     .divCardProfile {
@@ -2313,7 +2344,7 @@ CARRITO ** CARRITO ** CARRITO */
     
     /* login y registro */
     #inputBusqueda-login, #inputBusqueda-login2, .center-register {
-        width: 95%
+        width: 100%
     }
 
     .register-txt, .product-add-title, .title-cart, .title-login, .profile-txt, .prodlist-txt, .product-edit-title {
@@ -2449,34 +2480,48 @@ VALIDACION LOGIN ** VALIDACION LOGIN */
 
     .loginValidator-estado{
         position: relative;
-        left: -30px;
-        bottom: -2px;
         z-index: -1;   
     }
+
     .divGrupo-correcto .loginValidator-estado{
-        color: #1ed12d;
+        color: #47C252;
         opacity: 1;
         z-index: 1;
+        width: 100%;
+        left: 48%;
+        bottom: 31px;
     }
+
     .divGrupo-incorrecto .loginValidator-estado{
         color: #bb2929;
         opacity: 1;
         z-index: 1;
+        width: 100%;
+        left: 48%;
+        bottom: 31px;
     }
+
     .divGrupo-correcto .formInput{
-        border: 3px solid #1ed12d;
+        border-bottom: solid 1px #47C252;
     }
+
+    .divGrupo-correcto .formGrupoInput .formInput {
+        margin-bottom: 30px;
+    }
+
     .divGrupo-incorrecto .formInput{
-       border: 3px solid #bb2929;
+        border-bottom: solid 1px #CD113B;
     }
+
     .loginError{
         display: none;
     }
+
     .loginError-activo{
-        display: block;
+        display: inline;
         color: #CD113B;
         box-shadow: 2px;
-        margin-top: 0px;
+        margin-top: -20px;
     }    
 
 
@@ -2485,35 +2530,48 @@ VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
 
     .productValidacion-estado{
         position: relative;
-        left: -30px;
-        bottom: -2px;
         z-index: -1;   
     }
+
+    .divGrupo {
+        width: 100%;
+    }
+
     .divGrupo-correcto .productValidacion-estado{
-        color: #1ed12d;
+        color: #47C252;
         opacity: 1;
         z-index: 1;
+        width: 100%;
+        left: 48%;
+        bottom: 31px;
     }
+
     .divGrupo-incorrecto .productValidacion-estado{
         color: #bb2929;
         opacity: 1;
         z-index: 1;
+        width: 100%;
+        left: 48%;
+        bottom: 31px;
     }
+
     .divGrupo-correcto .inputBusqueda-add{
-        border: 3px solid #1ed12d;
+        border-bottom: solid 1px #47C252;
     }
+
     .divGrupo-incorrecto .inputBusqueda-add{
-       border: 3px solid #bb2929;
+        border-bottom: solid 1px #CD113B;
     }
+
     .productError{
         display: none;
     }
+
     .productError-activo{
         display: block;
         color: #CD113B;
         box-shadow: 2px;
-        margin-top: 8px;
-        font-size: small;
+        margin-top: -20px;
     }    
 
 /* 
@@ -2521,29 +2579,40 @@ VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
     VALIDACION PRODUCT-EDIT ** VALIDACION PRODUCT-EDIT */
 
     .productEditValidacion-estado{
-        position: relative;
-        left: 200px;
-        bottom: 40px;
         z-index: -1;   
+        position: absolute;
+        left: 97%;
     }
+    
     .divGrupo-correcto .productEditValidacion-estado{
-        color: #1ed12d;
+        color: #47C252;
         opacity: 1;
         z-index: 1;
+        bottom: 10px;
+        position: absolute;
+
     }
+
     .divGrupo-incorrecto .productEditValidacion-estado{
         color: #bb2929;
         opacity: 1;
         z-index: 1;
+        bottom: 50px;
+        position: absolute;
     }
+
+    .divGrupo {
+        position: relative;
+    }
+
     .divGrupo-correcto .inputBusqueda-prodlist{
-        border: 3px solid #1ed12d;
-        border-radius: 10px;
+        border-bottom: solid 1px #47C252;
     }
+
     .divGrupo-incorrecto .inputBusqueda-prodlist{
-       border: 3px solid #bb2929;
-       border-radius: 10px;
+        border-bottom: solid 1px #CD113B;
     }
+
     /* .productError{
         display: none;
     }
