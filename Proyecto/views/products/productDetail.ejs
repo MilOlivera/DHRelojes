@@ -33,7 +33,7 @@
                             <button class ="product-btn-buy" type="submit" id="btnComprarProduct"> Comprar </button> 
                     </div>
                     <% } %>
-                    <% if (locals.isLogged) { %>
+                    <% if (locals.isLogged && locals.userLogged.idRoleFK==1) { %>
                     <br>
                     <div class="edit-delete">
                         <div class="divDelete">
@@ -42,7 +42,7 @@
                             </form>
                         </div>
                         <% } %>
-                        <% if (locals.isLogged) { %>
+                        <% if (locals.isLogged && locals.userLogged.idRoleFK==1) { %>
                             <br>
                         <div class="divDelete">
                             <form class = "botonDeCompra" method="POST" action="/products/delete/<%= promesaProducto.idProduct %>?_method=DELETE" >

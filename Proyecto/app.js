@@ -30,7 +30,7 @@ const rutasProducts = require("./routes/products.js");
 const rutasUsers = require("./routes/users.js");
 const rutasApi = require("./routes/Api/Api");
 
-app.listen(3042, () => {
+app.listen(3002, () => {
   console.log("Servidor Corriendo en 3042");
 });
 

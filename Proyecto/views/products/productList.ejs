@@ -8,6 +8,13 @@
 
             <div>
                 <h2 class="prodlist-txt">Todos los productos</h2>
+
+                <% if (locals.isLogged && locals.userLogged.idRoleFK==1) { %>
+                    <a href="/products/create">
+                        <button>Crear producto</button>
+                    </a>
+                <% } %>
+                
                 <!-- <button class="all-button" category="all">all</button>
                     <% categorias.forEach(categoria => { %>
                         <button class="button-category" category='<%= categoria.idCategory %>' value="<%= categoria.idCategory %>">

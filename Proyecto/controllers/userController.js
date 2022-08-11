@@ -36,14 +36,14 @@ let userController = {
       avatar = "default-image.jfif";
     }
 
-    // const resultValidation = validationResult(req);
-
-    // if (resultValidation.errors.length > 0) {
-    //   return res.render("./users/registro", {
-    //     errors: resultValidation.mapped(),
-    //     oldData: req.body,
-    //   });
-    // }
+    const resultValidation = validationResult(req);
+    
+    if (resultValidation.errors.length > 0) {
+      return res.render("./users/registro", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
 
     db.Usuario.create({
       name: req.body.name,
