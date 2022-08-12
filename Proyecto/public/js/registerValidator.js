@@ -45,10 +45,10 @@ const validarFormulario = (e) => {
         case "password2":
             validarPassword2()
         break;
-        
     }
 }
 
+let validarcheck;
 const validarCampo = (expresion, input, campo) => {
     if(expresion.test(input.value)){
         document.getElementById(`grupo-${campo}`).classList.remove("divGrupo-incorrecto")
@@ -57,6 +57,7 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector(`#grupo-${campo} i`).classList.remove('fa-times-circle')
         document.querySelector(`#grupo-${campo} .formError`).classList.remove('formError-activo')
         campos[campo] = true;
+        validarcheck = true;
     }else{
         document.getElementById(`grupo-${campo}`).classList.add("divGrupo-incorrecto")
         document.getElementById(`grupo-${campo}`).classList.remove("divGrupo-correcto")
@@ -64,9 +65,11 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector(`#grupo-${campo} i`).classList.add('fa-times-circle')
         document.querySelector(`#grupo-${campo} .formError`).classList.add('formError-activo')
         campos[campo] = false;
+        validarcheck = false;
     }
 }
 
+let validarcheck2;
 const validarPassword2 = () => {
     const inputPassword1 = document.getElementById('password')
     const inputPassword2 = document.getElementById('password2')
@@ -79,6 +82,7 @@ const validarPassword2 = () => {
         document.querySelector('#grupo-password2 i').classList.add('fa-times-circle')
         document.querySelector('#grupo-password2 .formError').classList.add('formError-activo')
         campos[password] = false;
+        validarcheck2 = false;
     }else{
         document.getElementById('grupo-password2').classList.remove("divGrupo-incorrecto")
         document.getElementById('grupo-password2').classList.add("divGrupo-correcto")
@@ -86,6 +90,7 @@ const validarPassword2 = () => {
         document.querySelector('#grupo-password2 i').classList.remove('fa-times-circle')
         document.querySelector('#grupo-password2 .formError').classList.remove('formError-activo')
         campos[password] = true;
+        validarcheck2 = true;
     }
 }
 
@@ -93,5 +98,12 @@ inputs.forEach( (input) => {
     input.addEventListener('keyup', validarFormulario)
     input.addEventListener('blur', validarFormulario)
     })
+
+
+formulario.addEventListener('submit', function(e) {
+    if(!validarcheck || !validarcheck2) {
+    e.preventDefault();
+    }
+})
 
 }

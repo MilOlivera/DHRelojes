@@ -14,42 +14,44 @@ let user = db.Usuario;
 
 const validation = [
   body("name")
-    .notEmpty()
+    .notEmpty().withMessage(" ")
     .isLength({ min: 2 })
-    .withMessage("El nombre debe ser más largo que dos caracteres"),
+    .withMessage(" "),
   body("lastName")
     .notEmpty()
-    .withMessage("Tenes que escribir un apellido")
+    .withMessage(" ")
     .isLength({ min: 2 })
-    .withMessage("El apellido debe ser más largo que dos caracteres"),
+    .withMessage(" "),
   body("mail")
     .notEmpty()
-    .withMessage("Tenes que escribir un mail válido")
+    .withMessage(" ")
     .bail()
     .isEmail()
-    .withMessage("Tenes que escribir un formato válido")
+    .withMessage(" ")
     .custom((userEmail) => {
       return new Promise((resolve, reject) => {
         user.findOne({ where: { mail: userEmail } }).then((emailExist) => {
           if (emailExist !== null) {
-            reject(new Error("Este mail ya está registrado"));
+            reject(new Error(" "));
           } else {
             resolve(true);
           }
         });
       });
     }),
-  body("dni").notEmpty().withMessage("Tenes que escribir tu DNI"),
-  body("address").notEmpty().withMessage("Tenes que escribir una dirección"),
+  body("dni").notEmpty()
+  .withMessage(" "),
+  body("address").notEmpty()
+  .withMessage(" "),
   body("password")
     .isString()
     .notEmpty()
-    .withMessage("Tenes que escribir una contraseña")
+    .withMessage(" ")
     .isLength({ min: 8 })
-    .withMessage("La contraseña debe tener al menos 8 caracteres")
+    .withMessage(" ")
     .isStrongPassword()
     .withMessage(
-      "La contraseña debe tener al una letra mayuscula, una letra minuscula, un número y un caracter especial"
+      " "
     ),
 ];
 
