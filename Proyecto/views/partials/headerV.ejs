@@ -1,29 +1,32 @@
 <header>
+    <div class="container-header">
 
-    <div class="headerVideo">
+    <div class="primary-header flex">
 
-        <video autoplay loop class="videoHeader" muted plays-inline>
-            <source src="../video/home.mp4" type="video/mp4">
-        </video>
+        <div>
+            <a href="/">
+                <img src="../images/logo-dh-blanco.png" alt="" class="logoHeader">
+            </a>
+        </div>
 
-        <nav>
-            <img src="../images/logo-dh-blanco.png" alt="" class="logoHeader">
-
-            <ul class="linksNav">
-                <li>
-                    <form action="#" method="GET">
-                        <input type="text" name="" id="buscarProducto" placeholder="Buscar un producto">
-                        <button type="submit" class="buscarHome"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </li>
+        <nav class="nonepls">
+            <ul id="primary-navigation2" data-visible="false" class="primary-navigation2 flex">
                 <% if (locals.isLogged) { %>
-                <li><a href="/users/profile"><%= locals.userLogged.name %><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="16px" height="16px" class="imgUserNav"></a></li>
+                    <li><a href="/users/profile"><%= locals.userLogged.name %><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="20px" height="20px" class="imgUserNav"></a></li>
                 <% } else { %>
-                <li><a href="/users/login"> Acceso <i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="/users/login"><i class="fa-solid fa-user"> </i> <span class="header-info2">  Acceso </span> </li></a>
                 <% } %>
-                <li><a href="/products/cart"> Carrito <i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <li><a href="/products/cart"><i class="fa-solid fa-bag-shopping"> </i> <span class="header-info2">Carrito </span> </li></a>
             </ul>
         </nav>
+    </div>
+
+
+    <video autoplay loop class="video-header" muted plays-inline>
+        <source src="../video/home.mp4" type="video/mp4">
+    </video>
+
+
     </div>
 
 </header>
