@@ -94,9 +94,11 @@ html{
 /* HEADER SIN VIDEO ** HEADER SIN VIDEO
 HEADER SIN VIDEO ** HEADER SIN VIDEO */
 
-.background {
+.background img{
     width: 100%;
     position: relative;
+    margin-left: -10px;
+    padding: 0;
 }
 
 .newcolection {
@@ -447,7 +449,7 @@ ul{
 }
 
 .titulos-lastcolec {
-    padding: 15px 15px 0 10px;
+    padding: 10px 10px 0 10px;
 }
 
 .latestColec {
@@ -551,7 +553,7 @@ ul{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 15px;
+    padding: 10px;
     margin-bottom: 30px;
 }
 
@@ -1827,7 +1829,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         margin-left: -50px;
     }
     .primeraParteHome{
-        margin-top: 700px;
+        margin-top: 800px;
     }
 
     .primeraParteH1, .divTexto h1 {
@@ -1835,7 +1837,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     }
 
     .primeraParteParrafo {
-        margin: 0px 10px 0px 10px;
+        margin: 0px 60px 0px 0px;
     }
 
     .contenedorHome2{
@@ -1854,6 +1856,14 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     
     }
 
+    .parrafoSection2 {
+        margin-right: 30px;
+    }
+
+    .divParrafo p {
+        margin-right: 35px;
+    }
+
     .contenido3{
         display: flex;
         flex-direction: row;
@@ -1861,7 +1871,8 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     }
 
     .slides {
-        padding: 10px 15px 10px 10px;
+        padding: 10px 10px 10px 0px;
+        margin-right: 30px;
     }
 
     .card3{
@@ -1895,7 +1906,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
     .banner {
         text-align: center;
-        margin: 20px 0 20px 0;
+        margin: 20px 50px 20px 0;
     }
 
    .wave{
@@ -1966,7 +1977,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     margin-left: 0;
 }
 .primeraParteHome{
-    margin-top: 700px;
+    margin-top: 900px;
     margin-bottom: 280px;
     margin-left: 0;
     display: flex;
@@ -1984,6 +1995,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 }
 .div3{
     margin-top: -200px;
+    margin-bottom: 80px;
 }
 
 .divTextos3{
@@ -2017,7 +2029,8 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 }
 
 .slides {
-    padding: 20px 30px 20px 20px;
+    padding: 20px 10px 20px 20px;
+    margin-right: 5px;
 }
 
 .card3 {
@@ -2385,8 +2398,12 @@ CARRITO ** CARRITO ** CARRITO */
         line-height: 2rem
     }
 
-    .primeraParteH1, .divTexto h1, .tituloSection2  {
+    .primeraParteH1, .divTexto h1 {
         font-size: 30px;
+    }
+
+    .tituloSection2 {
+        font-size: 40px;
     }
 
     .section2Home{
@@ -2418,7 +2435,7 @@ CARRITO ** CARRITO ** CARRITO */
     }
 
     .div3 {
-        margin-bottom: 150px;
+        margin-bottom: 250px;
     }
 
     .banner img{
