@@ -438,7 +438,7 @@ ul{
     font-weight: 500;
 }
 
-.primeraParteParrafo, .divParrafo p, .parrafoSection2 {
+.primeraParteParrafo, .divParrafo p, .parrafoSection2, .texto-info {
     /* text-align: justify; */
     text-indent: 15px;
     font-size: 14px;
@@ -508,7 +508,7 @@ ul{
 }
 
 .card3{
-    background-color:#f5f5f3;
+    background-color:#fafafa;
     border-radius: 3%;
     width: 98%;
 }
@@ -527,13 +527,13 @@ ul{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 10px;
     padding: 10px;
 }
 
 .cardNombre{
-    font-weight: 900;
-    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Raleway';
+    font-size: 14px;
 }
 
 .contenido3 .card3 .cardImg3 img{
@@ -543,7 +543,7 @@ ul{
     border-radius: 2%;
 }
 
-.tituloSection2{
+.tituloSection2, .about-info h2{
     font-family: 'New York', sans-serif;
     text-align: center;
     font-weight: 500;
@@ -617,6 +617,10 @@ ul{
     height: 300px;
     margin-top: 140px;
     margin-left: 15px;
+}
+
+.about-info div {
+    padding: 0 10px 0 10px;
 }
 
 /* FOOTER FOOTER FOOTER FOOTER FOOTER */
@@ -1851,9 +1855,8 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     .primeraParteH3{
         display: none;
     }
-    .primeraParteParrafo, .divParrafo p, .parrafoSection2 {
+    .primeraParteParrafo, .divParrafo p, .parrafoSection2, .texto-info {
         text-indent: 0;
-    
     }
 
     .parrafoSection2 {
@@ -1872,7 +1875,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
     .slides {
         padding: 10px 10px 10px 0px;
-        margin-right: 30px;
+        margin-right: 5px;
     }
 
     .card3{
@@ -1953,11 +1956,11 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     height: 300px;
     }
 
-    .primeraParteH1, .divTexto h1, .tituloSection2 {
+    .primeraParteH1, .divTexto h1, .tituloSection2, .about-info h2 {
         font-size: 25px;
     }
 
-    .primeraParteParrafo, .divParrafo p, .parrafoSection2 {
+    .primeraParteParrafo, .divParrafo p, .parrafoSection2, .texto-info {
         font-size: 15px;
     }
 
@@ -2030,12 +2033,36 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
 .slides {
     padding: 20px 10px 20px 20px;
-    margin-right: 5px;
+    margin: 60px 5px 0 0;
 }
 
 .card3 {
     width: 90%;
 }
+
+.about-info {
+    padding: 10px 10px 0 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-info div {
+    width: 50%;
+}
+
+.about-info h2 {
+    margin: 20px 0 0 127px;
+    font-size: 30px;
+}
+
+.cardNombre {
+    font-size: 15px;
+}
+
+.titulos-lastcolec {
+    margin-top: 30px;
+}
+
 
 .wave{
 width: 100%;
@@ -2398,12 +2425,20 @@ CARRITO ** CARRITO ** CARRITO */
         line-height: 2rem
     }
 
+    .texto-info {
+        font-size: 17px;
+    }
+
     .primeraParteH1, .divTexto h1 {
         font-size: 30px;
     }
 
     .tituloSection2 {
         font-size: 40px;
+    }
+
+    .about-info h2 {
+        font-size: 60px;
     }
 
     .section2Home{
@@ -2442,6 +2477,18 @@ CARRITO ** CARRITO ** CARRITO */
         width: 65rem;
         margin: 50px 0 50px 0;
     }
+
+    .about-info div {
+        width: 40%;
+    }
+
+    .cardNombre {
+        font-size: 16px;
+    }
+
+    .titulos-lastcolec {
+        margin-top: 50px;
+    }    
 
    .wave{
     width: 300%;
