@@ -1,4 +1,5 @@
 const { promiseImpl } = require("ejs");
+const { sequelize } = require("../../src/database/models");
 let db = require("../../src/database/models");
 // let imagePath = require("../../public/images/products");
 

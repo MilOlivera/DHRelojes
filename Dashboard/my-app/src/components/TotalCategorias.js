@@ -1,12 +1,10 @@
 import React from "react";
+import "../assests/css/Contenedores.css";
 
-function TotalCategorias() {
+function TotalCategorias (props) {
   return (
     <React.Fragment>
-      <div className="Contenedor">
-        <h2>Total de Categorias</h2>
-        {/* Acá tiene que mostrar cuantas categorias tenemos en total */}
-      </div>
+      <li className="Listado"> {props.name}: </li>
     </React.Fragment>
   );
 }

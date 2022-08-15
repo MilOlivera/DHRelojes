@@ -1,13 +1,36 @@
 import React from "react";
+import { Component } from "react";
 
-function TotalXCategoria() {
-  return (
-    <React.Fragment>
-      <div className="ContenedorListado">
-        <h2>Total de Productos por Categoría</h2>
-        {/* Acá tiene que mostrar el total de productos por cada categoría */}
-      </div>
-    </React.Fragment>
-  );
+class TotalXCategoria extends Component {
+  constructor() {
+    super();
+    this.state = {
+      totalCategory: [],
+    };
+  }
+  componentDidMount() {
+    fetch("/api/products")
+      .then((respuesta) => {
+        return respuesta.json();
+      })
+      .then((count) => {
+        // console.log(count);
+        this.setState({ totalCategory: count.count });
+      })
+      .catch((error) => console.log(error));
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <div className="ContenedorListado">
+          <h2>Total por Categorias</h2>
+          <div className="card-body fondoCaja">
+            <div className="row">{this.state.totalCategory}</div>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 export default TotalXCategoria;

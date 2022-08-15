@@ -1,9 +1,9 @@
 import React from "react";
 import TotalProductosInDb from "./TotalProductosInDb";
 import TotalUsuarios from "./TotalUsuarios";
-import TotalCategorias from "./TotalCategorias";
+import TotalCategoriasInDb from "./TotalCategoriasInDb";
 import UltimoProductoUsuario from "./UltimoProductoUsuario";
-import TotalXCategoria from "./TotalXCategoria";
+// import TotalXCategoria from "./TotalXCategoria";
 import ListadoDeProductosInDb from "./ListadoDeProductosInDb";
 import "../assests/css/Contenedores.css";
 
@@ -14,11 +14,11 @@ function Data() {
         <div className="Contenedores">
           <TotalProductosInDb />
           <TotalUsuarios />
-          <TotalCategorias />
+          <TotalCategoriasInDb />
           <UltimoProductoUsuario />
         </div>
         <div>
-          <TotalXCategoria />
+          {/* <TotalXCategoria /> */}
         </div>
         <div>
           <ListadoDeProductosInDb />
