@@ -789,6 +789,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 #twitter:hover, #facebook:hover, #pinterest:hover, #instagram:hover{
     background-color: white;
     color:black;
+    transition: all 450ms;
 }
 
 /* FOOTER GRIS - sin video */
@@ -1042,6 +1043,7 @@ ERROR 404 ERROR 404 ERROR 404 */
     border: 0;
     color: #252525;
     height: 2.5rem;
+    border-bottom: solid 1px #252525;
 }
 
 /* CARRITO CARRITO CARRITO CARRITO 
@@ -1645,6 +1647,18 @@ REGISTRO ** REGISTRO ** REGISTRO */
     margin-bottom: 8px;
 }
 
+.button-add {
+    font-size: 13px;
+    font-family: 'Raleway', Sans-Serif;
+    cursor: pointer;
+    background-color: #fafafa;
+    margin-top: 1rem;
+    border: 0;
+    color: #252525;
+    height: 2rem;
+    border-bottom: solid 1px #252525;
+}
+
 /* EDICION ** EDICION ** EDICION 
 EDICION ** EDICION ** EDICION  */
 
@@ -1887,7 +1901,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         width: 100%;
     }
 
-    .button-category {
+    .button-category, .button-add {
         font-size: 14px;
         margin-left: 5px;
     }
@@ -2258,6 +2272,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         color: #efefef;
         padding: 8px;
         border-radius: 30px;
+        transition: all 450ms;
         background-color: rgba(0,0,0, 0.50)
     }
 
@@ -2337,9 +2352,16 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         width: 300px;
     }   
 
-    .button-category {
+    .button-category, .button-add {
         font-size: 15px;
         margin-left: 10px;
+    }
+
+    .button-add:hover {
+        border-bottom: solid 1px #efefef;
+        background-color: #efefef;
+        border-radius: 20px;
+        transition: all 500ms ease;
     }
 
     .all-button {
@@ -2591,7 +2613,7 @@ CARRITO ** CARRITO ** CARRITO */
 
 @media(min-width: 1280px){
 
-    .button-category {
+    .button-category, .button-add {
         font-size: 16px;
         margin-left: 10px;
     }
