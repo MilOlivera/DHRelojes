@@ -4,6 +4,12 @@
     <main class="main-product">
         <section class="section-product">
             
+            <div class="arrow-back">
+                <a href="/products">
+                    <button class="arrow-btn"><i class="fa-solid fa-angle-left"></i> Volver</button>
+                </a>
+            </div>
+            
             <div class="img-box">
                 
                 <img class="product-img" src="/images/products/<%= promesaImagen.name %>" alt="Foto Imagen">
@@ -14,7 +20,7 @@
 
                 <p class="desc-product"><%= promesaProducto.description %></p>
                             
-                <div class = "cantidad">
+                <!-- <div class = "cantidad">
                     <p>Cantidad</p>
                     <select name = "cantidad" class = "selectorCantidad">
                         <option value = "SeleccionarCantidad">1</option>
@@ -23,9 +29,15 @@
                         <option value = "4">4</option>
                         <option value = "5">5</option>
                     </select>
-                </div>
+                </div> 
+                </div> -->
 
-                </div>
+                <% if (!locals.isLogged) { %>
+                    <div>
+                        <p class="desc-product">Tienes que estar logueado para poder comprar, </p>
+                        <a href="/users/login"><input type='button'class="login-btn" value="Iniciar sesion"></a>    
+                    </div>
+                <% } %>
 
                 <div class="botones">
                     <% if (locals.isLogged) { %>

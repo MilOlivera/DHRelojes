@@ -6,6 +6,9 @@
             <img src="/images/users/<%= user.image %>" alt="profile picture" class="profile-pic">
             <p class="welcome-text"> Bienvenido <%= user.name %></p>
             <div>
+                <a href="/"><input type='button' name="home" class="logoutProfile" value="Home"></a>
+            </div>
+            <div>
                 <a href="/users/edit/<%= user.idUser %>"><input type='button' name="edit" id="editProfile" class="logoutProfile" value="Editar perfil"></a>
             </div>
             <div>

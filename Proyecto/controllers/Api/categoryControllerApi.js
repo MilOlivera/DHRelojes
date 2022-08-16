@@ -22,28 +22,48 @@ let categoryControllerApi = {
   },
 
   countByCategory: (req, res) => {
-    const categorias = sequelize.query('SELECT idCategoryFK, COUNT(*) FROM dhrelojes.product group by idCategoryFK');
-    console.log(categorias)
+  const categorias = sequelize.query('SELECT idCategoryFK, COUNT(*) FROM dhrelojes.product group by idCategoryFK');
+
+    // db.Producto.sync ({ alter: true }). then(() => {
+    //   return Producto.findAll ({
+    //   attributes: ['idCategoryFK', [ sequelize.fn('COUNT', sequelize.col('idCategoryFK')), 'FUNCIONAPORFA' ]],
+    //   group: 'idCategoryFk'});
+    // })
+
+    // .then(function (pruebas) {
+    //   return res.status(200).json({
+    //     county: pruebas.length,
+    //     // countByCategory: { categoria1: productos.idCategoryFK.length },
+    //     prueba: FUNCIONAPORFA,
+    //     status: 200,
+    //   });
+    // })
+
+    // .catch((error) => {
+    //   console.log(error)
+    // })
+
+
+    // const pruebas = db.Producto.findAll({
+    //   attributes: [
+    //     'idCategoryFk',
+    //     'name',
+    //     [sequelize.fn('COUNT', sequelize.col('idCategoryFK')), 'prueba'],
+    //   ],
+    //   group: 'idCategoryFK',
+    //   order: [["idCategoryFK", "ASC"]],
+    // })
+    
+    //   .then(function (pruebas) {
+    //   return res.status(200).json({
+    //     count: pruebas.length,
+    //     categoria: pruebas,
+    //     prueba: prueba,
+    //     status: 200,
+    //   });
+    // });
+
   },
-
-
-//   const getAllCategories = async (req, res) => {
-//     try {
-//       const categories = await Category.findAll();
-//       const totalCategory= await Category.count();
-//       return res.json({
-//         meta: {
-//             status: 200,
-//             total: categories.length,
-//             url: "api/categories/all"
-//         },
-//         data: categories,
-//        totalCategory
-//       })
-//     } catch (error) {
-//       return console.log(error)
-//     }
-//   };
 }
 
 module.exports = categoryControllerApi

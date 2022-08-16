@@ -336,7 +336,6 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     text-transform: uppercase;
 }
 
-
 .parrafoFlex{
     display: flex;
     flex-wrap: wrap;
@@ -642,6 +641,71 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     padding: 0 10px 0 10px;
 }
 
+.card-all {
+    background-color: #fafafa;
+}
+
+.background-cell img{
+    width: 100%;
+    position: relative;
+    margin-left: -10px;
+    padding: 0;
+}
+
+.background-lap img{
+    width: 100%;
+    position: relative;
+    margin-left: -10px;
+    padding: 0;
+    display: none;
+}
+
+.title-all {
+    font-family: 'Raleway', Sans-Serif;
+    font-weight: 500;
+    color: #363636;
+    font-size: 15px;
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+.text-all {
+    font-family: 'Raleway', Sans-Serif;
+    color: #363636;
+    line-height: 1.5rem;
+    font-size: 14px;
+}
+
+.card-all {
+    padding: 0 10px;
+}
+
+.shop-all-btn {
+    background-color: #fff;
+    color: #363636;
+    border: solid 1px #efefef;
+    font-family: 'Raleway', Sans-Serif;
+    font-weight: 500;
+    border: 0;
+    padding: 1.125rem 1rem;
+    line-height: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.btn-shop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-shop {
+    padding-bottom: 20px;
+}
+
 /* FOOTER FOOTER FOOTER FOOTER FOOTER */
 /* FOOTER FOOTER FOOTER FOOTER FOOTER */
 
@@ -661,7 +725,6 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     width: 300%;
     background-color: black;    
     position: absolute;
-
 }
 
 .wave{
@@ -895,7 +958,6 @@ ERROR 404 ERROR 404 ERROR 404 */
 }
 
 .section-product {
-    padding: 10px;
     line-height: 30px;
     text-align: center;
 }
@@ -1044,6 +1106,21 @@ ERROR 404 ERROR 404 ERROR 404 */
     color: #252525;
     height: 2.5rem;
     border-bottom: solid 1px #252525;
+}
+
+.arrow-back {
+    position: absolute;
+    top: 20;
+    right: 20;
+    display: none;
+}
+
+.arrow-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 14px;
 }
 
 /* CARRITO CARRITO CARRITO CARRITO 
@@ -1299,7 +1376,24 @@ hr.divider {
     font-weight: bold;
 }
 
-.send-btn-login:hover {
+.login-btn {
+    font-family: 'Raleway', Sans-Serif;
+    line-height: 18px;
+    letter-spacing: 0.6px;
+    border: 0;
+    padding: 0.75rem;
+    width: 95%;
+    background-color: #efefef;
+    transition: all 400ms;
+    color: #363636;
+    margin: 0px 0 150px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.send-btn-login:hover, .login-btn:hover {
     background-color: #363636;
     transition: all 400ms;
     color: #ffffff;
@@ -2039,6 +2133,18 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         margin: 20px 20px 20px 0;
     }
 
+    .shop-all-btn {
+        font-size: 13px;
+        padding: 1.125rem 1rem;
+        line-height: 1rem;
+    }
+
+    .shop-all-btn:hover {
+        background-color: #363636;
+        color: #ffffff;
+        transition: all 500ms;
+    }
+
     /* error 404 */
     .divError1 img{
         width: 400px;
@@ -2068,6 +2174,24 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         margin: 10px;
     }
 
+    .container-shop {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    
+    .box-shop {
+        width: 23%;
+    }
+
+    .text-all {
+        font-size: 12px;
+        line-height: 1.2rem;
+    }
+
+    .title-all {
+        font-size: 14px;
+    }
 
    .wave{
     width: 100%;
@@ -2233,6 +2357,22 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     height: 1400px;
     }
 
+    .background-cell img{
+        width: 100%;
+        position: relative;
+        margin-left: -10px;
+        padding: 0;
+        display: none;
+    }
+    
+    .background-lap img{
+        width: 100%;
+        position: relative;
+        margin-left: -10px;
+        padding: 0;
+        display: inline;
+    }
+
     /* footer gris */
     .container-footer-nv {
         background-color: #efefef;
@@ -2379,6 +2519,18 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     .product-detail {
         margin: 15px;
     }
+
+    .arrow-back {
+        display: block;
+        top: 40px;
+        left: 0;
+        padding: 15px;
+    }
+
+    .arrow-btn {
+        font-family: 'Raleway';
+        font-weight: 400;
+    }
     
  /* LOGIN Y REGISTRO ** LOGIN Y REGISTRO
  LOGIN Y REGISTRO ** LOGIN Y REGISTRO */
@@ -2397,7 +2549,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         width: 100%;
     }
 
-    .send-btn-login, .text-login , .text-login-end {
+    .send-btn-login, .text-login , .text-login-end, .login-btn {
         width: 100%;
     }
 
@@ -2757,9 +2909,40 @@ CARRITO ** CARRITO ** CARRITO */
     }    
 
    .wave{
-    width: 300%;
-    height: 150%;
+        width: 300%;
+        height: 150%;
    }
+
+   .container-shop {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin: -18px;
+        padding-bottom: 60px;
+    }
+
+    .box-shop {
+        width: 15%;
+    }
+
+    .text-all {
+        font-size: 12px;
+    }
+
+    .title-all {
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .card-all {
+        padding-bottom: 30px;
+    }
+
+    .shop-all-btn {
+        font-size: 15px;
+
+    }
+
 
    /* footer gris */
     .container-footer-nv {
