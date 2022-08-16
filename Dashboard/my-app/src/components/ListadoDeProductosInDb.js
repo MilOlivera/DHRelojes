@@ -17,8 +17,10 @@ class ListadoDeProductosInDb extends Component {
       .then((products) => {
         //console.log(genres)
         this.setState({ productList: products.products });
+        console.log(products.products)
       })
       .catch((error) => console.log(error));
+      
   }
 
   render() {
