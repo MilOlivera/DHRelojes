@@ -27,18 +27,23 @@
             <% for (let i = 0; i < producto.length; i++) { %>
 
                 <section class="product">
-                    
+                    <!-- <div class="cart-prod">
+                        <button class="cart-btn"><i class="fa-solid fa-bag-shopping fa-lg"></i></button>
+                    </div> -->
+        
                     <a href="/products/<%=producto[i].idProduct %>" category="producto[i].idCategoryFK" class="ref-link">
+
                     <div class="box-image">
-                 
                         <img src="/images/products/<%= imagen[i].name %>" alt="Foto Reloj" class="img-pl">
-                    
                     </div>
-                    <article>
-                        <p class="product-name"><%= producto[i].name %></p>
-                        <p class="product-price">$<%= producto[i].price %></p>
+
+                    <p class="product-name"><%= producto[i].name %></p>
+                    <p class="product-price">$<%= producto[i].price %></p>
                         <!-- <p class=""><%= producto[i].description %></p> -->
-                    </article>
+
+                    <div class="cart-section">
+                        <button>Agregar al carrito</button>
+                    </div>
                     </a>
                 </section>
 

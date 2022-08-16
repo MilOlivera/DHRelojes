@@ -1112,7 +1112,6 @@ ERROR 404 ERROR 404 ERROR 404 */
     position: absolute;
     top: 20;
     right: 20;
-    display: none;
 }
 
 .arrow-btn {
@@ -1123,9 +1122,43 @@ ERROR 404 ERROR 404 ERROR 404 */
     font-size: 14px;
 }
 
+.arrow-btn p {
+    display: none;
+}
+
 /* CARRITO CARRITO CARRITO CARRITO 
 CARRITO CARRITO CARRITO CARRITO  */
 
+/* .cart-btn i {
+    position: relative;
+    top: 7px;
+    left: 60px;
+} */
+
+/* .cart-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    size: 10px;
+} */
+
+.cart-section {
+    background-color: #EFEFEF;
+}
+
+.cart-section button {
+    cursor: pointer;
+    color: #fafafa;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    font-family: 'Raleway';
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    padding: 13px;
+    color: #363636;
+}
 
 .body-cart {
     background-color: #fafafa;
@@ -2011,6 +2044,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     .img-pl {
         width: 150px;
         max-width: 150px;
+        height: 230px;
     }
 
     .product-img{
@@ -2485,7 +2519,8 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
     .img-pl {
         width: 200px;
-        max-width: 200px;
+        max-width: 220px;
+        height: 310px;
     }
 
     .product-img {
@@ -2521,7 +2556,6 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     }
 
     .arrow-back {
-        display: block;
         top: 40px;
         left: 0;
         padding: 15px;
@@ -2530,7 +2564,13 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     .arrow-btn {
         font-family: 'Raleway';
         font-weight: 400;
+        margin: auto;
     }
+
+    .arrow-btn p {
+        display: inline;
+    }
+    
     
  /* LOGIN Y REGISTRO ** LOGIN Y REGISTRO
  LOGIN Y REGISTRO ** LOGIN Y REGISTRO */
@@ -2759,7 +2799,27 @@ CARRITO ** CARRITO ** CARRITO */
     .header-info {
         display: none;
         color: #252525;
-    }  
+    }
+
+    .cart-section button {
+        font-size: 14px;
+        padding: 20px;
+    }
+
+    .cart-section {
+        visibility: hidden;
+    }
+    
+    .product:hover .cart-section {
+        visibility: visible;
+    }
+
+    .cart-section button:hover {
+        width: 100%;
+        transition: all 450ms;
+        background-color: #363636;
+        color: #fafafa;
+    }
 
 }
 
