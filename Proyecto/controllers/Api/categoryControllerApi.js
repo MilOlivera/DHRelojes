@@ -21,15 +21,24 @@ let categoryControllerApi = {
     });
   },
 
-  countByCategory: (req, res) => {
-  const categorias = sequelize.query('SELECT idCategoryFK, COUNT(*) FROM dhrelojes.product group by idCategoryFK');
+  countByCategory: async (req, res) => {
+    const categorias = await db.Producto.sequelize.query('SELECT idCategoryFK, COUNT(*) as total FROM dhrelojes.product group by idCategoryFK')
+    const categoriasName = await db.Categoria.sequelize.query('SELECT name FROM dhrelojes.category')
+    Promise.all([categorias, categoriasName])
+    .then(function ([categorias, categoriasName]) {
+        return res.status(200).json({
+          id: categorias,
+          names: categoriasName,
+          status: 200,
+        });
+      })
 
     // db.Producto.sync ({ alter: true }). then(() => {
     //   return Producto.findAll ({
     //   attributes: ['idCategoryFK', [ sequelize.fn('COUNT', sequelize.col('idCategoryFK')), 'FUNCIONAPORFA' ]],
     //   group: 'idCategoryFk'});
     // })
-
+  }
     // .then(function (pruebas) {
     //   return res.status(200).json({
     //     county: pruebas.length,
@@ -63,7 +72,6 @@ let categoryControllerApi = {
     //   });
     // });
 
-  },
 }
 
 module.exports = categoryControllerApi

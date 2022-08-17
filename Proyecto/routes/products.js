@@ -60,7 +60,7 @@ router.get("/:id", productsController.productDetail);
 router.get("/:id/edit", productsController.edit);
 // router.put('/:id', productsController.confirm)
 
-router.put("/:id/edit", productsController.confirm);
+router.put("/:id/edit", cargaArchivo.any("image"), productsController.confirm);
 
 // falta edit del carrito
 

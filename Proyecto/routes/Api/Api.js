@@ -17,7 +17,7 @@ router.get("/products", productController.apiProduct);
 
 router.get("/categories", categoryController.apiTotalCategory);
 
-router.get("/categories", categoryController.countByCategory);
+router.get("/categories2", categoryController.countByCategory);
 
 // router.get("/products/:id", productController.apiProductId);
 

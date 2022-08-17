@@ -7,17 +7,18 @@ class TotalXCategoria extends Component {
     super();
     this.state = {
       totalCategory: [],
+      totalNames: [],
     };
   }
   componentDidMount() {
-    fetch("/api/categories")
+    fetch("/api/categories2")
       .then((respuesta) => {
         return respuesta.json();
       })
       .then((count) => {
         //console.log(genres)
-        this.setState({ totalCategory: count.category });
-        console.log(count.category)
+        this.setState({ totalCategory: count.id[0], totalNames: count.names[0] });
+        console.log(count.id[0], count.names[0], 'soylog')
       })
       .catch((error) => console.log(error));
   }
@@ -31,7 +32,9 @@ class TotalXCategoria extends Component {
             {this.state.totalCategory.map((category, index) => {
               return <TotalCategorias {...category} key={index} />;
             })}
+            
           </div>
+    
         </div>
       </React.Fragment>
     );

@@ -103,17 +103,16 @@ const productsController = {
   confirm: (req, res) => {
     let productFind = req.params.id;
 
-    let idProduct_image;
-    console.log(req.file);
-    if (req.files) {
-      idProduct_image = req.files;
+    let name;
+    if (req.files != undefined) {
+      name = req.files.filename;
     } else {
-      idProduct_image = db.Imagen.findByPk(productFind).name;
+      name = db.Imagen.findByPk(productFind).name;
     }
 
     let imagen = db.Imagen.update(
       {
-        name: idProduct_image,
+        name: name,
       },
       {
         where: {
@@ -138,7 +137,7 @@ const productsController = {
     );
 
     Promise.all([imagen, producto]).then(function ([imagen, producto]) {
-      res.redirect("/", { imagen, producto });
+      res.redirect("/", {imagen, producto});
     });
   },
 
