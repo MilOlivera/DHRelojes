@@ -111,12 +111,13 @@ let userController = {
   },
 
   confirmEdit: (req, res) => {
-    // let image;
-    // if (req.files[0] != undefined) {
-    //   image = req.files[0].filename;
-    // } else {
-    //   image = db.Usuario.image;
-    // }
+    let image;
+    console.log(req.files[0], 'acaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+    if (req.files[0] != undefined) {
+      image = req.files[0].filename;
+    } else {
+      image = image;
+    }
 
     let userFind = req.params.id;
 
@@ -128,7 +129,7 @@ let userController = {
         dni: req.body.dni,
         address: req.body.address,
         // password: req.body.password,
-        // image: req.files[0].filename,
+        image: image,
       },
       {
         where: {
@@ -136,8 +137,7 @@ let userController = {
         },
       }
     ).then(function (cambio) {
-      // res.redirect("/", cambio);
-      res.send("funciona");
+      res.redirect("/");
     });
   },
 };

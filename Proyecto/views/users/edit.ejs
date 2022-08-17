@@ -8,16 +8,17 @@
 
             <!-- <img src="/images/users/<%= user.image %>" alt="profile picture" class="profile-pic-edit"> -->
 
-            <div class="img-upload">
-                <img src="/images/users/<%= user.image %>" alt="profile picture">
-                <div class="round">
-                  <input class="inputfile" type="file">
-                  <i class = "fa-solid fa-plus"></i>
-                </div>
-            </div>
-
             <br>
             <form class="width-registro" action="/users/edit/<%= promesaUsuario.idUser %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <!-- IMAGEN -->
+                <div class="img-upload">
+                    <img src="/images/users/<%= user.image %>" alt="profile picture">
+                    <div class="round">
+                      <input name="image" class="inputfile" type="file">
+                      <i class = "fa-solid fa-plus"></i>
+                    </div>
+                </div>
+
                 <!-- NOMBRE -->
                 <div>
                     <p class="desc-ep">Nombre:</p>
@@ -36,7 +37,7 @@
                 <!-- APELLIDO -->
                 <div>
                     <p class="desc-ep">Apellido:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.lastName %>" >
+                    <input class="inputBusqueda-editprof" type="text"  name="lastName" id="name" value="<%= promesaUsuario.lastName %>" >
                 </div>
 
                 <!-- <div><input
@@ -49,7 +50,7 @@
                 <!-- MAIL -->
                 <div>
                     <p class="desc-ep">Mail:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.mail %>" >
+                    <input class="inputBusqueda-editprof" type="text"  name="mail" id="name" value="<%= promesaUsuario.mail %>" >
                 </div>
 
                 <!-- <div><input
@@ -62,7 +63,7 @@
                 <!-- DNI -->
                 <div>
                     <p class="desc-ep">Dni:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.dni %>" >
+                    <input class="inputBusqueda-editprof" type="text"  name="dni" id="name" value="<%= promesaUsuario.dni %>" >
                 </div>
 
 
@@ -76,7 +77,7 @@
                 <!-- DIRECCION -->
                 <div>
                     <p class="desc-ep">Direccion:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.address %>" >
+                    <input class="inputBusqueda-editprof" type="text"  name="address" id="name" value="<%= promesaUsuario.address %>" >
                 </div>
 
 

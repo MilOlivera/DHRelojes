@@ -81,6 +81,7 @@ const productsController = {
       });
     });
   },
+
   // EDICION DE UN PRODUCTO ** EDICION DE UN PRODUCTO
   edit: (req, res) => {
     let promesaImagen = db.Imagen.findByPk(req.params.id);
@@ -103,16 +104,16 @@ const productsController = {
   confirm: (req, res) => {
     let productFind = req.params.id;
 
-    let name;
-    if (req.files != undefined) {
-      name = req.files.filename;
+    let idProduct_image;
+    if (req.files[0] != undefined) {
+      idProduct_image = req.files[0].filename;
     } else {
-      name = db.Imagen.findByPk(productFind).name;
+      idProduct_image = idProduct_image;
     }
 
     let imagen = db.Imagen.update(
       {
-        name: name,
+        name: idProduct_image,
       },
       {
         where: {
@@ -136,8 +137,26 @@ const productsController = {
       }
     );
 
+    // db.Producto.update(
+    //   {
+    //     name: req.body.name,
+    //     description: req.body.description,
+    //     price: req.body.price,
+    //     idCategoryFK: req.body.category,
+    //   },
+    //   db.Imagen.update({
+    //     name: idProduct_image,
+    //   },
+    //   {
+    //     where: {
+    //       idProduct_image: productFind,
+    //     },
+    //   }
+    //   )
+    // );
+
     Promise.all([imagen, producto]).then(function ([imagen, producto]) {
-      res.redirect("/", {imagen, producto});
+      res.redirect("/");
     });
   },
 

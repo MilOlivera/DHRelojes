@@ -83,6 +83,6 @@ router.get("/logout", userController.logout);
 
 router.get("/edit/:id", authMiddleware, userController.edit);
 
-router.put("/edit/:id", userController.confirmEdit);
+router.put("/edit/:id", cargaArchivo.any("image"), userController.confirmEdit);
 
 module.exports = router;
