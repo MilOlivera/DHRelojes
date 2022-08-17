@@ -17,7 +17,6 @@ html{
     background-color: #ffffff;
 }
 
-
 /* mi navbar */
 .flex {
     display: flex;
@@ -49,6 +48,7 @@ html{
 }
 
 .primary-header {
+    background-color: rgba(255, 255, 255, 0.1);
     align-items: center;
     justify-content: space-between;
 }

@@ -7,19 +7,33 @@ const productsPath = path.join(__dirname, "../views/products");
 
 const productsController = {
   // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
-  list: (req, res) => {
-    let producto = db.Producto.findAll();
-    let imagen = db.Imagen.findAll();
-    let categorias = db.Categoria.findAll();
-    Promise.all([producto, imagen, categorias]).then(function ([
+  list: async (req, res) => {
+    let producto = await db.Producto.findAll();
+    let imagen = await db.Imagen.findAll();
+    let categorias = await db.Categoria.findAll();
+
+    let tinker = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 1 ')
+    let jacquetDroze = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 2 ')
+    let centerPomp = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 3 ')
+    let colorsNature = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 4 ')
+
+    Promise.all([producto, imagen, categorias, tinker, jacquetDroze, centerPomp, colorsNature]).then(function ([
       producto,
       imagen,
       categorias,
+      tinker,
+      jacquetDroze,
+      centerPomp,
+      colorsNature
     ]) {
       return res.render(productsPath + "/productList", {
         producto,
         imagen,
         categorias,
+        tinker,
+        jacquetDroze,
+        centerPomp,
+        colorsNature
       });
     });
   },
@@ -181,6 +195,7 @@ const productsController = {
       return res.render(productsPath + "/productCart", { detalle });
     });
   },
+
 };
 
 module.exports = productsController;
