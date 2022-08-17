@@ -7,7 +7,6 @@ class TotalXCategoria extends Component {
     super();
     this.state = {
       totalCategory: [],
-      totalNames: [],
     };
   }
   componentDidMount() {
@@ -17,8 +16,8 @@ class TotalXCategoria extends Component {
       })
       .then((count) => {
         //console.log(genres)
-        this.setState({ totalCategory: count.id[0], totalNames: count.names[0] });
-        console.log(count.id[0], count.names[0], 'soylog')
+        this.setState({ totalCategory: count.id[0] });
+        console.log(count.id, count.categorias, 'soylog')
       })
       .catch((error) => console.log(error));
   }
