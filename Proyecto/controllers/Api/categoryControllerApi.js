@@ -29,14 +29,15 @@ let categoryControllerApi = {
           id: categorias,
           status: 200,
         });
-      })
+    })
+  },
 
     // db.Producto.sync ({ alter: true }). then(() => {
     //   return Producto.findAll ({
     //   attributes: ['idCategoryFK', [ sequelize.fn('COUNT', sequelize.col('idCategoryFK')), 'FUNCIONAPORFA' ]],
     //   group: 'idCategoryFk'});
     // })
-  }
+  
     // .then(function (pruebas) {
     //   return res.status(200).json({
     //     county: pruebas.length,

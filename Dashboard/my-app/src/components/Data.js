@@ -5,6 +5,7 @@ import TotalCategoriasInDb from "./TotalCategoriasInDb";
 import UltimoProductoUsuario from "./UltimoProductoUsuario";
 import TotalXCategoria from "./TotalXCategoria";
 import ListadoDeProductosInDb from "./ListadoDeProductosInDb";
+import UltimoProductoDb from "./UltimoProductoDb"
 import "../assests/css/Contenedores.css";
 
 function Data() {
@@ -16,6 +17,7 @@ function Data() {
           <TotalUsuarios />
           <TotalCategoriasInDb />
           <UltimoProductoUsuario />
+          <UltimoProductoDb/>
         </div>
         <div>
           <TotalXCategoria />

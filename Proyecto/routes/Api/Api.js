@@ -13,7 +13,11 @@ router.get("/users", userController.apiUser);
 
 router.get("/users/:id", userController.apiUserId);
 
+router.get("/usersLast", userController.apiLastUser);
+
 router.get("/products", productController.apiProduct);
+
+router.get("/productsLast", productController.apiLastProduct);
 
 router.get("/categories", categoryController.apiTotalCategory);
 

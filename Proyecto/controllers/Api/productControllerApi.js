@@ -70,6 +70,17 @@ let productControllerApi = {
       });
     });
   },
+
+  apiLastProduct: async (req, res) => {
+    const lastProd = await db.Producto.sequelize.query('SELECT name FROM dhrelojes.product ORDER BY idProduct DESC LIMIT 1')
+    Promise.all([lastProd])
+    .then(function ([lastProd]) {
+        return res.status(200).json({
+          id: lastProd,
+          status: 200,
+        });
+    })
+  }
 };
 
 module.exports = productControllerApi;
