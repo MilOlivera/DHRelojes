@@ -85,12 +85,12 @@ html{
         padding: 3rem 2rem;
         background-color: hsl(0 0% 0% / 0.1);
         backdrop-filter: blur(0.5rem);
-        transform: translateX(100%);
+        transform: translateX(110%);
         transition: transform 350ms ease-in;
     }
 
     .primary-navigation[data-visible="true"] {
-        transform: translateX(0%);
+        transform: translateX(10%);
     }
 
     .mobile-nav-toggle {
@@ -889,7 +889,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 
 .logo-footer img {
     width: 56px;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .iconos-footer-nv {
@@ -960,6 +960,7 @@ ERROR 404 ERROR 404 ERROR 404 */
 .section-product {
     line-height: 30px;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .img-box {
@@ -2434,7 +2435,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     
     .logo-footer img {
         width: 60px;
-        opacity: 0.8;
+        opacity: 0.6;
     }
 
     #twitter-nv, #facebook-nv, #pinterest-nv, #instagram-nv {
@@ -2819,6 +2820,10 @@ CARRITO ** CARRITO ** CARRITO */
         transition: all 450ms;
         background-color: #363636;
         color: #fafafa;
+    }
+
+    .section-product {
+        padding-bottom: 110px;
     }
 
 }

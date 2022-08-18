@@ -4,6 +4,7 @@ const multer = require("multer");
 const router = express.Router();
 const productsController = require("../controllers/productsController.js");
 // const mainControllers = require("../controllers/mainControllers.js")
+const adminMiddleware = require('../middleware/adminMiddleware')
 
 const { check, validationResult, body } = require("express-validator");
 
@@ -59,7 +60,7 @@ router.delete("/delete/:id", productsController.delete);
 router.get("/:id", productsController.productDetail);
 
 // EDITAR UN PRODUCTO ** EDITAR UN PRODUCTO
-router.get("/:id/edit", productsController.edit);
+router.get("/:id/edit", adminMiddleware, productsController.edit);
 // router.put('/:id', productsController.confirm)
 
 router.put("/:id/edit", cargaArchivo.any("image"), productsController.confirm);

@@ -90,7 +90,6 @@ const productsController = {
     ]) {
       return res.render(productsPath + "/productDetail", {
         promesaProducto,
-
         promesaImagen,
       });
     });

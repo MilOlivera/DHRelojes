@@ -112,7 +112,7 @@ let userController = {
 
   confirmEdit: (req, res) => {
     let image;
-    console.log(req.files[0], 'acaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+    console.log(req.files[0])
     if (req.files[0] != undefined) {
       image = req.files[0].filename;
     } else {
@@ -136,7 +136,7 @@ let userController = {
           idUser: userFind,
         },
       }
-    ).then(function (cambio) {
+    ).then(function () {
       res.redirect("/");
     });
   },
