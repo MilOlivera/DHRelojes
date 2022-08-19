@@ -23,6 +23,16 @@ router.get("/categories", categoryController.apiTotalCategory);
 
 router.get("/categories2", categoryController.countByCategory);
 
-// router.get("/products/:id", productController.apiProductId);
+router.get("/tinker", productController.apiTinker);
+
+router.get("/jacquetDroze", productController.apiJacquetDroze);
+
+router.get("/centerPomp", productController.apiCenterPomp);
+
+router.get("/colorsNature", productController.apiColorsNature);
+
+router.get("/filter", productController.filterList);
+
+router.get("/products/:id", productController.apiProductId);
 
 module.exports = router;

@@ -4,9 +4,17 @@
     <main>
 
         <div class="container">
+            <div>Categorias  
+            <button id="filter-btn" type="button" value="all" data-id="all">all</button>
+            <button id="filter-btn" type="button" value="tinker" data-id="1">tinker</button>
+            <button id="filter-btn" type="button" value="jacquetDroze" data-id="2">jacquet droze</button>
+            <button id="filter-btn" type="button" value="centerPomp" data-id="3">center pomp</button>
+            <button id="filter-btn" type="button" value="colorsNature" data-id="4">colors nature</button>
+        </div>
+
             <div class="prod-width">
             <div>
-                <h2 class="prodlist-txt">Todos los productos</h2>
+                <h2 id="titulo" class="prodlist-txt">Todos los productos</h2>
 
                 <% if (locals.isLogged && locals.userLogged.idRoleFK==1) { %>
                     <a href="/products/create">
@@ -14,46 +22,15 @@
                     </a>
                 <% } %>
                 
-                <!-- <button class="all-button" category="all">all</button>
-                    <% categorias.forEach(categoria => { %>
-                        <button class="button-category" category='<%= categoria.idCategory %>' value="<%= categoria.idCategory %>">
-                            <%= categoria.name %>
-                    <% }); %> -->
             </div>
-
-            <div class="products-container"> 
-                       
-            <% for (let i = 0; i < producto.length; i++) { %>
-
-                <section class="product">
-                    <!-- <div class="cart-prod">
-                        <button class="cart-btn"><i class="fa-solid fa-bag-shopping fa-lg"></i></button>
-                    </div> -->
-        
-                    <a href="/products/<%=producto[i].idProduct %>" category="producto[i].idCategoryFK" class="ref-link">
-
-                    <div class="box-image">
-                        <img src="/images/products/<%= imagen[i].name %>" alt="Foto Reloj" class="img-pl">
-                    </div>
-
-                    <p class="product-name"><%= producto[i].name %></p>
-                    <p class="product-price">$<%= producto[i].price %></p>
-                        <!-- <p class=""><%= producto[i].description %></p> -->
-
-                    <div class="cart-section">
-                        <button>Agregar al carrito</button>
-                    </div>
-                    </a>
-                </section>
-
-            <% } %>
-            </div>
+            <div id="filter" class="products-container"></div>
+          
         </div>
         </div>
 
     </main>
     
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/listado-js.js"></script>
+    <script type="module" src="/js/listado-js.js"></script>
 </body>
 </html>
