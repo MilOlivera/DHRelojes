@@ -2,32 +2,29 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-
         <div class="container">
-            <div>Categorias  
-            <button id="filter-btn" type="button" value="all" data-id="all">all</button>
-            <button id="filter-btn" type="button" value="tinker" data-id="1">tinker</button>
-            <button id="filter-btn" type="button" value="jacquetDroze" data-id="2">jacquet droze</button>
-            <button id="filter-btn" type="button" value="centerPomp" data-id="3">center pomp</button>
-            <button id="filter-btn" type="button" value="colorsNature" data-id="4">colors nature</button>
-        </div>
-
             <div class="prod-width">
             <div>
                 <h2 id="titulo" class="prodlist-txt">Todos los productos</h2>
-
+                
                 <% if (locals.isLogged && locals.userLogged.idRoleFK==1) { %>
                     <a href="/products/create">
                         <button class="button-add"> Crear producto </button>
                     </a>
                 <% } %>
-                
-            </div>
-            <div id="filter" class="products-container"></div>
-          
-        </div>
-        </div>
 
+                <div class="class-container">
+                    <div>Filtro  
+                    <button id="filter-btn" class="button-category" type="button" value="all" data-id="all">all</button>
+                    <button id="filter-btn" class="button-category" type="button" value="tinker" data-id="1">tinker</button>
+                    <button id="filter-btn" class="button-category" type="button" value="jacquetDroze" data-id="2">jaquet droze</button>
+                    <button id="filter-btn" class="button-category" type="button" value="centerPomp" data-id="3">center pompidou</button>
+                    <button id="filter-btn" class="button-category" type="button" value="colorsNature" data-id="4">colors of nature</button>
+                </div>
+            </div>
+            <div id="filter" class="products-container"> </div>
+          
+        </div>  
     </main>
     
     <%- include('../partials/footer.ejs') %>

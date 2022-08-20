@@ -1102,11 +1102,16 @@ ERROR 404 ERROR 404 ERROR 404 */
     font-family: 'Raleway', Sans-Serif;
     cursor: pointer;
     background-color: #fafafa;
-    margin-top: 1rem;
     border: 0;
-    color: #252525;
+    color: #73777c;
     height: 2.5rem;
-    border-bottom: solid 1px #252525;
+    padding: 2px;
+}
+
+.class-container div {
+    font-size: 13px;
+    font-family: 'Raleway', Sans-Serif;
+    color: #73777c;
 }
 
 .arrow-back {
@@ -1780,11 +1785,11 @@ REGISTRO ** REGISTRO ** REGISTRO */
     font-family: 'Raleway', Sans-Serif;
     cursor: pointer;
     background-color: #fafafa;
-    margin-top: 1rem;
     border: 0;
     color: #252525;
     height: 2rem;
     border-bottom: solid 1px #252525;
+    margin: 1rem 0 10px 0;
 }
 
 /* EDICION ** EDICION ** EDICION 
@@ -2029,7 +2034,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         width: 100%;
     }
 
-    .button-category, .button-add {
+    .button-category, .button-add, .class-container div {
         font-size: 14px;
         margin-left: 5px;
     }
@@ -2040,6 +2045,10 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
     .box-img {
         margin-top: 30px;
+    }
+
+    .box-image {
+        padding-top: 5px;
     }
 
     .img-pl {
@@ -2528,16 +2537,36 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         width: 300px;
     }   
 
-    .button-category, .button-add {
+    .button-category .class-container div {
         font-size: 15px;
         margin-left: 10px;
+    }
+
+    .button-add {
+        font-size: 15px;
+        margin: 0 10px 15px 0;
     }
 
     .button-add:hover {
         border-bottom: solid 1px #efefef;
         background-color: #efefef;
         border-radius: 20px;
-        transition: all 500ms ease;
+        transition: all 600ms ease;
+    }
+
+    .button-category, .class-container div {
+        font-size: 15px;
+        height: 1.5rem;
+    }
+    
+    .button-category:hover {
+        border-bottom: solid 1px #363636;
+        transition: all 400ms ease;
+        color: #252525;
+    }
+
+    .box-image {
+        padding-top: 10px;
     }
 
     .all-button {
@@ -2605,8 +2634,12 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
     .prodlist-txt {
         font-size: 30px;
-        margin: 50px 0 50px 0;
+        margin: 50px 0 40px 0;
         text-align: center;
+    }
+
+    .class-container {
+        margin-bottom: 20px;
     }
 
     .span-recordar {
@@ -2830,7 +2863,7 @@ CARRITO ** CARRITO ** CARRITO */
 
 @media(min-width: 1280px){
 
-    .button-category, .button-add {
+    .button-category, .button-add, .class-container div {
         font-size: 16px;
         margin-left: 10px;
     }
@@ -3175,7 +3208,15 @@ ERROR 404 ERROR 404 ERROR 404 */
     }
 
     .prodlist-txt {
-        margin: 70px 0 70px 0;;
+        margin: 70px 0 80px 0;;
+    }
+
+    .class-container {
+        margin: 0 0 0 30px;
+    }
+
+    .button-add {
+        margin: 0 0 20px 40px;
     }
 
     .register-txt, .title-login, .profile-txt, .product-add-title, .product-edit-title {

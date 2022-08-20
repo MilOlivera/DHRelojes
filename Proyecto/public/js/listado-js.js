@@ -10,6 +10,7 @@ window.onload = async function () {
   });
 
   displayProducts(all);
+  
   btnFilter.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       const category = e.currentTarget.dataset.id;
@@ -26,11 +27,11 @@ window.onload = async function () {
       if (category == 1) {
         titulo.innerText = "Tinker";
       } else if (category == 2) {
-        titulo.innerText = "Jacquet Droze";
+        titulo.innerText = "Jaquet Droze";
       } else if (category == 3) {
-        titulo.innerText = "Center Pomp";
+        titulo.innerText = "Center Pompidou";
       } else if (category == 4) {
-        titulo.innerText = "Colors Nature";
+        titulo.innerText = "Colors of Nature";
       } else if (category == "all") {
         titulo.innerText = "Todos los productos";
       }
@@ -49,9 +50,23 @@ function displayProducts(itemsProducts) {
           <p class="product-name">${item.name}</p>
           <p class="product-price">$${item.price}</p>
       </article>
+      <div class="cart-section">
+      <button>Agregar al carrito</button>
+     </div>
       </a>
   </section>`;
   });
+
   displayItems = displayItems.join("");
   filter.innerHTML = displayItems;
 }
+
+// btnFilter.addEventListener('click', () => {
+//   btnFilter.classList.add(button-category-click);
+//   btnFilter.classList.remove(button-category)
+// });
+
+// btnFilter.addEventListener('click', function handleClick(event) {
+//   event.target.classList.add('button-category-click');
+//   event.target.classList.remove('button-category')
+// });

@@ -91,7 +91,7 @@ const productsController = {
       return res.render(productsPath + "/productDetail", {
         promesaProducto,
         promesaImagen,
-      });
+      }, console.log(promesaImagen, 'soy yo loko'));
     });
   },
 

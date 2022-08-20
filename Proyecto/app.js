@@ -30,8 +30,10 @@ const rutasProducts = require("./routes/products.js");
 const rutasUsers = require("./routes/users.js");
 const rutasApi = require("./routes/Api/Api");
 
-app.listen(4068, () => {
-  console.log("Servidor Corriendo en 4068");
+const port = 4068
+
+app.listen(port, () => {
+  console.log("Servidor Corriendo en " + port);
 });
 
 
