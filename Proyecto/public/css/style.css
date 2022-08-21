@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;
     font-family: 'Open Sans', Sans-Serif;
-
 }
 
 @font-face {
@@ -15,6 +14,12 @@ body{
 
 html{
     background-color: #ffffff;
+}
+
+#body-index {
+    overflow-y: scroll; overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* mi navbar */
@@ -113,7 +118,6 @@ HEADER SIN VIDEO ** HEADER SIN VIDEO */
 .background img{
     width: 100%;
     position: relative;
-    margin-left: -10px;
     padding: 0;
 }
 
@@ -298,7 +302,6 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
-
 }
 
 /* EDITAR PROFILE */
@@ -452,7 +455,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     font-weight: 500;
 }
 
-.primeraParteParrafo, .divParrafo p, .parrafoSection2, .texto-info {
+.primeraParteParrafo, .divParrafo p, .parrafoSection2, .texto-info, .text-all {
     /* text-align: justify; */
     text-indent: 15px;
     font-size: 14px;
@@ -462,8 +465,8 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     font-family: 'Raleway', Sans-Serif;
 }
 
-.titulos-lastcolec {
-    padding: 10px 10px 0 10px;
+.text-all {
+    margin-bottom: 30px;
 }
 
 .latestColec {
@@ -571,7 +574,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 30px;
 }
 
@@ -634,11 +637,11 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     z-index: 2;
     height: 300px;
     margin-top: 140px;
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
-.about-info div {
-    padding: 0 10px 0 10px;
+.latestColec {
+    padding: 20px 20px 0 20px;
 }
 
 .card-all {
@@ -648,16 +651,22 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 .background-cell img{
     width: 100%;
     position: relative;
-    margin-left: -10px;
     padding: 0;
+}
+
+.background-cell {
+    background-color: #fafafa;
 }
 
 .background-lap img{
     width: 100%;
     position: relative;
-    margin-left: -10px;
     padding: 0;
     display: none;
+}
+
+.background-lap {
+    width: 100%;
 }
 
 .title-all {
@@ -665,19 +674,12 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     font-weight: 500;
     color: #363636;
     font-size: 15px;
-    margin: 15px 0 0 0;
+    margin: 0px;
     text-align: center;
 }
 
-.text-all {
-    font-family: 'Raleway', Sans-Serif;
-    color: #363636;
-    line-height: 1.5rem;
-    font-size: 14px;
-}
-
 .card-all {
-    padding: 0 10px;
+    padding: 0 10px 20px 10px;
 }
 
 .shop-all-btn {
@@ -704,6 +706,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 
 .container-shop {
     padding-bottom: 20px;
+    width: 100%;
 }
 
 /* FOOTER FOOTER FOOTER FOOTER FOOTER */
@@ -712,7 +715,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 .footerV {
     width: 100%;
     padding: 50px 0px;
-    background-color: #ffffff;
+    background-color: #fafafa;
     margin-top: 10%;
 }
 
@@ -725,11 +728,12 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     width: 300%;
     background-color: black;    
     position: absolute;
+    overflow-y: hidden;
 }
 
 .wave{
     width: 300%;
-    height: 150%;
+    height: 300px;
     padding: 0px 0px;
     position: absolute;
     -webkit-mask-image: url(../img/footer/background-footer.svg);
@@ -738,12 +742,12 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     mask-size: cover;
     background-size: cover;
     animation: w1 7s linear infinite;
-    background-color: black
+    background-color: #efefef;
 }
 
 .w1{
     animation: w1 7s linear infinite;
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 
@@ -856,16 +860,25 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 }
 
 /* FOOTER GRIS - sin video */
-.container-footer-nv {
-    padding: 20px 0 40px 0;
-    background-color: #efefef;
+.container-footer-nv, .container-footer-v {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 10;
 }
 
-.text-footer-nv, .box-footer-nv a {
+.container-footer-nv {
+    background-color: #efefef;
+    padding: 20px 0 40px 0;
+}
+
+.container-footer-v {
+    background-color: #fafafa;
+    padding: 60px 0 60px 0;
+}
+
+.text-footer-nv, .box-footer-nv a, .box-footer-v a {
     color: #9b9b9b;
     font-family: 'Raleway', Sans-Serif;
     font-weight: 500;
@@ -878,13 +891,14 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
     margin-bottom: 3px;
 }
 
-.box-footer-nv {
+.box-footer-nv, .box-footer-v  {
     padding: 15px 0 0 0;
     display: flex;
     flex-direction: column;
     width: 100px;
     text-decoration: none;
     list-style: none;
+    z-index: 10;
 }
 
 .logo-footer img {
@@ -2094,42 +2108,33 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     .videoHeader{
         right: 0;
     }
-    .sectionHome{
-        margin-left: -50px;
-    }
-    .primeraParteHome{
-        margin-top: 140px;
+
+    .primeraParteHome {
+        margin: 140px 0 50px 0;
     }
 
     .primeraParteH1, .divTexto h1 {
-        width: 90%;
+        width: 100%;
     }
 
     .primeraParteParrafo {
-        margin: 0px 60px 0px 0px;
+        margin: 0px;
     }
 
     .contenedorHome2{
         width: 250px;
         height: 320px;
     }
-    .contenedorHome2-1{
-        margin: 0px 30px 30px 30px;
-        padding: 10px;
-    }
+
     .primeraParteH3{
         display: none;
     }
-    .primeraParteParrafo, .divParrafo p, .parrafoSection2, .texto-info {
+    .primeraParteParrafo, .divParrafo p, .parrafoSection2, .texto-info, .text-all {
         text-indent: 0;
     }
 
     .parrafoSection2 {
         margin-right: 30px;
-    }
-
-    .divParrafo p {
-        margin-right: 35px;
     }
 
     .contenido3{
@@ -2139,8 +2144,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     }
 
     .slides {
-        padding: 10px 10px 10px 0px;
-        margin-right: 5px;
+        margin: 30px 5px 5px 5px;
     }
 
     .card3{
@@ -2150,22 +2154,23 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     .div3{
         margin-top: -100px;
         margin-bottom: 30px;
+        padding: 0px;
     }
 
     .divTextos3{
         width: 100%;
-        padding: 0px;
+        padding: 20px;
     }
+
     .divImg3-2 .imgFondo3 img{
-        width: 500px;
-        height: 200px;
+        width: 750px;
+        margin: 0px 0px 0px -223px;
     }
 
     .divImg3-1 .imgReloj3 img{
-        width: 250px;
         height: 300px;
-        margin-top: 96px;
-        margin-left: 100%;
+        margin-top: 55px;
+        margin-left: 110%;
     }
 
     .banner img {
@@ -2218,29 +2223,19 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         margin: 10px;
     }
 
-    .container-shop {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-around;
-    }
-    
-    .box-shop {
-        width: 23%;
-    }
-
-    .text-all {
-        font-size: 12px;
-        line-height: 1.2rem;
+    .card-all {
+        padding: 0 20px 20px 20px;
     }
 
     .title-all {
-        font-size: 14px;
+        font-size: 16px;
     }
 
    .wave{
     width: 100%;
-    height: 2500px;
+    height: 960px;
    }
+
    @keyframes w1{
     0%{
         display: none;
@@ -2309,7 +2304,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     }
     .primeraParteHome{
         margin-top: 180px;
-        margin-bottom: 300px;
+        margin-bottom: 350px;
         margin-left: 0;
         display: flex;
         flex-wrap: wrap;
@@ -2333,14 +2328,16 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         width: 40%;
         padding: 40px 40px 40px 60px;
     }
+
     .divImg3-2 .imgFondo3 img{
         width: 350px;
         height: 450px;
-        margin-left: -60px;
+        margin: 30px 0 0 -60px;
         display: block;
         background-size: cover;
         object-fit: cover;
     }
+
     .divImg3-1 .imgReloj3 img{
         width: 250px;
         margin-top: 127px;
@@ -2398,7 +2395,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
     .wave{
     width: 100%;
-    height: 1400px;
+    height: 830px;
     }
 
     .background-cell img{
@@ -2412,23 +2409,51 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
     .background-lap img{
         width: 100%;
         position: relative;
-        margin-left: -10px;
         padding: 0;
         display: inline;
     }
 
+    .background-lap {
+        background-color: #fafafa;
+    }
+
+    .container-shop{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .text-all {
+        font-size: 12px;
+        line-height: 1.2rem;
+    }
+
+    .title-all {
+        font-size: 14px;
+    }
+
+    .box-shop {
+        width: 23%;
+    }
+
     /* footer gris */
-    .container-footer-nv {
-        background-color: #efefef;
+    .container-footer-nv, .container-footer-v {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         flex-direction: unset;
         align-items: flex-start;
+    }
+
+    .container-footer-nv {
         padding: 40px 0 60px 0;
     }
+
+    .container-footer-v { 
+        padding: 140px 0 60px 0;
+    }
     
-    .text-footer-nv, .box-footer-nv a {
+    .text-footer-nv, .box-footer-nv a, .box-footer-v a {
         font-size: 13px;
         line-height: 30px;
     }
@@ -2437,7 +2462,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         margin-bottom: 5px;
     }
     
-    .box-footer-nv {
+    .box-footer-nv, .box-footer-v  {
         padding: 20px;
         width: 300px;
     }
@@ -2558,7 +2583,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         font-size: 15px;
         height: 1.5rem;
     }
-    
+
     .button-category:hover {
         border-bottom: solid 1px #363636;
         transition: all 400ms ease;
@@ -2991,7 +3016,7 @@ CARRITO ** CARRITO ** CARRITO */
 
     .banner img{
         width: 65rem;
-        margin: 50px 0 50px 0;
+        margin: 0px 0 50px 0;
     }
 
     .about-info div {
@@ -3008,7 +3033,7 @@ CARRITO ** CARRITO ** CARRITO */
 
    .wave{
         width: 300%;
-        height: 150%;
+        height: 580px;
    }
 
    .container-shop {
@@ -3030,10 +3055,11 @@ CARRITO ** CARRITO ** CARRITO */
     .title-all {
         text-align: left;
         font-size: 14px;
+        margin-top: 15px;
     }
 
     .card-all {
-        padding-bottom: 30px;
+        padding: 0 0 30px 0;
     }
 
     .shop-all-btn {
@@ -3043,14 +3069,23 @@ CARRITO ** CARRITO ** CARRITO */
 
 
    /* footer gris */
-    .container-footer-nv {
+    .container-footer-nv, .container-footer-v {
         align-items: flex-start;
     }
 
+    .container-footer-v { 
+        padding: 250px 0 120px 0;
+    }
+
    .box-footer-nv {
-    padding: 60px 0 ;
-    width: 200px;
-    margin: 0px;
+        padding: 60px 0 ;
+        width: 200px;
+        margin: 0px;
+   }
+
+   .box-footer-v {
+        width: 200px;
+        margin: 0px;
    }
 
    /* ERROR 404 ERROR 404 ERROR 404

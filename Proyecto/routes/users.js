@@ -55,6 +55,39 @@ const validation = [
     ),
 ];
 
+const validationEdit = [
+  body("name")
+    .notEmpty().withMessage(" ")
+    .isLength({ min: 2 })
+    .withMessage(" "),
+  body("lastName")
+    .notEmpty()
+    .withMessage(" ")
+    .isLength({ min: 2 })
+    .withMessage(" "),
+  body("mail")
+    .notEmpty()
+    .withMessage(" ")
+    .bail()
+    .isEmail()
+    .withMessage(" ")
+    .custom((userEmail) => {
+      return new Promise((resolve, reject) => {
+        user.findOne({ where: { mail: userEmail } }).then((emailExist) => {
+          if (emailExist !== null) {
+            reject(new Error(" "));
+          } else {
+            resolve(true);
+          }
+        });
+      });
+    }),
+  body("dni").notEmpty()
+  .withMessage(" "),
+  body("address").notEmpty()
+  .withMessage(" "),
+];
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public/images/users");
@@ -83,6 +116,6 @@ router.get("/logout", userController.logout);
 
 router.get("/edit/:id", authMiddleware, userController.edit);
 
-router.put("/edit/:id", cargaArchivo.any("image"), userController.confirmEdit);
+router.put("/edit/:id", cargaArchivo.any("image"), validationEdit, userController.confirmEdit);
 
 module.exports = router;

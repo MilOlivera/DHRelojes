@@ -11,6 +11,13 @@
 
     <nav class="nonepls">
         <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+
+            <li>
+                <form action="#" method="GET">
+                    <input type="text" name="" id="" placeholder="Buscar un producto">
+                    <button type="submit" class="buscarHome"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </li>
                 
         <% if (locals.isLogged) { %>
             <li><a href="/users/profile"><%= locals.userLogged.name %><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="20px" height="20px" class="imgUserNav"></a></li>

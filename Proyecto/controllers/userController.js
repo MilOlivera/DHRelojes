@@ -33,7 +33,7 @@ let userController = {
     if (req.files[0] != undefined) {
       avatar = req.files[0].filename;
     } else {
-      avatar = "default-image.jfif";
+      avatar = "default-image.jpg";
     }
 
     const resultValidation = validationResult(req);
@@ -117,6 +117,15 @@ let userController = {
       image = req.files[0].filename;
     } else {
       image = image;
+    }
+
+    const resultValidation = validationResult(req);
+    
+    if (resultValidation.errors.length > 0) {
+      return res.render("./users/profile", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
     }
 
     let userFind = req.params.id;

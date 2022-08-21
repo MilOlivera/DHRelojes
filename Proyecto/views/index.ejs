@@ -1,6 +1,6 @@
 <%- include('./partials/head.ejs') %>
 
-    <body>
+    <body id="body-index">
         <%- include('./partials/headerV.ejs') %>
             <main>
                 <div class="contenedor-all-home">
@@ -59,11 +59,11 @@
                             <h4 class="texto-info">Desde el gráfico Mondrian y el soñador Kandinsky, hasta el dinámico Delaunay. Elige tu favorito entre los maestros del arte moderno.</h4>
                         </div>
                     </div>
-
-                    <div class="banner">
-                        <img src="/img/home/banner_pompidou_combo_desktop_1440x400_test.png" alt="">
-                    </div>
                 </section>
+
+                <div class="banner">
+                    <img src="/img/home/banner_pompidou_combo_desktop_1440x400_test.png" alt="">
+                </div>
 
                 <section class="slides">
                     <div class="swiper mySwiper contenedorHome3">
@@ -97,7 +97,7 @@
                                     </div>
         
                                     <div class="cardDatosHome">
-                                        <span class="cardNombre">Eiffel Tower</span>
+                                        <span class="cardNombre">Tour Eiffel</span>
                                         <!-- <span class="cardDescrpcion">Day Date</span> -->
                                     </div>
                                 </div>
@@ -114,7 +114,24 @@
                                     </div>
         
                                     <div class="cardDatosHome">
-                                        <span class="cardNombre">Black & White</span>
+                                        <span class="cardNombre">Rouge, Bleu at Blanc</span>
+                                        <!-- <span class="cardDescrpcion">Day Date</span> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" swiper-wrapper contenido3">
+        
+                            <div class=" swiper-slide card3">
+                                <div class="contenido-card3">
+                                    
+                                    <div class="cardImg3">
+                                        <a href="/products/9"><img src="/img/home/frida.jpg" alt=""></a>
+                                    </div>
+        
+                                    <div class="cardDatosHome">
+                                        <span class="cardNombre">Frida Kahlo</span>
                                         <!-- <span class="cardDescrpcion">Day Date</span> -->
                                     </div>
                                 </div>
@@ -131,24 +148,7 @@
                                     </div>
         
                                     <div class="cardDatosHome">
-                                        <span class="cardNombre">Blue Sky</span>
-                                        <!-- <span class="cardDescrpcion">Day Date</span> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class=" swiper-wrapper contenido3">
-        
-                            <div class=" swiper-slide card3">
-                                <div class="contenido-card3">
-                                    
-                                    <div class="cardImg3">
-                                        <a href="/products/9"><img src="/img/home/frida.jpg" alt=""></a>
-                                    </div>
-        
-                                    <div class="cardDatosHome">
-                                        <span class="cardNombre">Frida</span>
+                                        <span class="cardNombre">Bleu de Ciel</span>
                                         <!-- <span class="cardDescrpcion">Day Date</span> -->
                                     </div>
                                 </div>
@@ -158,20 +158,21 @@
                         <!-- <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div> -->
-                       </div>
+                    </div>
         
                 </section> 
 
                 <br><br>
 
-                <section class="card-all">
-                    <div class="background-cell">
-                        <img src="/img/home/ola2.png" alt="">
-                    </div>
+                <div class="background-cell">
+                    <img src="/img/home/ola2.png" alt="">
+                </div>
 
-                    <div class="background-lap">
-                        <img src="/img/home/ola.png" alt="">
-                    </div>
+                <div class="background-lap">
+                    <img src="/img/home/ola.png" alt="">
+                </div>
+                <section class="card-all">
+
 
                     <div class="container-shop">
                         <div class="box-shop">
@@ -217,6 +218,7 @@
                 </section> -->
 
             </div>
+        
             </main>
             <%- include('./partials/footerV.ejs') %>
 
