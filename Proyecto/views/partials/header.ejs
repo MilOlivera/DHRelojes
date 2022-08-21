@@ -18,21 +18,23 @@
                     <button type="submit" class="buscarHome"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </li> -->
-                
+            <li><a href="/products/cart"><i class="fa-solid fa-bag-shopping"> </i> <span class="header-info"> Carrito </span> </li></a>
         <% if (locals.isLogged) { %>
-            <li><a href="/users/profile"><%= locals.userLogged.name %><%= locals.userLogged.name %><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="20px" height="20px" class="imgUserNav"></a>
-                <!-- <ul class="mini-navbar">
-                    <li><a href="/users/logout">Cerrar sesion</a></li>
-                    <% if (locals.userLogged.idRoleFK==1) { %>
-                    <li><a href="/users/allusers">Panel</a></li>
-                    <li><a href="/products//create">Crear prod</a></li>
-                    <% } %>
-                </ul> -->
-            </li>
+            <div class="dropdown-container">
+                <li><a href="/users/profile"><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="20px" height="20px" class="imgUserNav"><%= locals.userLogged.name %></a>
+                    <ul class="dropdownLi">
+                        <li><a href="/users/logout">Cerrar sesion</a></li>
+                        <% if (locals.userLogged.idRoleFK==1) { %>
+                        <li><a href="/users/allusers">Panel de usuarios</a></li>
+                        <li><a href="/products/create">Crear producto</a></li>
+                        <% } %>
+                    </ul>
+                </li>
+            </div>
+
         <% } else { %>
             <li><a href="/users/login"><i class="fa-solid fa-user"> </i> <span class="header-info"> Acceso </span> </li></a>
         <% } %>
-        <li><a href="/products/cart"><i class="fa-solid fa-bag-shopping"> </i> <span class="header-info"> Carrito </span> </li></a>
         </ul>
     </nav>
 
