@@ -80,6 +80,7 @@ html{
     color: #fafafa;
 }
 
+
 @media (max-width: 769px) {
     .primary-navigation{
         --gap: 1.5em;
@@ -1479,7 +1480,7 @@ hr.divider {
 /* REGISTRO ** REGISTRO ** REGISTRO 
 REGISTRO ** REGISTRO ** REGISTRO */
 
-.register-txt, .profile-txt, .prodlist-txt, .product-add-title, .product-edit-title {
+.register-txt, .profile-txt, .prodlist-txt, .product-add-title, .product-edit-title, .userlist-txt {
     font-size: 25px;
     letter-spacing: 0.035rem;
     font-weight: 300;
@@ -1671,6 +1672,10 @@ REGISTRO ** REGISTRO ** REGISTRO */
     font-size: 14px;
 }
 
+.productError-activo {
+    font-size: 14px;
+}
+
 
 /*Daniel pagina producto*/
 
@@ -1831,10 +1836,19 @@ EDICION ** EDICION ** EDICION  */
     gap: 1.5rem;
 }
 
-.product{
+.users-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3rem;
+}
+
+.product, .user{
     text-align: center;
     margin:3rem 2rem 1rem 2rem;
     outline-offset: -1.5rem;
+}
+
+.product {
     cursor: pointer;
 }
 
@@ -1842,11 +1856,11 @@ EDICION ** EDICION ** EDICION  */
     display: none;
 }
 
-.product-name {
+.product-name, .user-id {
     font-family: 'New York', Sans-Serif;
 }
 
-.product-price {
+.product-price, .user-info {
     font-family: 'Raleway', Sans-Serif;
 }
 /* 
@@ -1915,9 +1929,11 @@ PERFIL USUARIO ** PERFIL USUARIO ** PERFIL USUARIO */
     background-color: #252525;
 } */
 
-.profile-pic {
-    width: 60px;
-    clip-path: circle();
+.profile-pic, .user-profile-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .logoutProfile{
@@ -2020,6 +2036,11 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         clip-path: circle();
     }
 
+    .user-profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
     .img-upload {
         width: 100px;
     }
@@ -2061,7 +2082,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         margin-top: 30px;
     }
 
-    .box-image {
+    .box-image, .user-box-image {
         padding-top: 5px;
     }
 
@@ -2539,13 +2560,32 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         font-size: 16px;
     }
 
-    .prod-width {
+    .prod-width, .user-width {
         width: 85%;
         margin: auto;
     }
 
-    .product-name {
+    .product-name, .user-id {
         font-size: 20px;
+    }
+
+    .user-id {
+        margin-bottom: 10px;
+    }
+
+    .user-info {
+        margin-top: 10px;
+    }
+
+    .user-delete form button {
+        cursor: pointer;
+        font-family: 'Raleway';
+        padding: 10px;
+        background-color: #EFEFEF;
+        border: 0;
+        width: 60%;
+        border-radius: 8px;
+        font-size: 14px;
     }
 
     .box-img {
@@ -2592,6 +2632,10 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
 
     .box-image {
         padding-top: 10px;
+    }
+
+    .user-box-image{
+        padding-top: 20px;
     }
 
     .all-button {
@@ -2657,7 +2701,7 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         font-size: 30px;
     }
 
-    .prodlist-txt {
+    .prodlist-txt, .userlist-txt {
         font-size: 30px;
         margin: 50px 0 40px 0;
         text-align: center;
@@ -2730,9 +2774,15 @@ SCRIPT JS SCRIPT JS SCRIPT JS */
         padding: 50px 0 300px 0;
     }
 
-    .profile-pic, .img-upload {
+    .profile-pic, .img-upload, .user-profile-pic {
         width: 150px;
+        height: 150px;
     }
+
+    /* .user {
+        background-color: rgba(239, 239, 239, 0.5);
+        border-radius: 5px;
+    } */
 
     .logoutProfile {
         font-size: 15px;
@@ -3195,17 +3245,22 @@ ERROR 404 ERROR 404 ERROR 404 */
         background-color: #fafafa;
     }
     
-    .prod-width {
+    .prod-width, .user-width {
         width: 80%;
     }
 
-    .product-name {
+    .product-name, .user-id {
         font-size: 24px;
     }
 
-    .products-container {
+    .products-container, .users-container {
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         gap: 2rem;
+    }
+
+    .users-container {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 4rem;
     }
 
     .img-box {
@@ -3238,11 +3293,11 @@ ERROR 404 ERROR 404 ERROR 404 */
         width: 100%
     }
 
-    .register-txt, .product-add-title, .title-cart, .title-login, .profile-txt, .prodlist-txt, .product-edit-title {
+    .register-txt, .product-add-title, .title-cart, .title-login, .profile-txt, .prodlist-txt, .product-edit-title, .userlist-txt {
         font-size: 35px;
     }
 
-    .prodlist-txt {
+    .prodlist-txt, .userlist-txt {
         margin: 70px 0 80px 0;;
     }
 
@@ -3282,6 +3337,12 @@ ERROR 404 ERROR 404 ERROR 404 */
 
     .profile-pic, .img-upload {
         width: 250px;
+        height: 250px;
+    }
+
+    .user-profile-pic {
+        width: 200px;
+        height: 200px;
     }
 
     .logoutProfile {
@@ -3470,7 +3531,7 @@ VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
         display: block;
         color: #CD113B;
         box-shadow: 2px;
-        margin-top: -20px;
+        margin-top: -15px;
     }    
 
 /* 
@@ -3479,8 +3540,7 @@ VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
 
     .productEditValidacion-estado{
         z-index: -1;   
-        position: absolute;
-        left: 97%;
+        position: relative;
     }
     
     .divGrupo-correcto .productEditValidacion-estado{
@@ -3489,15 +3549,17 @@ VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
         z-index: 1;
         bottom: 10px;
         position: absolute;
-
+        left: 48%;
+        width: 100%;
     }
 
     .divGrupo-incorrecto .productEditValidacion-estado{
-        color: #bb2929;
+        color: #CD113B;
         opacity: 1;
         z-index: 1;
-        bottom: 50px;
-        position: absolute;
+        bottom: 36px;
+        left: 48%;
+        width: 100%;
     }
 
     .divGrupo {

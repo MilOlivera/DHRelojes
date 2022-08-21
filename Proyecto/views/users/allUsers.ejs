@@ -1,0 +1,38 @@
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="container">
+            <div class="user-width">
+                <h2 id="titulo" class="userlist-txt">Todos los usuarios</h2>
+ 
+                <div class="users-container">  
+
+                    <% users.forEach(user => { %>
+
+                    <section class="user">
+
+                        <div class="user-box-image">
+                            <img src="/images/users/<%= user.image %>" alt="foto de perfil" class="user-profile-pic">
+                        </div>
+
+                        <article>
+                            <p class="user-id"><%= user.idUser %></p>
+                            <p class="user-info"><%= user.name %> <%= user.lastName %></p>
+                            <p class="user-info"><%= user.mail %></p>
+                        </article>
+
+                        <div class="user-delete">
+                            <form method="POST" action="/users/delete/<%= user.idUser %>?_method=DELETE" >
+                                <button>Eliminar usuario</button> 
+                            </form>
+                        </div>
+
+                    </section>
+                    <%   }) %>
+                </div>   
+            </div>
+        </div>  
+    </main>
+</body>
+</html>

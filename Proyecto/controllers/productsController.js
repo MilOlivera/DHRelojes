@@ -6,7 +6,7 @@ const { check, validationResult, body } = require("express-validator");
 const productsPath = path.join(__dirname, "../views/products");
 
 const productsController = {
-  // VER TODOS LOS PRODUCTOS ** VER TODOS LOS PRODUCTOS
+  /* ver todos los productos ** ver todos los productos */
   list: async (req, res) => {
     let producto = await db.Producto.findAll();
     let imagen = await db.Imagen.findAll();
@@ -38,14 +38,14 @@ const productsController = {
     });
   },
 
-  // CREAR UN PRODUCTO ** CREAR UN PRODUCTO
+  /* crear un producto ** crear un producto */
   create: (req, res) => {
     db.Categoria.findAll().then(function (categorias) {
       return res.render(productsPath + "/productAdd", { categorias });
     });
   },
 
-  // GUARDAR UN PRODUCTO CREADO ** GUARDAR UN PRODUCTO CREADO
+  /* guardar un producto creado ** guardar un producto creado */
   store: (req, res) => {
     let idProduct_image;
     console.log(req.file);
@@ -79,7 +79,7 @@ const productsController = {
     res.redirect("/");
   },
 
-  // DETALLE DE UN PRODUCTO ** DETALLE DE UN PRODUCTO
+  /* detalle de un producto ** detalle de un producto */
   productDetail: (req, res) => {
     let promesaProducto = db.Producto.findByPk(req.params.id);
     // let promesaTalle = db.Talle.findAll();
@@ -95,7 +95,7 @@ const productsController = {
     });
   },
 
-  // EDICION DE UN PRODUCTO ** EDICION DE UN PRODUCTO
+  /* edicion de un producto ** edicion de un producto */
   edit: (req, res) => {
     let promesaImagen = db.Imagen.findByPk(req.params.id);
     let promesaProducto = db.Producto.findByPk(req.params.id);
@@ -113,7 +113,7 @@ const productsController = {
     });
   },
 
-  // ACTUALIZACION DE DATOS ** ACTUALIZACION DE DATOS
+  /* actualizacion de datos ** actualizacion de datos */
   confirm: (req, res) => {
     let productFind = req.params.id;
 
@@ -173,7 +173,7 @@ const productsController = {
     });
   },
 
-  // DELETE ** DELETE
+  /* eliminar un producto ** eliminar un producto */
   delete: (req, res) => {
     db.Imagen.destroy({
       where: {
@@ -188,7 +188,8 @@ const productsController = {
     });
     res.redirect("/");
   },
-  // CARRITO ** CARRITO
+  
+  /* carrito ** carrito */
   cart: (req, res) => {
     db.Producto.findByPk(req.params.id).then(function (detalle) {
       return res.render(productsPath + "/productCart", { detalle });

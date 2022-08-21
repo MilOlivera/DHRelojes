@@ -42,29 +42,24 @@ var storage = multer.diskStorage({
 
 var cargaArchivo = multer({ storage: storage });
 
-// VER TODOS LOS PRODUCTOS .get + controler.index "/"
+/* ver todos los productos ** ver todos los productos */
 router.get("/", productsController.list);
 
-
-// CREAR UN PRODUCTO ** CREAR UN PRODUCTO
+/* crear un producto ** crear un producto */
 router.get("/create", productsController.create);
 router.post("/", cargaArchivo.any("image"), validation, productsController.store);
 
-// VER CARRITO ** VER CARRITO
+/* carrito ** carrito */
 router.get("/cart", productsController.cart);
 
-// DELETE ** DELETE
+/* eliminar un producto ** eliminar un producto */
 router.delete("/delete/:id", productsController.delete);
 
-// VER UN PRODUCTO ** VER UN PRODUCTO
+/* detalle de un producto ** detalle de un producto */
 router.get("/:id", productsController.productDetail);
 
-// EDITAR UN PRODUCTO ** EDITAR UN PRODUCTO
+/* editar un producto ** editar un producto */
 router.get("/:id/edit", adminMiddleware, productsController.edit);
-// router.put('/:id', productsController.confirm)
-
 router.put("/:id/edit", cargaArchivo.any("image"), productsController.confirm);
-
-// falta edit del carrito
 
 module.exports = router;

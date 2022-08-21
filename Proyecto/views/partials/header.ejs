@@ -12,15 +12,23 @@
     <nav class="nonepls">
         <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
 
-            <li>
+            <!-- <li>
                 <form action="#" method="GET">
                     <input type="text" name="" id="" placeholder="Buscar un producto">
                     <button type="submit" class="buscarHome"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-            </li>
+            </li> -->
                 
         <% if (locals.isLogged) { %>
-            <li><a href="/users/profile"><%= locals.userLogged.name %><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="20px" height="20px" class="imgUserNav"></a></li>
+            <li><a href="/users/profile"><%= locals.userLogged.name %><%= locals.userLogged.name %><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="20px" height="20px" class="imgUserNav"></a>
+                <!-- <ul class="mini-navbar">
+                    <li><a href="/users/logout">Cerrar sesion</a></li>
+                    <% if (locals.userLogged.idRoleFK==1) { %>
+                    <li><a href="/users/allusers">Panel</a></li>
+                    <li><a href="/products//create">Crear prod</a></li>
+                    <% } %>
+                </ul> -->
+            </li>
         <% } else { %>
             <li><a href="/users/login"><i class="fa-solid fa-user"> </i> <span class="header-info"> Acceso </span> </li></a>
         <% } %>
