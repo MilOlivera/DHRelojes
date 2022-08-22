@@ -26,6 +26,23 @@ const validation = [
     .withMessage("Debe elegir una categoria"),
 ];
 
+const validationEdit = [
+  body("name")
+    .notEmpty()
+    .withMessage("Tenes que escribir un nombre")
+    .isLength({ min: 5 })
+    .withMessage("El nombre debe tener más de cinco caracteres"),
+  body("description")
+    .isLength({ min: 20 })
+    .withMessage("La descripción debe tener veinte caracteres como minimo"),
+  body("price")
+    .notEmpty()
+    .withMessage("Debe ingresar un precio"),
+  body("category")
+    .notEmpty()
+    .withMessage("Debe elegir una categoria"),
+];
+
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -60,6 +77,6 @@ router.get("/:id", productsController.productDetail);
 
 /* editar un producto ** editar un producto */
 router.get("/:id/edit", adminMiddleware, productsController.edit);
-router.put("/:id/edit", cargaArchivo.any("image"), productsController.confirm);
+router.put("/:id/edit", cargaArchivo.any("image"), validationEdit, productsController.confirm);
 
 module.exports = router;

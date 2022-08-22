@@ -127,25 +127,27 @@ let userController = {
 
   /* actualizacion de datos ** actualizacion de datos */
   confirmEdit: (req, res) => {
+    let promesaUsuario = db.Usuario.findByPk(req.params.id);
+    let user = req.session.userLogged;
+
     let image;
-  
     if (req.files[0] != undefined) {
       image = req.files[0].filename;
     } else {
       image = image;
     }
 
-    const resultValidation = validationResult(req);
+    const resValidation = validationResult(req);
     
-    if (resultValidation.errors.length > 0) {
-      return res.render("./users/profile", {
-        errors: resultValidation.mapped(),
+    if (resValidation.errors.length > 0) {
+      return res.render("./users/edit", {
+        errors: resValidation.mapped(),
         oldData: req.body,
+        userFind: promesaUsuario,
+        user,
       });
     }
-
-    let userFind = req.params.id;
-
+    
     db.Usuario.update(
       {
         name: req.body.name,
@@ -157,7 +159,7 @@ let userController = {
       },
       {
         where: {
-          idUser: userFind,
+          idUser: req.params.id,
         },
       }
     )

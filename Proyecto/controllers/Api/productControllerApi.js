@@ -118,7 +118,7 @@ let productControllerApi = {
 
   filterList: async (req, res) => {
     let productFilter = await db.Producto.sequelize.query(
-      "SELECT product.name, product.description, product.price,product.idCategoryFK , product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image"
+      "SELECT product.idProduct, product.name, product.description, product.price,product.idCategoryFK , product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image"
     );
     Promise.all(productFilter).then(function (productFilter) {
       return res.status(200).json({

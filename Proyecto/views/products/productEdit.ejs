@@ -3,46 +3,62 @@
     <%- include('../partials/header.ejs') %>
     <main class="main-register">
         <section class="section-register">
-            <h2 class="product-edit-title">Editar <%=promesaProducto.name %></h2>
+            <h2 class="product-edit-title">Editar</h2>
 
             <div class="box-img">
-                <img class="img-pl" src="/images/products/<%= promesaImagen.name %>" alt="Foto de Reloj">
+
             </div>
 
-            <form class="width-registro" method="POST" action="/products/<%= promesaProducto.idProduct %>/edit?_method=PUT" id="productsValidator" enctype="multipart/form-data">
+            <form class="width-registro" method="POST" action="/products/<%= locals.oldData ? idProduct : promesaProducto.idProduct %>/edit?_method=PUT" id="productsValidator" enctype="multipart/form-data">
+
+                <div class="box-img">
+                    <img class="img-pl" src="/images/products/<%= promesaImagen.name %>" alt="Foto de Reloj">
+                </div>
 
                 <br></br>
 
                 <div>
                     <p class="desc-ep">Nombre:</p>
                     <div class="divGrupo" id="grupo-name">
-                        <input class="formInput" type="text"  name="name" id="name" value="<%= promesaProducto.name %>" >
+                        <input class="formInput" type="text"  name="name" id="name" value="<%= locals.oldData ? oldData.name : promesaProducto.name %>">
                         <i class="productEditValidacion-estado fas fa-times-circle"></i>
                         <p class="productError">El nombre debe tener al menos cinco caracteres y no puede incluir numeros</p>
                     </div>
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
                 </div>
-
-                <!-- <div>
-                    <p class="desc-ep">Breve descripción:</p>
-                    <input class="formInput" type="text" name="short_descriptio" id="short_descriptio" value="<%= promesaProducto.description %>" >
-                </div> -->
 
                 <div>
                     <p class="desc-ep">Descripción:</p>
                     <div class="divGrupo" id="grupo-description">
-                        <input class="formInput" type="text" name="description" id="description" value="<%= promesaProducto.description %>" >
+                        <input class="formInput" type="text" name="description" id="description" value="<%= locals.oldData ? oldData.description : promesaProducto.description %>">
                         <i class="productEditValidacion-estado fas fa-times-circle"></i>
                         <p class="productError">La descripcion debe tener al menos 20 caracteres</p>
                     </div>
+
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="text-danger">
+                            <%= errors.description.msg %>
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
                     <p class="desc-ep">Precio:</p>
                     <div class="divGrupo" id="grupo-price">
-                        <input class="formInput" type="number"  name="price" id="price" value="<%= promesaProducto.price %>">
+                        <input class="formInput" type="number"  name="price" id="price" value="<%= locals.oldData ? oldData.price : promesaProducto.price %>">
                         <i class="productEditValidacion-estado fas fa-times-circle"></i>
                         <p class="productError">Utilice el "." como separador decimal</p>
                     </div>
+
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="text-danger">
+                            <%= errors.price.msg %>
+                        </div>
+                    <% } %>
                 </div>
 
                 <br>
@@ -56,8 +72,12 @@
                             </option>
                         <% }); %>
                     </select>
-                    <!-- <p class="desc-ep">Categoria:</p>
-                    <input class="formInput" type="tel"  name="category" id="category" value="<%= promesaProducto.category %>"> -->
+
+                    <% if (locals.errors && errors.category) { %>
+                        <div class="text-danger">
+                            <%= errors.category.msg %>
+                        </div>
+                    <% } %>
                 </div>
 
                 <div><input class="formInput-edit" type="file" placeholder="image" name="image" id="image"></div>

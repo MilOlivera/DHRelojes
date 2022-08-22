@@ -61,7 +61,7 @@ let userControllerApi = {
   },
 
   apiLastUser: async (req, res) => {
-    const lastUser = await db.Producto.sequelize.query('SELECT name, lastName FROM dhrelojes.user ORDER BY idUser DESC LIMIT 1')
+    const lastUser = await db.Producto.sequelize.query('SELECT idUser, name, lastName FROM dhrelojes.user ORDER BY idUser DESC LIMIT 1')
     Promise.all([lastUser])
     .then(function ([lastUser]) {
         return res.status(200).json({

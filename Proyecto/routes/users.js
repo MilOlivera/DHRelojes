@@ -51,9 +51,40 @@ const validation = [
     .isLength({ min: 8 })
     .withMessage(" ")
     .isStrongPassword()
-    .withMessage(
-      " "
-    ),
+    .withMessage(" "),
+];
+
+const validationEdit = [
+  body("name")
+    .notEmpty().withMessage(" ")
+    .isLength({ min: 2 })
+    .withMessage(" "),
+  body("lastName")
+    .notEmpty()
+    .withMessage(" ")
+    .isLength({ min: 2 })
+    .withMessage(" "),
+  body("mail")
+    .notEmpty()
+    .withMessage(" ")
+    .bail()
+    .isEmail()
+    .withMessage(" ")
+    .custom((userEmail) => {
+      return new Promise((resolve, reject) => {
+        user.findOne({ where: { mail: userEmail } }).then((emailExist) => {
+          if (emailExist !== null) {
+            reject(new Error(" caca "));
+          } else {
+            resolve(true);
+          }
+        });
+      });
+    }),
+  body("dni").notEmpty()
+  .withMessage(" "),
+  body("address").notEmpty()
+  .withMessage(" "),
 ];
 
 var storage = multer.diskStorage({
@@ -88,7 +119,7 @@ router.get("/logout", userController.logout);
 
 /* editar usuario ** editar usuario */
 router.get("/edit/:id", authMiddleware, userController.edit);
-router.put("/edit/:id", cargaArchivo.any("image"), userController.confirmEdit);
+router.put("/edit/:id", cargaArchivo.any("image"), validationEdit, userController.confirmEdit);
 
 /* eliminar usuario ** eliminar usuario */
 router.delete("/delete/:id", userController.delete);

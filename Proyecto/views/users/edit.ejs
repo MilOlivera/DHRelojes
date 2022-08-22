@@ -5,11 +5,9 @@
 
         <section class="section-register">
             <h2 class="profile-txt">Editar perfil</h2>
-
-            <!-- <img src="/images/users/<%= user.image %>" alt="profile picture" class="profile-pic-edit"> -->
-
             <br>
-            <form class="width-registro" action="/users/edit/<%= promesaUsuario.idUser %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="width-registro" action="/users/edit/<%= locals.oldData ? userFind : promesaUsuario.idUser %>?_method=PUT" id="editValidator" method="POST" enctype="multipart/form-data">
+                
                 <!-- IMAGEN -->
                 <div class="img-upload">
                     <img src="/images/users/<%= user.image %>" alt="profile picture">
@@ -20,105 +18,122 @@
                 </div>
 
                 <!-- NOMBRE -->
-                <div>
-                    <p class="desc-ep">Nombre:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="name" id="name" value="<%= promesaUsuario.name %>" >
-                </div>
-                
-                <!-- <div>
-                    <p class="desc-pl">Nombre:</p>
+                <div class="divGrupo" id="grupo-name">
+                    <div class="formGrupoInput">
+                    <p class="desc-ep">Nombre</p>
                     <input 
                     type="text"
-                    class="inputBusqueda-profile"
-                    placeholder="<%= promesaUsuario.name %>"
+                    class="formInput"
                     name="name"
-                    id="name"></div> -->
+                    id="name"
+                    value="<%= locals.oldData ? oldData.name : promesaUsuario.name %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
 
-                <!-- APELLIDO -->
-                <div>
-                    <p class="desc-ep">Apellido:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="lastName" id="name" value="<%= promesaUsuario.lastName %>" >
-                </div>
-
-                <!-- <div><input
-                    type="text"
-                    class="inputBusqueda-profile"
-                    placeholder="<%= promesaUsuario.lastName %>"
-                    name="lastName"
-                    id="lastName"></div> -->
-
-                <!-- MAIL -->
-                <div>
-                    <p class="desc-ep">Mail:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="mail" id="name" value="<%= promesaUsuario.mail %>" >
-                </div>
-
-                <!-- <div><input
-                    type="email"
-                    class="inputBusqueda-profile"
-                    placeholder="<%= promesaUsuario.mail%>"
-                    name="mail"
-                    id="mail"></div> -->
-
-                <!-- DNI -->
-                <div>
-                    <p class="desc-ep">Dni:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="dni" id="name" value="<%= promesaUsuario.dni %>" >
-                </div>
-
-
-                <!-- <div><input
-                    type="number"
-                    class="inputBusqueda-profile"
-                    placeholder="<%= promesaUsuario.dni %>"
-                    name="dni"
-                    id="dni"></div> -->
-
-                <!-- DIRECCION -->
-                <div>
-                    <p class="desc-ep">Direccion:</p>
-                    <input class="inputBusqueda-editprof" type="text"  name="address" id="name" value="<%= promesaUsuario.address %>" >
-                </div>
-
-
-                <!-- <div><input
-                    type="text"
-                    class="inputBusqueda-profile"
-                    placeholder="<%= promesaUsuario.address %>"
-                    name="address"
-                    id="address"></div> -->
-
-                 <!-- CONTRASEÑA
-                 <div><input
-                    type="password"
-                    class="inputBusqueda-profile <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                    placeholder=""
-                    name="password"
-                    id="password"
-                    value="<%= locals.oldData ? oldData.password : null %>"></div>
-                    <% if (locals.errors && errors.password) { %>
+                    <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
-                            <%= errors.password.msg %>
+                            <%= errors.name.msg %>
                         </div>
                     <% } %>
-                    <p id="errores-password"></p>
-                 IMAGEN
-                 <div class="inputBusqueda-input">
-                    <input class="input-profile <%= locals.errors && errors.image ? 'is-invalid' : null %>" type="file" class="inputBusqueda" placeholder="image" name="image" id=" ">
-                        <img src="/images/users/<%= promesaUsuario.image %>" alt="">
-                    </input>
+
+                    <p class="formError">El nombre debe tener al menos dos caracteres y no puede incluir numeros</p>
                 </div>
-                    <% if (locals.errors && errors.image) { %>
+
+                <!-- APELLIDO -->
+                <div class="divGrupo" id="grupo-lastName">
+                    <div class="formGrupoInput">
+                    <p class="desc-ep">Apellido</p>
+                    <input
+                    type="text"
+                    class="formInput"
+                    name="lastName"
+                    id="lastName"
+                    value="<%= locals.oldData ? oldData.lastName : promesaUsuario.lastName %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
+
+                    <% if (locals.errors && errors.lastName) { %>
                         <div class="text-danger">
-                            <%= errors.image.msg %>
+                            <%= errors.lastName.msg %>
                         </div>
-                    <% } %> -->
-                
+                    <% } %>
+                    
+                    <p class="formError">El apellido debe tener al menos dos caracteres y no puede incluir numeros</p>
+                </div>
+
+                <!-- MAIL -->
+                <div class="divGrupo" id="grupo-mail">
+                    <div class="formGrupoInput">
+                    <p class="desc-ep">Mail</p>
+                    <input
+                    type="email"
+                    class="formInput"
+                    name="mail"
+                    id="mail"
+                    value="<%= locals.oldData ? oldData.mail : promesaUsuario.mail %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
+
+                    <% if (locals.errors && errors.mail) { %>
+                        <div class="text-danger">
+                            <%= errors.mail.msg %>
+                        </div>
+                    <% } %>
+                    
+                    <p class="formError">Ingrese un formato de email válido</p>
+                </div>
+
+                <!-- DNI -->
+                <div class="divGrupo" id="grupo-dni">
+                    <div class="formGrupoInput">
+                    <p class="desc-ep">DNI</p>
+                    <input
+                    type="number"
+                    class="formInput"
+                    name="dni"
+                    id="dni"
+                    value="<%= locals.oldData ? oldData.dni : promesaUsuario.dni %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
+
+                    <% if (locals.errors && errors.dni) { %>
+                        <div class="text-danger">
+                            <%= errors.dni.msg %>
+                        </div>
+                    <% } %>
+
+                    <p class="formError">Ingrese un DNI valido sin puntos</p>
+                </div>
+
+                <!-- DIRECCION -->
+                <div class="divGrupo" id="grupo-address">
+                    <div class="formGrupoInput">
+                    <p class="desc-ep">Direccion</p>
+                    <input
+                    type="text"
+                    class="formInput"
+                    name="address"
+                    id="address"
+                    value="<%= locals.oldData ? oldData.address : promesaUsuario.address %>">
+                    <i class="formValidacion-estado fas fa-times-circle"></i>
+                    </div>
+
+                    <% if (locals.errors && errors.address) { %>
+                        <div class="text-danger">
+                            <%= errors.address.msg %>
+                        </div>
+                    <% } %>
+
+                    <p class="formError">Ingrese una dirección válida</p>
+                </div>
+
                 <div><input type="submit" value="Enviar" class="send-btn-register" id="boton"></div>
             </form>
         </section>
     </main>
+
     <%- include('../partials/footer.ejs') %>
 
+    <script src="/js/userValidator.js"></script>
 </body>
 </html>

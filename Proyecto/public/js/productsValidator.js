@@ -28,6 +28,7 @@ const validarFormulario = (e) => {
     }
 }
 
+let validarcheck;
 const validarCampo = (expresion, input, campo) => {
     if(expresion.test(input.value)){
         document.getElementById(`grupo-${campo}`).classList.remove("divGrupo-incorrecto")
@@ -36,6 +37,7 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector(`#grupo-${campo} i`).classList.remove('fa-times-circle')
         document.querySelector(`#grupo-${campo} .productError`).classList.remove('productError-activo')
         campos[campo] = true;
+        validarcheck = true;
     }else{
         document.getElementById(`grupo-${campo}`).classList.add("divGrupo-incorrecto")
         document.getElementById(`grupo-${campo}`).classList.remove("divGrupo-correcto")
@@ -43,12 +45,19 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector(`#grupo-${campo} i`).classList.add('fa-times-circle')
         document.querySelector(`#grupo-${campo} .productError`).classList.add('productError-activo')
         campos[campo] = false;
+        validarcheck = false;
     }
 }
 
 inputs.forEach( (input) => {
     input.addEventListener('keyup', validarFormulario)
     input.addEventListener('blur', validarFormulario)
-    })
+})
+
+formulario.addEventListener('submit', function(e) {
+    if(!validarcheck) {
+        e.preventDefault();
+    }
+})
 
 }
