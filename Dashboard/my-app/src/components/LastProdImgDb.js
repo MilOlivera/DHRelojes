@@ -1,22 +1,24 @@
 import React from "react";
 import { Component } from "react";
-import TotalCategorias from "./TotalCategorias";
+import UltProdImg from './LastProdImg'
 
-class TotalXCategoria extends Component {
+class LastProdImgDb extends Component{
   constructor() {
     super();
     this.state = {
-      totalCategory: [],
+      lastProductImg: [],
     };
   }
+
   componentDidMount() {
-    fetch("/api/categories2")
+    fetch("/api/lastProdImg")
       .then((respuesta) => {
         return respuesta.json();
       })
       .then((count) => {
         //console.log(genres)
-        this.setState({ totalCategory: count.id[0] });
+        this.setState({ lastProductImg: count.id[0] });
+        console.log(count.id[0].name, 'ULT IMG')
       })
       .catch((error) => console.log(error));
   }
@@ -24,18 +26,15 @@ class TotalXCategoria extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="ContenedorListado">
-          <h2>Total por Categorias</h2>
+
           <div>
-            {this.state.totalCategory.map((category, index) => {
-              return <TotalCategorias {...category} key={index} />;
+            {this.state.lastProductImg.map((category, index) => {
+              return <UltProdImg {...category} key={index} />;
             })}
             
           </div>
-    
-        </div>
       </React.Fragment>
     );
   }
 }
-export default TotalXCategoria;
+export default LastProdImgDb;

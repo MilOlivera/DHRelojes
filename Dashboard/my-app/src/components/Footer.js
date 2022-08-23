@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "../assests/images/logo-dh.png";
-import "../assests/css/Footer.css";
+import logo from "../assets/images/logo-dh-blanco.png";
 
 function Footer() {
   return (

@@ -752,7 +752,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 .footerV {
     width: 100%;
     padding: 50px 0px;
-    background-color: #fafafa;
+    background-color: #efefef;
     margin-top: 10%;
 }
 
@@ -784,7 +784,7 @@ HEADER CON VIDEO ** HEADER CON VIDEO */
 
 .w1{
     animation: w1 7s linear infinite;
-    opacity: 0.3;
+    opacity: 1;
 }
 
 
@@ -3946,3 +3946,13 @@ VALIDACION PRODUCTOS VALIDACION PRODUCTOS */
         font-size: small;
     }     */
 
+.btnDashboard{
+    font-size: 20px;
+}
+.btnDashboard a{
+    text-decoration: none;
+    color: black;
+    background-color: #c5c6c8;
+    border-radius: 10px;
+    padding: 15px ;
+}

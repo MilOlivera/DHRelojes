@@ -1,10 +1,16 @@
 import React from "react";
-import "../assests/css/Contenedores.css";
+
 
 function TotalCategorias (props) {
   return (
     <React.Fragment>
-      <li className="Listado"> {props.name} : {props.total} </li>
+      <table>
+        <td><p>{props.name} :</p>
+        </td>
+        <td><p>{props.total}</p>
+        </td>
+      {/* <p className="categoriasSmallCard"> {props.name} : {props.total}</p> */}
+      </table>
     </React.Fragment>
   );
 }

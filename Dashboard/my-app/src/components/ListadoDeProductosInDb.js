@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ListadoDeProductos from "./ListadoDeProductos";
-import "../assests/css/Contenedores.css";
+import "../assets/css/Styles.css";
 
 class ListadoDeProductosInDb extends Component {
   constructor() {
@@ -26,13 +26,19 @@ class ListadoDeProductosInDb extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="ContenedorListado">
-          <h2>Listado de Productos</h2>
-          <div>
-            {this.state.productList.map((product, index) => {
-              return <ListadoDeProductos {...product} key={index} />;
-            })}
-          </div>
+        <div className="contenedorListado">
+          {/* <table>
+            <thead> */}
+              <h2 className="listadoProductosTitulo">Listado de Productos</h2>
+            {/* </thead>
+            <tbody> */}
+              <div className="listadoProductos">
+                {this.state.productList.map((product, index) => {
+                return <ListadoDeProductos {...product} key={index} />;
+                })}
+              </div>
+            {/* </tbody>
+          </table> */}
         </div>
       </React.Fragment>
     );

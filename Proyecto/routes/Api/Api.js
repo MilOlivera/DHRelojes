@@ -19,6 +19,11 @@ router.get("/products", productController.apiProduct);
 
 router.get("/productsLast", productController.apiLastProduct);
 
+router.get("/lastProdImg", productController.apiLastProductImg);
+
+router.get("/lastUserImg", userController.apiLastUserImg);
+
+
 router.get("/categories", categoryController.apiTotalCategory);
 
 router.get("/categories2", categoryController.countByCategory);

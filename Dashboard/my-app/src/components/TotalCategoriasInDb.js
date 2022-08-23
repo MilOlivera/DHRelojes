@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import TotalCategorias from './TotalCategorias'
-import "../assests/css/Contenedores.css";
 
 class TotalCategoriasInDb extends Component {
   constructor() {
@@ -24,9 +23,12 @@ class TotalCategoriasInDb extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="Contenedor">
-          <h2>Total de Categorias</h2>
-          <div>
+        <div className="contenedorSmallCard">
+          <div className="tituloSmallCard">
+            <h2>Total de Categorias</h2>
+          </div>
+          {/* <hr className="hrHome"></hr> */}
+          <div className="contenidoSmallCard">
             {this.state.categoryList}
           </div>
         </div>

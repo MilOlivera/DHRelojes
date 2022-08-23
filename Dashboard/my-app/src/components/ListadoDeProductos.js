@@ -1,10 +1,13 @@
 import React from "react";
-import "../assests/css/Contenedores.css";
 
 function ListadoDeProductos(props) {
   return (
     <React.Fragment>
-      <li className="Listado"> {props.name}</li>
+      <tbody className="Listado"> 
+        <tr>
+          {props.name}
+        </tr>
+      </tbody>
     </React.Fragment>
   );
 }

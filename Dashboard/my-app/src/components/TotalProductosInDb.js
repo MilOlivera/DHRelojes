@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../assests/css/Contenedores.css";
+
 
 class TotalProductosInDb extends Component {
   constructor() {
@@ -23,13 +23,16 @@ class TotalProductosInDb extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="Contenedor">
+      <div className="contenedorSmallCard">
+        <div className="tituloSmallCard">
           <h2>Total de Productos</h2>
-          <div>
-            <div>{this.state.totalProducts}</div>
-          </div>
         </div>
-      </React.Fragment>
+        {/* <hr className="hrHome"></hr> */}
+        <div className="contenidoSmallCard">
+          {this.state.totalProducts}
+        </div>
+      </div>
+    </React.Fragment>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class TotalUsuarios extends Component {
   constructor() {
     super();
@@ -22,13 +23,16 @@ class TotalUsuarios extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="Contenedor">
+      <div className="contenedorSmallCard">
+        <div className="tituloSmallCard">
           <h2>Total de Usuarios</h2>
-          <div className="card-body fondoCaja">
-            <div className="row">{this.state.totalUsers}</div>
-          </div>
         </div>
-      </React.Fragment>
+        {/* <hr className="hrHome"></hr> */}
+        <div className="contenidoSmallCard">
+          {this.state.totalUsers}
+        </div>
+      </div>
+    </React.Fragment>
     );
   }
 }

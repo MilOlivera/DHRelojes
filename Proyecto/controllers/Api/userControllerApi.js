@@ -69,6 +69,17 @@ let userControllerApi = {
           status: 200,
         });
     })
+  },
+  apiLastUserImg: async (req, res) => {
+    const lastUserImg = await db.Imagen.sequelize.query('SELECT image FROM dhrelojes.user ORDER BY idUser DESC LIMIT 1')
+    console.log(lastUserImg)
+    Promise.all([lastUserImg])
+    .then(function ([lastUserImg]) {
+        return res.status(200).json({
+          id: lastUserImg,
+          status: 200,
+        });
+    })
   }
 };
 
