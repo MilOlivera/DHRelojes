@@ -48,7 +48,6 @@ const productsController = {
   /* guardar un producto creado ** guardar un producto creado */
   store: (req, res) => {
     let idProduct_image;
-    console.log(req.file);
     if (req.files[0] != undefined) {
       idProduct_image = req.files[0].filename;
     } else {
@@ -75,8 +74,7 @@ const productsController = {
         name: idProduct_image,
       })
     );
-    console.log(req.body);
-    res.redirect("/");
+    res.redirect("/products");
   },
 
   /* detalle de un producto ** detalle de un producto */
@@ -117,7 +115,6 @@ const productsController = {
   confirm: (req, res) => {
     let productFind = req.params.id;
     let categorias = db.Categoria.findAll();
-    let promesaImagen = db.Imagen.findByPk(req.params.id);
 
     let idProduct_image;
     if (req.files[0] != undefined) {
@@ -127,7 +124,6 @@ const productsController = {
     }
 
     const resultValidation = validationResult(req);
-    console.log(promesaImagen, 'aki')
     
     if (resultValidation.errors.length > 0) {
       return res.render(productsPath + '/productEdit', {
@@ -135,7 +131,6 @@ const productsController = {
         oldData: req.body,
         idProduct: productFind,
         categorias,
-        promesaImagen
       });
     }
 
@@ -184,7 +179,7 @@ const productsController = {
     // );
 
     Promise.all([imagen, promesaProducto, resultValidation]).then(function ([imagen, promesaProducto, resultValidation]) {
-      res.redirect("/");
+      res.redirect("/products");
     });
   },
 
@@ -201,16 +196,35 @@ const productsController = {
         idProduct: req.params.id,
       },
     });
-    res.redirect("/");
+    res.redirect("/products");
   },
   
   /* carrito ** carrito */
   cart: (req, res) => {
-    db.Producto.findByPk(req.params.id).then(function (detalle) {
-      return res.render(productsPath + "/productCart", { detalle });
+    res.render(productsPath + "/productCart");
+  },
+
+  cartAdd: (req, res) => {
+    let nombreProducto = req.body.name;
+    let precioProducto = req.body.price;
+    let imagenProducto = req.body.img;
+    Promise.all([nombreProducto, precioProducto, imagenProducto]).then(function ([
+      nombreProducto,
+      precioProducto,
+      imagenProducto
+    ]) {
+      return res.render(productsPath + "/productCart", {
+        nombreProducto,
+        precioProducto,
+        imagenProducto
+      });
     });
   },
 
+
+  emptyCart: (req, res) => {
+    return res.render(productsPath + "/emptyCart")
+  }
 };
 
 module.exports = productsController;

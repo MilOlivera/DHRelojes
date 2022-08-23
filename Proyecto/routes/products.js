@@ -3,11 +3,18 @@ const path = require("path");
 const multer = require("multer");
 const router = express.Router();
 const productsController = require("../controllers/productsController.js");
-// const mainControllers = require("../controllers/mainControllers.js")
-const adminMiddleware = require('../middleware/adminMiddleware')
+// const mainControllers = require("../controllers/mainControllers.js");
+const adminMiddleware = require('../middleware/adminMiddleware');
 
 const { check, validationResult, body } = require("express-validator");
 
+const paymentController = require("../controllers/paymentsController")
+const paymentService = require("../services/paymentServices")
+const paymentInstance = new paymentController(new paymentService())
+
+const dotenv = require("dotenv")
+
+dotenv.config();
 
 const validation = [
   body("name")
@@ -67,7 +74,24 @@ router.get("/create", productsController.create);
 router.post("/", cargaArchivo.any("image"), validation, productsController.store);
 
 /* carrito ** carrito */
+router.get("/emptyCart", productsController.emptyCart)
 router.get("/cart", productsController.cart);
+router.post("/cart", productsController.cartAdd);
+
+router.get("/jsonLinks", function (req, res, next) {
+  return res.json({
+    "/payment": "generates a payment link",
+    "/subscription": "generates a subscription link"
+  });
+});
+
+router.post("/payment", (req,res, next) => {
+  paymentInstance.getPaymentLink(req,res)
+})
+
+router.get("/subscription", function (req, res, next) {
+  paymentInstance.getSubscriptionLink(req, res);
+});
 
 /* eliminar un producto ** eliminar un producto */
 router.delete("/delete/:id", productsController.delete);

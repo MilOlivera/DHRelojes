@@ -61,50 +61,6 @@
                     <p class="formError">El apellido debe tener al menos dos caracteres y no puede incluir numeros</p>
                 </div>
 
-                <!-- MAIL -->
-                <div class="divGrupo" id="grupo-mail">
-                    <div class="formGrupoInput">
-                    <p class="desc-ep">Mail</p>
-                    <input
-                    type="email"
-                    class="formInput"
-                    name="mail"
-                    id="mail"
-                    value="<%= locals.oldData ? oldData.mail : promesaUsuario.mail %>">
-                    <i class="formValidacion-estado fas fa-times-circle"></i>
-                    </div>
-
-                    <% if (locals.errors && errors.mail) { %>
-                        <div class="text-danger">
-                            <%= errors.mail.msg %>
-                        </div>
-                    <% } %>
-                    
-                    <p class="formError">Ingrese un formato de email válido</p>
-                </div>
-
-                <!-- DNI -->
-                <div class="divGrupo" id="grupo-dni">
-                    <div class="formGrupoInput">
-                    <p class="desc-ep">DNI</p>
-                    <input
-                    type="number"
-                    class="formInput"
-                    name="dni"
-                    id="dni"
-                    value="<%= locals.oldData ? oldData.dni : promesaUsuario.dni %>">
-                    <i class="formValidacion-estado fas fa-times-circle"></i>
-                    </div>
-
-                    <% if (locals.errors && errors.dni) { %>
-                        <div class="text-danger">
-                            <%= errors.dni.msg %>
-                        </div>
-                    <% } %>
-
-                    <p class="formError">Ingrese un DNI valido sin puntos</p>
-                </div>
-
                 <!-- DIRECCION -->
                 <div class="divGrupo" id="grupo-address">
                     <div class="formGrupoInput">

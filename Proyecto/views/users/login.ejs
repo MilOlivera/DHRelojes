@@ -11,7 +11,7 @@
                     <input name="mail" type="text" class="formInput" id="inputBusqueda-login" placeholder="Email" value="<%= locals.oldData ? oldData.mail : null %>" required>
                     <i class="loginValidator-estado fas fa-times-circle"></i>
                     <% if (locals.errors && errors.mail) { %>
-                        <div class="text-danger1">
+                        <div class="text-danger">
                             <%= errors.mail.msg %>
                         </div>
                     <% } %>
@@ -21,7 +21,7 @@
                     <input name="password" type="password" class="formInput" id="inputBusqueda-login2" placeholder="Password" required>
                     
                     <% if (locals.errors && errors.password) { %>
-                        <div class="text-danger1">
+                        <div class="text-danger">
                             <%= errors.password.msg %>
                         </div>
                     <% } %> 

@@ -64,25 +64,6 @@ const validationEdit = [
     .withMessage(" ")
     .isLength({ min: 2 })
     .withMessage(" "),
-  body("mail")
-    .notEmpty()
-    .withMessage(" ")
-    .bail()
-    .isEmail()
-    .withMessage(" ")
-    .custom((userEmail) => {
-      return new Promise((resolve, reject) => {
-        user.findOne({ where: { mail: userEmail } }).then((emailExist) => {
-          if (emailExist !== null) {
-            reject(new Error(" Debes usar un mail que no este en la base de datos "));
-          } else {
-            resolve(true);
-          }
-        });
-      });
-    }),
-  body("dni").notEmpty()
-  .withMessage(" "),
   body("address").notEmpty()
   .withMessage(" "),
 ];

@@ -18,7 +18,7 @@
                     <button type="submit" class="buscarHome"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </li> -->
-            <li><a href="/products/cart"><i class="fa-solid fa-bag-shopping"> </i> <span class="header-info"> Carrito </span> </li></a>
+            <li><a href="/products/emptyCart"><i class="fa-solid fa-bag-shopping"> </i> <span class="header-info"> Carrito </span> </li></a>
         <% if (locals.isLogged) { %>
             <div class="dropdown-container">
                 <li><a href="/users/profile"><img src="/images/users/<%= locals.userLogged.image %>" alt="" width="20px" height="20px" class="imgUserNav"><%= locals.userLogged.name %></a>

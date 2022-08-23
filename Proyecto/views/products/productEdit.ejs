@@ -12,7 +12,7 @@
             <form class="width-registro" method="POST" action="/products/<%= locals.oldData ? idProduct : promesaProducto.idProduct %>/edit?_method=PUT" id="productsValidator" enctype="multipart/form-data">
 
                 <div class="box-img">
-                    <img class="img-pl" src="/images/products/<%= promesaImagen.name %>" alt="Foto de Reloj">
+                    <img class="img-pl2" src="/images/products/<%= promesaImagen.name %>" alt="Foto de Reloj">
                 </div>
 
                 <br></br>
@@ -64,13 +64,12 @@
                 <br>
 
                 <div>
+                    <p class="desc-ep">Seleccione Categoría</p>
                     <select class="formInput" type="text" placeholder="Categoria" name="category" id="category">
-                        <option value="" disabled selected>- Seleccione Categoría - </option>
-                    <option value="1" > Center Pompidou </option>
-                    <option value="2" > Jaquet Droze </option>
-                    <option value="3" > Tinker </option>
-                    <option value="4" > Colors of Nature </option>
-
+                        <option value="1" > Tinker </option>
+                        <option value="2" > Jaquet Droze </option>
+                        <option value="3" > Center Pompidou </option>
+                        <option value="4" > Colors of Nature </option>
                     </select>
 
                     <% if (locals.errors && errors.category) { %>

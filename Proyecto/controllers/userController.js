@@ -153,8 +153,6 @@ let userController = {
         name: req.body.name,
         lastName: req.body.lastName,
         mail: req.body.mail,
-        dni: req.body.dni,
-        address: req.body.address,
         image: image,
       },
       {

@@ -1,0 +1,47 @@
+<%- include('../partials/head.ejs') %>
+<body class="body-cart">
+    <%- include('../partials/header.ejs') %>
+    <main class="main-cart">
+        <h1 class="title-cart">Carrito</h1>
+        <div class="cart">
+            <div class="cart-products">
+
+                <article class="product-empty">
+                    <p class="product-text-cart1"> Su carrito está vacio </p>
+                    <p class="product-text-cart"> Para seguir comprando, navegar por las categorías en el sitio. </p>
+                    <a href="/products"><input type='button'class="shop-all-btn-cart" value="Ver todos los productos"></a>  
+                </article>
+
+            </div>
+
+            <div class="purchase-summary">
+
+
+                <!-- <p class="resume">Resumen</p> -->
+
+                <ul class="purchase-summary-div">
+
+
+                    <li class="total"> Total:
+                        <span> $  </span>
+                    </li>
+                </ul>
+
+                <hr class="divider">
+                <form action="/products/payment" class="form-cart" method="POST">
+                    <button type="submit" class="cart-btn" href="/"> <strong>Finalizar compra</strong>  </button> <br>
+                </form>
+                <!-- <button type="submit" class="add-btn-cart" href="/">Agregar mas productos</button> <br> -->
+            </div>
+
+
+
+        </div>
+
+        <br>
+
+
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

@@ -43,16 +43,24 @@ function displayProducts(itemsProducts) {
   let displayItems = itemsProducts.map(function (item) {
     return `<section class="product">
       <a href="/products/${item.idProduct}" category="${item.idCategoryFK}" class="ref-link">
-      <div class="box-image">
-          <img src="/images/products/${item.image}" alt="Foto Reloj" class="img-pl">
-      </div>
-      <article>
+        <div class="box-image">
+            <img src="/images/products/${item.image}" alt="Foto Reloj" class="img-pl">
+        </div>
+
+        <article>
           <p class="product-name">${item.name}</p>
           <p class="product-price">$${item.price}</p>
-      </article>
-      <div class="cart-section">
-      <button>Agregar al carrito</button>
-     </div>
+        </article>
+
+        <div class="cart-section">
+          <form action="/products/cart" method="POST">
+                <input type="hidden" name="id" value=${item.idProduct}>
+                <input type="hidden" name="img" value=${item.image}>
+                <input type="hidden" name="name" value=${item.name}>
+                <input type="hidden" name="price" value=${item.price}>
+                <button>Agregar al carrito</button>
+            </form>
+        </div>
       </a>
   </section>`;
   });
