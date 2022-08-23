@@ -163,6 +163,7 @@ let userController = {
         },
       }
     )
+    
     .then(function () {
       res.redirect("/");
     });

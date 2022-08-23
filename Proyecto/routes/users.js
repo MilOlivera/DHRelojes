@@ -74,7 +74,7 @@ const validationEdit = [
       return new Promise((resolve, reject) => {
         user.findOne({ where: { mail: userEmail } }).then((emailExist) => {
           if (emailExist !== null) {
-            reject(new Error(" caca "));
+            reject(new Error(" Debes usar un mail que no este en la base de datos "));
           } else {
             resolve(true);
           }

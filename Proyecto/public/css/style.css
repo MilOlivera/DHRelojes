@@ -3525,18 +3525,11 @@ ERROR 404 ERROR 404 ERROR 404 */
 }
 
 .text-danger {
-    color: red;
-    margin-left: 20px;
-    font-size: 20px;
-    font-style: bold;
-}
-
-.text-danger1 {
-    font-family: 'Raleway', Sans-Serif;
+    display: block;
     color: #CD113B;
-    margin-bottom: -10px;
-    font-size: 16px;
-    font-style: bold;
+    box-shadow: 2px;
+    margin-top: 6px;
+    font-size: 14px;
 }
 
 .none {

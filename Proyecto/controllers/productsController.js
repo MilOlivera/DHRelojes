@@ -117,6 +117,7 @@ const productsController = {
   confirm: (req, res) => {
     let productFind = req.params.id;
     let categorias = db.Categoria.findAll();
+    let promesaImagen = db.Imagen.findByPk(req.params.id);
 
     let idProduct_image;
     if (req.files[0] != undefined) {
@@ -126,6 +127,7 @@ const productsController = {
     }
 
     const resultValidation = validationResult(req);
+    console.log(promesaImagen, 'aki')
     
     if (resultValidation.errors.length > 0) {
       return res.render(productsPath + '/productEdit', {
@@ -133,6 +135,7 @@ const productsController = {
         oldData: req.body,
         idProduct: productFind,
         categorias,
+        promesaImagen
       });
     }
 

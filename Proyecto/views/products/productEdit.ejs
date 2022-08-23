@@ -66,11 +66,11 @@
                 <div>
                     <select class="formInput" type="text" placeholder="Categoria" name="category" id="category">
                         <option value="" disabled selected>- Seleccione Categoría - </option>
-                        <% categorias.forEach(categoria => { %>
-                            <option value="<%= categoria.idCategory %>">
-                                <%= categoria.name %>
-                            </option>
-                        <% }); %>
+                    <option value="1" > Center Pompidou </option>
+                    <option value="2" > Jaquet Droze </option>
+                    <option value="3" > Tinker </option>
+                    <option value="4" > Colors of Nature </option>
+
                     </select>
 
                     <% if (locals.errors && errors.category) { %>
