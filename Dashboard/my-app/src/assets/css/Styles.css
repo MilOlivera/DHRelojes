@@ -327,6 +327,38 @@ ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS */
     color: black;
     transition: all 1s;
 }
+
+.crudCrear {
+    display: flex;
+    flex-direction: column;
+}
+
+.crudEditar {
+    display: flex;
+    flex-direction: column;
+}
+
+.crudEliminar {
+    display: flex;
+    flex-direction: column;
+}
+
+.crudEliminar, .crudCrear, .crudEditar h1 {
+    color: whitesmoke;
+}
+
+.inputsCrud {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputsCrud input, select {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+
 /* .prueba{
 
     width: 1000px;
