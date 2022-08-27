@@ -61,26 +61,28 @@ let userControllerApi = {
   },
 
   apiLastUser: async (req, res) => {
-    const lastUser = await db.Producto.sequelize.query('SELECT idUser, name, lastName FROM dhrelojes.user ORDER BY idUser DESC LIMIT 1')
-    Promise.all([lastUser])
-    .then(function ([lastUser]) {
-        return res.status(200).json({
-          id: lastUser,
-          status: 200,
-        });
-    })
+    const lastUser = await db.Producto.sequelize.query(
+      "SELECT idUser, name, lastName FROM dhrelojes2.user ORDER BY idUser DESC LIMIT 1"
+    );
+    Promise.all([lastUser]).then(function ([lastUser]) {
+      return res.status(200).json({
+        id: lastUser,
+        status: 200,
+      });
+    });
   },
   apiLastUserImg: async (req, res) => {
-    const lastUserImg = await db.Imagen.sequelize.query('SELECT image FROM dhrelojes.user ORDER BY idUser DESC LIMIT 1')
-    console.log(lastUserImg)
-    Promise.all([lastUserImg])
-    .then(function ([lastUserImg]) {
-        return res.status(200).json({
-          id: lastUserImg,
-          status: 200,
-        });
-    })
-  }
+    const lastUserImg = await db.Imagen.sequelize.query(
+      "SELECT image FROM dhrelojes2.user ORDER BY idUser DESC LIMIT 1"
+    );
+    console.log(lastUserImg);
+    Promise.all([lastUserImg]).then(function ([lastUserImg]) {
+      return res.status(200).json({
+        id: lastUserImg,
+        status: 200,
+      });
+    });
+  },
 };
 
 module.exports = userControllerApi;

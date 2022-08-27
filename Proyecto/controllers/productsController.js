@@ -12,19 +12,35 @@ const productsController = {
     let imagen = await db.Imagen.findAll();
     let categorias = await db.Categoria.findAll();
 
-    let tinker = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 1 ')
-    let jacquetDroze = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 2 ')
-    let centerPomp = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 3 ')
-    let colorsNature = await db.Producto.sequelize.query('SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 4 ')
+    let tinker = await db.Producto.sequelize.query(
+      "SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 1 "
+    );
+    let jacquetDroze = await db.Producto.sequelize.query(
+      "SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 2 "
+    );
+    let centerPomp = await db.Producto.sequelize.query(
+      "SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 3 "
+    );
+    let colorsNature = await db.Producto.sequelize.query(
+      "SELECT product.name, product.description, product.price, product_image.name as image FROM product INNER JOIN product_image ON product.idProduct = product_image.idProduct_Image WHERE idCategoryFK = 4 "
+    );
 
-    Promise.all([producto, imagen, categorias, tinker, jacquetDroze, centerPomp, colorsNature]).then(function ([
+    Promise.all([
       producto,
       imagen,
       categorias,
       tinker,
       jacquetDroze,
       centerPomp,
-      colorsNature
+      colorsNature,
+    ]).then(function ([
+      producto,
+      imagen,
+      categorias,
+      tinker,
+      jacquetDroze,
+      centerPomp,
+      colorsNature,
     ]) {
       return res.render(productsPath + "/productList", {
         producto,
@@ -33,7 +49,7 @@ const productsController = {
         tinker,
         jacquetDroze,
         centerPomp,
-        colorsNature
+        colorsNature,
       });
     });
   },
@@ -124,9 +140,9 @@ const productsController = {
     }
 
     const resultValidation = validationResult(req);
-    
+
     if (resultValidation.errors.length > 0) {
-      return res.render(productsPath + '/productEdit', {
+      return res.render(productsPath + "/productEdit", {
         errors: resultValidation.mapped(),
         oldData: req.body,
         idProduct: productFind,
@@ -178,7 +194,11 @@ const productsController = {
     //   )
     // );
 
-    Promise.all([imagen, promesaProducto, resultValidation]).then(function ([imagen, promesaProducto, resultValidation]) {
+    Promise.all([imagen, promesaProducto, resultValidation]).then(function ([
+      imagen,
+      promesaProducto,
+      resultValidation,
+    ]) {
       res.redirect("/products");
     });
   },
@@ -198,7 +218,7 @@ const productsController = {
     });
     res.redirect("/products");
   },
-  
+
   /* carrito ** carrito */
   cart: (req, res) => {
     res.render(productsPath + "/productCart");
@@ -208,23 +228,47 @@ const productsController = {
     let nombreProducto = req.body.name;
     let precioProducto = req.body.price;
     let imagenProducto = req.body.img;
-    Promise.all([nombreProducto, precioProducto, imagenProducto]).then(function ([
-      nombreProducto,
-      precioProducto,
-      imagenProducto
-    ]) {
-      return res.render(productsPath + "/productCart", {
-        nombreProducto,
-        precioProducto,
-        imagenProducto
-      });
-    });
+    Promise.all([nombreProducto, precioProducto, imagenProducto]).then(
+      function ([nombreProducto, precioProducto, imagenProducto]) {
+        return res.render(productsPath + "/productCart", {
+          nombreProducto,
+          precioProducto,
+          imagenProducto,
+        });
+      }
+    );
   },
 
-
   emptyCart: (req, res) => {
-    return res.render(productsPath + "/emptyCart")
-  }
+    return res.render(productsPath + "/emptyCart");
+  },
+
+  dashCreate: (req, res) => {
+    const name = req.body.name;
+    const description = req.body.description;
+    const price = req.body.price;
+    const idCategoryFK = req.body.idCategoryFK;
+    const image = req.file;
+
+    let idProduct_image;
+    if (image != undefined) {
+      idProduct_image = image.filename;
+    } else {
+      idProduct_image = "default-image.png";
+    }
+
+    db.Producto.create(
+      {
+        name: name,
+        description: description,
+        price: price,
+        idCategoryFK: idCategoryFK,
+      },
+      db.Imagen.create({
+        name: idProduct_image,
+      })
+    );
+  },
 };
 
 module.exports = productsController;
