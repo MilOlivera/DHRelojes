@@ -103,10 +103,22 @@ router.put(
   productsController.confirm
 );
 
+// dashboard
 router.post(
   "/dashboard/create",
   cargaArchivo.single("image"),
   productsController.dashCreate
+);
+router.put(
+  "/dashboard/edit/:id",
+  cargaArchivo.single("image"),
+  productsController.dashEdit
+);
+
+router.delete(
+  "/dashboard/delete/:id",
+  cargaArchivo.single("image"),
+  productsController.dashDelete
 );
 
 module.exports = router;

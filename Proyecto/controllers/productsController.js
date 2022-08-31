@@ -269,6 +269,61 @@ const productsController = {
       })
     );
   },
+
+  dashEdit: (req, res) => {
+    const id = req.params.id;
+    const name = req.body.name;
+    const description = req.body.description;
+    const price = req.body.price;
+    const idCategoryFK = req.body.idCategoryFK;
+    const image = req.file;
+
+    let idProduct_image;
+    if (image != undefined) {
+      idProduct_image = image.filename;
+    } else {
+      idProduct_image = idProduct_image;
+    }
+
+    imagen = db.Imagen.update(
+      {
+        name: idProduct_image,
+      },
+      {
+        where: {
+          idProduct_image: id,
+        },
+      }
+    );
+
+    db.Producto.update(
+      {
+        name: name,
+        description: description,
+        price: price,
+        idCategoryFK: idCategoryFK,
+      },
+      {
+        where: {
+          idProduct: id,
+        },
+      }
+    );
+  },
+
+  dashDelete: (req, res) => {
+    db.Imagen.destroy({
+      where: {
+        idProduct_image: req.params.id,
+      },
+    });
+
+    db.Producto.destroy({
+      where: {
+        idProduct: req.params.id,
+      },
+    });
+  },
 };
 
 module.exports = productsController;
