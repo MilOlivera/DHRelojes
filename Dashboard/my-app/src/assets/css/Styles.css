@@ -407,3 +407,38 @@ ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS */
     top: 3,5%;
     left: 3,5%;
 } */
+
+.crudCrear h1 {
+    margin-top: 3px;
+    margin-bottom: 0px
+}
+
+.btn-crud {
+    width: 50%;
+}
+
+#form-crud {
+    display: flex;
+    justify-content: center;
+} 
+
+#form-crud p {
+    font-size: 13px;
+
+    margin: 0
+}
+
+#form-crud span {
+    color: red;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#form-crud input, select {
+    width: 70%;
+}
+
+#form-crud button {
+    width: 20%;
+    align-items: center;
+}
