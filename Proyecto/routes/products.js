@@ -106,18 +106,18 @@ router.put(
 // dashboard
 router.post(
   "/dashboard/create",
-  cargaArchivo.single("image"),
+  cargaArchivo.any("image"),
   productsController.dashCreate
 );
 router.put(
   "/dashboard/edit/:id",
-  cargaArchivo.single("image"),
+  cargaArchivo.any("image"),
   productsController.dashEdit
 );
 
 router.delete(
   "/dashboard/delete/:id",
-  cargaArchivo.single("image"),
+  cargaArchivo.any("image"),
   productsController.dashDelete
 );
 

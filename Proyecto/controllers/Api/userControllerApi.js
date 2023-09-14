@@ -11,7 +11,7 @@ let userControllerApi = {
           id: usuario.idUser,
           name: usuario.name,
           email: usuario.mail,
-          detail: "http:localhost3042/users/profile/" + usuario.idUser,
+          detail: "http:localhost3043/users/profile/" + usuario.idUser,
         });
       });
 
@@ -54,7 +54,7 @@ let userControllerApi = {
     }).then(function (users) {
       return res.status(200).json({
         data: users,
-        image: `http://localhost:3042/images/users/${users.image}`,
+        image: `http://localhost:3043/images/users/${users.image}`,
         status: 200,
       });
     });
@@ -62,7 +62,7 @@ let userControllerApi = {
 
   apiLastUser: async (req, res) => {
     const lastUser = await db.Producto.sequelize.query(
-      "SELECT idUser, name, lastName FROM dhrelojes2.user ORDER BY idUser DESC LIMIT 1"
+      "SELECT idUser, name, lastName FROM dhrelojes.user ORDER BY idUser DESC LIMIT 1"
     );
     Promise.all([lastUser]).then(function ([lastUser]) {
       return res.status(200).json({
@@ -73,7 +73,7 @@ let userControllerApi = {
   },
   apiLastUserImg: async (req, res) => {
     const lastUserImg = await db.Imagen.sequelize.query(
-      "SELECT image FROM dhrelojes2.user ORDER BY idUser DESC LIMIT 1"
+      "SELECT image FROM dhrelojes.user ORDER BY idUser DESC LIMIT 1"
     );
     console.log(lastUserImg);
     Promise.all([lastUserImg]).then(function ([lastUserImg]) {

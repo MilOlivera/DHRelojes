@@ -40,7 +40,7 @@ function EditarProducto() {
 
   const submitEdit = () => {
     if (errors.length == null) {
-      fetch("http://localhost:3042/products/dashboard/edit/" + id, {
+      fetch("http://localhost:3043/products/dashboard/edit/" + id, {
         method: "PUT",
         body: formdata,
       })
@@ -53,7 +53,7 @@ function EditarProducto() {
   };
 
   const submitDelete = () => {
-    fetch("http://localhost:3042/products/dashboard/delete/" + id, {
+    fetch("http://localhost:3043/products/dashboard/delete/" + id, {
       method: "DELETE",
     })
       .then((res) => res.text())

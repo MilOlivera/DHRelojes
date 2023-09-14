@@ -22,7 +22,7 @@ function CrearProducto() {
       formdata.append("price", price);
       formdata.append("idCategoryFK", idCategoryFK);
 
-      fetch("http://localhost:3042/products/dashboard/create", {
+      fetch("http://localhost:3043/products/dashboard/create", {
         method: "POST",
         body: formdata,
       })
@@ -33,6 +33,7 @@ function CrearProducto() {
         });
       alert("Producto creado");
     }
+    
   };
 
   const {

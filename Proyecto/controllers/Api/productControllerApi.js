@@ -48,7 +48,7 @@ let productControllerApi = {
           price: producto.price,
         },
         category: categoria[producto.idCategoryFK].name,
-        image: `http://localhost:3042/images/products/${
+        image: `http://localhost:3043/images/products/${
           imagen[producto.idProduct_imageFK].name
         }`,
         status: 200,
@@ -58,7 +58,7 @@ let productControllerApi = {
 
   apiLastProduct: async (req, res) => {
     const lastProd = await db.Producto.sequelize.query(
-      "SELECT name FROM dhrelojes2.product ORDER BY idProduct DESC LIMIT 1"
+      "SELECT name FROM dhrelojes.product ORDER BY idProduct DESC LIMIT 1"
     );
     Promise.all([lastProd]).then(function ([lastProd]) {
       return res.status(200).json({
@@ -129,7 +129,7 @@ let productControllerApi = {
   },
   apiLastProductImg: async (req, res) => {
     const lastProdImg = await db.Imagen.sequelize.query(
-      "SELECT name FROM dhrelojes2.product_image ORDER BY idProduct_image DESC LIMIT 1"
+      "SELECT name FROM dhrelojes.product_image ORDER BY idProduct_image DESC LIMIT 1"
     );
     console.log(lastProdImg);
     Promise.all([lastProdImg]).then(function ([lastProdImg]) {

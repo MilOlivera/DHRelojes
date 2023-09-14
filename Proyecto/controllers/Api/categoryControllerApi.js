@@ -19,7 +19,7 @@ let categoryControllerApi = {
 
   countByCategory: async (req, res) => {
     const categorias = await db.Producto.sequelize.query(
-      "SELECT category.name, COUNT(idCategoryFK) as total FROM dhrelojes2.product INNER JOIN category ON product.idCategoryFK=category.idCategory group by idCategoryFK"
+      "SELECT category.name, COUNT(idCategoryFK) as total FROM dhrelojes.product INNER JOIN category ON product.idCategoryFK=category.idCategory group by idCategoryFK"
     );
     Promise.all([categorias]).then(function ([categorias]) {
       return res.status(200).json({
