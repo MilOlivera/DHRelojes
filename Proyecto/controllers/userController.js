@@ -1,7 +1,7 @@
 const { check, validationResult, body } = require("express-validator");
 let db = require("../src/database/models");
 const path = require("path");
-const bcryptjs = require("bcryptjs");
+/*const bcryptjs = require("bcryptjs");*/
 
 let userController = {
   /* llamar a un usuario por id ** llamar a un usuario por id */
@@ -56,7 +56,7 @@ let userController = {
       mail: req.body.mail,
       dni: req.body.dni,
       address: req.body.address,
-      password: bcryptjs.hashSync(req.body.password, 10),
+      password: /*bcryptjs.*/hashSync(req.body.password, 10),
       idRoleFK: 2,
       image: avatar,
     });
@@ -76,7 +76,7 @@ let userController = {
 
     .then(function (userToLogin) {
       if (userToLogin) {
-        let passwordMatched = bcryptjs.compareSync(
+        let passwordMatched = /*bcryptjs.*/compareSync(
           req.body.password,
           userToLogin.password
         );
