@@ -8,7 +8,7 @@ const mysql2 = require('mysql2')
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
-const db = {};
+const db = {dialect: "mysql", dialectModule: mysql2};
 
 let sequelize;
 if (config.use_env_variable) {
