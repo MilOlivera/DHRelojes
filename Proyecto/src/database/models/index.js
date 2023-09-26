@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-import mysql2 from 'mysql2'; // Needed to fix sequelize issues with WebPack
 const mysql2 = require('mysql2')
 
 const basename = path.basename(__filename);
@@ -13,9 +12,9 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  sequelize = new Sequelize(process.env[config.use_env_variable], config, {dialect: "mysql", dialectModule: mysql2});
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(config.database, config.username, config.password, config, {dialect: "mysql", dialectModule: mysql2});
 }
 
 fs
