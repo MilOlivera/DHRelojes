@@ -3,7 +3,9 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
+import mysql2 from 'mysql2'; // Needed to fix sequelize issues with WebPack
 const mysql2 = require('mysql2')
+
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
