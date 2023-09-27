@@ -14,7 +14,16 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config, {dialect: "mysql", dialectModule: mysql2});
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config, {dialect: "mysql", dialectModule: mysql2});
+  sequelize = new Sequelize(config.database, config.username, config.password, config,{
+    host: config.host,
+    dialect: config.dialect,
+    port: config.port
+  }, {dialect: "mysql", dialectModule: mysql2})
+  sequelize.authenticate().then(() => {
+    console.log('Connection has been established successfully.')
+  }).catch((error) => {
+    console.error('Unable to connect to the database:', error);
+  })
 }
 
 fs
