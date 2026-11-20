@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/css/Styles.css";
-import CrearProducto from "./CrearProducto.";
+import CrearProducto from "./CrearProducto";
 import EditarProducto from "./EditarProducto";
 
 function Crud() {
